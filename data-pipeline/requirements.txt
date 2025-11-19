@@ -1,0 +1,11 @@
+# Manual V1 MVP - Python Dependencies
+# Processing 7 priority PDFs with 35 curated names
+
+# PDF Processing
+PyMuPDF>=1.23.0  # PDF text extraction (fitz)
+
+# No OCR for V1 - skipping pytesseract, pillow
+# No NER for V1 - skipping spacy
+
+# Data handling
+# Built-in modules used: json, hashlib, re, pathlib, typing

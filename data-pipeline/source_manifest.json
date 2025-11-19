@@ -1,0 +1,96 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "created": "2024-11-19",
+    "description": "Source tracking for all Epstein documents processed by InEpsteinFiles.com",
+    "priority_note": "P0 = Manual V1 MVP (launch priority), P1 = Automated Phase 2"
+  },
+  "files": [
+    {
+      "filename": "3-emails_redacted.pdf",
+      "local_path": "/Users/Me/ClaudeWorkspace/projects/inepsteinfiles/source-files/initial-dump/3-emails_redacted.pdf",
+      "source_url": "https://oversightdemocrats.house.gov/sites/evo-subsites/democrats-oversight.house.gov/files/evo-media-document/3-emails_redacted.pdf",
+      "source_attribution": "U.S. House Committee on Oversight and Accountability - November 2025 Release",
+      "priority": "P0",
+      "classification": "Emails",
+      "date_added": "2024-11-19",
+      "sha256": null,
+      "verification_status": "UNVERIFIED",
+      "notes": "New emails released Nov 2025 - highest priority for V1"
+    },
+    {
+      "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+      "local_path": "/Users/Me/ClaudeWorkspace/projects/inepsteinfiles/source-files/initial-dump/EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+      "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+      "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+      "official_source": "https://www.justice.gov/opa/pr/attorney-general-pamela-bondi-releases-first-phase-declassified-epstein-files",
+      "priority": "P0",
+      "classification": "Flight Logs",
+      "date_added": "2024-11-19",
+      "sha256": null,
+      "verification_status": "UNVERIFIED",
+      "notes": "Complete unredacted flight logs from Lolita Express - critical for V1"
+    },
+    {
+      "filename": "contact-book.pdf",
+      "local_path": "/Users/Me/ClaudeWorkspace/projects/inepsteinfiles/source-files/initial-dump/contact-book.pdf",
+      "source_url": "https://drive.google.com/drive/folders/1ZSVpXEhI7gKI0zatJdYe6QhKJ5pjUo4b",
+      "source_attribution": "Official Government Release via Justice Department",
+      "official_source": "https://www.justice.gov/ag/media/1391321/dl?inline",
+      "priority": "P0",
+      "classification": "Contact Book",
+      "date_added": "2024-11-19",
+      "sha256": null,
+      "verification_status": "UNVERIFIED",
+      "notes": "Little Black Book - names and contact information"
+    },
+    {
+      "filename": "Epstein-Estate-Document-01.pdf",
+      "local_path": "/Users/Me/ClaudeWorkspace/projects/inepsteinfiles/source-files/initial-dump/Epstein-Estate-Document-01.pdf",
+      "source_url": "https://drive.google.com/drive/folders/1ZSVpXEhI7gKI0zatJdYe6QhKJ5pjUo4b",
+      "source_attribution": "Epstein Estate Documents",
+      "priority": "P0",
+      "classification": "Birthday Book",
+      "date_added": "2024-11-19",
+      "sha256": null,
+      "verification_status": "UNVERIFIED",
+      "notes": "Birthday book - Part 1"
+    },
+    {
+      "filename": "Epstein-Estate-Document-02.pdf",
+      "local_path": "/Users/Me/ClaudeWorkspace/projects/inepsteinfiles/source-files/initial-dump/Epstein-Estate-Document-02.pdf",
+      "source_url": "https://drive.google.com/drive/folders/1ZSVpXEhI7gKI0zatJdYe6QhKJ5pjUo4b",
+      "source_attribution": "Epstein Estate Documents",
+      "priority": "P0",
+      "classification": "Birthday Book",
+      "date_added": "2024-11-19",
+      "sha256": null,
+      "verification_status": "UNVERIFIED",
+      "notes": "Birthday book - Part 2"
+    },
+    {
+      "filename": "Epstein-Estate-Document-03.pdf",
+      "local_path": "/Users/Me/ClaudeWorkspace/projects/inepsteinfiles/source-files/initial-dump/Epstein-Estate-Document-03.pdf",
+      "source_url": "https://drive.google.com/drive/folders/1ZSVpXEhI7gKI0zatJdYe6QhKJ5pjUo4b",
+      "source_attribution": "Epstein Estate Documents",
+      "priority": "P0",
+      "classification": "Birthday Book",
+      "date_added": "2024-11-19",
+      "sha256": null,
+      "verification_status": "UNVERIFIED",
+      "notes": "Birthday book - Part 3"
+    },
+    {
+      "filename": "Epstein-Estate-Document-04.pdf",
+      "local_path": "/Users/Me/ClaudeWorkspace/projects/inepsteinfiles/source-files/initial-dump/Epstein-Estate-Document-04.pdf",
+      "source_url": "https://drive.google.com/drive/folders/1ZSVpXEhI7gKI0zatJdYe6QhKJ5pjUo4b",
+      "source_attribution": "Epstein Estate Documents",
+      "priority": "P0",
+      "classification": "Birthday Book",
+      "date_added": "2024-11-19",
+      "sha256": null,
+      "verification_status": "UNVERIFIED",
+      "notes": "Birthday book - Part 4"
+    }
+  ]
+}

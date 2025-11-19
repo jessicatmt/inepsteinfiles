@@ -1,0 +1,291 @@
+{
+  "_metadata": {
+    "version": "1.0",
+    "created": "2024-11-19",
+    "description": "Curated list of high-priority names for Manual V1 MVP",
+    "source": "Combined recommendations from GPT-5.1 and Grok",
+    "total_names": 35
+  },
+  "names": [
+    {
+      "display_name": "Donald Trump",
+      "search_variants": ["Donald Trump", "Donald J. Trump", "Trump", "D. Trump", "DJT"],
+      "slug": "donald-trump",
+      "priority": "P0",
+      "category": "Political Figure",
+      "notes": "Former U.S. President, central figure in 2025 file releases"
+    },
+    {
+      "display_name": "Bill Clinton",
+      "search_variants": ["Bill Clinton", "William Clinton", "Clinton", "W. Clinton", "WJC"],
+      "slug": "bill-clinton",
+      "priority": "P0",
+      "category": "Political Figure",
+      "notes": "Former U.S. President, 26 documented flights"
+    },
+    {
+      "display_name": "Ghislaine Maxwell",
+      "search_variants": ["Ghislaine Maxwell", "Maxwell", "G. Maxwell", "Ghislaine"],
+      "slug": "ghislaine-maxwell",
+      "priority": "P0",
+      "category": "Co-Conspirator",
+      "notes": "Epstein's co-conspirator and convicted accomplice"
+    },
+    {
+      "display_name": "Prince Andrew",
+      "search_variants": ["Prince Andrew", "Andrew", "Duke of York", "P. Andrew"],
+      "slug": "prince-andrew",
+      "priority": "P0",
+      "category": "British Royal",
+      "notes": "British royal, settled sexual assault lawsuit with Giuffre"
+    },
+    {
+      "display_name": "Elon Musk",
+      "search_variants": ["Elon Musk", "Musk", "E. Musk"],
+      "slug": "elon-musk",
+      "priority": "P0",
+      "category": "Tech CEO",
+      "notes": "Tesla/SpaceX CEO, 2025 island invite & schedule mentions"
+    },
+    {
+      "display_name": "Alan Dershowitz",
+      "search_variants": ["Alan Dershowitz", "Dershowitz", "A. Dershowitz"],
+      "slug": "alan-dershowitz",
+      "priority": "P0",
+      "category": "Legal",
+      "notes": "High-profile lawyer, represented Epstein, accused by Giuffre"
+    },
+    {
+      "display_name": "Bill Gates",
+      "search_variants": ["Bill Gates", "Gates", "William Gates", "B. Gates"],
+      "slug": "bill-gates",
+      "priority": "P0",
+      "category": "Tech CEO",
+      "notes": "Microsoft co-founder, post-conviction meetings with Epstein"
+    },
+    {
+      "display_name": "Stephen Hawking",
+      "search_variants": ["Stephen Hawking", "Hawking", "S. Hawking"],
+      "slug": "stephen-hawking",
+      "priority": "P1",
+      "category": "Scientist",
+      "notes": "Legendary physicist, mentioned in bizarre 2015 email"
+    },
+    {
+      "display_name": "Leonardo DiCaprio",
+      "search_variants": ["Leonardo DiCaprio", "DiCaprio", "L. DiCaprio", "Leo DiCaprio"],
+      "slug": "leonardo-dicaprio",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Oscar-winning actor, name-dropped in deposition"
+    },
+    {
+      "display_name": "Kevin Spacey",
+      "search_variants": ["Kevin Spacey", "Spacey", "K. Spacey"],
+      "slug": "kevin-spacey",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Actor, multiple flights on Lolita Express"
+    },
+    {
+      "display_name": "Naomi Campbell",
+      "search_variants": ["Naomi Campbell", "Campbell", "N. Campbell"],
+      "slug": "naomi-campbell",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Supermodel, black book + flight log regular"
+    },
+    {
+      "display_name": "Larry Summers",
+      "search_variants": ["Larry Summers", "Summers", "Lawrence Summers", "L. Summers"],
+      "slug": "larry-summers",
+      "priority": "P1",
+      "category": "Political Figure",
+      "notes": "Former Treasury Secretary & Harvard president"
+    },
+    {
+      "display_name": "Peter Thiel",
+      "search_variants": ["Peter Thiel", "Thiel", "P. Thiel"],
+      "slug": "peter-thiel",
+      "priority": "P1",
+      "category": "Tech CEO",
+      "notes": "PayPal co-founder & Trump donor, island schedule mentions"
+    },
+    {
+      "display_name": "Steve Bannon",
+      "search_variants": ["Steve Bannon", "Bannon", "Stephen Bannon", "S. Bannon"],
+      "slug": "steve-bannon",
+      "priority": "P1",
+      "category": "Political Figure",
+      "notes": "Trump strategist, 2019 meetings with Epstein"
+    },
+    {
+      "display_name": "Ehud Barak",
+      "search_variants": ["Ehud Barak", "Barak", "E. Barak"],
+      "slug": "ehud-barak",
+      "priority": "P1",
+      "category": "Political Figure",
+      "notes": "Former Israeli Prime Minister, frequent mansion visitor"
+    },
+    {
+      "display_name": "David Copperfield",
+      "search_variants": ["David Copperfield", "Copperfield", "D. Copperfield"],
+      "slug": "david-copperfield",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Illusionist, mentioned performing for Epstein guests"
+    },
+    {
+      "display_name": "Al Gore",
+      "search_variants": ["Al Gore", "Gore", "Albert Gore", "A. Gore"],
+      "slug": "al-gore",
+      "priority": "P1",
+      "category": "Political Figure",
+      "notes": "Former U.S. Vice President, named in Giuffre claims"
+    },
+    {
+      "display_name": "George Mitchell",
+      "search_variants": ["George Mitchell", "Mitchell", "G. Mitchell"],
+      "slug": "george-mitchell",
+      "priority": "P1",
+      "category": "Political Figure",
+      "notes": "Former Senate Majority Leader, named in Giuffre claims"
+    },
+    {
+      "display_name": "Bill Richardson",
+      "search_variants": ["Bill Richardson", "Richardson", "William Richardson", "B. Richardson"],
+      "slug": "bill-richardson",
+      "priority": "P1",
+      "category": "Political Figure",
+      "notes": "Former New Mexico Governor & UN Ambassador"
+    },
+    {
+      "display_name": "Michael Jackson",
+      "search_variants": ["Michael Jackson", "Jackson", "M. Jackson", "MJ"],
+      "slug": "michael-jackson",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "King of Pop, visited Epstein's Palm Beach home"
+    },
+    {
+      "display_name": "Woody Allen",
+      "search_variants": ["Woody Allen", "Allen", "W. Allen"],
+      "slug": "woody-allen",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Filmmaker, flew with wife Soon-Yi"
+    },
+    {
+      "display_name": "Alec Baldwin",
+      "search_variants": ["Alec Baldwin", "Baldwin", "A. Baldwin"],
+      "slug": "alec-baldwin",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Actor, listed in black book"
+    },
+    {
+      "display_name": "Cameron Diaz",
+      "search_variants": ["Cameron Diaz", "Diaz", "C. Diaz"],
+      "slug": "cameron-diaz",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Actress, name came up in deposition"
+    },
+    {
+      "display_name": "Cate Blanchett",
+      "search_variants": ["Cate Blanchett", "Blanchett", "C. Blanchett"],
+      "slug": "cate-blanchett",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Oscar-winning actress, name-dropped by Epstein"
+    },
+    {
+      "display_name": "Chris Tucker",
+      "search_variants": ["Chris Tucker", "Tucker", "C. Tucker"],
+      "slug": "chris-tucker",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Comedian/actor, flew to Africa trip with Clinton"
+    },
+    {
+      "display_name": "Courtney Love",
+      "search_variants": ["Courtney Love", "Love", "C. Love"],
+      "slug": "courtney-love",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Musician, black book contact"
+    },
+    {
+      "display_name": "Hillary Clinton",
+      "search_variants": ["Hillary Clinton", "Clinton", "H. Clinton", "HRC", "Hillary Rodham Clinton"],
+      "slug": "hillary-clinton",
+      "priority": "P0",
+      "category": "Political Figure",
+      "notes": "Former First Lady & Secretary of State"
+    },
+    {
+      "display_name": "Les Wexner",
+      "search_variants": ["Les Wexner", "Wexner", "Leslie Wexner", "L. Wexner"],
+      "slug": "les-wexner",
+      "priority": "P0",
+      "category": "Business",
+      "notes": "Victoria's Secret billionaire, Epstein's main client"
+    },
+    {
+      "display_name": "Mick Jagger",
+      "search_variants": ["Mick Jagger", "Jagger", "M. Jagger"],
+      "slug": "mick-jagger",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Rolling Stones frontman, black book"
+    },
+    {
+      "display_name": "Minnie Driver",
+      "search_variants": ["Minnie Driver", "Driver", "M. Driver"],
+      "slug": "minnie-driver",
+      "priority": "P1",
+      "category": "Entertainment",
+      "notes": "Actress, black book contact"
+    },
+    {
+      "display_name": "Noam Chomsky",
+      "search_variants": ["Noam Chomsky", "Chomsky", "N. Chomsky"],
+      "slug": "noam-chomsky",
+      "priority": "P1",
+      "category": "Academic",
+      "notes": "Linguist & political activist, post-conviction meetings"
+    },
+    {
+      "display_name": "Robert F. Kennedy Jr.",
+      "search_variants": ["Robert F. Kennedy Jr.", "RFK Jr.", "Kennedy", "R. Kennedy"],
+      "slug": "robert-f-kennedy-jr",
+      "priority": "P1",
+      "category": "Political Figure",
+      "notes": "Environmental lawyer & 2024 presidential candidate"
+    },
+    {
+      "display_name": "Tom Pritzker",
+      "search_variants": ["Tom Pritzker", "Pritzker", "T. Pritzker"],
+      "slug": "tom-pritzker",
+      "priority": "P1",
+      "category": "Business",
+      "notes": "Hyatt hotels billionaire, named in deposition"
+    },
+    {
+      "display_name": "Kathryn Ruemmler",
+      "search_variants": ["Kathryn Ruemmler", "Ruemmler", "K. Ruemmler"],
+      "slug": "kathryn-ruemmler",
+      "priority": "P1",
+      "category": "Legal",
+      "notes": "Obama White House counsel, dozens of meetings"
+    },
+    {
+      "display_name": "Glenn Dubin",
+      "search_variants": ["Glenn Dubin", "Dubin", "G. Dubin"],
+      "slug": "glenn-dubin",
+      "priority": "P1",
+      "category": "Business",
+      "notes": "Hedge fund billionaire, close Epstein associate"
+    }
+  ]
+}
