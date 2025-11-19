@@ -115,7 +115,7 @@ export async function GET(
               textAlign: 'center',
             }}
           >
-            Proof: {vanityUrl}
+            {`Proof: ${vanityUrl}`}
           </div>
         </div>
       ),
