@@ -1,43 +1,46 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { Person, PeopleIndex, getDocumentTitle } from '@/types';
+import { Metadata } from 'next';
+import { Person, PeopleIndex } from '@/types';
+import SearchForm from '../components/SearchForm';
 
-// VIRALITY FEATURE: Generate metadata for SEO and Twitter cards
-export async function generateMetadata({ params }: { params: Promise<{ name: string }> }): Promise<Metadata> {
+async function getPersonData(slug: string): Promise<Person | null> {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const response = await fetch(`${baseUrl}/people_index.json`, {
+    cache: 'no-store',
+  });
+  const data: PeopleIndex = await response.json();
+  return data.people.find((p) => p.slug === slug) || null;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ name: string }>;
+}): Promise<Metadata> {
   const { name } = await params;
   const person = await getPersonData(name);
 
   if (!person) {
     return {
-      title: 'Name Not Found | InEpsteinFiles.com',
+      title: 'Name Not Found - InEpsteinFiles.com',
+      description: 'This name was not found in our search index.',
     };
   }
 
   const found = person.found_in_documents;
-  const title = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein Files`;
-  const description = found
-    ? `${person.display_name} appears ${person.total_matches} times across ${person.documents.length} official documents including ${person.documents.map(d => getDocumentTitle(d.filename, d.source_attribution)).join(', ')}.`
-    : `${person.display_name} does not appear in the Epstein files we've indexed.`;
+  const vanityUrl = `${person.slug}.inepsteinfiles.com`;
+  const canonicalUrl = `https://inepsteinfiles.com/${person.slug}?utm_source=x_share`;
 
-  const canonicalUrl = `https://inepsteinfiles.com/${name}`;
-  const ogImage = `https://inepsteinfiles.com/api/og/${name}`;
+  const title = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein Files`;
+  const description = `${person.total_matches} result${person.total_matches !== 1 ? 's' : ''} found. Sources: ${vanityUrl}`;
+
+  const altText = found
+    ? `Red alert: ${person.display_name} appears ${person.total_matches} times in Epstein official records. No wrongdoing implied. Sources linked. Public docs only.`
+    : `Clear: ${person.display_name} has 0 matches in Epstein files so far. Still processing. Neutral search results.`;
 
   return {
     title,
     description,
-    // VIRALITY FEATURE: Canonical URL for SEO
-    alternates: {
-      canonical: canonicalUrl,
-    },
-    // VIRALITY FEATURE: Twitter Card meta tags
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [ogImage],
-      creator: '@inepsteinfiles',
-    },
     openGraph: {
       title,
       description,
@@ -45,194 +48,170 @@ export async function generateMetadata({ params }: { params: Promise<{ name: str
       siteName: 'InEpsteinFiles.com',
       images: [
         {
-          url: ogImage,
+          url: `/api/og/${person.slug}`,
           width: 1200,
-          height: 630,
-          alt: `${person.display_name} - Epstein Files Search`,
+          height: 628,
+          alt: altText,
         },
       ],
       type: 'website',
     },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [`/api/og/${person.slug}`],
+    },
   };
 }
 
-// Generate static params for all names
-export async function generateStaticParams() {
-  const data: PeopleIndex = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/people_index.json`)
-    .then(res => res.json())
-    .catch(() => ({
-      _metadata: {
-        version: '',
-        generated: '',
-        description: '',
-        total_names: 0,
-        total_documents: 0,
-        verification_note: ''
-      },
-      people: []
-    }));
-
-  return data.people.map((person) => ({
-    name: person.slug,
-  }));
-}
-
-async function getPersonData(slug: string): Promise<Person | null> {
-  const data: PeopleIndex = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/people_index.json`, {
-    next: { revalidate: 3600 }
-  }).then(res => res.json());
-
-  return data.people.find(p => p.slug === slug) || null;
-}
-
-export default async function NamePage({ params }: { params: Promise<{ name: string }> }) {
+export default async function NamePage({
+  params,
+}: {
+  params: Promise<{ name: string }>;
+}) {
   const { name } = await params;
   const person = await getPersonData(name);
 
   if (!person) {
-    notFound();
+    return (
+      <main className="min-h-screen bg-white text-black flex items-center justify-center p-4">
+        <div className="text-center">
+          <div className="text-6xl md:text-9xl font-black mb-8">404</div>
+          <p className="text-xl mb-8">Name not found in our index</p>
+          <Link href="/" className="text-black underline hover:text-gray-600">
+            ← Back to search
+          </Link>
+        </div>
+      </main>
+    );
   }
 
   const found = person.found_in_documents;
-  const shareUrl = `https://inepsteinfiles.com/${name}`;
-  const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files`;
-
-  // VIRALITY FEATURE: Share on X (Twitter) URL
-  const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+  const vanityUrl = `${person.slug}.inepsteinfiles.com`;
+  const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts? Sources: ${vanityUrl}`;
+  const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   return (
-    <main className="min-h-screen bg-black text-white p-4 md:p-8">
-      {/* Header */}
-      <header className="max-w-4xl mx-auto mb-12">
-        <Link href="/" className="text-gray-400 hover:text-white text-sm md:text-base">
-          ← Back to Search
-        </Link>
-        <h1 className="text-2xl md:text-3xl font-bold mt-4">
-          InEpsteinFiles.com
-        </h1>
-      </header>
-
-      {/* Main Result */}
+    <main className="min-h-screen bg-white text-black p-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-light mb-6">
-          Is <span className="font-bold">{person.display_name}</span> in the Epstein files?
-        </h2>
+        {/* Answer Section */}
+        <div className="text-center mb-16">
+          {/* YES/NO Answer */}
+          <div
+            className={`text-8xl md:text-[14rem] font-black leading-none tracking-tighter mb-8 ${
+              found ? 'text-red-600' : 'text-black'
+            }`}
+          >
+            {found ? 'YES' : 'NO'}
+          </div>
 
-        {/* YES/NO Answer */}
-        <div className={`text-6xl md:text-9xl font-black mb-8 ${found ? 'text-red-600' : 'text-white'}`}>
-          {found ? 'YES' : 'NO'}
-        </div>
+          {/* Subtitle */}
+          <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
+            {person.display_name} {found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES
+          </p>
 
-        {/* VIRALITY FEATURE: Share on X Button */}
-        <div className="flex gap-4 mb-12">
+          {/* Match Count */}
+          <p className="text-2xl mb-6">
+            {person.total_matches} result{person.total_matches !== 1 ? 's' : ''}{' '}
+            <Link href="/" className="underline hover:text-gray-600">
+              so far
+            </Link>
+          </p>
+
+          {/* Post on X Button */}
           <a
             href={twitterShareUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2 transition-colors"
+            className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors mb-8"
           >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            Post on
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
-            Share on X
           </a>
 
-          {/* VIRALITY FEATURE: Subdomain link for easy sharing */}
-          <button
-            onClick={() => {
-              navigator.clipboard.writeText(`${person.slug}.inepsteinfiles.com`);
-              alert('Link copied!');
-            }}
-            className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-          >
-            Copy Link
-          </button>
+          {/* Legal Disclaimer */}
+          <p className="text-xs text-gray-600 mt-8">
+            <Link href="/" className="text-gray-600 hover:underline">
+              No wrongdoing is alleged or implied. We are literally just a search.
+            </Link>
+          </p>
         </div>
 
-        {/* Evidence Section */}
-        {found && (
-          <div className="space-y-8">
-            <div className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4">Summary</h3>
-              <p className="text-gray-300">
-                {person.display_name} appears <span className="text-white font-semibold">{person.total_matches} times</span> across{' '}
-                <span className="text-white font-semibold">{person.documents.length} document{person.documents.length > 1 ? 's' : ''}</span>.
-              </p>
-            </div>
+        {/* Documents Section (YES only) */}
+        {found && person.documents.length > 0 && (
+          <div className="border-t border-gray-300 pt-12 mt-12">
+            <p className="text-sm text-gray-600 mb-8 text-center">
+              Sources processed → click to open original file.
+            </p>
 
-            {/* VIRALITY FEATURE: Human-readable document titles + Official source links */}
-            {person.documents.map((doc, idx) => (
-              <div key={idx} className="bg-gray-900 border border-gray-800 rounded-lg p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <h4 className="text-lg font-semibold mb-1">
-                      {getDocumentTitle(doc.filename, doc.source_attribution)}
-                    </h4>
-                    <p className="text-sm text-gray-400">{doc.classification}</p>
-                  </div>
-                  <span className="bg-red-900/30 text-red-400 px-3 py-1 rounded text-sm font-medium">
-                    {doc.match_count} match{doc.match_count > 1 ? 'es' : ''}
-                  </span>
-                </div>
-
-                {/* VIRALITY FEATURE: Official source attribution and link */}
-                <div className="mb-4 p-3 bg-gray-800 rounded">
-                  <p className="text-xs text-gray-400 mb-1">Official Source</p>
+            <div className="space-y-8">
+              {person.documents.map((doc, idx) => (
+                <div key={idx} className="border-b border-gray-300 pb-8 last:border-b-0">
                   <a
                     href={doc.source_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-blue-400 hover:text-blue-300 hover:underline break-all"
+                    className="block hover:underline"
                   >
-                    {doc.source_attribution}
+                    <div className="font-bold uppercase text-base mb-1">
+                      {doc.filename.replace(/\.pdf$/i, '').replace(/_/g, ' ')}
+                    </div>
+                    <div className="text-sm text-gray-600 mb-2">
+                      {doc.matches.length > 0 && `page ${doc.matches[0].page} • `}
+                      {new Date(doc.matches[0]?.snippet || '').toLocaleDateString('en-US', {
+                        month: 'long',
+                        day: 'numeric',
+                        year: 'numeric'
+                      })}
+                    </div>
+                    {doc.matches[0] && (
+                      <div className="text-sm mt-2">
+                        &ldquo;...{doc.matches[0].snippet}...&rdquo;
+                      </div>
+                    )}
                   </a>
                 </div>
-
-                {/* Show first 3 matches */}
-                <div className="space-y-3">
-                  {doc.matches.slice(0, 3).map((match, matchIdx) => (
-                    <div key={matchIdx} className="border-l-2 border-gray-700 pl-4">
-                      <p className="text-xs text-gray-500 mb-1">Page {match.page}</p>
-                      <p className="text-sm text-gray-300 italic">&ldquo;{match.snippet}&rdquo;</p>
-                    </div>
-                  ))}
-                  {doc.match_count > 3 && (
-                    <p className="text-sm text-gray-500">
-                      ... and {doc.match_count - 3} more occurrences
-                    </p>
-                  )}
-                </div>
-
-                <div className="mt-4 pt-4 border-t border-gray-800">
-                  <p className="text-xs text-gray-500">
-                    Verification: {doc.verification_status} • SHA-256: {doc.sha256?.substring(0, 16)}...
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
 
-        {/* Not Found Message */}
-        {!found && (
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-8">
-            <p className="text-lg text-gray-300 mb-4">
-              {person.display_name} does not appear in the documents we've currently indexed.
-            </p>
-            <p className="text-sm text-gray-500">
-              We're continuously adding new documents as they're released by Congress, DOJ, and FBI.
-              Check back soon for updates.
-            </p>
-          </div>
-        )}
-
-        {/* Legal Disclaimer */}
-        <div className="mt-12 pt-8 border-t border-gray-800">
-          <p className="text-xs text-gray-600">
-            This search engine indexes publicly released documents from official U.S. government sources.
-            Appearance in these documents does not imply wrongdoing. Documents are marked UNVERIFIED pending
-            SHA-256 hash verification against official government sources.
+        {/* Search Again Section */}
+        <div className="border-t border-gray-300 pt-12 mt-12 text-center">
+          <p className="text-sm uppercase tracking-wide text-gray-600 mb-6">
+            SEARCH ANOTHER NAME
           </p>
+          <SearchForm />
+        </div>
+
+        {/* Footer */}
+        <div className="text-center pt-8 mt-8 text-xs text-gray-600">
+          <Link href="/" className="text-gray-600 hover:underline">about</Link>
+          {!found && (
+            <>
+              {' • '}
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  alert('Thank you for your feedback! This result has been flagged as TREMENDOUS fake news. The best people are looking into it. Believe me!');
+                }}
+                className="text-gray-600 hover:underline"
+                title="Flag this result as a complete and total Democrat HOAX! Sad!"
+              >
+                FAKE NEWS
+              </a>
+            </>
+          )}
+          {' • '}
+          last updated: november 19, 2024
+          {' • '}
+          <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
+            @jessicasuarez
+          </a>
         </div>
       </div>
     </main>

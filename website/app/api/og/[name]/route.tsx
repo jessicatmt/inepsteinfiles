@@ -29,28 +29,26 @@ export async function GET(
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: '#000',
-              color: '#fff',
+              backgroundColor: 'white',
             }}
           >
-            <div style={{ fontSize: 60, fontWeight: 'bold' }}>
-              Name Not Found
-            </div>
-            <div style={{ fontSize: 32, marginTop: 20, color: '#999' }}>
-              InEpsteinFiles.com
-            </div>
+            <div style={{ display: 'flex', fontSize: 120, fontWeight: 900 }}>404</div>
+            <div style={{ display: 'flex', fontSize: 40, marginTop: 20 }}>Not Found</div>
           </div>
         ),
         {
           width: 1200,
-          height: 630,
+          height: 628,
         }
       );
     }
 
     const found = person.found_in_documents;
-    const answerText = found ? 'IS' : 'IS NOT';
-    const answerColor = found ? '#dc2626' : '#fff';
+    const answer = found ? 'YES' : 'NO';
+    const answerColor = found ? '#dc2626' : '#000000';
+    const subtitle = `${person.display_name.toUpperCase()} ${found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES`;
+    const meta = `${person.total_matches} mention${person.total_matches !== 1 ? 's' : ''} in official records. No wrongdoing implied.`;
+    const vanityUrl = `${person.slug}.inepsteinfiles.com`;
 
     return new ImageResponse(
       (
@@ -62,68 +60,68 @@ export async function GET(
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#000',
-            color: '#fff',
+            backgroundColor: 'white',
             padding: '80px',
           }}
         >
-          {/* Site branding */}
+          {/* YES/NO Answer */}
           <div
             style={{
-              fontSize: 28,
-              color: '#666',
-              marginBottom: 40,
-              fontWeight: 'normal',
-            }}
-          >
-            InEpsteinFiles.com
-          </div>
-
-          {/* Main question */}
-          <div
-            style={{
-              fontSize: 48,
-              textAlign: 'center',
-              marginBottom: 40,
-              fontWeight: 'normal',
-              lineHeight: 1.2,
-            }}
-          >
-            Is <span style={{ fontWeight: 'bold' }}>{person.display_name}</span>
-            <br />
-            in the Epstein files?
-          </div>
-
-          {/* Answer */}
-          <div
-            style={{
-              fontSize: 120,
-              fontWeight: 'black',
+              display: 'flex',
+              fontSize: 200,
+              fontWeight: 900,
+              lineHeight: 1,
               color: answerColor,
               marginBottom: 40,
             }}
           >
-            {answerText}
+            {answer}
           </div>
 
-          {/* Stats for found names */}
-          {found && (
-            <div
-              style={{
-                fontSize: 24,
-                color: '#999',
-                textAlign: 'center',
-              }}
-            >
-              {person.total_matches} matches across {person.documents.length}{' '}
-              document{person.documents.length > 1 ? 's' : ''}
-            </div>
-          )}
+          {/* Subtitle */}
+          <div
+            style={{
+              display: 'flex',
+              fontSize: 42,
+              fontWeight: 700,
+              textAlign: 'center',
+              color: '#000000',
+              marginBottom: 60,
+              letterSpacing: '0.05em',
+            }}
+          >
+            {subtitle}
+          </div>
+
+          {/* Meta */}
+          <div
+            style={{
+              display: 'flex',
+              fontSize: 28,
+              color: '#666666',
+              textAlign: 'center',
+              marginBottom: 20,
+            }}
+          >
+            {meta}
+          </div>
+
+          {/* Proof link */}
+          <div
+            style={{
+              display: 'flex',
+              fontSize: 20,
+              color: '#999999',
+              textAlign: 'center',
+            }}
+          >
+            Proof: {vanityUrl}
+          </div>
         </div>
       ),
       {
         width: 1200,
-        height: 630,
+        height: 628,
       }
     );
   } catch (error) {

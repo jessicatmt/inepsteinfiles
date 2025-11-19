@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Card Preview - Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f0f0f0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .card-container {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+            max-width: 600px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .card-image {
+            width: 100%;
+            aspect-ratio: 1200/628;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+        }
+
+        .card-question {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            color: black;
+            text-align: center;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .card-tagline {
+            font-size: 1.25rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .card-proof {
+            font-size: 0.875rem;
+            color: #999;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .card-info {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid #eee;
+        }
+
+        .card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-description {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .card-url {
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 0.5rem;
+        }
+
+        .label {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+    <p class="label">Twitter Card Preview - Homepage</p>
+
+    <div class="card-container">
+        <div class="card-image">
+            <div class="card-question">
+                IS [NAME] IN THE<br>EPSTEIN FILES?
+            </div>
+            <div class="card-tagline">
+                Search official documents
+            </div>
+            <div class="card-proof">
+                Proof: inepsteinfiles.com
+            </div>
+        </div>
+
+        <div class="card-info">
+            <div class="card-title">Alt Text: Search Epstein files by name. Neutral public records search.</div>
+            <div class="card-description">Actual URL (with tracking): inepsteinfiles.com?utm_source=x_share</div>
+            <div class="card-url">Display URL: inepsteinfiles.com</div>
+        </div>
+    </div>
+</body>
+</html>
