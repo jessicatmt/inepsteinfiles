@@ -2,13 +2,13 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { Person, PeopleIndex } from '@/types';
 import SearchForm from '../components/SearchForm';
+import fs from 'fs/promises';
+import path from 'path';
 
 async function getPersonData(slug: string): Promise<Person | null> {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  const response = await fetch(`${baseUrl}/people_index.json`, {
-    cache: 'no-store',
-  });
-  const data: PeopleIndex = await response.json();
+  const filePath = path.join(process.cwd(), 'public', 'people_index.json');
+  const fileContents = await fs.readFile(filePath, 'utf8');
+  const data: PeopleIndex = JSON.parse(fileContents);
   return data.people.find((p) => p.slug === slug) || null;
 }
 
