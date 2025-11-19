@@ -160,12 +160,8 @@ export default async function NamePage({
                       {doc.filename.replace(/\.pdf$/i, '').replace(/_/g, ' ')}
                     </div>
                     <div className="text-sm text-gray-600 mb-2">
-                      {doc.matches.length > 0 && `page ${doc.matches[0].page} • `}
-                      {new Date(doc.matches[0]?.snippet || '').toLocaleDateString('en-US', {
-                        month: 'long',
-                        day: 'numeric',
-                        year: 'numeric'
-                      })}
+                      {doc.matches.length > 0 && `page ${doc.matches[0].page}`}
+                      {doc.match_count > 1 && ` • ${doc.match_count} matches in this document`}
                     </div>
                     {doc.matches[0] && (
                       <div className="text-sm mt-2">
