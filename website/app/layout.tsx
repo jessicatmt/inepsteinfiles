@@ -9,7 +9,7 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com'),
   title: "InEpsteinFiles.com - Search Official Epstein Documents",
   description: "Search publicly released Epstein documents from official U.S. government sources",
 };

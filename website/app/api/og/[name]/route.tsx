@@ -1,12 +1,12 @@
 import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
-
-export const runtime = 'edge';
+import fs from 'fs/promises';
+import path from 'path';
 
 async function getPersonData(slug: string) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-  const response = await fetch(`${baseUrl}/people_index.json`);
-  const data = await response.json();
+  const filePath = path.join(process.cwd(), 'public', 'people_index.json');
+  const fileContents = await fs.readFile(filePath, 'utf8');
+  const data = JSON.parse(fileContents);
   return data.people.find((p: any) => p.slug === slug) || null;
 }
 
