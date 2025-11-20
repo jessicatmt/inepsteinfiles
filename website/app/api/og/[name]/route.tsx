@@ -39,7 +39,8 @@ export async function GET(
     const answer = found ? 'YES' : 'NO';
     const answerColor = found ? '#dc2626' : '#000000';
     const subtitle = `${person.display_name.toUpperCase()} ${found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES`;
-    const meta = `${person.total_matches} mention${person.total_matches !== 1 ? 's' : ''} in official records. No wrongdoing implied.`;
+    const matchCount = `${person.total_matches} mention${person.total_matches !== 1 ? 's' : ''} in official records`;
+    const disclaimer = 'No wrongdoing is alleged or implied.';
     const vanityUrl = `${person.slug}.inepsteinfiles.com`;
 
     return new ImageResponse(
@@ -85,17 +86,30 @@ export async function GET(
             {subtitle}
           </div>
 
-          {/* Meta */}
+          {/* Match Count */}
           <div
             style={{
               display: 'flex',
               fontSize: 28,
               color: '#666666',
               textAlign: 'center',
+              marginBottom: 16,
+            }}
+          >
+            {matchCount}
+          </div>
+
+          {/* Disclaimer */}
+          <div
+            style={{
+              display: 'flex',
+              fontSize: 18,
+              color: '#999999',
+              textAlign: 'center',
               marginBottom: 20,
             }}
           >
-            {meta}
+            {disclaimer}
           </div>
 
           {/* Proof link */}
