@@ -83,7 +83,8 @@ export default async function NamePage({
 
   const found = person.found_in_documents;
   const vanityUrl = `${person.slug}.inepsteinfiles.com`;
-  const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts? Sources: ${vanityUrl}`;
+  const canonicalUrl = `https://inepsteinfiles.com/${person.slug}`;
+  const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${canonicalUrl}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   return (
