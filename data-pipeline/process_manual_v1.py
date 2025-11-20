@@ -111,6 +111,68 @@ def extract_snippet(text: str, match_start: int, match_end: int, snippet_chars: 
     return snippet.strip()
 
 
+def deduplicate_matches(matches: List[Dict[str, Any]], proximity_threshold: int = 200) -> List[Dict[str, Any]]:
+    """
+    Deduplicate matches that occur in close proximity (e.g., same table row).
+
+    For flight logs and similar documents, multiple name variants appear in the same row
+    (e.g., "Bill Clinton | Clinton, Bill | Bill Clinton | BC"). This function groups
+    matches within proximity_threshold characters and keeps only the most complete variant.
+
+    Args:
+        matches: List of match dictionaries with 'start', 'end', 'variant' keys
+        proximity_threshold: Maximum character distance to consider matches as duplicates
+
+    Returns:
+        Deduplicated list of matches
+    """
+    if not matches:
+        return matches
+
+    # Sort matches by start position
+    sorted_matches = sorted(matches, key=lambda m: m['start'])
+
+    deduplicated = []
+    current_group = [sorted_matches[0]]
+
+    for match in sorted_matches[1:]:
+        # Check if this match is close to the current group
+        last_match = current_group[-1]
+
+        if match['start'] - last_match['end'] <= proximity_threshold:
+            # Add to current group
+            current_group.append(match)
+        else:
+            # Process current group and start a new one
+            deduplicated.append(select_best_match(current_group))
+            current_group = [match]
+
+    # Process the last group
+    if current_group:
+        deduplicated.append(select_best_match(current_group))
+
+    return deduplicated
+
+
+def select_best_match(match_group: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """
+    Select the best match from a group of proximity-based duplicates.
+
+    Prioritizes:
+    1. Longest variant (more complete name)
+    2. First occurrence if variants are equal length
+
+    Args:
+        match_group: List of match dictionaries
+
+    Returns:
+        Single best match from the group
+    """
+    # Sort by variant length (descending) and then by position (ascending)
+    best_match = max(match_group, key=lambda m: (len(m['variant']), -m['start']))
+    return best_match
+
+
 def process_pdfs(manifest_data: Dict[str, Any], names_data: Dict[str, Any]) -> Dict[str, Any]:
     """
     Main processing function: search for all names in all P0 PDFs.
@@ -173,7 +235,10 @@ def process_pdfs(manifest_data: Dict[str, Any], names_data: Dict[str, Any]) -> D
             for page_num, page_text in page_texts.items():
                 matches = find_name_matches(page_text, person['search_variants'])
 
-                for match in matches:
+                # Deduplicate matches that are in close proximity (e.g., same table row)
+                deduplicated_matches = deduplicate_matches(matches)
+
+                for match in deduplicated_matches:
                     snippet = extract_snippet(page_text, match['start'], match['end'])
 
                     document_matches.append({
