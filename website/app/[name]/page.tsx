@@ -4,6 +4,9 @@ import { Person } from '@/types';
 import SearchForm from '../components/SearchForm';
 import { getPersonData } from '@/lib/data';
 
+// Allow dynamic params to handle names not in the index
+export const dynamicParams = true;
+
 export async function generateMetadata({
   params,
 }: {
