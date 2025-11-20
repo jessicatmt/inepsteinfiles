@@ -12,10 +12,42 @@ export async function generateMetadata({
   const { name } = await params;
   const person = await getPersonData(name);
 
+  // Convert slug to display name
+  const displayName = name
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+
   if (!person) {
+    const title = `${displayName} IS NOT in the Epstein Files`;
+    const description = `0 results found. Sources: ${name}.inepsteinfiles.com`;
+    const canonicalUrl = `https://inepsteinfiles.com/${name}?utm_source=x_share`;
+    const altText = `Clear: ${displayName} has 0 matches in Epstein files so far. Still processing. Neutral search results.`;
+
     return {
-      title: 'Name Not Found - InEpsteinFiles.com',
-      description: 'This name was not found in our search index.',
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        url: canonicalUrl,
+        siteName: 'InEpsteinFiles.com',
+        images: [
+          {
+            url: `/api/og/${name}`,
+            width: 1200,
+            height: 628,
+            alt: altText,
+          },
+        ],
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: [`/api/og/${name}`],
+      },
     };
   }
 
@@ -65,15 +97,91 @@ export default async function NamePage({
   const { name } = await params;
   const person = await getPersonData(name);
 
+  // Convert slug to display name (e.g., "donald-duck" -> "Donald Duck")
+  const displayName = name
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+
   if (!person) {
+    // Show NO page for names not in the index
+    const shareText = `${displayName} IS NOT in the Epstein files. Thoughts? Sources: ${name}.inepsteinfiles.com`;
+    const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+
     return (
-      <main className="min-h-screen bg-white text-black flex items-center justify-center p-4">
-        <div className="text-center">
-          <div className="text-6xl md:text-9xl font-black mb-8">404</div>
-          <p className="text-xl mb-8">Name not found in our index</p>
-          <Link href="/" className="text-black underline hover:text-gray-600">
-            ← Back to search
-          </Link>
+      <main className="min-h-screen bg-white text-black p-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Answer Section */}
+          <div className="text-center mb-16">
+            {/* NO Answer */}
+            <div className="text-8xl md:text-[14rem] font-black leading-none tracking-tighter mb-8 text-black">
+              NO
+            </div>
+
+            {/* Subtitle */}
+            <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
+              {displayName} IS NOT IN THE EPSTEIN FILES
+            </p>
+
+            {/* Match Count */}
+            <p className="text-2xl mb-6">
+              0 results{' '}
+              <Link href="/" className="underline hover:text-gray-600">
+                so far
+              </Link>
+            </p>
+
+            {/* Post on X Button */}
+            <a
+              href={twitterShareUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors mb-8"
+            >
+              Post on
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+
+            {/* Legal Disclaimer */}
+            <p className="text-xs text-gray-600 mt-8">
+              <Link href="/" className="text-gray-600 hover:underline">
+                No wrongdoing is alleged or implied. We are literally just a search.
+              </Link>
+            </p>
+          </div>
+
+          {/* Search Again Section */}
+          <div className="border-t border-gray-300 pt-12 mt-12 text-center">
+            <p className="text-sm uppercase tracking-wide text-gray-600 mb-6">
+              SEARCH ANOTHER NAME
+            </p>
+            <SearchForm />
+          </div>
+
+          {/* Footer */}
+          <div className="text-center pt-8 mt-8 text-xs text-gray-600">
+            <Link href="/" className="text-gray-600 hover:underline">about</Link>
+            {' • '}
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                alert('Thank you for your feedback! This result has been flagged as TREMENDOUS fake news. The best people are looking into it. Believe me!');
+              }}
+              className="text-gray-600 hover:underline"
+              title="Flag this result as a complete and total Democrat HOAX! Sad!"
+            >
+              FAKE NEWS
+            </a>
+            {' • '}
+            last updated: november 19, 2024
+            {' • '}
+            <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
+              @jessicasuarez
+            </a>
+          </div>
         </div>
       </main>
     );
