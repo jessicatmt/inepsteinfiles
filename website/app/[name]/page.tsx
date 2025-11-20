@@ -22,6 +22,8 @@ export async function generateMetadata({
   const found = person.found_in_documents;
   const vanityUrl = `${person.slug}.inepsteinfiles.com`;
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}?utm_source=x_share`;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
+  const ogImageUrl = `${siteUrl}/api/og/${person.slug}`;
 
   const title = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein Files`;
   const description = `${person.total_matches} result${person.total_matches !== 1 ? 's' : ''} found. Sources: ${vanityUrl}`;
@@ -40,7 +42,7 @@ export async function generateMetadata({
       siteName: 'InEpsteinFiles.com',
       images: [
         {
-          url: `/api/og/${person.slug}`,
+          url: ogImageUrl,
           width: 1200,
           height: 628,
           alt: altText,
@@ -52,7 +54,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title,
       description,
-      images: [`/api/og/${person.slug}`],
+      images: [ogImageUrl],
     },
   };
 }
