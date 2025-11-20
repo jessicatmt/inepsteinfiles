@@ -1,190 +1,165 @@
-# InEpsteinFiles.com - Project Overview
+# InEpsteinFiles.com
 
-## Current Status
-**Phase:** Initial Setup & Development
-**Timeline:** Launch target within 24-48 hours
-**Priority:** HIGH - Senate release of Epstein files imminent
+> A transparent search engine for official Epstein court documents
 
-## What This Is
-A search engine that provides definitive YES/NO answers to: "Is [NAME] in the Epstein files?"
+## About
 
-**Example URLs:**
-- `bill-clinton.inepsteinfiles.com` → Shows evidence from flight logs & depositions
-- `inepsteinfiles.com/bill-clinton` → Same result, canonical URL
+InEpsteinFiles.com provides a simple, transparent way to search official Epstein court documents released through Freedom of Information Act (FOIA) requests and Congressional releases. Get definitive YES/NO answers to whether a name appears in the official documents, with direct links to source evidence.
 
-## Project Goals
+**Example:** Visit `inepsteinfiles.com/bill-clinton` to see if Bill Clinton appears in the documents, along with exact page references and context.
 
-### Immediate (Phase 1 - Core Index)
-- [x] Project structure set up
-- [ ] Python environment configured (Tesseract OCR, packages)
-- [ ] Audit existing 64 PDFs → classification report
-- [ ] Process high-value documents (Flight Logs, Depositions)
-- [ ] Generate `people_index.json` with evidence
-- [ ] Build Next.js website with search
-- [ ] Deploy to Vercel with domain configured
-- [ ] Ready for viral sharing via dynamic social cards
+## Features
 
-### Near-Term (Phase 2 - Senate Release)
-- [ ] Monitor news for high-value document identification
-- [ ] Surgical indexing of specific new PDFs
-- [ ] Quick redeployment with updated index
-- [ ] Maintain source attribution and verification
+- 🔍 **Simple Search** - Enter any name to get immediate YES/NO results
+- 📄 **Source Evidence** - Every result links to exact page numbers in original PDFs
+- ✅ **Verification** - All documents tracked with SHA-256 cryptographic hashes
+- 📱 **Mobile-First** - Clean, responsive design optimized for sharing
+- 🔗 **Clean URLs** - Direct access via `inepsteinfiles.com/[name]`
+- 🎨 **Dynamic Social Cards** - Share-optimized OG images for every search
 
-### Future (Phase 3 - Full Archive)
-- [ ] Background processing of remaining documents
-- [ ] Expand to phone records, additional sources
-- [ ] Community contributions for source verification
+## How It Works
+
+1. **Document Processing**: Official PDFs are processed using OCR and natural language processing
+2. **Name Extraction**: Names are extracted and indexed with surrounding context
+3. **Verification**: All source files are cryptographically hashed and tracked
+4. **Search**: Fast client-side fuzzy search matches names and variations
+5. **Results**: Clear YES/NO answer with evidence cards linking to original documents
 
 ## Tech Stack
 
+### Frontend
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Search**: Fuse.js (client-side fuzzy search)
+- **Social Cards**: @vercel/og (dynamic image generation)
+- **Deployment**: Vercel
+
 ### Data Pipeline
-- **Language:** Python 3.13
-- **OCR:** Tesseract (for scanned documents)
-- **PDF Processing:** PyMuPDF (fitz)
-- **NER:** spacy (name extraction)
-- **Output:** JSON index with evidence snippets
+- **Language**: Python 3.13
+- **PDF Processing**: PyMuPDF (fitz)
+- **OCR**: Tesseract (for scanned documents)
+- **NLP**: spaCy (name extraction)
+- **Output**: JSON index with evidence snippets
 
-### Website
-- **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS + shadcn/ui
-- **Search:** Fuse.js (client-side fuzzy search)
-- **Social:** @vercel/og (dynamic OG images)
-- **Deployment:** Vercel
-- **Domain:** inepsteinfiles.com
+## Installation
 
-## Repository Structure
+### Prerequisites
+- Node.js 18+ and npm
+- Python 3.13+
+- Tesseract OCR
 
-```
-├── website/                 # Next.js application
-│   ├── app/
-│   │   ├── [name]/         # Dynamic routes (/bill-clinton)
-│   │   ├── api/og/         # OG image generation
-│   │   └── page.tsx        # Homepage with search
-│   ├── components/         # Reusable React components
-│   └── public/
-│       └── people_index.json  # Search data (generated)
-│
-├── data-pipeline/          # Python processing
-│   ├── audit_files.py      # PDF classification
-│   ├── process_pdfs.py     # Full pipeline (to build)
-│   ├── source_manifest.json  # File tracking with URLs
-│   └── output/
-│       └── people_index.json
-│
-├── source-files/           # Raw PDFs (NOT in git)
-│   └── initial-dump/       # First batch (64 files)
-│
-└── reference/              # Docs, specs, design
-    ├── requirements/       # PRD & Data Pipeline spec
-    └── replit-frontend-design/  # Design guidelines
-```
+### Setup
 
-## Key Features
-
-### URL Routing
-- **Subdomain:** `[name].inepsteinfiles.com` → Direct search via subdomain
-- **Path:** `inepsteinfiles.com/[name]` → Canonical URL for SEO
-- **Clean URLs:** No `/name/` segment - users can type URLs directly
-
-### Search Results
-- **Binary Answer:** Massive "YES" (red) or "NO" (black)
-- **Evidence Cards:** Show exact snippets from source documents
-  - Document type (Flight Log, Deposition, etc.)
-  - Date and page reference
-  - Link to original PDF
-  - Verification status (SHA-256 hash)
-- **Social Sharing:** Dynamic OG images for viral spread
-
-### Data Integrity
-- **SHA-256 Hashing:** Every file cryptographically verified
-- **Source Attribution:** Official links to government sources
-- **Manual Curation:** User reviews classifications before processing
-- **Transparency:** Clear methodology and data sources
-
-## Development Status
-
-### Completed
-✅ Project structure created
-✅ Documentation (CLAUDE.md, README.md)
-✅ Design reference from Replit (ported to Next.js approach)
-✅ PRD and technical specs reviewed
-
-### In Progress
-🔄 Python environment setup
-🔄 PDF audit and classification
-🔄 Next.js application bootstrap
-
-### Pending
-⏳ Data pipeline implementation
-⏳ Website development
-⏳ Vercel deployment
-⏳ DNS configuration
-
-## Quick Start
-
-### For Development
 ```bash
-# Python pipeline
+# Clone the repository
+git clone https://github.com/jessicatmt/inepsteinfiles.git
+cd inepsteinfiles
+
+# Set up the data pipeline
 cd data-pipeline
 python3 -m venv venv
-source venv/bin/activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 
-# Run audit
-python audit_files.py
-
-# Website
-cd website
+# Set up the website
+cd ../website
 npm install
+```
+
+## Usage
+
+### Running the Website Locally
+
+```bash
+cd website
 npm run dev
 ```
 
-### For Deployment
+Visit `http://localhost:3000` to access the search interface.
+
+### Processing Documents
+
 ```bash
-# Build and deploy via Vercel
+cd data-pipeline
+source venv/bin/activate
+
+# Audit PDF files
+python audit_files.py
+
+# Process approved documents
+python process_pdfs.py
+
+# Output is generated at: output/people_index.json
+```
+
+### Deploying
+
+The website automatically deploys to Vercel on push to `main`:
+
+```bash
 cd website
 npm run build
 vercel --prod
 ```
 
-## Important Notes
+## Project Structure
 
-### Design Philosophy
-- **Speed over perfection** - Launch quickly, iterate after
-- **Mobile-first** - Most sharing happens on mobile
-- **Bold simplicity** - Inspired by isabevigodadead.com
-- **Zero friction** - One search input, immediate answer
+```
+inepsteinfiles/
+├── website/                 # Next.js application
+│   ├── app/                 # App Router pages and API routes
+│   ├── components/          # React components
+│   └── public/              # Static assets and generated JSON
+├── data-pipeline/           # Python document processing
+│   ├── audit_files.py       # PDF classification
+│   ├── process_pdfs.py      # Processing pipeline
+│   └── output/              # Generated search index
+└── reference/               # Documentation and specifications
+```
 
-### Data Strategy
-- **Phase 1:** Core Index (Flight Logs + Depositions) only
-- **Phase 2:** Surgical indexing of Senate release high-value docs
-- **Phase 3:** Background bulk processing of remaining files
-- **Exclusions:** Procedural filings, unproven allegations
+## Data Integrity
 
-### User Workflow for New Files
-1. Monitor Twitter/news for document releases
-2. Identify 10-20 high-value PDFs with new names
-3. Download specific files
-4. Add source URLs to `source_manifest.json`
-5. Run pipeline on those files only
-6. Redeploy website with updated index
+All documents are:
+- **Verified**: SHA-256 hashes for every source file
+- **Attributed**: Links to official government sources
+- **Transparent**: Clear methodology and data sources
 
-## Next Steps
-1. Install Tesseract OCR and Python packages
-2. Run PDF audit on initial 64 files
-3. Review classifications and approve processing
-4. Build data pipeline for approved files
-5. Bootstrap Next.js website
-6. Deploy to Vercel
-7. Configure DNS for inepsteinfiles.com
+We only index documents from:
+- Court filings and depositions
+- FOIA releases
+- Congressional document releases
 
-## Contact & Access
-- **Owner:** Jessica Suarez (jessica.suarez@gmail.com)
-- **Vercel:** jessicasuarez-3910
-- **Domain:** inepsteinfiles.com (purchased, needs DNS config)
-- **GitHub:** Private repo (will make public post-launch)
+We do NOT index:
+- Unverified sources
+- Procedural legal filings without evidentiary value
+- Unproven allegations or complaints
+
+## Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Source Verification**: Help verify SHA-256 hashes against official sources
+2. **Bug Reports**: Report issues via GitHub Issues
+3. **Document Submissions**: Suggest official documents for indexing
+4. **Code Contributions**: Submit PRs for improvements
+
+Please ensure all contributions maintain our standards for source verification and data integrity.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Disclaimer
+
+This is an independent project and is not affiliated with any government agency, court, or official investigation. All documents indexed are from publicly available sources. This site provides search functionality only and makes no claims about the accuracy or completeness of the underlying documents.
+
+The appearance of a name in documents does not imply guilt, wrongdoing, or association with illegal activities. Context is essential - read the source documents.
+
+## Contact
+
+- Report issues: [GitHub Issues](https://github.com/jessicatmt/inepsteinfiles/issues)
+- Suggest documents: Open an issue with "Document Suggestion" label
 
 ---
 
-**Last Updated:** 2024-11-19
-**Next Review:** After Phase 1 launch
+Built with transparency and accountability in mind.
