@@ -8,10 +8,33 @@ const publicSans = Public_Sans({
   weight: ["400", "600", "700", "900"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com'),
+  metadataBase: new URL(siteUrl),
   title: "InEpsteinFiles.com - Search Official Epstein Documents",
   description: "Search publicly released Epstein documents from official U.S. government sources",
+  openGraph: {
+    title: "InEpsteinFiles.com - Search Official Epstein Documents",
+    description: "Search publicly released Epstein documents from official U.S. government sources",
+    url: siteUrl,
+    siteName: 'InEpsteinFiles.com',
+    images: [
+      {
+        url: `${siteUrl}/api/og/index`,
+        width: 1200,
+        height: 628,
+        alt: 'Search Epstein files by name. Neutral public records search.',
+      },
+    ],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "InEpsteinFiles.com - Search Official Epstein Documents",
+    description: "Search publicly released Epstein documents from official U.S. government sources",
+    images: [`${siteUrl}/api/og/index`],
+  },
 };
 
 export default function RootLayout({
