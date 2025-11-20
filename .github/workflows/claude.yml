@@ -45,3 +45,44 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Prevent auto-merge - require manual approval
+          auto_merge: false
+
+      - name: Request review after PR creation
+        if: github.event_name == 'pull_request' && github.event.action == 'opened'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Add label for tracking
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['awaiting-review', 'claude-generated']
+            });
+
+            // Request review from maintainer
+            await github.rest.pulls.requestReviewers({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              reviewers: ['jessicatmt']
+            });
+
+            // Add comment with instructions
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `🤖 **Claude has created this PR to address the issue.**
+
+## Review Checklist
+- [ ] Tests pass (check CI workflow)
+- [ ] Changes actually fix the reported issue
+- [ ] No unintended side effects
+- [ ] Code quality is acceptable
+
+@jessicatmt Please review and test this fix before merging.
+
+**Note:** This PR will NOT auto-merge. Manual approval required.`
+            });
