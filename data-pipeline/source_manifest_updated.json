@@ -69,16 +69,16 @@
       "notes": "Birthday book - Part 2"
     },
     {
-      "filename": "Epstein-Estate-Document-03.pdf",
-      "local_path": "/Users/Me/ClaudeWorkspace/projects/inepsteinfiles/source-files/initial-dump/Epstein-Estate-Document-03.pdf",
+      "filename": "Epstein-Estate-Document-08.pdf",
+      "local_path": "/Users/Me/ClaudeWorkspace/projects/inepsteinfiles/source-files/initial-dump/Epstein-Estate-Document-08.pdf",
       "source_url": "https://drive.google.com/drive/folders/1ZSVpXEhI7gKI0zatJdYe6QhKJ5pjUo4b",
       "source_attribution": "Epstein Estate Documents",
       "priority": "P0",
       "classification": "Birthday Book",
       "date_added": "2024-11-19",
-      "sha256": null,
+      "sha256": "6b090e42e18a74a88b545792c79d6d899c0e27117a296eda025f83c24c829a67",
       "verification_status": "UNVERIFIED",
-      "notes": "Birthday book - Part 3"
+      "notes": "Birthday book - Part 3 (Document-08, Document-03 not publicly released)"
     },
     {
       "filename": "Epstein-Estate-Document-04.pdf",
