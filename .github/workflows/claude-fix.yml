@@ -57,6 +57,12 @@ jobs:
           prompt: |
             You are an expert Next.js 14 developer fixing bug #${{ github.event.issue.number }}.
 
+            ISSUE DETAILS:
+            Title: ${{ github.event.issue.title }}
+
+            Description:
+            ${{ github.event.issue.body }}
+
             CRITICAL REQUIREMENTS:
             1. Work in the 'website/' directory for all Next.js code
             2. Create branch: claude-fix-issue-${{ github.event.issue.number }}
