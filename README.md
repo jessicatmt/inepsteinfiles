@@ -145,6 +145,21 @@ Contributions are welcome! Here's how you can help:
 
 Please ensure all contributions maintain our standards for source verification and data integrity.
 
+### Development Workflow
+
+This project uses automated testing and manual review for all changes:
+
+- **Automated Testing**: All PRs run CI tests (linter, tests, build)
+- **Manual Review**: PRs require maintainer approval before merging
+- **Issue Verification**: Fixes must be tested in production before closing issues
+
+**For Claude AI-generated PRs:**
+- Auto-merge is disabled
+- Maintainer review is automatically requested
+- Issues remain open until manually verified
+
+See [`.github/WORKFLOW_GUIDE.md`](.github/WORKFLOW_GUIDE.md) for complete workflow documentation.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
