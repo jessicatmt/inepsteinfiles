@@ -23,10 +23,24 @@ TARGET_NAMES = [
     "Tom Pritzker", "Kathryn Ruemmler", "Glenn Dubin"
 ]
 
-# Existing data from my collection for comparison
-MY_COLLECTION_DATA = {
-    "Donald Trump": {"entity_id": "/m/0cqt90", "file_count": 44},
-    "Bill Clinton": {"entity_id": "/m/0157m", "file_count": 46},
+# Manually found entities from user research and Coffeezilla analysis
+MANUAL_ENTITIES = {
+    # From Coffeezilla's collection with actual file counts
+    "Donald Trump": {"entity_id": "/m/0cqt90", "file_count": 1651},
+    "Bill Clinton": {"entity_id": "/m/0157m", "file_count": 410},
+    "Hillary Clinton": {"entity_id": "/m/0157m", "file_count": 410},  # Same entity as Bill
+    
+    # User manually found these with URLs provided
+    "Leonardo DiCaprio": {"entity_id": "/m/0dvmd", "file_count": 0},
+    "Bill Gates": {"entity_id": "/m/017nt", "file_count": 0},
+    "Elon Musk": {"entity_id": "/m/018ygt", "file_count": 0},
+    "Michael Jackson": {"entity_id": "/m/09889g", "file_count": 0},
+    "Naomi Campbell": {"entity_id": "/m/05b6w8", "file_count": 0},
+    "Peter Thiel": {"entity_id": "/m/04hyrd", "file_count": 0},
+    "David Copperfield": {"entity_id": "/m/02rbmg", "file_count": 0},
+    "Woody Allen": {"entity_id": "/m/08l57", "file_count": 0},
+    
+    # From my previous collection data (keeping the ones we had)
     "Ghislaine Maxwell": {"entity_id": "/m/0gw_xk8", "file_count": 798},
     "Prince Andrew": {"entity_id": "/m/0xnh2", "file_count": 17},
     "Alan Dershowitz": {"entity_id": "/m/097qj4", "file_count": 55},
@@ -37,7 +51,6 @@ MY_COLLECTION_DATA = {
     "George Mitchell": {"entity_id": "/m/02c643", "file_count": 5},
     "Bill Richardson": {"entity_id": "/m/020z31", "file_count": 11},
     "Chris Tucker": {"entity_id": "/m/01900g", "file_count": 12},
-    "Hillary Clinton": {"entity_id": "/m/0d06m5", "file_count": 9},
     "Les Wexner": {"entity_id": "/m/01hwr1", "file_count": 45},
     "Glenn Dubin": {"entity_id": "/m/0dlkym0", "file_count": 5}
 }
@@ -233,88 +246,70 @@ def manual_search_entities(page, target_names):
     
     return entities
 
-def compare_collections(coffeezilla_entities):
-    """Compare Coffeezilla's entities with my existing collection data."""
+def update_people_index_with_entities():
+    """Update people_index.json with all manually found entities."""
     
-    results = {
-        "totally_missing_from_my_collection": [],
-        "undercounted_in_my_collection": []
-    }
+    PEOPLE_INDEX_PATH = "../website/public/people_index.json"
     
-    for target_name in TARGET_NAMES:
-        coffeezilla_data = coffeezilla_entities.get(target_name)
-        my_data = MY_COLLECTION_DATA.get(target_name)
+    print("📝 Updating people_index.json with manually found entities...\n")
+    
+    # Load current index
+    with open(PEOPLE_INDEX_PATH, 'r', encoding='utf-8') as f:
+        index = json.load(f)
+    
+    updated_count = 0
+    
+    for person in index['people']:
+        person_name = person['display_name']
         
-        if coffeezilla_data:
-            my_file_count = my_data['file_count'] if my_data else 0
-            coffeezilla_file_count = coffeezilla_data['file_count']
-            
-            if my_file_count == 0:
-                # Totally missing from my collection
-                results["totally_missing_from_my_collection"].append({
-                    "name": coffeezilla_data['name'],
-                    "entity_id": coffeezilla_data['entity_id'],
-                    "file_count_coffeezilla": coffeezilla_file_count,
-                    "file_count_mine": 0,
-                    "status": "missing",
-                    "coffeezilla_search_url": coffeezilla_data['coffeezilla_search_url']
-                })
-            elif coffeezilla_file_count > my_file_count:
-                # Undercounted in my collection
-                results["undercounted_in_my_collection"].append({
-                    "name": coffeezilla_data['name'],
-                    "entity_id": coffeezilla_data['entity_id'],
-                    "file_count_coffeezilla": coffeezilla_file_count,
-                    "file_count_mine": my_file_count,
-                    "status": "undercounted",
-                    "coffeezilla_search_url": coffeezilla_data['coffeezilla_search_url']
-                })
+        # Check if we have this entity in our manual collection
+        if person_name in MANUAL_ENTITIES:
+            entity_data = MANUAL_ENTITIES[person_name]
+            person['pinpoint_entity_id'] = entity_data['entity_id']
+            person['pinpoint_file_count'] = entity_data.get('file_count', 0)
+            updated_count += 1
+            print(f"  ✅ {person_name}: {entity_data['entity_id']} ({entity_data['file_count']} files)")
     
-    return {"comparison_results": results}
+    # Save updated index
+    with open(PEOPLE_INDEX_PATH, 'w', encoding='utf-8') as f:
+        json.dump(index, f, indent=2, ensure_ascii=False)
+    
+    print(f"\n💾 Updated {updated_count} people in people_index.json")
+    
+    # Show which ones are still missing
+    all_names = {person['display_name'] for person in index['people']}
+    found_names = set(MANUAL_ENTITIES.keys())
+    missing_names = all_names - found_names
+    
+    print(f"\n📊 Coverage Summary:")
+    print(f"  • Total curated names: {len(all_names)}")
+    print(f"  • Found with entity IDs: {len(found_names)}")
+    print(f"  • Still missing: {len(missing_names)}")
+    print(f"  • Coverage: {len(found_names)}/{len(all_names)} ({len(found_names)/len(all_names)*100:.1f}%)")
+    
+    if missing_names:
+        print(f"\n❌ Still need entity IDs for:")
+        for name in sorted(missing_names):
+            print(f"  • {name}")
+    
+    return updated_count
 
 def main():
-    """Main execution function."""
+    """Update the people index with all known entities."""
     
-    # Create screenshots directory
-    import os
-    os.makedirs('screenshots', exist_ok=True)
+    print("🔍 Adding All Known Pinpoint Entity IDs\n")
+    print(f"📊 Found {len(MANUAL_ENTITIES)} entities with IDs")
     
-    print("Starting Pinpoint entity scraping...")
-    print(f"Looking for {len(TARGET_NAMES)} target names")
-    print(f"Comparing against {len(MY_COLLECTION_DATA)} existing entities")
+    updated_count = update_people_index_with_entities()
     
-    # Scrape Coffeezilla's collection
-    coffeezilla_entities = scrape_pinpoint_entities()
+    print(f"\n🎉 Update Complete!")
+    print(f"📝 Updated {updated_count} entities in people_index.json")
+    print(f"🔗 Test these on inepsteinfiles.com:")
     
-    print(f"\nFound {len(coffeezilla_entities)} matching entities in Coffeezilla's collection")
-    
-    # Compare with my collection
-    comparison_results = compare_collections(coffeezilla_entities)
-    
-    # Save results
-    output_file = 'pinpoint_entity_comparison.json'
-    with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(comparison_results, f, indent=2, ensure_ascii=False)
-    
-    print(f"\nResults saved to: {output_file}")
-    
-    # Print summary
-    missing = comparison_results["comparison_results"]["totally_missing_from_my_collection"]
-    undercounted = comparison_results["comparison_results"]["undercounted_in_my_collection"]
-    
-    print(f"\nSUMMARY:")
-    print(f"- Totally missing from my collection: {len(missing)}")
-    print(f"- Undercounted in my collection: {len(undercounted)}")
-    
-    if missing:
-        print("\nMissing entities:")
-        for entity in missing:
-            print(f"  - {entity['name']}: {entity['file_count_coffeezilla']} files")
-    
-    if undercounted:
-        print("\nUndercounted entities:")
-        for entity in undercounted:
-            print(f"  - {entity['name']}: {entity['file_count_coffeezilla']} vs {entity['file_count_mine']} files")
+    # Show some test URLs
+    for name in list(MANUAL_ENTITIES.keys())[:5]:
+        slug = name.lower().replace(" ", "-").replace(".", "")
+        print(f"  • https://inepsteinfiles.com/{slug}")
 
 if __name__ == "__main__":
     main()
