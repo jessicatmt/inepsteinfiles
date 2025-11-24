@@ -47,39 +47,17 @@ jobs:
           cd website
           npm run build
 
-      - name: Notify on test failure
+      - name: Comment test results on PR
         if: failure() && github.event_name == 'pull_request'
         uses: actions/github-script@v7
         with:
           script: |
-            const prNumber = context.issue.number;
-            const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-
-            // Check if this PR was created by Claude
-            const { data: pr } = await github.rest.pulls.get({
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              pull_number: prNumber
-            });
-
-            const isClaudePR = pr.head.ref.startsWith('claude-fix-');
-
-            let body = `❌ **Tests Failed**\n\nThe build failed. Check the [test logs](${runUrl}) for details.\n\n`;
-
-            if (isClaudePR) {
-              // Auto-ping Claude to fix
-              body += `@claude The tests failed. Please review the error logs above and push a fix to this branch.\n\n`;
-              body += `**Failed Steps:** Check the Actions tab for specific error messages.`;
-            } else {
-              body += `Please fix the failing tests before merging.`;
-            }
-
-            await github.rest.issues.createComment({
-              issue_number: prNumber,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: body
-            });
+              body: '❌ Tests failed! Please fix the issues before merging.\n\nCheck the [Actions tab](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details.'
+            })
 
       - name: Comment success on PR
         if: success() && github.event_name == 'pull_request'

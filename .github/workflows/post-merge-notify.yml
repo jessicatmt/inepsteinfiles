@@ -1,0 +1,54 @@
+name: Post-Merge Notification
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  notify:
+    # Only run if PR was merged (not just closed)
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+      pull-requests: read
+
+    steps:
+      - name: Find linked issue and post verification reminder
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          # Extract issue numbers from PR body (supports: #123, Fixes #123, Closes #123, etc.)
+          issue_number=$(echo "$PR_BODY" | grep -oiE '(close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved) #[0-9]+' | grep -oE '[0-9]+' | head -n 1)
+
+          if [ -z "$issue_number" ]; then
+            echo "No linked issue found in PR body. Checking title..."
+            issue_number=$(echo "$PR_TITLE" | grep -oE '#[0-9]+' | grep -oE '[0-9]+' | head -n 1)
+          fi
+
+          if [ -z "$issue_number" ]; then
+            echo "No linked issue found. Exiting."
+            exit 0
+          fi
+
+          echo "Found linked issue #$issue_number. Posting verification reminder..."
+
+          gh issue comment $issue_number --body "🎉 **PR #${PR_NUMBER} has been merged and deployed!**
+
+          ## ⚠️ Verification Required
+
+          @jessicatmt Please test that this fix actually resolves the issue:
+
+          1. **Test the fix** on https://inepsteinfiles.com
+          2. **Verify** the original problem is resolved
+          3. **Check** for any side effects or regressions
+
+          Once verified:
+          - ✅ Close this issue with: \`Verified - works as expected ✅\`
+          - ⚠️ Re-open if broken: \`Issue still occurs because...\`
+
+          **Note:** This issue will NOT auto-close. Manual verification required."
