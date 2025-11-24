@@ -84,7 +84,7 @@ export default function HomePage() {
 
         {/* Footer */}
         <div className="text-center mt-16 text-xs text-gray-600">
-          <Link href="https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
+          <Link href="https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
             Browse full database (5000+ documents)
           </Link>
           {' • '}
