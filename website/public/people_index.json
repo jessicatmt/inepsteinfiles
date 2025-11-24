@@ -2862,7 +2862,9 @@
       "category": "Tech CEO",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/03nzf1",
+      "pinpoint_file_count": 0
     },
     {
       "display_name": "Alan Dershowitz",
@@ -2954,7 +2956,9 @@
       "category": "Tech CEO",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/017nt",
+      "pinpoint_file_count": 0
     },
     {
       "display_name": "Stephen Hawking",
@@ -3098,7 +3102,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/01pcrw",
+      "pinpoint_file_count": 0
     },
     {
       "display_name": "Larry Summers",
@@ -3155,7 +3161,9 @@
       "category": "Tech CEO",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/02w8m6",
+      "pinpoint_file_count": 0
     },
     {
       "display_name": "Steve Bannon",
@@ -3186,7 +3194,9 @@
       "category": "Entertainment",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/01ppv3",
+      "pinpoint_file_count": 0
     },
     {
       "display_name": "Al Gore",
@@ -3287,7 +3297,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/09889g",
+      "pinpoint_file_count": 0
     },
     {
       "display_name": "Woody Allen",
@@ -3296,7 +3308,9 @@
       "category": "Entertainment",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/081lh",
+      "pinpoint_file_count": 0
     },
     {
       "display_name": "Alec Baldwin",
