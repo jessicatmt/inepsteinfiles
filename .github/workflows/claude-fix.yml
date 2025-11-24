@@ -54,7 +54,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
           # Custom instructions for Claude
-          custom_instructions: |
+          prompt: |
             You are an expert Next.js 14 developer fixing bug #${{ github.event.issue.number }}.
 
             CRITICAL REQUIREMENTS:
