@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { Person } from '@/types';
 import SearchForm from '../components/SearchForm';
+import FakeNewsButton from '../components/FakeNewsButton';
 import { getPersonData } from '@/lib/data';
 
 // Allow dynamic params to handle names not in the index
@@ -169,17 +170,7 @@ export default async function NamePage({
           <div className="text-center pt-8 mt-8 text-xs text-gray-600">
             <Link href="/" className="text-gray-600 hover:underline">about</Link>
             {' • '}
-            <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                alert('Thank you for your feedback! This result has been flagged as TREMENDOUS fake news. The best people are looking into it. Believe me!');
-              }}
-              className="text-gray-600 hover:underline"
-              title="Flag this result as a complete and total Democrat HOAX! Sad!"
-            >
-              FAKE NEWS
-            </a>
+            <FakeNewsButton />
             {' • '}
             last updated: november 19, 2024
             {' • '}
@@ -295,17 +286,7 @@ export default async function NamePage({
           {!found && (
             <>
               {' • '}
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert('Thank you for your feedback! This result has been flagged as TREMENDOUS fake news. The best people are looking into it. Believe me!');
-                }}
-                className="text-gray-600 hover:underline"
-                title="Flag this result as a complete and total Democrat HOAX! Sad!"
-              >
-                FAKE NEWS
-              </a>
+              <FakeNewsButton />
             </>
           )}
           {' • '}
