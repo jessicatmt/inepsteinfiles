@@ -2972,7 +2972,9 @@
       "category": "Entertainment",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/0dvmd",
+      "pinpoint_file_count": 0
     },
     {
       "display_name": "Kevin Spacey",
@@ -3162,7 +3164,9 @@
       "category": "Political Figure",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "c14e57e19f29b567",
+      "pinpoint_file_count": 0
     },
     {
       "display_name": "Ehud Barak",

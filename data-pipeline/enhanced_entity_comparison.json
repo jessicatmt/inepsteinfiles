@@ -1,0 +1,80 @@
+{
+  "comparison_results": {
+    "totally_missing_from_my_collection": [
+      {
+        "name": "Jeffrey Epstein",
+        "entity_id": "/m/02_x6w",
+        "file_count_coffeezilla": 1111,
+        "file_count_mine": 0,
+        "status": "missing",
+        "coffeezilla_search_url": "https://journaliststudio.google.com/pinpoint/search?collection=061ce61c9e70bdfd&entityId=/m/02_x6w"
+      },
+      {
+        "name": "Barack Obama",
+        "entity_id": "/m/02mjmr",
+        "file_count_coffeezilla": 425,
+        "file_count_mine": 0,
+        "status": "missing",
+        "coffeezilla_search_url": "https://journaliststudio.google.com/pinpoint/search?collection=061ce61c9e70bdfd&entityId=/m/02mjmr"
+      },
+      {
+        "name": "Michael Wolff",
+        "entity_id": "/m/0h7pqn8",
+        "file_count_coffeezilla": 212,
+        "file_count_mine": 0,
+        "status": "missing",
+        "coffeezilla_search_url": "https://journaliststudio.google.com/pinpoint/search?collection=061ce61c9e70bdfd&entityId=/m/0h7pqn8"
+      },
+      {
+        "name": "Steve Bannon",
+        "entity_id": "c14e57e19f29b567",
+        "file_count_coffeezilla": 7,
+        "file_count_mine": 0,
+        "status": "missing",
+        "coffeezilla_search_url": "https://journaliststudio.google.com/pinpoint/search?collection=061ce61c9e70bdfd&entityId=c14e57e19f29b567"
+      },
+      {
+        "name": "Leon Black",
+        "entity_id": "03e8ec3aee2d2c0c",
+        "file_count_coffeezilla": 4,
+        "file_count_mine": 0,
+        "status": "missing",
+        "coffeezilla_search_url": "https://journaliststudio.google.com/pinpoint/search?collection=061ce61c9e70bdfd&entityId=03e8ec3aee2d2c0c"
+      },
+      {
+        "name": "Lex Wexner",
+        "entity_id": "ef0bbd74c72ac19f",
+        "file_count_coffeezilla": 8,
+        "file_count_mine": 0,
+        "status": "missing",
+        "coffeezilla_search_url": "https://journaliststudio.google.com/pinpoint/search?collection=061ce61c9e70bdfd&entityId=ef0bbd74c72ac19f"
+      },
+      {
+        "name": "Michael Bloomberg",
+        "entity_id": "/m/0178g",
+        "file_count_coffeezilla": 50,
+        "file_count_mine": 0,
+        "status": "missing",
+        "coffeezilla_search_url": "https://journaliststudio.google.com/pinpoint/search?collection=061ce61c9e70bdfd&entityId=/m/0178g"
+      }
+    ],
+    "undercounted_in_my_collection": [
+      {
+        "name": "Donald Trump",
+        "entity_id": "/m/0cqt90",
+        "file_count_coffeezilla": 1651,
+        "file_count_mine": 44,
+        "status": "undercounted",
+        "coffeezilla_search_url": "https://journaliststudio.google.com/pinpoint/search?collection=061ce61c9e70bdfd&entityId=/m/0cqt90"
+      },
+      {
+        "name": "Bill Clinton",
+        "entity_id": "/m/0157m",
+        "file_count_coffeezilla": 410,
+        "file_count_mine": 46,
+        "status": "undercounted",
+        "coffeezilla_search_url": "https://journaliststudio.google.com/pinpoint/search?collection=061ce61c9e70bdfd&entityId=/m/0157m"
+      }
+    ]
+  }
+}

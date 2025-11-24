@@ -34,12 +34,22 @@ def extract_entities_from_html():
         }
         print(f"  • {entity_name}: {entity_id} ({file_count} files)")
     
-    # Manually add Ghislaine Maxwell since she's clearly in the data
-    entities["Ghislaine Maxwell"] = {
-        'entity_id': '/m/0gw_xk8',
-        'file_count': 798
+    # Manually add entities found from Coffeezilla's collection
+    manual_entities = {
+        "Ghislaine Maxwell": {'entity_id': '/m/0gw_xk8', 'file_count': 798},
+        "Leonardo DiCaprio": {'entity_id': '/m/0dvmd', 'file_count': 0},  # Found in Coffeezilla, need count
+        "Jeffrey Epstein": {'entity_id': '/m/02_x6w', 'file_count': 0},   # From agent results
+        "Barack Obama": {'entity_id': '/m/02mjmr', 'file_count': 0},       # From agent results
+        "Michael Wolff": {'entity_id': '/m/0h7pqn8', 'file_count': 0},     # From agent results
+        "Steve Bannon": {'entity_id': 'c14e57e19f29b567', 'file_count': 0}, # From agent results
+        "Leon Black": {'entity_id': '03e8ec3aee2d2c0c', 'file_count': 0},   # From agent results
+        "Michael Bloomberg": {'entity_id': '/m/0178g', 'file_count': 0}     # From agent results
     }
-    print(f"  • Ghislaine Maxwell: /m/0gw_xk8 (798 files) [manually added]")
+    
+    for name, data in manual_entities.items():
+        entities[name] = data
+        status = "[manually added]" if name == "Ghislaine Maxwell" else "[from Coffeezilla analysis]"
+        print(f"  • {name}: {data['entity_id']} ({data['file_count']} files) {status}")
     
     print(f"\n✅ Extracted {len(entities)} entities")
     return entities
