@@ -196,6 +196,31 @@
 3. **Deployment:** Document every step for future updates
 4. **Logs:** Update project log proactively with decisions and progress
 
+### GitHub Workflow (IMPORTANT - Updated 2025-11-24)
+**All PRs now require manual approval and testing before merge:**
+
+1. **Automated Testing** - CI runs on every PR
+   - Linter, tests, and build must pass
+   - You'll be notified of results
+
+2. **Manual Review Required**
+   - Auto-merge is DISABLED
+   - Maintainer approval required for all PRs
+   - Review checklist posted automatically
+
+3. **Issue Verification Process**
+   - Issues do NOT auto-close after PR merge
+   - Must test fix in production
+   - Manually close with verification comment
+
+**For Claude-generated PRs:**
+- Label: `claude-generated` + `awaiting-review`
+- Review automatically requested from @jessicatmt
+- Manual merge only
+- Verification reminder posted on linked issues
+
+**Complete workflow documentation:** `.github/WORKFLOW_GUIDE.md`
+
 ### Communication Style
 - Be concise and action-oriented (this is time-sensitive)
 - Ask questions only when truly necessary
@@ -213,6 +238,15 @@
 
 ---
 
-**Last Updated:** 2024-11-19
-**Status:** Active Development - Launch Target: 24-48 hours
-**Priority:** HIGH - Time-sensitive due to imminent Senate release
+**Last Updated:** 2025-11-24
+**Status:** Active - Site Launched, Maintenance Mode
+**Priority:** Medium - Monitor for new document releases
+
+## Recent Major Updates
+
+### 2025-11-24: GitHub Actions Workflow Improvements
+- ✅ Added automated CI testing for all PRs
+- ✅ Disabled auto-merge - manual approval required
+- ✅ Added issue verification process
+- ✅ Complete workflow documentation added
+- See: `.logs/inepsteinfiles_2025-11-24.md` for details
