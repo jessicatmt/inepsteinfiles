@@ -103,6 +103,15 @@ export default async function NamePage({
   const { name } = await params;
   const person = await getPersonData(name);
 
+  // Track search asynchronously (don't await to avoid blocking page render)
+  fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/track-search`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name }),
+  }).catch(() => {
+    // Silently fail tracking - don't block page render
+  });
+
   // Convert slug to display name (e.g., "donald-duck" -> "Donald Duck")
   const displayName = name
     .split('-')
@@ -113,6 +122,7 @@ export default async function NamePage({
     // Show NO page for names not in the index
     const shareText = `${displayName} IS NOT in the Epstein files. Thoughts? Sources: ${name}.inepsteinfiles.com`;
     const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+    const pinpointSearchUrl = `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&q=${encodeURIComponent(displayName)}`;
 
     return (
       <main className="min-h-screen bg-white text-black p-4">
@@ -133,9 +143,19 @@ export default async function NamePage({
             <p className="text-2xl mb-6">
               0 results{' '}
               <Link href="/" className="underline hover:text-gray-600">
-                so far
+                in our processed files
               </Link>
             </p>
+
+            {/* Search Full Database Button */}
+            <a
+              href={pinpointSearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gray-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors mb-6"
+            >
+              Search Full Database (5000+ docs) →
+            </a>
 
             {/* Post on X Button */}
             <a
@@ -189,6 +209,9 @@ export default async function NamePage({
   const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${canonicalUrl}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
+  // Pinpoint collection URL for deep linking
+  const pinpointSearchUrl = `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&q=${encodeURIComponent(person.display_name)}`;
+
   return (
     <main className="min-h-screen bg-white text-black p-4">
       <div className="max-w-4xl mx-auto">
@@ -216,6 +239,18 @@ export default async function NamePage({
             </Link>
           </p>
 
+          {/* View Evidence in Pinpoint Button */}
+          {found && (
+            <a
+              href={pinpointSearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors mb-6"
+            >
+              View All Evidence in Database →
+            </a>
+          )}
+
           {/* Post on X Button */}
           <a
             href={twitterShareUrl}
@@ -232,8 +267,17 @@ export default async function NamePage({
           {/* Legal Disclaimer */}
           <p className="text-xs text-gray-600 mt-8">
             <Link href="/" className="text-gray-600 hover:underline">
-              No wrongdoing is alleged or implied. We are literally just a search.
+              No wrongdoing is alleged or implied. Appearance in documents ≠ wrongdoing.
             </Link>
+            {' '}
+            <a
+              href={pinpointSearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 hover:underline"
+            >
+              View full context in source database
+            </a>
           </p>
         </div>
 
