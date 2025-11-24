@@ -69,13 +69,40 @@ The workflow will:
 4. ✅ CI tests run automatically
 5. ✅ Comment on PR with test results
 
-### Step 4: If Tests Pass
+### Step 4: Clean PR Merge Process
 
-1. Review the PR code changes
-2. Click **Merge pull request**
-3. Issue will get a verification reminder
-4. Test on https://inepsteinfiles.com
-5. Close issue manually with: `Verified - works as expected ✅`
+**1. Wait for PR Creation:**
+   - The workflow will automatically create a PR
+   - CI tests will run automatically
+   - You'll see comments on the PR with test results
+
+**2. Review the PR:**
+   - Go to the PR (you'll see it in the "Pull requests" tab)
+   - Review the code changes
+   - Check that CI tests passed (green checkmark)
+
+**3. Merge the PR (if tests pass):**
+   - Click **"Merge pull request"** button
+   - Click **"Confirm merge"**
+   - **IMPORTANT:** Check the box **"Delete branch after merge"** ✅
+     - This automatically cleans up the branch
+     - No loose ends!
+
+**4. Verify on Production:**
+   - The merge triggers automatic Vercel deployment
+   - Test on https://inepsteinfiles.com
+   - If it works, close issue with: `Verified - works as expected ✅`
+
+**5. Sync Your Desktop (after merge):**
+   ```bash
+   git checkout main
+   git pull origin main
+   ```
+
+**Key Points:**
+- ✅ **Always delete branch after merge** - keeps repo clean
+- ✅ **Don't pull Claude's branches to your desktop** - just review on GitHub
+- ✅ **Only pull main** - that's all you need locally
 
 ### Step 5: If Tests Fail
 
