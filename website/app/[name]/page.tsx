@@ -122,7 +122,8 @@ export default async function NamePage({
     // Show NO page for names not in the index
     const shareText = `${displayName} IS NOT in the Epstein files. Thoughts? Sources: ${name}.inepsteinfiles.com`;
     const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
-    const pinpointSearchUrl = `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&q=${encodeURIComponent(displayName)}`;
+    // For names not in our index, we can only use text search
+    const pinpointSearchUrl = `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&p=1&q=${encodeURIComponent(displayName)}`;
 
     return (
       <main className="min-h-screen bg-white text-black p-4">
@@ -210,7 +211,10 @@ export default async function NamePage({
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   // Pinpoint collection URL for deep linking
-  const pinpointSearchUrl = `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&q=${encodeURIComponent(person.display_name)}`;
+  // Use entity ID if available (more accurate), otherwise fall back to text search
+  const pinpointSearchUrl = person.pinpoint_entity_id
+    ? `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&p=1&entities=${encodeURIComponent(person.pinpoint_entity_id)}`
+    : `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&q=${encodeURIComponent(person.display_name)}`;
 
   return (
     <main className="min-h-screen bg-white text-black p-4">
