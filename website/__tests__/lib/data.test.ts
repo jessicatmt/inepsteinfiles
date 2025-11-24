@@ -4,8 +4,10 @@ import fs from 'fs/promises';
 import path from 'path';
 
 // Mock the filesystem
-jest.mock('fs/promises');
-const mockFs = fs as jest.Mocked<typeof fs>;
+jest.mock('fs/promises', () => ({
+  readFile: jest.fn()
+}));
+const mockFs = jest.mocked(fs);
 
 describe('Data Loading Functions', () => {
   beforeEach(() => {

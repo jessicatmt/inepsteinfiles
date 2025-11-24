@@ -18,6 +18,9 @@ import re
 from pathlib import Path
 from typing import List, Dict, Any
 import fitz  # PyMuPDF
+from PIL import Image
+import pytesseract
+import io
 
 # Configuration
 SNIPPET_CHARS = 150  # ±150 chars around match
@@ -42,17 +45,42 @@ def compute_sha256(filepath: Path) -> str:
 def extract_text_from_pdf(pdf_path: Path) -> Dict[int, str]:
     """
     Extract text from PDF using PyMuPDF.
+    Falls back to OCR (Tesseract) if page has < 50 chars (likely scanned).
     Returns dict mapping page_number (1-indexed) to text content.
     """
     page_texts = {}
 
     try:
         doc = fitz.open(pdf_path)
-        for page_num in range(len(doc)):
+        total_pages = len(doc)
+
+        for page_num in range(total_pages):
             page = doc[page_num]
             text = page.get_text()
+
+            # Check if page needs OCR (scanned image with little/no text)
+            if len(text.strip()) < 50:
+                print(f"    [OCR] Page {page_num + 1}/{total_pages} (scanned)", end='\r')
+
+                try:
+                    # Render page as image
+                    pix = page.get_pixmap(matrix=fitz.Matrix(2, 2))  # 2x scale for better OCR
+                    img_data = pix.tobytes("png")
+                    img = Image.open(io.BytesIO(img_data))
+
+                    # Run OCR
+                    ocr_text = pytesseract.image_to_string(img)
+                    text = ocr_text
+
+                except Exception as ocr_error:
+                    print(f"\n    [OCR ERROR] Page {page_num + 1}: {ocr_error}")
+                    text = ""  # Fall back to empty if OCR fails
+
             page_texts[page_num + 1] = text  # 1-indexed for human readability
+
+        print()  # Clear the progress line
         doc.close()
+
     except Exception as e:
         print(f"Error extracting text from {pdf_path.name}: {e}")
         return {}
