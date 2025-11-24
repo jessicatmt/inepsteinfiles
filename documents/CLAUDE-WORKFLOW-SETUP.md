@@ -6,21 +6,14 @@ The corrected GitHub Actions workflows have been deployed. Here's what you need 
 
 ## Required Setup (One-Time)
 
-### 1. Create GitHub Environment for Manual Approval
+### 1. ~~Create GitHub Environment for Manual Approval~~ (Skipped - Requires Public Repo)
 
-This is a **safety gate** to prevent accidental API costs.
-
-**Steps:**
-1. Go to your repo: https://github.com/jessicatmt/inepsteinfiles
-2. Click **Settings** → **Environments** (left sidebar)
-3. Click **New environment**
-4. Name it: `claude-manual-approval`
-5. Under "Deployment protection rules":
-   - Check **Required reviewers**
-   - Add yourself: `jessicatmt`
-6. Click **Save protection rules**
-
-**What this does:** Every time someone mentions `@claude`, you'll get a notification to approve the workflow run. Click "Approve" to let it proceed.
+**Note:** Manual approval environment requires GitHub Enterprise or a public repository. Since this repo is private, we've removed the approval gate. Safety features still in place:
+- ✅ Only you can trigger workflows (author check)
+- ✅ 15-minute timeout on all runs
+- ✅ One workflow per issue at a time (concurrency control)
+- ✅ Manual merge required (no auto-merge)
+- ✅ Manual issue closure (verification required)
 
 ### 2. Verify API Key is Set
 
