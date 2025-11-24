@@ -239,17 +239,6 @@ export default async function NamePage({
             </Link>
           </p>
 
-          {/* View Evidence in Pinpoint Button */}
-          {found && (
-            <a
-              href={pinpointSearchUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors mb-6"
-            >
-              View All Evidence in Database →
-            </a>
-          )}
 
           {/* Post on X Button */}
           <a
@@ -281,38 +270,19 @@ export default async function NamePage({
           </p>
         </div>
 
-        {/* Documents Section (YES only) */}
-        {found && person.documents.length > 0 && (
+        {/* Sources Section (YES only) */}
+        {found && (
           <div className="border-t border-gray-300 pt-12 mt-12">
-            <p className="text-sm text-gray-600 mb-8 text-center">
-              Sources processed → click to open original file.
+            <p className="text-sm text-gray-600 mb-4 text-center">
+              Sources processed → <a
+                href={pinpointSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:underline font-semibold"
+              >
+                view all evidence in full database
+              </a>
             </p>
-
-            <div className="space-y-8">
-              {person.documents.map((doc, idx) => (
-                <div key={idx} className="border-b border-gray-300 pb-8 last:border-b-0">
-                  <a
-                    href={doc.source_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block hover:underline"
-                  >
-                    <div className="font-bold uppercase text-base mb-1">
-                      {doc.filename.replace(/\.pdf$/i, '').replace(/_/g, ' ')}
-                    </div>
-                    <div className="text-sm text-gray-600 mb-2">
-                      {doc.matches.length > 0 && `page ${doc.matches[0].page}`}
-                      {doc.match_count > 1 && ` • ${doc.match_count} matches in this document`}
-                    </div>
-                    {doc.matches[0] && (
-                      <div className="text-sm mt-2">
-                        &ldquo;...{doc.matches[0].snippet}...&rdquo;
-                      </div>
-                    )}
-                  </a>
-                </div>
-              ))}
-            </div>
           </div>
         )}
 
