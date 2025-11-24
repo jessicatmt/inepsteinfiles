@@ -15,7 +15,7 @@
       "category": "Political Figure",
       "found_in_documents": true,
       "total_matches": 1,
-      "pinpoint_file_count": 44,
+      "pinpoint_file_count": 1651,
       "pinpoint_entity_id": "/m/0cqt90",
       "documents": [
         {
@@ -182,7 +182,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/0157m",
-      "pinpoint_file_count": 46
+      "pinpoint_file_count": 410
     },
     {
       "display_name": "Ghislaine Maxwell",
@@ -2863,7 +2863,7 @@
       "found_in_documents": false,
       "total_matches": 0,
       "documents": [],
-      "pinpoint_entity_id": "/m/03nzf1",
+      "pinpoint_entity_id": "/m/018ygt",
       "pinpoint_file_count": 0
     },
     {
@@ -3103,7 +3103,7 @@
           ]
         }
       ],
-      "pinpoint_entity_id": "/m/01pcrw",
+      "pinpoint_entity_id": "/m/05b6w8",
       "pinpoint_file_count": 0
     },
     {
@@ -3162,7 +3162,7 @@
       "found_in_documents": false,
       "total_matches": 0,
       "documents": [],
-      "pinpoint_entity_id": "/m/02w8m6",
+      "pinpoint_entity_id": "/m/04hyrd",
       "pinpoint_file_count": 0
     },
     {
@@ -3195,7 +3195,7 @@
       "found_in_documents": false,
       "total_matches": 0,
       "documents": [],
-      "pinpoint_entity_id": "/m/01ppv3",
+      "pinpoint_entity_id": "/m/02rbmg",
       "pinpoint_file_count": 0
     },
     {
@@ -3309,7 +3309,7 @@
       "found_in_documents": false,
       "total_matches": 0,
       "documents": [],
-      "pinpoint_entity_id": "/m/081lh",
+      "pinpoint_entity_id": "/m/08l57",
       "pinpoint_file_count": 0
     },
     {
@@ -3571,8 +3571,8 @@
           ]
         }
       ],
-      "pinpoint_entity_id": "/m/0d06m5",
-      "pinpoint_file_count": 9
+      "pinpoint_entity_id": "/m/0157m",
+      "pinpoint_file_count": 410
     },
     {
       "display_name": "Les Wexner",
