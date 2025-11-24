@@ -24,6 +24,7 @@ export interface Person {
   category: string;
   found_in_documents: boolean;
   total_matches: number;
+  pinpoint_file_count?: number;
   documents: DocumentEvidence[];
 }
 
