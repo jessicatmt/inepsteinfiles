@@ -180,7 +180,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/0157m",
+      "pinpoint_file_count": 46
     },
     {
       "display_name": "Ghislaine Maxwell",
@@ -2801,7 +2803,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/0gw_xk8",
+      "pinpoint_file_count": 798
     },
     {
       "display_name": "Prince Andrew",
@@ -2847,7 +2851,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/0xnh2",
+      "pinpoint_file_count": 17
     },
     {
       "display_name": "Elon Musk",
@@ -2937,7 +2943,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/097qj4",
+      "pinpoint_file_count": 55
     },
     {
       "display_name": "Bill Gates",
@@ -3040,7 +3048,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/048lv",
+      "pinpoint_file_count": 23
     },
     {
       "display_name": "Naomi Campbell",
@@ -3132,7 +3142,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/01d7lz",
+      "pinpoint_file_count": 10
     },
     {
       "display_name": "Peter Thiel",
@@ -3159,7 +3171,9 @@
       "category": "Political Figure",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/016hk4",
+      "pinpoint_file_count": 5
     },
     {
       "display_name": "David Copperfield",
@@ -3177,7 +3191,9 @@
       "category": "Political Figure",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/0d05fv",
+      "pinpoint_file_count": 6
     },
     {
       "display_name": "George Mitchell",
@@ -3203,7 +3219,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/02c643",
+      "pinpoint_file_count": 5
     },
     {
       "display_name": "Bill Richardson",
@@ -3212,7 +3230,9 @@
       "category": "Political Figure",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/020z31",
+      "pinpoint_file_count": 11
     },
     {
       "display_name": "Michael Jackson",
@@ -3375,7 +3395,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/01900g",
+      "pinpoint_file_count": 12
     },
     {
       "display_name": "Courtney Love",
@@ -3530,7 +3552,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/0d06m5",
+      "pinpoint_file_count": 9
     },
     {
       "display_name": "Les Wexner",
@@ -3539,7 +3563,9 @@
       "category": "Business",
       "found_in_documents": false,
       "total_matches": 0,
-      "documents": []
+      "documents": [],
+      "pinpoint_entity_id": "/m/01hwr1",
+      "pinpoint_file_count": 45
     },
     {
       "display_name": "Mick Jagger",
@@ -3897,7 +3923,9 @@
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/0dlkym0",
+      "pinpoint_file_count": 5
     }
   ]
 }
