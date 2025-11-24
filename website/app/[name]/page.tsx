@@ -233,10 +233,14 @@ export default async function NamePage({
 
           {/* Match Count */}
           <p className="text-2xl mb-6">
-            {person.total_matches} result{person.total_matches !== 1 ? 's' : ''}{' '}
-            <Link href="/" className="underline hover:text-gray-600">
-              so far
-            </Link>
+            <a
+              href={pinpointSearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-600"
+            >
+              {person.pinpoint_file_count ? `in ${person.pinpoint_file_count} files` : 'view all matches in database'}
+            </a>
           </p>
 
 
@@ -255,10 +259,6 @@ export default async function NamePage({
 
           {/* Legal Disclaimer */}
           <p className="text-xs text-gray-600 mt-8">
-            <Link href="/" className="text-gray-600 hover:underline">
-              No wrongdoing is alleged or implied. Appearance in documents ≠ wrongdoing.
-            </Link>
-            {' '}
             <a
               href={pinpointSearchUrl}
               target="_blank"
