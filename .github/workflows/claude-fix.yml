@@ -16,9 +16,6 @@ jobs:
       contains(github.event.comment.body, '@claude') &&
       (github.event.comment.user.login == 'jessicatmt' || github.event.comment.author_association == 'OWNER')
 
-    # Manual approval environment for safety
-    environment: claude-manual-approval
-
     # Prevent multiple simultaneous runs on same issue
     concurrency:
       group: claude-fix-${{ github.event.issue.number }}
