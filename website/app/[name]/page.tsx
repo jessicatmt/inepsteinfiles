@@ -55,7 +55,8 @@ export async function generateMetadata({
     };
   }
 
-  const found = person.found_in_documents;
+  // Person is "found" if they have documents OR a Pinpoint entity ID
+  const found = person.found_in_documents || !!person.pinpoint_entity_id;
   const vanityUrl = `${person.slug}.inepsteinfiles.com`;
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}?utm_source=x_share`;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
@@ -204,7 +205,8 @@ export default async function NamePage({
     );
   }
 
-  const found = person.found_in_documents;
+  // Person is "found" if they have documents OR a Pinpoint entity ID
+  const found = person.found_in_documents || !!person.pinpoint_entity_id;
   const vanityUrl = `${person.slug}.inepsteinfiles.com`;
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}`;
   const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${canonicalUrl}`;
