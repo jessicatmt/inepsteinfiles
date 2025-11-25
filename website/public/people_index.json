@@ -3837,7 +3837,7 @@
       "category": "Religious Figure",
       "found_in_documents": true,
       "total_matches": 0,
-      "pinpoint_entity_id": null,
+      "pinpoint_entity_id": "%P%Jesus_Christ",
       "pinpoint_file_count": 17,
       "custom_content": {
         "one_liner": null,
