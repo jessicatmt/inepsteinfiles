@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python virtual environments (should not be in website dir)
+venv/
+env/
+scraper_env/
+.venv/

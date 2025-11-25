@@ -1,7 +1,6 @@
 import { describe, it, expect, beforeEach, jest } from '@jest/globals';
 import { getPersonData, loadPeopleData, clearCache } from '@/lib/data';
 import fs from 'fs/promises';
-import path from 'path';
 
 // Mock the filesystem
 jest.mock('fs/promises', () => ({
