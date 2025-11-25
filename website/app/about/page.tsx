@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import SearchForm from '../components/SearchForm';
 
 export const metadata: Metadata = {
   title: 'About & Legal - InEpsteinFiles.com',
@@ -89,14 +88,10 @@ export default function AboutPage() {
         </section>
 
         {/* About Section */}
-        <section className="mb-12 border-t border-gray-300 pt-8">
+        <section className="mb-12 mt-16">
           <h2 className="text-2xl font-bold mb-6 border-b border-gray-300 pb-2">About</h2>
           <p className="text-gray-700 mb-4">
-            Vibe coded in ~48 hours (with a five day covid / party break at the halfway mark) by{' '}
-            <span className="inline-block">
-              <SearchForm defaultValue="Jessica Suarez" compact={true} />
-            </span>.
-            Say <a href="https://twitter.com/messages/compose?recipient_id=1016511" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">hi</a>.
+            Vibe coded in ~48 hours (with a five day covid / party break at the halfway mark). Say <a href="https://x.com/intent/post?text=@jessicasuarez%20hi" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">hi</a>.
           </p>
           <p className="text-gray-700 mb-4">
             <a href="https://github.com/jessicatmt/inepsteinfiles" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
