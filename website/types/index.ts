@@ -17,6 +17,13 @@ export interface DocumentEvidence {
   matches: DocumentMatch[];
 }
 
+export interface CustomContent {
+  one_liner?: string | null;
+  image_url?: string | null;
+  youtube_embed_id?: string | null;
+  youtube_timestamp?: number | null;
+}
+
 export interface Person {
   display_name: string;
   slug: string;
@@ -26,6 +33,7 @@ export interface Person {
   total_matches: number;
   pinpoint_file_count?: number;
   pinpoint_entity_id?: string;
+  custom_content?: CustomContent;
   documents: DocumentEvidence[];
 }
 
