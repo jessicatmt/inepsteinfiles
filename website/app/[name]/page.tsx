@@ -56,8 +56,8 @@ export async function generateMetadata({
     };
   }
 
-  // Person is "found" if they have documents OR a Pinpoint entity ID
-  const found = person.found_in_documents || !!person.pinpoint_entity_id;
+  // Person is "found" if they have documents OR Pinpoint file count > 0
+  const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
   const vanityUrl = `https://${person.slug}.inepsteinfiles.com?utm_source=x_share`;
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}?utm_source=x_share`;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
@@ -207,8 +207,8 @@ export default async function NamePage({
     );
   }
 
-  // Person is "found" if they have documents OR a Pinpoint entity ID
-  const found = person.found_in_documents || !!person.pinpoint_entity_id;
+  // Person is "found" if they have documents OR Pinpoint file count > 0
+  const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}`;
   const vanityUrl = `https://${person.slug}.inepsteinfiles.com`;
   const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${vanityUrl}`;
@@ -228,7 +228,7 @@ export default async function NamePage({
           {/* YES/NO Answer */}
           <div
             className={`text-8xl md:text-[14rem] font-black leading-none tracking-tighter mb-8 ${
-              found ? 'text-red-600' : 'text-black'
+              found ? 'text-red-600' : 'text-green-600'
             }`}
           >
             {found ? 'YES' : 'NO'}
