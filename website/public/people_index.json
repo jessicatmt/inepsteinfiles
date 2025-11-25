@@ -16,9 +16,9 @@
       "priority": "P1",
       "category": "Historical Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 16,
       "pinpoint_entity_id": "/m/07_m9_",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 16,
       "custom_content": {
         "one_liner": "AYO wrongdoing implied (just not like, here).",
         "image_url": null,
@@ -33,10 +33,10 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 15,
       "documents": [],
       "pinpoint_entity_id": "/m/0d05fv",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 15,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -50,7 +50,7 @@
       "priority": "P0",
       "category": "Legal",
       "found_in_documents": true,
-      "total_matches": 12,
+      "total_matches": 133,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -125,7 +125,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/097qj4",
-      "pinpoint_file_count": 55,
+      "pinpoint_file_count": 133,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -139,10 +139,10 @@
       "priority": "P1",
       "category": "Entertainment",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 9,
       "documents": [],
       "pinpoint_entity_id": "/m/018ygt",
-      "pinpoint_file_count": 11,
+      "pinpoint_file_count": 9,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -176,9 +176,9 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 39,
       "pinpoint_entity_id": "/m/02mjmr",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 39,
       "custom_content": {
         "one_liner": "\"Told you.\" - Donald Trump",
         "image_url": null,
@@ -193,9 +193,9 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 7,
       "pinpoint_entity_id": "/m/0fm2h",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 7,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -210,7 +210,7 @@
       "priority": "P0",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 25,
+      "total_matches": 124,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -350,7 +350,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/0157m",
-      "pinpoint_file_count": 25,
+      "pinpoint_file_count": 124,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -364,10 +364,10 @@
       "priority": "P0",
       "category": "Tech CEO",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 16,
       "documents": [],
       "pinpoint_entity_id": "/m/017nt",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 16,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -381,10 +381,10 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 35,
       "documents": [],
       "pinpoint_entity_id": "/m/020z31",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 35,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -428,9 +428,9 @@
       "priority": "P1",
       "category": "Entertainment Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 7,
       "pinpoint_entity_id": "/m/06lvlf",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 7,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -445,7 +445,7 @@
       "priority": "P1",
       "category": "Entertainment",
       "found_in_documents": true,
-      "total_matches": 11,
+      "total_matches": 32,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -515,7 +515,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/01900g",
-      "pinpoint_file_count": 12,
+      "pinpoint_file_count": 32,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -543,11 +543,11 @@
       "slug": "david-copperfield",
       "priority": "P1",
       "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
+      "found_in_documents": true,
+      "total_matches": 27,
       "documents": [],
       "pinpoint_entity_id": "/m/02rbmg",
-      "pinpoint_file_count": 0,
+      "pinpoint_file_count": 27,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -583,8 +583,8 @@
       "priority": "P0",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 1,
-      "pinpoint_file_count": 54,
+      "total_matches": 135,
+      "pinpoint_file_count": 135,
       "pinpoint_entity_id": "/m/0cqt90",
       "custom_content": {
         "one_liner": null,
@@ -616,10 +616,10 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 12,
       "documents": [],
       "pinpoint_entity_id": "/m/016hk4",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 12,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -633,10 +633,10 @@
       "priority": "P0",
       "category": "Tech CEO",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 8,
       "documents": [],
       "pinpoint_entity_id": "/m/018ygt",
-      "pinpoint_file_count": 6,
+      "pinpoint_file_count": 8,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -650,9 +650,9 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 10,
       "pinpoint_entity_id": "/m/034ls",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 10,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -667,7 +667,7 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 1,
+      "total_matches": 20,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -687,7 +687,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/02c643",
-      "pinpoint_file_count": 5,
+      "pinpoint_file_count": 20,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -701,9 +701,9 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 20,
       "pinpoint_entity_id": "/m/09b6zr",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 20,
       "custom_content": {
         "one_liner": "\"Sir, a (your joke here)\"",
         "image_url": "/images/george-w-bush.jpg",
@@ -718,7 +718,7 @@
       "priority": "P0",
       "category": "Co-Conspirator",
       "found_in_documents": true,
-      "total_matches": 520,
+      "total_matches": 876,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -3333,7 +3333,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/0gw_xk8",
-      "pinpoint_file_count": 520,
+      "pinpoint_file_count": 876,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -3347,7 +3347,7 @@
       "priority": "P1",
       "category": "Business",
       "found_in_documents": true,
-      "total_matches": 51,
+      "total_matches": 17,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -3622,13 +3622,13 @@
             {
               "page": 16,
               "matched_variant": "Dubin",
-              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :\u2022\u2022 Dunne, Phillp & Domlmce . I t I \u2022 \u2022 t \u2022 Durso Luigi ..... IV"
+              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :•• Dunne, Phillp & Domlmce . I t I • • t • Durso Luigi ..... IV"
             }
           ]
         }
       ],
       "pinpoint_entity_id": "/m/0dlkym0",
-      "pinpoint_file_count": 5,
+      "pinpoint_file_count": 17,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -3642,7 +3642,7 @@
       "priority": "P0",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 25,
+      "total_matches": 24,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -3782,7 +3782,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/0157m",
-      "pinpoint_file_count": 410,
+      "pinpoint_file_count": 24,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -3796,9 +3796,9 @@
       "priority": "Custom",
       "category": "Easter Egg",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 1885,
       "pinpoint_entity_id": "/m/0fz196",
-      "pinpoint_file_count": 999,
+      "pinpoint_file_count": 1885,
       "aliases": [
         "he"
       ],
@@ -3887,7 +3887,7 @@
       "priority": "P1",
       "category": "Entertainment",
       "found_in_documents": true,
-      "total_matches": 11,
+      "total_matches": 54,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -3957,7 +3957,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/048lv",
-      "pinpoint_file_count": 23,
+      "pinpoint_file_count": 54,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -3971,7 +3971,7 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 5,
+      "total_matches": 31,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -4011,7 +4011,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/01d7lz",
-      "pinpoint_file_count": 10,
+      "pinpoint_file_count": 31,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -4059,10 +4059,10 @@
       "priority": "P0",
       "category": "Business",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 80,
       "documents": [],
       "pinpoint_entity_id": "/m/01hwr1",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 80,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -4111,7 +4111,7 @@
       "priority": "P1",
       "category": "Entertainment",
       "found_in_documents": true,
-      "total_matches": 6,
+      "total_matches": 14,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -4156,7 +4156,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/09889g",
-      "pinpoint_file_count": 10,
+      "pinpoint_file_count": 14,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -4264,7 +4264,7 @@
       "priority": "P1",
       "category": "Entertainment",
       "found_in_documents": true,
-      "total_matches": 5,
+      "total_matches": 48,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -4304,7 +4304,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/05b6w8",
-      "pinpoint_file_count": 0,
+      "pinpoint_file_count": 48,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -4335,9 +4335,9 @@
       "priority": "P1",
       "category": "Historical Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 12,
       "pinpoint_entity_id": "/m/05mg9",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 12,
       "custom_content": {
         "one_liner": "Osama Bin Listed",
         "image_url": null,
@@ -4369,7 +4369,7 @@
       "priority": "P0",
       "category": "British Royal",
       "found_in_documents": true,
-      "total_matches": 5,
+      "total_matches": 91,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -4409,7 +4409,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/0xnh2",
-      "pinpoint_file_count": 17,
+      "pinpoint_file_count": 91,
       "custom_content": {
         "one_liner": "And why he's just \"Andrew Mountbatten-Windsor\" the peasant now.",
         "image_url": null,
@@ -4506,9 +4506,9 @@
       "priority": "P1",
       "category": "Entertainment Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 11,
       "pinpoint_entity_id": "/m/0dl567",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 11,
       "custom_content": {
         "one_liner": "Absolutely no wrongdoing implied here or anywhere, ever.",
         "image_url": null,
@@ -4555,9 +4555,9 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 10,
       "pinpoint_entity_id": "/m/08193",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 10,
       "custom_content": {
         "one_liner": "Putin deez nutz",
         "image_url": null,
@@ -4592,10 +4592,10 @@
       "priority": "P1",
       "category": "Entertainment",
       "found_in_documents": false,
-      "total_matches": 0,
+      "total_matches": 25,
       "documents": [],
       "pinpoint_entity_id": "/m/08l57",
-      "pinpoint_file_count": 0,
+      "pinpoint_file_count": 25,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -4617,7 +4617,7 @@
         "yo momma"
       ],
       "custom_content": {
-        "one_liner": "Hahaha \ud83d\ude02 funny. But YES someone was in your mom.",
+        "one_liner": "Hahaha 😂 funny. But YES someone was in your mom.",
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null
