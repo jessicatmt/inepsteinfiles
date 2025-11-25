@@ -43,7 +43,3 @@ assignees: ''
 ## Additional Context
 
 <!-- Any other context about the problem -->
-
----
-
-@claude Please investigate and create a PR to fix this issue.
