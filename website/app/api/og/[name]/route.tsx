@@ -2,6 +2,12 @@ import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 import { getPersonData } from '@/lib/data';
 
+// Use edge runtime for faster OG image generation
+export const runtime = 'edge';
+
+// Cache OG images for 1 hour at the edge, revalidate in background
+export const revalidate = 3600;
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ name: string }> }
@@ -118,6 +124,9 @@ export async function GET(
       {
         width: 1200,
         height: 628,
+        headers: {
+          'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800',
+        },
       }
     );
   } catch (error) {
