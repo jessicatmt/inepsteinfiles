@@ -28,6 +28,10 @@ export async function generateMetadata({
     const canonicalUrl = `https://inepsteinfiles.com/${name}?utm_source=x_share`;
     const vanityUrl = `https://${name}.inepsteinfiles.com?utm_source=x_share`;
     const altText = `Clear: ${displayName} has 0 matches in Epstein files so far. Still processing. Neutral search results.`;
+    // Version param for cache busting - bump this when data changes significantly
+    const ogVersion = '20251125';
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
+    const ogImageUrl = `${siteUrl}/api/og/${name}?v=${ogVersion}`;
 
     return {
       title,
@@ -39,7 +43,7 @@ export async function generateMetadata({
         siteName: 'InEpsteinFiles.com',
         images: [
           {
-            url: `/api/og/${name}`,
+            url: ogImageUrl,
             width: 1200,
             height: 628,
             alt: altText,
@@ -51,7 +55,7 @@ export async function generateMetadata({
         card: 'summary_large_image',
         title,
         description,
-        images: [`/api/og/${name}`],
+        images: [ogImageUrl],
       },
     };
   }
@@ -61,13 +65,17 @@ export async function generateMetadata({
   const vanityUrl = `https://${person.slug}.inepsteinfiles.com?utm_source=x_share`;
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}?utm_source=x_share`;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
-  const ogImageUrl = `${siteUrl}/api/og/${person.slug}`;
+  // Version param for cache busting - bump this when data changes significantly
+  const ogVersion = '20251125';
+  const ogImageUrl = `${siteUrl}/api/og/${person.slug}?v=${ogVersion}`;
 
+  // Use pinpoint_file_count as primary, fall back to total_matches
+  const fileCount = person.pinpoint_file_count || person.total_matches || 0;
   const title = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein Files`;
-  const description = `${person.total_matches} result${person.total_matches !== 1 ? 's' : ''} found. Sources: ${vanityUrl}`;
+  const description = `${fileCount} result${fileCount !== 1 ? 's' : ''} found. Sources: ${vanityUrl}`;
 
   const altText = found
-    ? `Red alert: ${person.display_name} appears ${person.total_matches} times in Epstein official records. No wrongdoing implied. Sources linked. Public docs only.`
+    ? `Alert: ${person.display_name} appears in ${fileCount} Epstein files. No wrongdoing alleged or implied. Official public records only.`
     : `Clear: ${person.display_name} has 0 matches in Epstein files so far. Still processing. Neutral search results.`;
 
   return {
@@ -325,7 +333,7 @@ export default async function NamePage({
             </>
           )}
           {' • '}
-          last updated: november 19, 2024
+          last updated: november 25, 2024
           {' • '}
           <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
             @jessicasuarez
