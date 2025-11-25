@@ -30,6 +30,3 @@ assignees: ''
 
 <!-- Technical details, if any -->
 
----
-
-@claude Please review this feature request and create a PR with an implementation.
