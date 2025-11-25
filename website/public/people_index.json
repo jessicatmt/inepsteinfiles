@@ -663,7 +663,7 @@
       "pinpoint_file_count": 0,
       "custom_content": {
         "one_liner": "\"Sir, a (your joke here)\"",
-        "image_url": "/images/george-w-bush.jpg",
+        "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null
       },
