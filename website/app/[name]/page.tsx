@@ -134,7 +134,7 @@ export default async function NamePage({
           {/* Answer Section */}
           <div className="text-center mb-16">
             {/* NO Answer */}
-            <div className="text-8xl md:text-[14rem] font-black leading-none tracking-tighter mb-8 text-black">
+            <div className="text-8xl md:text-[14rem] font-black leading-none tracking-tighter mb-8 text-green-600">
               NO
             </div>
 
@@ -145,21 +145,8 @@ export default async function NamePage({
 
             {/* Match Count */}
             <p className="text-2xl mb-6">
-              0 results{' '}
-              <Link href="/" className="underline hover:text-gray-600">
-                in our processed files
-              </Link>
+              0 results in official records
             </p>
-
-            {/* Search Full Database Button */}
-            <a
-              href={pinpointSearchUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-gray-700 text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors mb-6"
-            >
-              Search Full Database (5000+ docs) →
-            </a>
 
             {/* Post on X Button */}
             <a
@@ -176,7 +163,7 @@ export default async function NamePage({
 
             {/* Legal Disclaimer */}
             <p className="text-xs text-gray-600 mt-8">
-              <Link href="/" className="text-gray-600 hover:underline">
+              <Link href="/about#legal" className="text-gray-600 hover:underline">
                 No wrongdoing is alleged or implied. We are literally just a search.
               </Link>
             </p>
@@ -192,7 +179,7 @@ export default async function NamePage({
 
           {/* Footer */}
           <div className="text-center pt-8 mt-8 text-xs text-gray-600">
-            <Link href="/" className="text-gray-600 hover:underline">about</Link>
+            <Link href="/about" className="text-gray-600 hover:underline">about</Link>
             {' • '}
             <FakeNewsButton />
             {' • '}
@@ -274,7 +261,7 @@ export default async function NamePage({
 
           {/* Legal Disclaimer */}
           <p className="text-xs text-gray-600 mt-8">
-            <Link href="/" className="text-gray-600 hover:underline">
+            <Link href="/about#legal" className="text-gray-600 hover:underline">
               No wrongdoing is alleged or implied. We are literally just a search.
             </Link>
           </p>
@@ -313,21 +300,6 @@ export default async function NamePage({
           </div>
         )}
 
-        {/* Sources Section (YES only) */}
-        {found && (
-          <div className="border-t border-gray-300 pt-12 mt-12">
-            <p className="text-sm text-gray-600 mb-4 text-center">
-              Sources processed → <a
-                href={pinpointSearchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:underline font-semibold"
-              >
-                view all evidence in full database
-              </a>
-            </p>
-          </div>
-        )}
 
         {/* Search Again Section */}
         <div className="border-t border-gray-300 pt-12 mt-12 text-center">
@@ -339,7 +311,7 @@ export default async function NamePage({
 
         {/* Footer */}
         <div className="text-center pt-8 mt-8 text-xs text-gray-600">
-          <Link href="/" className="text-gray-600 hover:underline">about</Link>
+          <Link href="/about" className="text-gray-600 hover:underline">about</Link>
           {!found && (
             <>
               {' • '}
