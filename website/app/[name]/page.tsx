@@ -242,7 +242,9 @@ export default async function NamePage({
                 rel="noopener noreferrer"
                 className="underline hover:text-gray-600"
               >
-                In {person.pinpoint_file_count} official files so far.
+                {person.pinpoint_file_count && person.pinpoint_file_count > 0
+                  ? `In ${person.pinpoint_file_count} official files so far.`
+                  : "Bookmark this page, we're still processing their file matches."}
               </a>
             ) : (
               'No search results in official files — so far.'
