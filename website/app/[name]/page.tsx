@@ -272,14 +272,9 @@ export default async function NamePage({
 
           {/* Legal Disclaimer */}
           <p className="text-xs text-gray-600 mt-8">
-            <a
-              href={pinpointSearchUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-600 hover:underline"
-            >
-              View full context in source database
-            </a>
+            <Link href="/" className="text-gray-600 hover:underline">
+              No wrongdoing is alleged or implied. We are literally just a search.
+            </Link>
           </p>
         </div>
 
