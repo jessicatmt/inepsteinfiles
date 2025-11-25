@@ -2,24 +2,20 @@ import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 import peopleData from '@/public/people_index.json';
 
-// Cache OG images for 1 day
+// Use Edge runtime for faster cold starts
+export const runtime = 'edge';
+
+// Cache OG images for 1 day, but allow stale-while-revalidate
 export const revalidate = 86400;
 
-// Load Public Sans Black (900) font - must use TTF for @vercel/og
-async function loadPublicSansBlack() {
-  const response = await fetch(
-    'https://fonts.gstatic.com/s/publicsans/v21/ijwGs572Xtc6ZYQws9YVwllKVG8qX1oyOymuv565ww.ttf'
-  );
-  return await response.arrayBuffer();
-}
+// Load fonts at module level (bundled with the edge function)
+const publicSansBlack = fetch(
+  new URL('../fonts/PublicSans-Black.ttf', import.meta.url)
+).then((res) => res.arrayBuffer());
 
-// Load Geist Mono Bold font
-async function loadGeistMonoBold() {
-  const response = await fetch(
-    'https://raw.githubusercontent.com/vercel/geist-font/main/packages/next/dist/fonts/geist-mono/GeistMono-Bold.ttf'
-  );
-  return await response.arrayBuffer();
-}
+const geistMonoBold = fetch(
+  new URL('../fonts/GeistMono-Bold.ttf', import.meta.url)
+).then((res) => res.arrayBuffer());
 
 export async function GET(
   request: NextRequest,
@@ -27,10 +23,13 @@ export async function GET(
 ) {
   try {
     const { name } = await params;
-    const [publicSansBlack, geistMonoBold] = await Promise.all([
-      loadPublicSansBlack(),
-      loadGeistMonoBold(),
+
+    // Load fonts in parallel
+    const [publicSansBlackData, geistMonoBoldData] = await Promise.all([
+      publicSansBlack,
+      geistMonoBold,
     ]);
+
     const person = peopleData.people.find((p: { slug: string }) => p.slug === name);
 
     // Convert slug to display name for unknown people
@@ -50,13 +49,13 @@ export async function GET(
     const fonts = [
       {
         name: 'Public Sans',
-        data: publicSansBlack,
+        data: publicSansBlackData,
         style: 'normal' as const,
         weight: 900 as const,
       },
       {
         name: 'Geist Mono',
-        data: geistMonoBold,
+        data: geistMonoBoldData,
         style: 'normal' as const,
         weight: 700 as const,
       },

@@ -131,7 +131,7 @@ export default async function NamePage({
 
   if (!person) {
     // Show NO page for names not in the index
-    const vanityUrl = `https://${name}.inepsteinfiles.com?v=${OG_VERSION}`;
+    const vanityUrl = `https://${name}.inepsteinfiles.com`;
     const shareText = `${displayName} IS NOT in the Epstein files. Thoughts?\n\n${vanityUrl}`;
     const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
     // For names not in our index, we can only use text search
@@ -206,7 +206,7 @@ export default async function NamePage({
   // Person is "found" if they have documents OR Pinpoint file count > 0
   const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}`;
-  const vanityUrl = `https://${person.slug}.inepsteinfiles.com?v=${OG_VERSION}`;
+  const vanityUrl = `https://${person.slug}.inepsteinfiles.com`;
   const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${vanityUrl}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
