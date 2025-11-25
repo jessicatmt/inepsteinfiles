@@ -7,7 +7,7 @@
     "total_documents": 7,
     "verification_note": "SHA-256 hashes computed but marked UNVERIFIED pending official verification",
     "has_custom_content": true,
-    "last_manual_update": "2025-11-25T07:55:51.974458"
+    "last_manual_update": "2025-11-25T07:58:01.937999"
   },
   "people": [
     {
@@ -636,7 +636,7 @@
       "total_matches": 0,
       "documents": [],
       "pinpoint_entity_id": "/m/018ygt",
-      "pinpoint_file_count": 1,
+      "pinpoint_file_count": 6,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
