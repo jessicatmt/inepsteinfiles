@@ -13,15 +13,43 @@ from playwright.sync_api import sync_playwright
 from typing import Dict, List, Optional
 
 # Entities that exist in Coffeezilla's collection but have 0 files in ours
+# ALL entities that show YES but need document harvesting
 PRIORITY_ENTITIES = {
-    "Bill Gates": {"entity_id": "/m/017nt", "file_count": 0},
-    "Elon Musk": {"entity_id": "/m/018ygt", "file_count": 0}, 
-    "Leonardo DiCaprio": {"entity_id": "/m/0dvmd", "file_count": 0},
-    "David Copperfield": {"entity_id": "/m/02rbmg", "file_count": 0},
-    "Michael Jackson": {"entity_id": "/m/09889g", "file_count": 0},
-    "Naomi Campbell": {"entity_id": "/m/05b6w8", "file_count": 0},
-    "Peter Thiel": {"entity_id": "/m/04hyrd", "file_count": 0},
-    "Woody Allen": {"entity_id": "/m/08l57", "file_count": 0},
+    "Adolf Hitler": {"entity_id": "/m/07_m9_", "pinpoint_count": 0},
+    "Al Gore": {"entity_id": "/m/0d05fv", "pinpoint_count": 6},
+    "Alec Baldwin": {"entity_id": "/m/018ygt", "pinpoint_count": 0},
+    "Barack Obama": {"entity_id": "/m/02mjmr", "pinpoint_count": 0},
+    "Benjamin Netanyahu": {"entity_id": "/m/0fm2h", "pinpoint_count": 0},
+    "Bill Gates": {"entity_id": "/m/017nt", "pinpoint_count": 0},
+    "Bill Richardson": {"entity_id": "/m/020z31", "pinpoint_count": 11},
+    "Channing Tatum": {"entity_id": "/m/06lvlf", "pinpoint_count": 0},
+    "David Copperfield": {"entity_id": "/m/02rbmg", "pinpoint_count": 0},
+    "Ehud Barak": {"entity_id": "/m/016hk4", "pinpoint_count": 5},
+    "Elon Musk": {"entity_id": "/m/018ygt", "pinpoint_count": 0},
+    "George H. W. Bush": {"entity_id": "/m/034ls", "pinpoint_count": 0},
+    "George W. Bush": {"entity_id": "/m/09b6zr", "pinpoint_count": 0},
+    "Jeffrey Epstein": {"entity_id": "/m/0fz196", "pinpoint_count": 0},
+    "Joe Biden": {"entity_id": "/m/012gx2", "pinpoint_count": 0},
+    "Kathryn Ruemmler": {"entity_id": "/m/0gvs5b7", "pinpoint_count": 0},
+    "Lena Dunham": {"entity_id": "/m/0b3w054", "pinpoint_count": 0},
+    "Leonardo DiCaprio": {"entity_id": "/m/0dvmd", "pinpoint_count": 0},
+    "Les Wexner": {"entity_id": "/m/01hwr1", "pinpoint_count": 45},
+    "Martin Scorsese": {"entity_id": "/m/04sry", "pinpoint_count": 0},
+    "Michael Jackson": {"entity_id": "/m/09889g", "pinpoint_count": 0},
+    "Michael Wolff": {"entity_id": "/m/04q34ww", "pinpoint_count": 0},
+    "Mick Jagger": {"entity_id": "/m/01kx_81", "pinpoint_count": 0},
+    "Naomi Campbell": {"entity_id": "/m/05b6w8", "pinpoint_count": 0},
+    "Noam Chomsky": {"entity_id": "/m/0b78hw", "pinpoint_count": 0},
+    "Osama bin Laden": {"entity_id": "/m/05mg9", "pinpoint_count": 0},
+    "Peter Thiel": {"entity_id": "/m/04hyrd", "pinpoint_count": 0},
+    "Richard Dawkins": {"entity_id": "/m/06g4_", "pinpoint_count": 0},
+    "Rupert Murdoch": {"entity_id": "/m/06hrk", "pinpoint_count": 0},
+    "Stephen Hawking": {"entity_id": "/m/01tdnyh", "pinpoint_count": 0},
+    "Steve Bannon": {"entity_id": "/m/0bqscsg", "pinpoint_count": 0},
+    "Taylor Swift": {"entity_id": "/m/0dl567", "pinpoint_count": 0},
+    "Vladimir Putin": {"entity_id": "/m/08193", "pinpoint_count": 0},
+    "Warren Buffett": {"entity_id": "/m/01d_ys", "pinpoint_count": 0},
+    "Woody Allen": {"entity_id": "/m/08l57", "pinpoint_count": 0},
 }
 
 # Google Drive folder ID for InEpsteinFiles documents  
@@ -161,16 +189,40 @@ def scrape_entity_documents(entity_name: str, entity_id: str) -> List[Dict]:
             if not found_links:
                 print("🔍 No direct PDF links found. Looking for document entries...")
                 
-                # Look for document title patterns we can see in the screenshot
+                # Look for document title patterns and try to construct download URLs
                 document_titles = []
                 try:
-                    # Find elements containing "HOUSE_OVERSIGHT" and ".pdf"
-                    title_elements = page.query_selector_all('text=HOUSE_OVERSIGHT')
-                    for element in title_elements:
-                        text_content = element.inner_text()
-                        if '.pdf' in text_content:
-                            document_titles.append(text_content.strip())
-                            print(f"  🔍 Found document title: {text_content.strip()}")
+                    # Find all text containing "HOUSE_OVERSIGHT" and ".pdf"
+                    page_content = page.content()
+                    
+                    # Look for PDF file names in the page content
+                    import re
+                    pdf_patterns = re.findall(r'HOUSE_OVERSIGHT_[\d-]+\.pdf', page_content)
+                    
+                    for pdf_name in set(pdf_patterns):  # Remove duplicates
+                        document_titles.append(pdf_name)
+                        print(f"  🔍 Found document title: {pdf_name}")
+                        
+                        # Try to construct potential download URL
+                        # Pinpoint typically uses a pattern like this
+                        potential_urls = [
+                            f"https://journaliststudio.google.com/pinpoint/collections/061ce61c9e70bdfd/documents/{pdf_name}",
+                            f"https://storage.googleapis.com/pinpoint-collections/061ce61c9e70bdfd/{pdf_name}",
+                            f"https://journaliststudio.google.com/pinpoint/download?collection=061ce61c9e70bdfd&document={pdf_name}",
+                        ]
+                        
+                        for url in potential_urls:
+                            doc_info = {
+                                'title': pdf_name,
+                                'url': url,
+                                'entity_name': entity_name,
+                                'entity_id': entity_id,
+                                'url_type': 'constructed'
+                            }
+                            found_links.append(doc_info)
+                            print(f"  📎 Constructed URL: {pdf_name} -> {url}")
+                            break  # Use first URL pattern for now
+                        
                 except Exception as e:
                     print(f"Error finding document titles: {e}")
                 
