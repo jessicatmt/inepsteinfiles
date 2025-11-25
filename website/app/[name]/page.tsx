@@ -235,14 +235,18 @@ export default async function NamePage({
 
           {/* Match Count */}
           <p className="text-2xl mb-6">
-            <a
-              href={pinpointSearchUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-gray-600"
-            >
-              {person.pinpoint_file_count ? `in ${person.pinpoint_file_count} files` : 'view all matches in database'}
-            </a>
+            {found ? (
+              <a
+                href={pinpointSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-gray-600"
+              >
+                in {person.pinpoint_file_count} files
+              </a>
+            ) : (
+              '0 results in official records'
+            )}
           </p>
 
 
