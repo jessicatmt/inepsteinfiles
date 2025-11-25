@@ -3,7 +3,7 @@
     "version": "1.0",
     "generated": "2025-11-24",
     "description": "Manual V1 MVP - 35 curated names searched in 7 priority PDFs",
-    "total_names": 52,
+    "total_names": 60,
     "total_documents": 7,
     "verification_note": "SHA-256 hashes computed but marked UNVERIFIED pending official verification",
     "has_custom_content": true
@@ -148,6 +148,26 @@
         "youtube_embed_id": null,
         "youtube_timestamp": null
       }
+    },
+    {
+      "display_name": "Angel Martinez",
+      "slug": "angel-martinez",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "aliases": [
+        "bruckner"
+      ],
+      "custom_content": {
+        "one_liner": "Not in the files AT ALL, and actually helped OP get this site running.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
     },
     {
       "display_name": "Barack Obama",
@@ -533,6 +553,28 @@
         "youtube_embed_id": null,
         "youtube_timestamp": null
       }
+    },
+    {
+      "display_name": "Deez Nutz",
+      "slug": "deez-nutz",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": null,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "aliases": [
+        "deez nuts",
+        "deez"
+      ],
+      "custom_content": {
+        "one_liner": "Before answering, you know that Putin's in the Epstein files?",
+        "redirect_to": "vladimir-putin",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
     },
     {
       "display_name": "Donald Trump",
@@ -3579,7 +3621,7 @@
             {
               "page": 16,
               "matched_variant": "Dubin",
-              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :•• Dunne, Phillp & Domlmce . I t I • • t • Durso Luigi ..... IV"
+              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :\u2022\u2022 Dunne, Phillp & Domlmce . I t I \u2022 \u2022 t \u2022 Durso Luigi ..... IV"
             }
           ]
         }
@@ -3746,6 +3788,46 @@
         "youtube_embed_id": null,
         "youtube_timestamp": null
       }
+    },
+    {
+      "display_name": "Jeffrey Epstein",
+      "slug": "jeffrey-epstein",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": true,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/0fz196",
+      "pinpoint_file_count": 0,
+      "aliases": [
+        "he"
+      ],
+      "custom_content": {
+        "one_liner": "Yeah bro, you cracked the case.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Jessica Suarez",
+      "slug": "jessica-suarez",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "aliases": [
+        "jessicasuarez"
+      ],
+      "custom_content": {
+        "one_liner": "Literally just a search, brother.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
     },
     {
       "display_name": "Jesus Christ",
@@ -3988,6 +4070,24 @@
       }
     },
     {
+      "display_name": "Mark Sussman",
+      "slug": "mark-sussman",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "aliases": [],
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
       "display_name": "Martin Scorsese",
       "slug": "martin-scorsese",
       "priority": "P1",
@@ -4111,6 +4211,51 @@
         "youtube_embed_id": null,
         "youtube_timestamp": null
       }
+    },
+    {
+      "display_name": "My Dad",
+      "slug": "my-dad",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "aliases": [
+        "dad",
+        "my daddy",
+        "pops",
+        "my father"
+      ],
+      "custom_content": {
+        "one_liner": "Or maybe... either way there's only one thing he regrets more.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "My Mom",
+      "slug": "my-mom",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "aliases": [
+        "my momma",
+        "my mommy",
+        "my mother"
+      ],
+      "custom_content": {
+        "one_liner": "Or maybe... either way there's only one thing she regrets more.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
     },
     {
       "display_name": "Naomi Campbell",
@@ -4413,12 +4558,15 @@
       "pinpoint_entity_id": "/m/08193",
       "pinpoint_file_count": 0,
       "custom_content": {
-        "one_liner": null,
+        "one_liner": "Putin deez nutz",
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null
       },
-      "documents": []
+      "documents": [],
+      "aliases": [
+        "putin"
+      ]
     },
     {
       "display_name": "Warren Buffett",
@@ -4453,6 +4601,27 @@
         "youtube_embed_id": null,
         "youtube_timestamp": null
       }
+    },
+    {
+      "display_name": "Your Mom",
+      "slug": "your-mom",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "aliases": [
+        "ur mom",
+        "yo momma"
+      ],
+      "custom_content": {
+        "one_liner": "Hahaha \ud83d\ude02 funny. But YES someone was in your mom.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
     }
   ]
 }
