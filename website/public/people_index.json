@@ -1,12 +1,13 @@
 {
   "_metadata": {
     "version": "1.0",
-    "generated": "2025-11-24",
+    "generated": "2025-11-25",
     "description": "Manual V1 MVP - 35 curated names searched in 7 priority PDFs",
     "total_names": 60,
     "total_documents": 7,
     "verification_note": "SHA-256 hashes computed but marked UNVERIFIED pending official verification",
-    "has_custom_content": true
+    "has_custom_content": true,
+    "last_manual_update": "2025-11-25T07:55:51.974458"
   },
   "people": [
     {
@@ -141,7 +142,7 @@
       "total_matches": 0,
       "documents": [],
       "pinpoint_entity_id": "/m/018ygt",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 11,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -349,7 +350,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/0157m",
-      "pinpoint_file_count": 410,
+      "pinpoint_file_count": 25,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -583,7 +584,7 @@
       "category": "Political Figure",
       "found_in_documents": true,
       "total_matches": 1,
-      "pinpoint_file_count": 1651,
+      "pinpoint_file_count": 25,
       "pinpoint_entity_id": "/m/0cqt90",
       "custom_content": {
         "one_liner": null,
@@ -635,7 +636,7 @@
       "total_matches": 0,
       "documents": [],
       "pinpoint_entity_id": "/m/018ygt",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 1,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -3332,7 +3333,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/0gw_xk8",
-      "pinpoint_file_count": 798,
+      "pinpoint_file_count": 520,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -3797,7 +3798,7 @@
       "found_in_documents": true,
       "total_matches": 0,
       "pinpoint_entity_id": "/m/0fz196",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 999,
       "aliases": [
         "he"
       ],
