@@ -3,8 +3,13 @@
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-export default function SearchForm() {
-  const [searchQuery, setSearchQuery] = useState('');
+interface SearchFormProps {
+  defaultValue?: string;
+  compact?: boolean;
+}
+
+export default function SearchForm({ defaultValue = '', compact = false }: SearchFormProps) {
+  const [searchQuery, setSearchQuery] = useState(defaultValue);
   const router = useRouter();
 
   const handleSearch = (e: FormEvent) => {
@@ -23,7 +28,10 @@ export default function SearchForm() {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         placeholder="type a name + enter"
-        className="text-center text-base h-12 border-2 border-black px-4 max-w-md w-full bg-white focus:outline-none focus:border-black"
+        className={compact 
+          ? "text-center text-sm h-8 border-2 border-black px-3 w-48 bg-white focus:outline-none focus:border-black"
+          : "text-center text-base h-12 border-2 border-black px-4 max-w-md w-full bg-white focus:outline-none focus:border-black"
+        }
         autoComplete="off"
       />
     </form>
