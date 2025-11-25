@@ -23,7 +23,7 @@ async function loadSearches(): Promise<void> {
     const data = await fs.readFile(DATA_FILE, 'utf-8');
     const parsed: SearchData = JSON.parse(data);
     searchCache = parsed.searches || {};
-  } catch (error) {
+  } catch {
     // File doesn't exist yet or is invalid, start with empty cache
     searchCache = {};
   }
@@ -41,8 +41,8 @@ async function saveSearches(): Promise<void> {
     };
     await fs.writeFile(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
     lastSaveTime = Date.now();
-  } catch (error) {
-    console.error('Failed to save search data:', error);
+  } catch {
+    console.error('Failed to save search data');
   }
 }
 
@@ -72,8 +72,8 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json({ success: true, count: searchCache[name].count });
-  } catch (error) {
-    console.error('Track search error:', error);
+  } catch {
+    console.error('Track search error');
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }
@@ -91,7 +91,7 @@ export async function GET() {
 
     // Get searches from last 24 hours
     const recentSearches = Object.entries(searchCache)
-      .filter(([_, data]) => data.lastSearched > oneDayAgo)
+      .filter(([, data]) => data.lastSearched > oneDayAgo)
       .map(([name, data]) => ({
         name,
         count: data.count,
@@ -101,8 +101,8 @@ export async function GET() {
       .slice(0, 10); // Top 10
 
     return NextResponse.json({ trending: recentSearches });
-  } catch (error) {
-    console.error('Get trending error:', error);
+  } catch {
+    console.error('Get trending error');
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
 }

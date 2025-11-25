@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Person } from '@/types';
+import Image from 'next/image';
 import SearchForm from '../components/SearchForm';
 import FakeNewsButton from '../components/FakeNewsButton';
 import { getPersonData } from '@/lib/data';
@@ -207,7 +207,6 @@ export default async function NamePage({
 
   // Person is "found" if they have documents OR a Pinpoint entity ID
   const found = person.found_in_documents || !!person.pinpoint_entity_id;
-  const vanityUrl = `${person.slug}.inepsteinfiles.com`;
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}`;
   const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${canonicalUrl}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
@@ -281,9 +280,11 @@ export default async function NamePage({
         {/* Custom Image */}
         {person.custom_content?.image_url && (
           <div className="my-12 text-center">
-            <img 
-              src={person.custom_content.image_url} 
+            <Image
+              src={person.custom_content.image_url}
               alt={`Custom content for ${person.display_name}`}
+              width={800}
+              height={600}
               className="max-w-full md:max-w-2xl mx-auto rounded-lg shadow-lg"
             />
           </div>
