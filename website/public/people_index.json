@@ -569,11 +569,11 @@
         "deez"
       ],
       "custom_content": {
-        "one_liner": "Before answering, you know that Putin's in the Epstein files?",
-        "redirect_to": "vladimir-putin",
+        "one_liner": "Did you know that Vladimir Putin appears in several Epstein files?",
         "image_url": null,
         "youtube_embed_id": null,
-        "youtube_timestamp": null
+        "youtube_timestamp": null,
+        "one_liner_link": "/putin-deez-nutz"
       },
       "documents": []
     },
@@ -635,7 +635,7 @@
       "found_in_documents": true,
       "total_matches": 8,
       "documents": [],
-      "pinpoint_entity_id": "/m/018ygt",
+      "pinpoint_entity_id": "/m/03nzf1",
       "pinpoint_file_count": 8,
       "custom_content": {
         "one_liner": null,
@@ -3622,7 +3622,7 @@
             {
               "page": 16,
               "matched_variant": "Dubin",
-              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :•• Dunne, Phillp & Domlmce . I t I • • t • Durso Luigi ..... IV"
+              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :\u2022\u2022 Dunne, Phillp & Domlmce . I t I \u2022 \u2022 t \u2022 Durso Luigi ..... IV"
             }
           ]
         }
@@ -4559,7 +4559,7 @@
       "pinpoint_entity_id": "/m/08193",
       "pinpoint_file_count": 10,
       "custom_content": {
-        "one_liner": "Putin deez nutz",
+        "one_liner": null,
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null
@@ -4617,7 +4617,25 @@
         "yo momma"
       ],
       "custom_content": {
-        "one_liner": "Hahaha 😂 funny. But YES someone was in your mom.",
+        "one_liner": "Hahaha \ud83d\ude02 funny. But YES someone was in your mom.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Putin Deez Nutz",
+      "slug": "putin-deez-nutz",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": null,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": "Putin DEEZ NUTZ in your mouth.",
+        "one_liner_link": null,
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null

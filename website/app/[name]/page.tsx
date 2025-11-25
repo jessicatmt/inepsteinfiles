@@ -239,6 +239,14 @@ export default async function NamePage({
           {person.custom_content?.one_liner && (
             <p className="text-xl md:text-2xl italic text-gray-700 mb-8">
               {person.custom_content.one_liner}
+              {person.custom_content?.one_liner_link && (
+                <>
+                  {' '}
+                  <Link href={person.custom_content.one_liner_link} className="underline hover:text-gray-500">
+                    Check it out.
+                  </Link>
+                </>
+              )}
             </p>
           )}
 
