@@ -26,7 +26,8 @@ export async function generateMetadata({
     .join(' ');
 
   if (!person) {
-    const title = `${displayName} IS NOT in the Epstein Files`;
+    // Simpler title to avoid repetition with OG image text
+    const title = `${displayName} | Epstein Files Search`;
     const description = `0 results found. Sources: ${name}.inepsteinfiles.com`;
     const canonicalUrl = `https://inepsteinfiles.com/${name}?utm_source=x_share`;
     const vanityUrl = `https://${name}.inepsteinfiles.com?utm_source=x_share`;
@@ -70,7 +71,8 @@ export async function generateMetadata({
 
   // Use pinpoint_file_count as primary, fall back to total_matches
   const fileCount = person.pinpoint_file_count || person.total_matches || 0;
-  const title = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein Files`;
+  // Simpler title to avoid repetition with OG image text
+  const title = `${person.display_name} | Epstein Files Search`;
   const description = `${fileCount} result${fileCount !== 1 ? 's' : ''} found. Sources: ${vanityUrl}`;
 
   const altText = found
