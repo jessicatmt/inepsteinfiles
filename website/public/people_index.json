@@ -3782,7 +3782,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/0d06m5",
-      "pinpoint_file_count": 17,
+      "pinpoint_file_count": 24,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -3835,10 +3835,10 @@
       "slug": "jesus-christ",
       "priority": "P1",
       "category": "Religious Figure",
-      "found_in_documents": false,
+      "found_in_documents": true,
       "total_matches": 0,
       "pinpoint_entity_id": null,
-      "pinpoint_file_count": 0,
+      "pinpoint_file_count": 17,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -3855,7 +3855,7 @@
       "found_in_documents": true,
       "total_matches": 0,
       "pinpoint_entity_id": "/m/012gx2",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 12,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
