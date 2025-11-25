@@ -47,8 +47,9 @@ export async function GET(
     
     // Use Pinpoint file count or document matches for display
     const fileCount = person.pinpoint_file_count || person.total_matches || 0;
-    const meta = `${fileCount} result${fileCount !== 1 ? 's' : ''} in official records. No wrongdoing implied.`;
+    const meta = `${fileCount} result${fileCount !== 1 ? 's' : ''} in official records.`;
     const vanityUrl = `${person.slug}.inepsteinfiles.com`;
+    const legalDisclaimer = 'No wrongdoing alleged or implied. See: inepsteinfiles.com/about';
 
     return new ImageResponse(
       (
@@ -106,7 +107,7 @@ export async function GET(
             {meta}
           </div>
 
-          {/* Proof link */}
+          {/* Vanity URL */}
           <div
             style={{
               display: 'flex',
@@ -115,7 +116,21 @@ export async function GET(
               textAlign: 'center',
             }}
           >
-            {`Proof: ${vanityUrl}`}
+            {vanityUrl}
+          </div>
+
+          {/* Legal disclaimer - bottom section */}
+          <div
+            style={{
+              display: 'flex',
+              position: 'absolute',
+              bottom: 40,
+              fontSize: 16,
+              color: '#aaaaaa',
+              textAlign: 'center',
+            }}
+          >
+            {legalDisclaimer}
           </div>
         </div>
       ),
