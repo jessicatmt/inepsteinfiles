@@ -1,12 +1,9 @@
 import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
-import { getPersonData } from '@/lib/data';
+import peopleData from '@/public/people_index.json';
 
-// Use edge runtime for faster OG image generation
-export const runtime = 'edge';
-
-// Cache OG images for 1 hour at the edge, revalidate in background
-export const revalidate = 3600;
+// Cache OG images for 1 day
+export const revalidate = 86400;
 
 export async function GET(
   request: NextRequest,
@@ -14,7 +11,8 @@ export async function GET(
 ) {
   try {
     const { name } = await params;
-    const person = await getPersonData(name);
+    // Use static import instead of file system read for edge compatibility
+    const person = peopleData.people.find((p: { slug: string }) => p.slug === name);
 
     if (!person) {
       return new ImageResponse(
