@@ -183,7 +183,7 @@ export default async function NamePage({
             {' • '}
             <FakeNewsButton />
             {' • '}
-            last updated: november 19, 2024
+            last updated: november 25, 2024
             {' • '}
             <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
               @jessicasuarez
