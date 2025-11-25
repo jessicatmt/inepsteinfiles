@@ -7,7 +7,7 @@ and compare against existing collection data.
 import json
 import time
 import re
-from playwright.sync_api import sync_playwright
+# from playwright.sync_api import sync_playwright
 from typing import Dict, List, Optional
 
 # Target names to search for
