@@ -35,11 +35,15 @@ export async function GET(
       );
     }
 
-    const found = person.found_in_documents;
+    // Person is "found" if they have documents OR a Pinpoint entity ID  
+    const found = person.found_in_documents || !!person.pinpoint_entity_id;
     const answer = found ? 'YES' : 'NO';
     const answerColor = found ? '#dc2626' : '#000000';
     const subtitle = `${person.display_name.toUpperCase()} ${found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES`;
-    const meta = `${person.total_matches} mention${person.total_matches !== 1 ? 's' : ''} in official records. No wrongdoing implied.`;
+    
+    // Use Pinpoint file count or document matches for display
+    const fileCount = person.pinpoint_file_count || person.total_matches || 0;
+    const meta = `${fileCount} result${fileCount !== 1 ? 's' : ''} in official records. No wrongdoing implied.`;
     const vanityUrl = `${person.slug}.inepsteinfiles.com`;
 
     return new ImageResponse(
