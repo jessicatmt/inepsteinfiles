@@ -5,76 +5,94 @@
 @README.md
 
 ## Project Overview
-**InEpsteinFiles.com** is a time-sensitive search engine that verifies if names appear in official Epstein documents. Congress voted to release new files on Nov 18, 2024, and releases are expected imminently.
+**InEpsteinFiles.com** is a search engine that shows if names appear in official Epstein documents. Launched Nov 2024 in response to Congressional file releases.
 
-**Primary Goal:** Launch a functional search engine ASAP to be ready when new documents drop.
+**Status:** ✅ **LAUNCHED** - Live at [inepsteinfiles.com](https://inepsteinfiles.com)
 
-## 🎯 STRATEGIC DECISION: Manual-First MVP (Nov 19, 2024)
+## What Actually Shipped (MVP - Nov 2024)
 
-**Context:** After multi-model AI consultation (Gemini 2.5 Pro + GPT-5.1), unanimous recommendation to pursue Manual-First MVP approach for 24-48hr timeline.
+### The Pinpoint Integration Approach
+Instead of the originally planned PDF processing pipeline, we shipped a faster MVP using **Google Journalist Studio Pinpoint** as the document search backend.
 
-### Phase 1: Manual V1 MVP (CURRENT - Launch Target: 24-48 hours)
-**Scope:**
-- **5 priority PDFs**: New emails, flight logs, contact book, birthday books (1-4)
-- **35 curated names**: High-profile figures (Trump, Clinton, Gates, Prince Andrew, etc.)
-- **Simple text search**: PyMuPDF extraction + case-insensitive string matching
-- **Basic snippets**: ±150 chars around matches
-- **SHA-256 hashing**: With `UNVERIFIED` status + transparency messaging
-- **Next.js website**: Homepage, /[name] routes, OG images, legal disclaimers
+**What's Live:**
+- **~50 curated names**: High-profile figures manually researched
+- **Pinpoint entity linking**: Each person links to their entity search in our Pinpoint collection
+- **Document counts**: Pulled from Pinpoint via Playwright scraper (no API available)
+- **YES/NO results**: Based on whether entity has documents in collection
+- **Dynamic Twitter cards**: @vercel/og with photo backgrounds
+- **Next.js website**: Homepage, /[name] routes, /about page with legal disclaimers
 
-**What we're SKIPPING for V1:**
-- ❌ spaCy NER (name extraction)
-- ❌ Automated PDF classification
-- ❌ Complex DocType-specific parsing
-- ❌ Full verification against known_hashes.json
-- ❌ Processing all 64 PDFs
+**How Data Gets Updated:**
+1. User adds documents to Pinpoint collection (manual or via Google Drive folders)
+2. Search Pinpoint for entity, get Knowledge Graph entity ID from HTML
+3. Run Playwright scraper to extract entity IDs and document counts
+4. Update `people_index.json` with new counts
+5. Redeploy website
 
-**Why Manual-First:**
-- Meets 24-48hr timeline realistically
-- Launches with high-value content (most-searched names)
-- De-risks technical complexity
-- Allows for viral spread during news cycle
+### What We Didn't Ship (V1+ Features)
+These were in the original PRD but cut for speed:
 
-### Phase 2: Automated Pipeline (Post-Launch - Parallel Development)
-**Scope:**
+- ❌ **Evidence excerpts**: No ±150 char snippets around name matches
+- ❌ **Page-level linking**: Links to full collection, not specific pages
+- ❌ **SHA-256 verification**: Not actively hashing/verifying (aspirational)
+- ❌ **spaCy NER**: Name discovery via ML - exists but not running at scale
+- ❌ **Automated PDF processing**: PyMuPDF/Tesseract pipeline works but not deployed
+- ❌ **"Definitive" claims**: Can't guarantee completeness with 6000+ files
+
+### MVP Workarounds & Known Issues
+- **URL version params**: `?v=20251125` for Twitter card cache busting
+- **No Pinpoint API**: All entity data scraped via Playwright
+- **Manual name curation**: No automated name discovery from documents
+- **Document counts are estimates**: Pinpoint's entity matching isn't perfect
+
+## V1+ Roadmap (Post-MVP)
+
+**Data Pipeline** (exists, needs scaling):
 - Full NER with spaCy for name discovery
 - Automated PDF classification
-- Complex parsing (Q&A extraction, flight log tables)
-- Processing all 64+ PDFs
+- Evidence excerpt extraction with page numbers
 - SHA-256 verification against official hashes
-- Scale to full 65k+ page archive
+- Processing full 65k+ page archive
 
-**Timeline:** Build in parallel after V1 launch, deploy as updates
+**Website Enhancements**:
+- Evidence cards with specific page references
+- Direct PDF viewer integration
+- Name variation matching
+- Search within documents
 
-**Transition Strategy:** Manual V1 data becomes seed/validation for automated pipeline
+**Timeline:** Build incrementally as time allows
 
 ## Project Context
 
 ### Timeline
-- **Critical:** New Epstein files released Nov 18, 2024
-- **V1 Target:** Launch within 24-48 hours (Manual MVP)
-- **V2 Target:** Automated pipeline within 1-2 weeks post-launch
-- **Strategy:** Fast manual launch → Iterate with automation
+- **Nov 18, 2024:** Congress releases Epstein files
+- **Nov 19-24, 2024:** MVP development (pivoted to Pinpoint approach)
+- **Nov 24, 2024:** Site launched
+- **Current:** Maintenance mode, monitoring for new document releases
 
 ### Key Documents
-- **PRD v1.5:** `/reference/requirements/Product Requirements Document (PRD) InEpsteinFiles.com v1.5.md`
-- **Data Pipeline Spec v1.2:** `/reference/requirements/Data Pipeline & Engineering Specification v1.2.md`
-- **Design Guidelines:** `/reference/replit-frontend-design/design_guidelines.md`
+- **PRD v1.5:** `/reference/requirements/Product Requirements Document (PRD) InEpsteinFiles.com v1.5.md` *(aspirational - not all features shipped)*
+- **Data Pipeline Spec v1.2:** `/reference/requirements/Data Pipeline & Engineering Specification v1.2.md` *(V1+ reference)*
+- **GitHub Issue #55:** Tracks what was cut from MVP and planned for later
 
-### Assets Available
-- 64 PDFs in `/source-files/initial-dump/` (classification unknown)
-- Replit design reference in `/reference/replit-frontend-design/`
-- Existing audit script at `/data-pipeline/audit_files.py`
+### Current Assets
+- **Pinpoint collection:** ~6000 documents (user-maintained)
+- **people_index.json:** ~50 curated names with entity IDs and counts
+- **Data pipeline scripts:** Working but not deployed at scale
 
 ## Technical Architecture
 
-### Tech Stack
-- **Data Pipeline:** Python 3.13 + PyMuPDF + Tesseract OCR + spacy NER
+### Tech Stack (What's Actually Running)
+- **Document Backend:** Google Journalist Studio Pinpoint (no API - scraped via Playwright)
 - **Website:** Next.js 14 (App Router) + Tailwind CSS + shadcn/ui
-- **Search:** Fuse.js (client-side fuzzy search)
-- **Social Cards:** @vercel/og (dynamic OG image generation)
-- **Deployment:** Vercel
+- **Search:** Fuse.js (client-side fuzzy search for name autocomplete)
+- **Social Cards:** @vercel/og (dynamic Twitter card generation)
+- **Deployment:** Vercel (auto-deploy from GitHub main branch)
 - **Domain:** inepsteinfiles.com
+
+### Tech Stack (Exists but Not Deployed)
+- **Data Pipeline:** Python 3.13 + PyMuPDF + Tesseract OCR + spaCy NER
+- **Purpose:** PDF parsing, OCR, name extraction - works on small scale, not running in production
 
 ### URL Structure (CRITICAL)
 - **Subdomain:** `bill-clinton.inepsteinfiles.com` → `/bill-clinton`
@@ -115,44 +133,54 @@
 
 ## Behavioral Guidelines
 
-### Data Processing
+### Current Data Workflow (Pinpoint-Based)
+1. **Adding new documents:**
+   - User adds documents to Pinpoint collection (manual upload or Google Drive folder)
+   - Documents are automatically indexed by Pinpoint
+
+2. **Updating name data:**
+   - Run Playwright scraper to extract entity IDs and counts from Pinpoint
+   - Update `people_index.json` with new data
+   - Push to GitHub → auto-deploys to Vercel
+
+3. **Adding new names:**
+   - Research Knowledge Graph entity ID for the person
+   - Add entry to `people_index.json` with entity_id, slug, display name
+   - Run scraper to get document count
+   - Redeploy
+
+### V1+ Data Pipeline (When Ready to Scale)
+*These guidelines apply when running the full PDF processing pipeline:*
+
 1. **Always verify before processing:**
    - Run audit first, generate classification report
    - Pause for human review of classifications
    - Only process files approved by user
 
-2. **Source tracking is critical:**
-   - Every PDF must have an entry in `source_manifest.json`
+2. **Source tracking:**
+   - Every PDF should have an entry in `source_manifest.json`
    - Include: filename, source_url, sha256 hash, classification, date_added
-   - User will manually add official source URLs for verification
 
-3. **Classification priorities (per Data Pipeline spec):**
-   - **P0 (Process for v1):** Flight Logs, Depositions, Contact Books
-   - **P1 (After launch):** Phone Records
-   - **EXCLUDE:** Legal procedural filings, unproven complaints
-
-4. **Data integrity:**
-   - Generate SHA-256 hashes for all processed files
-   - Mark verification status in output JSON
-   - Never index unverified or questionable sources
+3. **Classification priorities:**
+   - **High Value:** Flight Logs, Depositions, Contact Books
+   - **Medium:** Phone Records, Correspondence
+   - **Exclude:** Legal procedural filings, unproven complaints
 
 ### Development Priorities
-1. **Speed over perfection:** Launch quickly, iterate after
-2. **Core features only:** Search, YES/NO results, evidence cards, social sharing
-3. **Mobile-first:** Most users will share on mobile
-4. **Viral engineering:** Dynamic social cards are critical for spread
+1. **Stability first:** Site is launched, avoid breaking changes
+2. **Data accuracy:** Verify counts and entity IDs before updating
+3. **Mobile-first:** Most users share on mobile
+4. **Twitter optimization:** Social cards drive traffic
 
 ### When New Files Release
 **User will:**
-- Monitor news/Twitter for high-value documents
-- Tell you which specific PDFs to download and index
-- Provide official source URLs for verification
+- Add documents to Pinpoint collection
+- Identify high-profile names to add
 
 **You should:**
-- Create surgical indexing process for specific files
-- Update source_manifest.json
-- Regenerate people_index.json
-- Redeploy website automatically
+- Run scraper to update entity counts
+- Add new names to people_index.json if requested
+- Verify data accuracy before deploying
 
 ### Deployment & Updates
 - **Environment:** Use `.env.master` for shared keys, local `.env` for project-specific
@@ -227,26 +255,41 @@
 - Provide clear status updates at major milestones
 - Flag blockers immediately
 
-## Success Criteria
-- ✅ Functional search with clean URL routing
-- ✅ Dynamic social cards for viral sharing
-- ✅ Clear YES/NO results with source evidence
-- ✅ Mobile-responsive design
-- ✅ Deployed to inepsteinfiles.com
-- ✅ Ready to quickly add new documents when released
-- ✅ Transparent source attribution and verification
+## What Shipped vs What Didn't
+
+### ✅ Shipped (MVP)
+- Functional search with clean URL routing
+- Dynamic Twitter cards for viral sharing
+- Clear YES/NO results with document counts
+- Mobile-responsive design
+- Deployed to inepsteinfiles.com
+- /about page with legal disclaimers
+
+### ⏳ Partially Working
+- Source attribution (links to Pinpoint collection, not specific pages)
+- Verification (SHA-256 hashing exists in scripts, not actively used)
+
+### ❌ Not Shipped (V1+ Features)
+- Evidence excerpts with page numbers
+- Automated name discovery via NER
+- Full PDF processing pipeline at scale
+- "Definitive" completeness claims
 
 ---
 
-**Last Updated:** 2025-11-24
-**Status:** Active - Site Launched, Maintenance Mode
-**Priority:** Medium - Monitor for new document releases
+**Last Updated:** 2025-11-25
+**Status:** ✅ Launched - Maintenance Mode
+**Priority:** Low - Monitor for new document releases, occasional data updates
 
-## Recent Major Updates
+## Recent Updates
 
-### 2025-11-24: GitHub Actions Workflow Improvements
-- ✅ Added automated CI testing for all PRs
-- ✅ Disabled auto-merge - manual approval required
-- ✅ Added issue verification process
-- ✅ Complete workflow documentation added
+### 2025-11-25: Documentation Sync
+- Updated CLAUDE.md and README.md to reflect MVP reality
+- Clarified what shipped vs what's planned for V1+
+- Synced with GitHub README and Issue #55
+
+### 2025-11-24: GitHub Actions Workflow
+- Added automated CI testing for all PRs
+- Disabled auto-merge - manual approval required
+- Added issue verification process
 - See: `.logs/inepsteinfiles_2025-11-24.md` for details

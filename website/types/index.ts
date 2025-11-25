@@ -19,6 +19,7 @@ export interface DocumentEvidence {
 
 export interface CustomContent {
   one_liner?: string | null;
+  one_liner_link?: string | null;
   image_url?: string | null;
   youtube_embed_id?: string | null;
   youtube_timestamp?: number | null;
