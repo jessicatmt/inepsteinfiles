@@ -6,7 +6,7 @@ import FakeNewsButton from '../components/FakeNewsButton';
 import { getPersonData } from '@/lib/data';
 
 // Version param for cache busting - bump this when data changes significantly
-const OG_VERSION = '20251125';
+const OG_VERSION = '20251125b';
 
 // Allow dynamic params to handle names not in the index
 export const dynamicParams = true;

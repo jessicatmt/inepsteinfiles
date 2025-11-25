@@ -5,16 +5,68 @@ import peopleData from '@/public/people_index.json';
 // Cache OG images for 1 day
 export const revalidate = 86400;
 
+// Load Public Sans Black (900) font - must use TTF for @vercel/og
+async function loadPublicSansBlack() {
+  const response = await fetch(
+    'https://fonts.gstatic.com/s/publicsans/v21/ijwGs572Xtc6ZYQws9YVwllKVG8qX1oyOymuv565ww.ttf'
+  );
+  return await response.arrayBuffer();
+}
+
+// Load Geist Mono Bold font
+async function loadGeistMonoBold() {
+  const response = await fetch(
+    'https://raw.githubusercontent.com/vercel/geist-font/main/packages/next/dist/fonts/geist-mono/GeistMono-Bold.ttf'
+  );
+  return await response.arrayBuffer();
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ name: string }> }
 ) {
   try {
     const { name } = await params;
-    // Use static import instead of file system read for edge compatibility
+    const [publicSansBlack, geistMonoBold] = await Promise.all([
+      loadPublicSansBlack(),
+      loadGeistMonoBold(),
+    ]);
     const person = peopleData.people.find((p: { slug: string }) => p.slug === name);
 
-    if (!person) {
+    // Convert slug to display name for unknown people
+    const displayName = name
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+
+    // Determine if found and get counts
+    const found = person
+      ? (person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0))
+      : false;
+    const fileCount = person?.pinpoint_file_count || person?.total_matches || 0;
+    const personName = person?.display_name || displayName;
+    const vanityUrl = `${name}.inepsteinfiles.com`;
+
+    const fonts = [
+      {
+        name: 'Public Sans',
+        data: publicSansBlack,
+        style: 'normal' as const,
+        weight: 900 as const,
+      },
+      {
+        name: 'Geist Mono',
+        data: geistMonoBold,
+        style: 'normal' as const,
+        weight: 700 as const,
+      },
+    ];
+
+    // Get base URL for background images
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
+
+    if (found) {
+      // YES CARD - Red scribbled background
       return new ImageResponse(
         (
           <div
@@ -23,147 +75,228 @@ export async function GET(
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backgroundColor: 'white',
+              alignItems: 'flex-start',
+              justifyContent: 'flex-start',
+              position: 'relative',
             }}
           >
-            <div style={{ display: 'flex', fontSize: 120, fontWeight: 900 }}>404</div>
-            <div style={{ display: 'flex', fontSize: 40, marginTop: 20 }}>Not Found</div>
+            {/* Background image */}
+            <img
+              src={`${siteUrl}/x-cards/yes blank scribble.png`}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
+
+            {/* Content overlay - centered vertically */}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                justifyContent: 'center',
+                padding: '40px 50px',
+                position: 'relative',
+                width: '100%',
+                height: '100%',
+              }}
+            >
+              {/* Giant YES - 238px Public Sans BLACK, centered horizontally */}
+              <div
+                style={{
+                  display: 'flex',
+                  width: '100%',
+                  justifyContent: 'center',
+                  fontFamily: 'Public Sans',
+                  fontSize: 238,
+                  fontWeight: 900,
+                  lineHeight: 0.9,
+                  color: '#ffffff',
+                  letterSpacing: '-0.02em',
+                  marginBottom: 20,
+                }}
+              >
+                YES
+              </div>
+
+              {/* Name line - highlighted text effect */}
+              <span
+                style={{
+                  fontFamily: 'Public Sans',
+                  fontSize: 50,
+                  fontWeight: 900,
+                  color: '#ffffff',
+                  lineHeight: 1.4,
+                  backgroundColor: '#000000',
+                  padding: '4px 12px',
+                  marginBottom: 24,
+                }}
+              >
+                {personName} IS in the Epstein Files
+              </span>
+
+              {/* Monospace details - 31px Geist Mono Bold */}
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 6,
+                  fontFamily: 'Geist Mono',
+                  fontSize: 31,
+                  color: '#ffffff',
+                  fontWeight: 700,
+                }}
+              >
+                <div style={{ display: 'flex' }}>
+                  {`> ${fileCount} RESULTS IN OFFICIAL DOCUMENTS (SO FAR)`}
+                </div>
+                <div style={{ display: 'flex' }}>
+                  {`> ${vanityUrl}`}
+                </div>
+                <div style={{ display: 'flex' }}>
+                  {`> NO WRONGDOING IS ALLEGED OR IMPLIED`}
+                </div>
+              </div>
+            </div>
           </div>
         ),
         {
           width: 1200,
           height: 628,
+          fonts,
+          headers: {
+            'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800',
+          },
         }
       );
-    }
-
-    // Person is "found" if they have documents OR Pinpoint file count > 0
-    const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
-    const answer = found ? 'YES' : 'NO';
-    // YES = red, NO = green
-    const answerColor = found ? '#dc2626' : '#16a34a';
-
-    // Use Pinpoint file count or document matches for display
-    const fileCount = person.pinpoint_file_count || person.total_matches || 0;
-    const meta = `${fileCount} result${fileCount !== 1 ? 's' : ''} in official records`;
-    const vanityUrl = `${person.slug}.inepsteinfiles.com`;
-    const legalDisclaimer = 'No wrongdoing alleged or implied. See: inepsteinfiles.com/about';
-    const oneLiner = person.custom_content?.one_liner || null;
-
-    return new ImageResponse(
-      (
-        <div
-          style={{
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            backgroundColor: 'white',
-            paddingTop: 30,
-            paddingLeft: 60,
-            paddingRight: 60,
-          }}
-        >
-          {/* YES/NO Answer - bigger, bolder, higher */}
+    } else {
+      // NO CARD - Black/white scribbled background
+      return new ImageResponse(
+        (
           <div
             style={{
+              height: '100%',
+              width: '100%',
               display: 'flex',
-              fontSize: 280,
-              fontWeight: 900,
-              lineHeight: 1,
-              color: answerColor,
-              marginBottom: 10,
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              justifyContent: 'flex-start',
+              position: 'relative',
             }}
           >
-            {answer}
-          </div>
+            {/* Background image */}
+            <img
+              src={`${siteUrl}/x-cards/NO blank scribble.png`}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+              }}
+            />
 
-          {/* Name line - name larger/emphasized */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'baseline',
-              justifyContent: 'center',
-              textAlign: 'center',
-              color: '#000000',
-              marginBottom: 8,
-              letterSpacing: '0.02em',
-            }}
-          >
-            <div style={{ display: 'flex', fontSize: 52, fontWeight: 700 }}>{person.display_name.toUpperCase()}</div>
-            <div style={{ display: 'flex', fontSize: 40, fontWeight: 400, marginLeft: 14, color: '#333333' }}>{found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES</div>
-          </div>
-
-          {/* Custom one-liner if exists - above results count */}
-          {oneLiner && (
+            {/* Content overlay - centered vertically */}
             <div
               style={{
                 display: 'flex',
-                fontSize: 24,
-                color: '#444444',
-                textAlign: 'center',
-                fontStyle: 'italic',
-                marginBottom: 12,
-                maxWidth: '80%',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                justifyContent: 'center',
+                padding: '40px 50px',
+                position: 'relative',
+                width: '100%',
+                height: '100%',
               }}
             >
-              {oneLiner}
+              {/* Giant NO - 238px Public Sans BLACK, centered horizontally */}
+              <div
+                style={{
+                  display: 'flex',
+                  width: '100%',
+                  justifyContent: 'center',
+                  fontFamily: 'Public Sans',
+                  fontSize: 238,
+                  fontWeight: 900,
+                  lineHeight: 0.9,
+                  color: '#ffffff',
+                  letterSpacing: '-0.02em',
+                  marginBottom: 20,
+                }}
+              >
+                NO
+              </div>
+
+              {/* Name line - highlighted text effect */}
+              <span
+                style={{
+                  fontFamily: 'Public Sans',
+                  fontSize: 50,
+                  fontWeight: 900,
+                  color: '#000000',
+                  lineHeight: 1.4,
+                  backgroundColor: '#ffffff',
+                  padding: '4px 12px',
+                  marginBottom: 24,
+                }}
+              >
+                {personName} is NOT in the Epstein Files
+              </span>
+
+              {/* Monospace details - 31px Geist Mono Bold */}
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 6,
+                  fontFamily: 'Geist Mono',
+                  fontSize: 31,
+                  color: '#ffffff',
+                  fontWeight: 700,
+                }}
+              >
+                <div style={{ display: 'flex' }}>
+                  {`> 0 RESULTS IN OFFICIAL DOCUMENTS (SO FAR)`}
+                </div>
+                <div style={{ display: 'flex' }}>
+                  {`> ${vanityUrl}`}
+                </div>
+              </div>
+
+              {/* Legal disclaimer - right aligned, 18px Geist Mono */}
+              <div
+                style={{
+                  display: 'flex',
+                  position: 'absolute',
+                  bottom: 30,
+                  right: 50,
+                  fontSize: 18,
+                  color: 'rgba(255, 255, 255, 0.6)',
+                  fontFamily: 'Geist Mono',
+                  fontWeight: 700,
+                }}
+              >
+                *No wrongdoing is alleged or implied
+              </div>
             </div>
-          )}
-
-          {/* Meta - results count, no period */}
-          <div
-            style={{
-              display: 'flex',
-              fontSize: 26,
-              color: '#666666',
-              textAlign: 'center',
-              marginBottom: 16,
-            }}
-          >
-            {meta}
           </div>
-
-          {/* Vanity URL */}
-          <div
-            style={{
-              display: 'flex',
-              fontSize: 20,
-              color: '#999999',
-              textAlign: 'center',
-            }}
-          >
-            {vanityUrl}
-          </div>
-
-          {/* Legal disclaimer - bottom section */}
-          <div
-            style={{
-              display: 'flex',
-              position: 'absolute',
-              bottom: 40,
-              fontSize: 16,
-              color: '#aaaaaa',
-              textAlign: 'center',
-            }}
-          >
-            {legalDisclaimer}
-          </div>
-        </div>
-      ),
-      {
-        width: 1200,
-        height: 628,
-        headers: {
-          'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800',
-        },
-      }
-    );
+        ),
+        {
+          width: 1200,
+          height: 628,
+          fonts,
+          headers: {
+            'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800',
+          },
+        }
+      );
+    }
   } catch (error) {
     console.error('Error generating OG image:', error);
     return new Response('Failed to generate image', { status: 500 });
