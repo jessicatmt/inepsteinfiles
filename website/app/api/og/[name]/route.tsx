@@ -39,17 +39,18 @@ export async function GET(
       );
     }
 
-    // Person is "found" if they have documents OR a Pinpoint entity ID  
-    const found = person.found_in_documents || !!person.pinpoint_entity_id;
+    // Person is "found" if they have documents OR Pinpoint file count > 0
+    const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
     const answer = found ? 'YES' : 'NO';
-    const answerColor = found ? '#dc2626' : '#000000';
-    const subtitle = `${person.display_name.toUpperCase()} ${found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES`;
-    
+    // YES = red, NO = green
+    const answerColor = found ? '#dc2626' : '#16a34a';
+
     // Use Pinpoint file count or document matches for display
     const fileCount = person.pinpoint_file_count || person.total_matches || 0;
-    const meta = `${fileCount} result${fileCount !== 1 ? 's' : ''} in official records.`;
+    const meta = `${fileCount} result${fileCount !== 1 ? 's' : ''} in official records`;
     const vanityUrl = `${person.slug}.inepsteinfiles.com`;
     const legalDisclaimer = 'No wrongdoing alleged or implied. See: inepsteinfiles.com/about';
+    const oneLiner = person.custom_content?.one_liner || null;
 
     return new ImageResponse(
       (
@@ -60,48 +61,69 @@ export async function GET(
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
             backgroundColor: 'white',
-            padding: '80px',
+            paddingTop: 30,
+            paddingLeft: 60,
+            paddingRight: 60,
           }}
         >
-          {/* YES/NO Answer */}
+          {/* YES/NO Answer - bigger, bolder, higher */}
           <div
             style={{
               display: 'flex',
-              fontSize: 200,
+              fontSize: 280,
               fontWeight: 900,
               lineHeight: 1,
               color: answerColor,
-              marginBottom: 40,
+              marginBottom: 10,
             }}
           >
             {answer}
           </div>
 
-          {/* Subtitle */}
+          {/* Name line - name larger/emphasized */}
           <div
             style={{
               display: 'flex',
-              fontSize: 42,
-              fontWeight: 700,
+              flexDirection: 'row',
+              alignItems: 'baseline',
+              justifyContent: 'center',
               textAlign: 'center',
               color: '#000000',
-              marginBottom: 60,
-              letterSpacing: '0.05em',
+              marginBottom: 8,
+              letterSpacing: '0.02em',
             }}
           >
-            {subtitle}
+            <div style={{ display: 'flex', fontSize: 52, fontWeight: 700 }}>{person.display_name.toUpperCase()}</div>
+            <div style={{ display: 'flex', fontSize: 40, fontWeight: 400, marginLeft: 14, color: '#333333' }}>{found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES</div>
           </div>
 
-          {/* Meta */}
+          {/* Custom one-liner if exists - above results count */}
+          {oneLiner && (
+            <div
+              style={{
+                display: 'flex',
+                fontSize: 24,
+                color: '#444444',
+                textAlign: 'center',
+                fontStyle: 'italic',
+                marginBottom: 12,
+                maxWidth: '80%',
+              }}
+            >
+              {oneLiner}
+            </div>
+          )}
+
+          {/* Meta - results count, no period */}
           <div
             style={{
               display: 'flex',
-              fontSize: 28,
+              fontSize: 26,
               color: '#666666',
               textAlign: 'center',
-              marginBottom: 20,
+              marginBottom: 16,
             }}
           >
             {meta}
