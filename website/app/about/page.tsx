@@ -15,7 +15,7 @@ export default function AboutPage() {
           <Link href="/" className="text-4xl font-black uppercase tracking-tight hover:underline">
             InEpsteinFiles.com
           </Link>
-          <p className="text-gray-600 mt-2">A neutral search tool for official documents</p>
+          <p className="text-gray-600 mt-2">A fair and neutral search tool for official documents</p>
         </div>
 
         {/* Legal Disclaimer Section */}
@@ -28,7 +28,7 @@ export default function AboutPage() {
           <div className="mb-8">
             <h3 className="text-lg font-bold mb-3">1. Public Records / No Guilt Implied</h3>
             <p className="text-gray-700 mb-3">
-              This website provides a searchable index of publicly available government documents,
+              This website basically provides a searchable index of publicly available government documents,
               including flight logs, unsealed court exhibits from <em>Giuffre v. Maxwell</em>,
               and releases from the Epstein Files Transparency Act.
             </p>
@@ -47,6 +47,7 @@ export default function AboutPage() {
               <li>Appeared on the same page of a magazine or newspaper in an unrelated piece.</li>
               <li>Passengers on flights for unrelated business or social purposes.</li>
               <li>Law enforcement or legal professionals named in procedural filings.</li>
+              <li><a href="https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&p=1&entities=%25P%25Jesus_Christ" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">The king of kings</a>.</li>
             </ul>
           </div>
 
@@ -54,15 +55,13 @@ export default function AboutPage() {
           <div className="mb-8">
             <h3 className="text-lg font-bold mb-3">2. "AI Indexed" / Beta Data Warning</h3>
             <p className="text-gray-700 mb-3">
-              To make thousands of pages of PDF evidence searchable, this site uses automated
-              Optical Character Recognition (OCR) and AI-assisted entity extraction, as well as Google's Pinpoint document collections.
-              <strong> This process is not 100% error-free.</strong>
+              This site uses automated Optical Character Recognition (OCR) and AI-assisted entity extraction,
+              as well as Google's Pinpoint document collections. <strong>This process is not 100% error-free.</strong>
             </p>
             <p className="text-gray-700">
-              While we cross-reference major names against verified flight manifests, "No Results"
-              does not guarantee absence from the files, and a "Positive Result" should always be
-              verified against the primary source PDF (linked in search results where available).
-              We are currently in <strong>Beta</strong> and processing new files daily.
+              While we cross-reference major names, "No Results" does not guarantee absence from the files,
+              and a "Positive Result" should always be verified against the primary source PDF
+              (linked in search results where available).
             </p>
           </div>
 
@@ -70,9 +69,10 @@ export default function AboutPage() {
           <div className="mb-8">
             <h3 className="text-lg font-bold mb-3">3. Neutral Research Tool</h3>
             <p className="text-gray-700">
-              This site is a neutral tool for research, journalism, and transparency. We do not
+              This site is a neutral tool for research, journalism, vibes, and transparency. We do not
               editorialize, accuse, or add commentary to the primary source documents. All data
               is sourced directly from official .gov, court-hosted, or government-released files.
+              Any jokes or memes are not meant to imply guilt or humor.
             </p>
           </div>
 
@@ -87,15 +87,27 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Back to Search */}
-        <div className="text-center border-t border-gray-300 pt-8">
-          <Link
-            href="/"
-            className="inline-block bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors"
-          >
-            Search a Name
-          </Link>
-        </div>
+        {/* About Section */}
+        <section className="mb-12 border-t border-gray-300 pt-8">
+          <h2 className="text-2xl font-bold mb-6">About</h2>
+          <p className="text-gray-700 mb-4">
+            Vibe coded in ~48 hours (with a five day covid / party break at the halfway mark) by{' '}
+            <Link href="/jessica-suarez" className="text-blue-600 hover:underline">
+              site search bar with jessica suarez in it
+            </Link>.
+            Say <a href="https://twitter.com/messages/compose?recipient_id=1016511" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">hi</a>.
+          </p>
+          <p className="text-gray-700 mb-4">
+            <a href="https://github.com/jessicatmt/inepsteinfiles" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              This site on github
+            </a>
+          </p>
+          <p className="text-gray-700">
+            <a href="sms://233733" className="text-blue-600 hover:underline">
+              You're not alone. Text HOME to 233733
+            </a>
+          </p>
+        </section>
 
         {/* Footer */}
         <div className="text-center pt-8 mt-8 text-xs text-gray-600">
