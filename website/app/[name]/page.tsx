@@ -26,6 +26,7 @@ export async function generateMetadata({
     const title = `${displayName} IS NOT in the Epstein Files`;
     const description = `0 results found. Sources: ${name}.inepsteinfiles.com`;
     const canonicalUrl = `https://inepsteinfiles.com/${name}?utm_source=x_share`;
+    const vanityUrl = `https://${name}.inepsteinfiles.com?utm_source=x_share`;
     const altText = `Clear: ${displayName} has 0 matches in Epstein files so far. Still processing. Neutral search results.`;
 
     return {
@@ -34,7 +35,7 @@ export async function generateMetadata({
       openGraph: {
         title,
         description,
-        url: canonicalUrl,
+        url: vanityUrl,
         siteName: 'InEpsteinFiles.com',
         images: [
           {
@@ -57,7 +58,7 @@ export async function generateMetadata({
 
   // Person is "found" if they have documents OR a Pinpoint entity ID
   const found = person.found_in_documents || !!person.pinpoint_entity_id;
-  const vanityUrl = `${person.slug}.inepsteinfiles.com`;
+  const vanityUrl = `https://${person.slug}.inepsteinfiles.com?utm_source=x_share`;
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}?utm_source=x_share`;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
   const ogImageUrl = `${siteUrl}/api/og/${person.slug}`;
@@ -75,7 +76,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: canonicalUrl,
+      url: vanityUrl,
       siteName: 'InEpsteinFiles.com',
       images: [
         {
@@ -121,7 +122,8 @@ export default async function NamePage({
 
   if (!person) {
     // Show NO page for names not in the index
-    const shareText = `${displayName} IS NOT in the Epstein files. Thoughts? Sources: ${name}.inepsteinfiles.com`;
+    const vanityUrl = `https://${name}.inepsteinfiles.com`;
+    const shareText = `${displayName} IS NOT in the Epstein files. Thoughts?\n\n${vanityUrl}`;
     const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
     // For names not in our index, we can only use text search
     const pinpointSearchUrl = `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&p=1&q=${encodeURIComponent(displayName)}`;
@@ -208,7 +210,8 @@ export default async function NamePage({
   // Person is "found" if they have documents OR a Pinpoint entity ID
   const found = person.found_in_documents || !!person.pinpoint_entity_id;
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}`;
-  const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${canonicalUrl}`;
+  const vanityUrl = `https://${person.slug}.inepsteinfiles.com`;
+  const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${vanityUrl}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   // Pinpoint collection URL for deep linking
