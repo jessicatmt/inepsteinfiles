@@ -145,7 +145,7 @@ export default async function NamePage({
 
             {/* Match Count */}
             <p className="text-2xl mb-6">
-              0 results in official records
+              No search results in official files — so far.
             </p>
 
             {/* Post on X Button */}
@@ -242,10 +242,10 @@ export default async function NamePage({
                 rel="noopener noreferrer"
                 className="underline hover:text-gray-600"
               >
-                in {person.pinpoint_file_count} files
+                In {person.pinpoint_file_count} official files so far.
               </a>
             ) : (
-              '0 results in official records'
+              'No search results in official files — so far.'
             )}
           </p>
 
