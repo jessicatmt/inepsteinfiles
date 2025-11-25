@@ -7,7 +7,7 @@
     "total_documents": 7,
     "verification_note": "SHA-256 hashes computed but marked UNVERIFIED pending official verification",
     "has_custom_content": true,
-    "last_manual_update": "2025-11-25T07:58:01.937999"
+    "last_manual_update": "2025-11-25T07:59:55.918660"
   },
   "people": [
     {
@@ -584,7 +584,7 @@
       "category": "Political Figure",
       "found_in_documents": true,
       "total_matches": 1,
-      "pinpoint_file_count": 25,
+      "pinpoint_file_count": 54,
       "pinpoint_entity_id": "/m/0cqt90",
       "custom_content": {
         "one_liner": null,
