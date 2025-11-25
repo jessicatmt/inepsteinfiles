@@ -5,6 +5,9 @@ import SearchForm from '../components/SearchForm';
 import FakeNewsButton from '../components/FakeNewsButton';
 import { getPersonData } from '@/lib/data';
 
+// Version param for cache busting - bump this when data changes significantly
+const OG_VERSION = '20251125';
+
 // Allow dynamic params to handle names not in the index
 export const dynamicParams = true;
 
@@ -28,10 +31,8 @@ export async function generateMetadata({
     const canonicalUrl = `https://inepsteinfiles.com/${name}?utm_source=x_share`;
     const vanityUrl = `https://${name}.inepsteinfiles.com?utm_source=x_share`;
     const altText = `Clear: ${displayName} has 0 matches in Epstein files so far. Still processing. Neutral search results.`;
-    // Version param for cache busting - bump this when data changes significantly
-    const ogVersion = '20251125';
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
-    const ogImageUrl = `${siteUrl}/api/og/${name}?v=${ogVersion}`;
+    const ogImageUrl = `${siteUrl}/api/og/${name}?v=${OG_VERSION}`;
 
     return {
       title,
@@ -65,9 +66,7 @@ export async function generateMetadata({
   const vanityUrl = `https://${person.slug}.inepsteinfiles.com?utm_source=x_share`;
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}?utm_source=x_share`;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
-  // Version param for cache busting - bump this when data changes significantly
-  const ogVersion = '20251125';
-  const ogImageUrl = `${siteUrl}/api/og/${person.slug}?v=${ogVersion}`;
+  const ogImageUrl = `${siteUrl}/api/og/${person.slug}?v=${OG_VERSION}`;
 
   // Use pinpoint_file_count as primary, fall back to total_matches
   const fileCount = person.pinpoint_file_count || person.total_matches || 0;
@@ -130,7 +129,7 @@ export default async function NamePage({
 
   if (!person) {
     // Show NO page for names not in the index
-    const vanityUrl = `https://${name}.inepsteinfiles.com`;
+    const vanityUrl = `https://${name}.inepsteinfiles.com?v=${OG_VERSION}`;
     const shareText = `${displayName} IS NOT in the Epstein files. Thoughts?\n\n${vanityUrl}`;
     const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
     // For names not in our index, we can only use text search
@@ -205,7 +204,7 @@ export default async function NamePage({
   // Person is "found" if they have documents OR Pinpoint file count > 0
   const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
   const canonicalUrl = `https://inepsteinfiles.com/${person.slug}`;
-  const vanityUrl = `https://${person.slug}.inepsteinfiles.com`;
+  const vanityUrl = `https://${person.slug}.inepsteinfiles.com?v=${OG_VERSION}`;
   const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${vanityUrl}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
