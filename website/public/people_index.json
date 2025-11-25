@@ -1,22 +1,55 @@
 {
   "_metadata": {
     "version": "1.0",
-    "generated": "2024-11-19",
+    "generated": "2025-11-24",
     "description": "Manual V1 MVP - 35 curated names searched in 7 priority PDFs",
-    "total_names": 35,
+    "total_names": 52,
     "total_documents": 7,
-    "verification_note": "SHA-256 hashes computed but marked UNVERIFIED pending official verification"
+    "verification_note": "SHA-256 hashes computed but marked UNVERIFIED pending official verification",
+    "has_custom_content": true
   },
   "people": [
     {
-      "display_name": "Donald Trump",
-      "slug": "donald-trump",
-      "priority": "P0",
+      "display_name": "Adolf Hitler",
+      "slug": "adolf-hitler",
+      "priority": "P1",
+      "category": "Historical Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/07_m9_",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": "AYO wrongdoing implied (just not like, here).",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Al Gore",
+      "slug": "al-gore",
+      "priority": "P1",
       "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/0d05fv",
+      "pinpoint_file_count": 6,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Alan Dershowitz",
+      "slug": "alan-dershowitz",
+      "priority": "P0",
+      "category": "Legal",
       "found_in_documents": true,
-      "total_matches": 1,
-      "pinpoint_file_count": 1651,
-      "pinpoint_entity_id": "/m/0cqt90",
+      "total_matches": 12,
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -25,16 +58,130 @@
           "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
           "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
           "verification_status": "UNVERIFIED",
-          "match_count": 1,
+          "match_count": 12,
           "matches": [
             {
-              "page": 9,
-              "matched_variant": "Donald Trump",
-              "snippet": "...22 PBI EWR West Palm Beach, FL, United States Newark, NJ, United States 934 Pass 3 35435-G-1159B-N908JE-PBI-EWR-934-Pass 3 Donald Trump Trump, Donald Donald Trump DT Yes Flight Log 4680 1/5/1997 1997 G-1159B N908JE Jet 22 PBI EWR West Palm Beach, FL, United States Newark, NJ, United States 934 Pass 4 35435-G-11..."
+              "page": 6,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "... DCA CMH Washington Dc, United States Columbus, OH, United States 887 Pass 3 35316-G-1159B-N908JE-DCA-CMH-887-Pass 3 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 4523 9/8/1996 1996 G-1159B N908JE Jet 22 CMH TEB Columbus, OH, United States Teterboro, NJ, United States 888 Pass 1 35316-G-1159B-..."
+            },
+            {
+              "page": 6,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "... CMH TEB Columbus, OH, United States Teterboro, NJ, United States 888 Pass 2 35316-G-1159B-N908JE-CMH-TEB-888-Pass 2 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 4525 9/9/1996 1996 G-1159B N908JE Jet 22 TEB BOS Teterboro, NJ, United States Boston, MA, United States 889 Pass 1 35317-G-1159B-N9..."
+            },
+            {
+              "page": 6,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "...22 TEB BOS Teterboro, NJ, United States Boston, MA, United States 889 Pass 2 35317-G-1159B-N908JE-TEB-BOS-889-Pass 2 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 4527 9/9/1996 1996 G-1159B N908JE Jet 22 BOS TEB Boston, MA, United States Teterboro, NJ, United States 890 Pass 1 35317-G-1159B-N9..."
+            },
+            {
+              "page": 10,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "...2 EWR TIX Newark, NJ, United States Titusville, FL, United States 935 Pass 3 35441-G-1159B-N908JE-EWR-TIX-935-Pass 3 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 4687 1/11/1997 1997 G-1159B N908JE Jet 22 EWR TIX Newark, NJ, United States Titusville, FL, United States 935 Pass 4 35441-G-1159B-..."
+            },
+            {
+              "page": 18,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "...West Palm Beach, FL, United States Teterboro, NJ, United States 1073 Pass 7 35835-G-1159B-N908JE-PBI-TEB-1073-Pass 7 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 3319 2/9/1998 1998 G-1159B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teterboro, NJ, United States 1073 Pass 8 35835-..."
+            },
+            {
+              "page": 25,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "...BED TEB Bedford, MA, United States Teterboro, NJ, United States 1174 Pass 2 36089-G-1159B-N908JE-BED-TEB-1174-Pass 2 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 3633 10/23/1998 1998 G-1159B N908JE Jet 22 TEB PBI Teterboro, NJ, United States West Palm Beach, FL, United States 1175 Pass 1 3609..."
+            },
+            {
+              "page": 27,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "...erboro, NJ, United States Martha's Vineyard, MA, United States 1225 Pass 3 36266-G-1159B-N908JE-TEB-MVY-1225-Pass 3 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 3671 4/16/1999 1999 G-1159B N908JE Jet 22 TEB MVY Teterboro, NJ, United States Martha's Vineyard, MA, United States 1225 Pass 4 36..."
+            },
+            {
+              "page": 88,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "...BED TEB Bedford, MA, United States Teterboro, NJ, United States 1695 Pass 1 38022-G-1159B-N909JE-BED-TEB-1695-Pass 1 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 1300 2/5/2004 2004 G-1159B N909JE Jet 22 BED TEB Bedford, MA, United States Teterboro, NJ, United States 1695 Pass 2 38022-G-1159B-..."
+            },
+            {
+              "page": 88,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "...Teterboro, NJ, United States West Palm Beach, FL, United States 1696 Pass 2 38022-G-1159B-N909JE-TEB-PBI-1696-Pass 2 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 1303 2/5/2004 2004 G-1159B N909JE Jet 22 TEB PBI Teterboro, NJ, United States West Palm Beach, FL, United States 1696 Pass 3 38022-..."
+            },
+            {
+              "page": 110,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "... 22 BED CYUL Bedford, MA, United States Dorval, Quebec, Canada 1841 Pass 1 38673-G-1159B-N909JE-BED-CYUL-1841-Pass 1 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 2205 11/17/2005 2005 G-1159B N909JE Jet 22 BED CYUL Bedford, MA, United States Dorval, Quebec, Canada 1841 Pass 2 38673-G-1159B-N90..."
+            },
+            {
+              "page": 110,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "... 22 CYUL BED Dorval, Quebec, Canada Bedford, MA, United States 1842 Pass 1 38673-G-1159B-N909JE-CYUL-BED-1842-Pass 1 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 2207 11/17/2005 2005 G-1159B N909JE Jet 22 CYUL BED Dorval, Quebec, Canada Bedford, MA, United States 1842 Pass 2 38673-G-1159B-N90..."
+            },
+            {
+              "page": 110,
+              "matched_variant": "Alan Dershowitz",
+              "snippet": "...BED TEB Bedford, MA, United States Teterboro, NJ, United States 1843 Pass 3 38673-G-1159B-N909JE-BED-TEB-1843-Pass 3 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 2211 11/17/2005 2005 G-1159B N909JE Jet 22 BED TEB Bedford, MA, United States Teterboro, NJ, United States 1843 Pass 4 38673-G-1159..."
             }
           ]
         }
-      ]
+      ],
+      "pinpoint_entity_id": "/m/097qj4",
+      "pinpoint_file_count": 55,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Alec Baldwin",
+      "slug": "alec-baldwin",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/018ygt",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Barack Obama",
+      "slug": "barack-obama",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/02mjmr",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": "\"Told you.\" - Donald Trump",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Benjamin Netanyahu",
+      "slug": "benjamin-netanyahu",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/0fm2h",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
     },
     {
       "display_name": "Bill Clinton",
@@ -182,7 +329,345 @@
         }
       ],
       "pinpoint_entity_id": "/m/0157m",
-      "pinpoint_file_count": 410
+      "pinpoint_file_count": 410,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Bill Gates",
+      "slug": "bill-gates",
+      "priority": "P0",
+      "category": "Tech CEO",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/017nt",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Bill Richardson",
+      "slug": "bill-richardson",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/020z31",
+      "pinpoint_file_count": 11,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Cameron Diaz",
+      "slug": "cameron-diaz",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Cate Blanchett",
+      "slug": "cate-blanchett",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Channing Tatum",
+      "slug": "channing-tatum",
+      "priority": "P1",
+      "category": "Entertainment Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/06lvlf",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": "dno1HK7X2gU",
+        "youtube_timestamp": 53
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Chris Tucker",
+      "slug": "chris-tucker",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": true,
+      "total_matches": 11,
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 11,
+          "matches": [
+            {
+              "page": 68,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...E Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 3 37520-B-727-31H-N908JE-JFK-LPAZ-136-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 425 9/21/2002 2002 B-727-31H N908JE Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 4 37520-B-727-31H-N..."
+            },
+            {
+              "page": 68,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 3 37521-B-727-31H-N908JE-LPAZ-DGAA-137-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 444 9/22/2002 2002 B-727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 4 37521-B-727-31H-N908JE-LPAZ-DGA..."
+            },
+            {
+              "page": 68,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 3 37522-B-727-31H-N908JE-DGAA-DNAA-138-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 462 9/23/2002 2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 4 37522-B-727-31H-N908JE-DGAA-DNAA-138-P..."
+            },
+            {
+              "page": 69,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...02 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 3 37523-B-727-31H-N908JE-DNAA-HRYR-139-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 480 9/24/2002 2002 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 4 37523-B-727-31H-N908JE-DNAA-HRYR-139..."
+            },
+            {
+              "page": 69,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 3 37524-B-727-31H-N908JE-HRYR-FQMA-140-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 498 9/25/2002 2002 B-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 4 37524-B-727-31H-N908JE-HRYR-FQMA..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 3 37525-B-727-31H-N908JE-FQMA-FACT-141-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 516 9/26/2002 2002 B-727-31H N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 4 37525-B-727-31H-N908JE-..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...et 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 3 37526-B-727-31H-N908JE-FACT-FAJS-142-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 534 9/27/2002 2002 B-727-31H N908JE Jet 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 4 37526-B-727-31H..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...et 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 3 37527-B-727-31H-N908JE-FAJS-FACT-143-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 546 9/28/2002 2002 B-727-31H N908JE Jet 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 4 37527-B-727-31H..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...7-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 3 37528-B-727-31H-N908JE-FACT-DGAA-144-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 556 9/29/2002 2002 B-727-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 4 37528-B-727-31H-N908JE-FACT-D..."
+            },
+            {
+              "page": 71,
+              "matched_variant": "Chris Tucker",
+              "snippet": "... 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 3 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 571 9/29/2002 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 4 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pa..."
+            },
+            {
+              "page": 71,
+              "matched_variant": "Chris Tucker",
+              "snippet": "...02 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 3 37528-B-727-31H-N908JE-LFPB-EGGW-146-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 588 9/29/2002 2002 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 4 37528-B-727-31H-N908JE-LFPB-EGGW-146..."
+            }
+          ]
+        }
+      ],
+      "pinpoint_entity_id": "/m/01900g",
+      "pinpoint_file_count": 12,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Courtney Love",
+      "slug": "courtney-love",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "David Copperfield",
+      "slug": "david-copperfield",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/02rbmg",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Donald Trump",
+      "slug": "donald-trump",
+      "priority": "P0",
+      "category": "Political Figure",
+      "found_in_documents": true,
+      "total_matches": 1,
+      "pinpoint_file_count": 1651,
+      "pinpoint_entity_id": "/m/0cqt90",
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null
+      },
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 9,
+              "matched_variant": "Donald Trump",
+              "snippet": "...22 PBI EWR West Palm Beach, FL, United States Newark, NJ, United States 934 Pass 3 35435-G-1159B-N908JE-PBI-EWR-934-Pass 3 Donald Trump Trump, Donald Donald Trump DT Yes Flight Log 4680 1/5/1997 1997 G-1159B N908JE Jet 22 PBI EWR West Palm Beach, FL, United States Newark, NJ, United States 934 Pass 4 35435-G-11..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "display_name": "Ehud Barak",
+      "slug": "ehud-barak",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/016hk4",
+      "pinpoint_file_count": 5,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Elon Musk",
+      "slug": "elon-musk",
+      "priority": "P0",
+      "category": "Tech CEO",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/018ygt",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "George H. W. Bush",
+      "slug": "george-h-w-bush",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/034ls",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "George Mitchell",
+      "slug": "george-mitchell",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": true,
+      "total_matches": 1,
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 19,
+              "matched_variant": "Mitchell",
+              "snippet": "...9B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teterboro, NJ, United States 1088 Pass 2 35890-G-1159B-N908JE-PBI-TEB-1088-Pass 2 Heather Mitchell Mitchell, Heather Heather Mitchell HM Yes Flight Log 3378 4/5/1998 1998 G-1159B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teterboro, N..."
+            }
+          ]
+        }
+      ],
+      "pinpoint_entity_id": "/m/02c643",
+      "pinpoint_file_count": 5,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "George W. Bush",
+      "slug": "george-w-bush",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/09b6zr",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": "\"Sir, a (your joke here)\"",
+        "image_url": "/images/george-w-bush.jpg",
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
     },
     {
       "display_name": "Ghislaine Maxwell",
@@ -2805,856 +3290,13 @@
         }
       ],
       "pinpoint_entity_id": "/m/0gw_xk8",
-      "pinpoint_file_count": 798
-    },
-    {
-      "display_name": "Prince Andrew",
-      "slug": "prince-andrew",
-      "priority": "P0",
-      "category": "British Royal",
-      "found_in_documents": true,
-      "total_matches": 5,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 5,
-          "matches": [
-            {
-              "page": 19,
-              "matched_variant": "Andrew",
-              "snippet": "...98 G-1159B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teterboro, NJ, United States 1088 Pass 3 35890-G-1159B-N908JE-PBI-TEB-1088-Pass 3 Andrew Mitchell Mitchell, Andrew Andrew Mitchell AM Yes Flight Log 3379 4/5/1998 1998 G-1159B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teter..."
-            },
-            {
-              "page": 35,
-              "matched_variant": "Prince Andrew",
-              "snippet": "...PBI Teterboro, NJ, United States West Palm Beach, FL, United States 1338 Pass 5 36658-G-1159B-N908JE-TEB-PBI-1338-Pass 5 Prince Andrew Andrew, Prince Prince Andrew PA Yes Flight Log 2654 5/12/2000 2000 G-1159B N908JE Jet 22 TEB PBI Teterboro, NJ, United States West Palm Beach, FL, United States 1338 Pass 6 36658..."
-            },
-            {
-              "page": 98,
-              "matched_variant": "Andrew",
-              "snippet": "...otte Amalie, St. Thomas, United States Virgin Islands West Palm Beach, FL, United States 300 Pass 5 38276-B-727-31H-N908JE-TIST-PBI-300-Pass 5 Laura Andrew Andrew, Laura Laura Andrew LA Yes Flight Log 1742 10/16/2004 2004 B-727-31H N908JE Jet 134 TIST PBI Charlotte Amalie, St. Thomas, United States Virg..."
-            },
-            {
-              "page": 98,
-              "matched_variant": "Andrew",
-              "snippet": "...lotte Amalie, St. Thomas, United States Virgin Islands West Palm Beach, FL, United States 300 Pass 6 38276-B-727-31H-N908JE-TIST-PBI-300-Pass 6 Lisa Andrew Andrew, Lisa Lisa Andrew LA Yes Flight Log 1743 10/16/2004 2004 B-727-31H N908JE Jet 134 TIST PBI Charlotte Amalie, St. Thomas, United States Virgin..."
-            },
-            {
-              "page": 98,
-              "matched_variant": "Andrew",
-              "snippet": "...-31H N908JE Jet 134 PBI JFK West Palm Beach, FL, United States New York, NY, United States 301 Pass 5 38277-B-727-31H-N908JE-PBI-JFK-301-Pass 5 Laura Andrew Andrew, Laura Laura Andrew LA Yes Flight Log 1750 10/17/2004 2004 B-727-31H N908JE Jet 134 PBI JFK West Palm Beach, FL, United States New York, NY, U..."
-            }
-          ]
-        }
-      ],
-      "pinpoint_entity_id": "/m/0xnh2",
-      "pinpoint_file_count": 17
-    },
-    {
-      "display_name": "Elon Musk",
-      "slug": "elon-musk",
-      "priority": "P0",
-      "category": "Tech CEO",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/018ygt",
-      "pinpoint_file_count": 0
-    },
-    {
-      "display_name": "Alan Dershowitz",
-      "slug": "alan-dershowitz",
-      "priority": "P0",
-      "category": "Legal",
-      "found_in_documents": true,
-      "total_matches": 12,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 12,
-          "matches": [
-            {
-              "page": 6,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "... DCA CMH Washington Dc, United States Columbus, OH, United States 887 Pass 3 35316-G-1159B-N908JE-DCA-CMH-887-Pass 3 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 4523 9/8/1996 1996 G-1159B N908JE Jet 22 CMH TEB Columbus, OH, United States Teterboro, NJ, United States 888 Pass 1 35316-G-1159B-..."
-            },
-            {
-              "page": 6,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "... CMH TEB Columbus, OH, United States Teterboro, NJ, United States 888 Pass 2 35316-G-1159B-N908JE-CMH-TEB-888-Pass 2 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 4525 9/9/1996 1996 G-1159B N908JE Jet 22 TEB BOS Teterboro, NJ, United States Boston, MA, United States 889 Pass 1 35317-G-1159B-N9..."
-            },
-            {
-              "page": 6,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "...22 TEB BOS Teterboro, NJ, United States Boston, MA, United States 889 Pass 2 35317-G-1159B-N908JE-TEB-BOS-889-Pass 2 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 4527 9/9/1996 1996 G-1159B N908JE Jet 22 BOS TEB Boston, MA, United States Teterboro, NJ, United States 890 Pass 1 35317-G-1159B-N9..."
-            },
-            {
-              "page": 10,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "...2 EWR TIX Newark, NJ, United States Titusville, FL, United States 935 Pass 3 35441-G-1159B-N908JE-EWR-TIX-935-Pass 3 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 4687 1/11/1997 1997 G-1159B N908JE Jet 22 EWR TIX Newark, NJ, United States Titusville, FL, United States 935 Pass 4 35441-G-1159B-..."
-            },
-            {
-              "page": 18,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "...West Palm Beach, FL, United States Teterboro, NJ, United States 1073 Pass 7 35835-G-1159B-N908JE-PBI-TEB-1073-Pass 7 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 3319 2/9/1998 1998 G-1159B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teterboro, NJ, United States 1073 Pass 8 35835-..."
-            },
-            {
-              "page": 25,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "...BED TEB Bedford, MA, United States Teterboro, NJ, United States 1174 Pass 2 36089-G-1159B-N908JE-BED-TEB-1174-Pass 2 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 3633 10/23/1998 1998 G-1159B N908JE Jet 22 TEB PBI Teterboro, NJ, United States West Palm Beach, FL, United States 1175 Pass 1 3609..."
-            },
-            {
-              "page": 27,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "...erboro, NJ, United States Martha's Vineyard, MA, United States 1225 Pass 3 36266-G-1159B-N908JE-TEB-MVY-1225-Pass 3 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 3671 4/16/1999 1999 G-1159B N908JE Jet 22 TEB MVY Teterboro, NJ, United States Martha's Vineyard, MA, United States 1225 Pass 4 36..."
-            },
-            {
-              "page": 88,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "...BED TEB Bedford, MA, United States Teterboro, NJ, United States 1695 Pass 1 38022-G-1159B-N909JE-BED-TEB-1695-Pass 1 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 1300 2/5/2004 2004 G-1159B N909JE Jet 22 BED TEB Bedford, MA, United States Teterboro, NJ, United States 1695 Pass 2 38022-G-1159B-..."
-            },
-            {
-              "page": 88,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "...Teterboro, NJ, United States West Palm Beach, FL, United States 1696 Pass 2 38022-G-1159B-N909JE-TEB-PBI-1696-Pass 2 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 1303 2/5/2004 2004 G-1159B N909JE Jet 22 TEB PBI Teterboro, NJ, United States West Palm Beach, FL, United States 1696 Pass 3 38022-..."
-            },
-            {
-              "page": 110,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "... 22 BED CYUL Bedford, MA, United States Dorval, Quebec, Canada 1841 Pass 1 38673-G-1159B-N909JE-BED-CYUL-1841-Pass 1 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 2205 11/17/2005 2005 G-1159B N909JE Jet 22 BED CYUL Bedford, MA, United States Dorval, Quebec, Canada 1841 Pass 2 38673-G-1159B-N90..."
-            },
-            {
-              "page": 110,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "... 22 CYUL BED Dorval, Quebec, Canada Bedford, MA, United States 1842 Pass 1 38673-G-1159B-N909JE-CYUL-BED-1842-Pass 1 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 2207 11/17/2005 2005 G-1159B N909JE Jet 22 CYUL BED Dorval, Quebec, Canada Bedford, MA, United States 1842 Pass 2 38673-G-1159B-N90..."
-            },
-            {
-              "page": 110,
-              "matched_variant": "Alan Dershowitz",
-              "snippet": "...BED TEB Bedford, MA, United States Teterboro, NJ, United States 1843 Pass 3 38673-G-1159B-N909JE-BED-TEB-1843-Pass 3 Alan Dershowitz Dershowitz, Alan Alan Dershowitz AD Yes Flight Log 2211 11/17/2005 2005 G-1159B N909JE Jet 22 BED TEB Bedford, MA, United States Teterboro, NJ, United States 1843 Pass 4 38673-G-1159..."
-            }
-          ]
-        }
-      ],
-      "pinpoint_entity_id": "/m/097qj4",
-      "pinpoint_file_count": 55
-    },
-    {
-      "display_name": "Bill Gates",
-      "slug": "bill-gates",
-      "priority": "P0",
-      "category": "Tech CEO",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/017nt",
-      "pinpoint_file_count": 0
-    },
-    {
-      "display_name": "Stephen Hawking",
-      "slug": "stephen-hawking",
-      "priority": "P1",
-      "category": "Scientist",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
-    },
-    {
-      "display_name": "Leonardo DiCaprio",
-      "slug": "leonardo-dicaprio",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/0dvmd",
-      "pinpoint_file_count": 0
-    },
-    {
-      "display_name": "Kevin Spacey",
-      "slug": "kevin-spacey",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": true,
-      "total_matches": 11,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 11,
-          "matches": [
-            {
-              "page": 68,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...E Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 2 37520-B-727-31H-N908JE-JFK-LPAZ-136-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 424 9/21/2002 2002 B-727-31H N908JE Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 3 37520-B-727-31H-N..."
-            },
-            {
-              "page": 68,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 2 37521-B-727-31H-N908JE-LPAZ-DGAA-137-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 443 9/22/2002 2002 B-727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 3 37521-B-727-31H-N908JE-LPAZ-DGA..."
-            },
-            {
-              "page": 68,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 2 37522-B-727-31H-N908JE-DGAA-DNAA-138-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 461 9/23/2002 2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 3 37522-B-727-31H-N908JE-DGAA-DNAA-138-P..."
-            },
-            {
-              "page": 69,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...02 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 2 37523-B-727-31H-N908JE-DNAA-HRYR-139-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 479 9/24/2002 2002 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 3 37523-B-727-31H-N908JE-DNAA-HRYR-139..."
-            },
-            {
-              "page": 69,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 2 37524-B-727-31H-N908JE-HRYR-FQMA-140-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 497 9/25/2002 2002 B-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 3 37524-B-727-31H-N908JE-HRYR-FQMA..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 2 37525-B-727-31H-N908JE-FQMA-FACT-141-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 515 9/26/2002 2002 B-727-31H N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 3 37525-B-727-31H-N908JE-..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...et 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 2 37526-B-727-31H-N908JE-FACT-FAJS-142-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 533 9/27/2002 2002 B-727-31H N908JE Jet 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 3 37526-B-727-31H..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...et 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 2 37527-B-727-31H-N908JE-FAJS-FACT-143-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 545 9/28/2002 2002 B-727-31H N908JE Jet 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 3 37527-B-727-31H..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...7-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 2 37528-B-727-31H-N908JE-FACT-DGAA-144-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 555 9/29/2002 2002 B-727-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 3 37528-B-727-31H-N908JE-FACT-D..."
-            },
-            {
-              "page": 71,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "... 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 2 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 570 9/29/2002 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 3 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pa..."
-            },
-            {
-              "page": 71,
-              "matched_variant": "Kevin Spacey",
-              "snippet": "...02 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 2 37528-B-727-31H-N908JE-LFPB-EGGW-146-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 587 9/29/2002 2002 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 3 37528-B-727-31H-N908JE-LFPB-EGGW-146..."
-            }
-          ]
-        }
-      ],
-      "pinpoint_entity_id": "/m/048lv",
-      "pinpoint_file_count": 23
-    },
-    {
-      "display_name": "Naomi Campbell",
-      "slug": "naomi-campbell",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": true,
-      "total_matches": 5,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 5,
-          "matches": [
-            {
-              "page": 49,
-              "matched_variant": "Naomi Campbell",
-              "snippet": "... 22 TEB CYUL Teterboro, NJ, United States Dorval, Quebec, Canada 1512 Pass 3 37050-G-1159B-N909JE-TEB-CYUL-1512-Pass 3 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 3081 6/8/2001 2001 G-1159B N909JE Jet 22 TEB CYUL Teterboro, NJ, United States Dorval, Quebec, Canada 1512 Pass 4 37050-G-1159B-N90..."
-            },
-            {
-              "page": 62,
-              "matched_variant": "Naomi Campbell",
-              "snippet": "...N908JE Jet 134 EGGW JFK London, England New York, NY, United States 76 Pass 7 37336-B-727-31-N908JE-EGGW-JFK-76-Pass 7 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 188 3/21/2002 2002 B-727-31 N908JE Jet 134 EGGW JFK London, England New York, NY, United States 76 Pass 8 37336-B-727-31-N908JE-EGG..."
-            },
-            {
-              "page": 71,
-              "matched_variant": "Naomi Campbell",
-              "snippet": "...908JE Jet 134 LFPB JFK Paris, France New York, NY, United States 148 Pass 6 37531-B-727-31H-N908JE-LFPB-JFK-148-Pass 6 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 605 10/3/2002 2002 B-727-31H N908JE Jet 134 JFK PBI New York, NY, United States West Palm Beach, FL, United States 149 Pass 1 37532..."
-            },
-            {
-              "page": 77,
-              "matched_variant": "Naomi Campbell",
-              "snippet": "...ie, St. Thomas, United States Virgin Islands Sao Paulo, Brazil 189 Pass 6 37713-B-727-31H-N908JE-TIST-SBGR-189-Pass 6 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 869 4/5/2003 2003 B-727-31H N908JE Jet 134 SBGR GVAL Sao Paulo, Brazil Geneva, Switzerland 190 Pass 1 37716-B-727-31H-N908JE-SBGR-G..."
-            },
-            {
-              "page": 78,
-              "matched_variant": "Naomi Campbell",
-              "snippet": "... N908JE Jet 134 SBGR GVAL Sao Paulo, Brazil Geneva, Switzerland 190 Pass 6 37716-B-727-31H-N908JE-SBGR-GVAL-190-Pass 6 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 875 4/6/2003 2003 B-727-31H N908JE Jet 134 GVAL LFPB Geneva, Switzerland Paris, France 191 Pass 1 37717-B-727-31H-N908JE-GVAL-LFPB-..."
-            }
-          ]
-        }
-      ],
-      "pinpoint_entity_id": "/m/05b6w8",
-      "pinpoint_file_count": 0
-    },
-    {
-      "display_name": "Larry Summers",
-      "slug": "larry-summers",
-      "priority": "P1",
-      "category": "Political Figure",
-      "found_in_documents": true,
-      "total_matches": 5,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 5,
-          "matches": [
-            {
-              "page": 24,
-              "matched_variant": "Larry Summers",
-              "snippet": "...et 22 ASE IAD Aspen, CO, United States Washington Dc, United States 1159 Pass 3 36057-G-1159B-N908JE-ASE-IAD-1159-Pass 3 Larry Summers Summers, Larry Larry Summers LS Yes Flight Log 3594 9/19/1998 1998 G-1159B N908JE Jet 22 ASE IAD Aspen, CO, United States Washington Dc, United States 1159 Pass 4 36057-G-1159B-N..."
-            },
-            {
-              "page": 91,
-              "matched_variant": "Larry Summers",
-              "snippet": "...t 134 JFK BED New York, NY, United States Bedford, MA, United States 259 Pass 3 38092-B-727-31-N908JE-JFK-BED-259-Pass 3 Larry Summers Summers, Larry Larry Summers LS Yes Flight Log 1429 4/15/2004 2004 B-727-31 N908JE Jet 134 JFK BED New York, NY, United States Bedford, MA, United States 259 Pass 4 38092-B-727-3..."
-            },
-            {
-              "page": 108,
-              "matched_variant": "Larry Summers",
-              "snippet": "...N Bedford, MA, United States Westchester County, NY, United States 1819 Pass 4 38609-G-1159B-N909JE-BED-HPN-1819-Pass 4 Larry Summers Summers, Larry Larry Summers LS Yes Flight Log 2122 9/14/2005 2005 G-1159B N909JE Jet 22 BED HPN Bedford, MA, United States Westchester County, NY, United States 1819 Pass 5 386..."
-            },
-            {
-              "page": 111,
-              "matched_variant": "Larry Summers",
-              "snippet": "...States Charlotte Amalie, St. Thomas, United States Virgin Islands 1853 Pass 2 38707-G-1159B-N909JE-BED-TIST-1853-Pass 2 Larry Summers Summers, Larry Larry Summers LS Yes Flight Log 2250 12/21/2005 2005 G-1159B N909JE Jet 22 BED TIST Bedford, MA, United States Charlotte Amalie, St. Thomas, United States Virgin ..."
-            },
-            {
-              "page": 111,
-              "matched_variant": "Summers",
-              "snippet": "...IST Bedford, MA, United States Charlotte Amalie, St. Thomas, United States Virgin Islands 1853 Pass 3 38707-G-1159B-N909JE-BED-TIST-1853-Pass 3 Lisa Summers Summers, Lisa Lisa Summers LS Yes Flight Log 2251 12/21/2005 2005 G-1159B N909JE Jet 22 BED TIST Bedford, MA, United States Charlotte Amalie, St. Tho..."
-            }
-          ]
-        }
-      ],
-      "pinpoint_entity_id": "/m/01d7lz",
-      "pinpoint_file_count": 10
-    },
-    {
-      "display_name": "Peter Thiel",
-      "slug": "peter-thiel",
-      "priority": "P1",
-      "category": "Tech CEO",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/04hyrd",
-      "pinpoint_file_count": 0
-    },
-    {
-      "display_name": "Steve Bannon",
-      "slug": "steve-bannon",
-      "priority": "P1",
-      "category": "Political Figure",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "c14e57e19f29b567",
-      "pinpoint_file_count": 0
-    },
-    {
-      "display_name": "Ehud Barak",
-      "slug": "ehud-barak",
-      "priority": "P1",
-      "category": "Political Figure",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/016hk4",
-      "pinpoint_file_count": 5
-    },
-    {
-      "display_name": "David Copperfield",
-      "slug": "david-copperfield",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/02rbmg",
-      "pinpoint_file_count": 0
-    },
-    {
-      "display_name": "Al Gore",
-      "slug": "al-gore",
-      "priority": "P1",
-      "category": "Political Figure",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/0d05fv",
-      "pinpoint_file_count": 6
-    },
-    {
-      "display_name": "George Mitchell",
-      "slug": "george-mitchell",
-      "priority": "P1",
-      "category": "Political Figure",
-      "found_in_documents": true,
-      "total_matches": 1,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 1,
-          "matches": [
-            {
-              "page": 19,
-              "matched_variant": "Mitchell",
-              "snippet": "...9B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teterboro, NJ, United States 1088 Pass 2 35890-G-1159B-N908JE-PBI-TEB-1088-Pass 2 Heather Mitchell Mitchell, Heather Heather Mitchell HM Yes Flight Log 3378 4/5/1998 1998 G-1159B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teterboro, N..."
-            }
-          ]
-        }
-      ],
-      "pinpoint_entity_id": "/m/02c643",
-      "pinpoint_file_count": 5
-    },
-    {
-      "display_name": "Bill Richardson",
-      "slug": "bill-richardson",
-      "priority": "P1",
-      "category": "Political Figure",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/020z31",
-      "pinpoint_file_count": 11
-    },
-    {
-      "display_name": "Michael Jackson",
-      "slug": "michael-jackson",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": true,
-      "total_matches": 6,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 6,
-          "matches": [
-            {
-              "page": 6,
-              "matched_variant": "Jackson",
-              "snippet": "4503 8/21/1996 1996 G-1159B N908JE Jet 22 PBI JAN West Palm Beach, FL, United States Jackson, MS, United States 879 Pass 1 35298-G-1159B-N908JE-PBI-JAN-879-Pass 1 Jeff Epstein Epstein, Jeff Jeff Epstein JE Yes Flight Log 4504 8/21/1996 1996 G..."
-            },
-            {
-              "page": 6,
-              "matched_variant": "Jackson",
-              "snippet": "...Pass 1 Jeff Epstein Epstein, Jeff Jeff Epstein JE Yes Flight Log 4504 8/21/1996 1996 G-1159B N908JE Jet 22 PBI JAN West Palm Beach, FL, United States Jackson, MS, United States 879 Pass 2 35298-G-1159B-N908JE-PBI-JAN-879-Pass 2 Ghislaine Maxwell Maxwell, Ghislaine Ghislaine Maxwell GM Yes Flight Log 4505 ..."
-            },
-            {
-              "page": 6,
-              "matched_variant": "Jackson",
-              "snippet": "... Maxwell Maxwell, Ghislaine Ghislaine Maxwell GM Yes Flight Log 4505 8/21/1996 1996 G-1159B N908JE Jet 22 PBI JAN West Palm Beach, FL, United States Jackson, MS, United States 879 Pass 3 35298-G-1159B-N908JE-PBI-JAN-879-Pass 3 Robin Plant Plant, Robin Robin Plant RP Yes Flight Log 4506 8/21/1996 1996 G-11..."
-            },
-            {
-              "page": 6,
-              "matched_variant": "Jackson",
-              "snippet": "...1 35298-G-1159B-N908JE-JAN-SAF-880-Pass 1 Jeff Epstein Epstein, Jeff Jeff Epstein JE Yes Flight Log 4507 8/21/1996 1996 G-1159B N908JE Jet 22 JAN SAF Jackson, MS, United States Santa Fe, NM, United States 880 Pass 2 35298-G-1159B-N908JE-JAN-SAF-880-Pass 2 Ghislaine Maxwell Maxwell, Ghislaine Ghislaine Max..."
-            },
-            {
-              "page": 6,
-              "matched_variant": "Jackson",
-              "snippet": "...N908JE-JAN-SAF-880-Pass 2 Ghislaine Maxwell Maxwell, Ghislaine Ghislaine Maxwell GM Yes Flight Log 4508 8/21/1996 1996 G-1159B N908JE Jet 22 JAN SAF Jackson, MS, United States Santa Fe, NM, United States 880 Pass 3 35298-G-1159B-N908JE-JAN-SAF-880-Pass 3 Robin Plant Plant, Robin Robin Plant RP Yes Flight ..."
-            },
-            {
-              "page": 51,
-              "matched_variant": "Jackson",
-              "snippet": "...-N908JE-VNY-BFI-FOIA-004-No Records ? ? ?, ? ? ? ?? No FOIA 3161 8/14/2001 2001 C-421B N908GM Fixed Wing 8 PBI JAN West Palm Beach, FL, United States Jackson, MS, United States Pass 1 37117-C-421B-N908GM-PBI-JAN--Pass 1 Jonathan Mano Mano, Jonathan Jonathan Mano (Pilot) JM Yes Flight Log 3162 8/14/2001 200..."
-            }
-          ]
-        }
-      ],
-      "pinpoint_entity_id": "/m/09889g",
-      "pinpoint_file_count": 0
-    },
-    {
-      "display_name": "Woody Allen",
-      "slug": "woody-allen",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/08l57",
-      "pinpoint_file_count": 0
-    },
-    {
-      "display_name": "Alec Baldwin",
-      "slug": "alec-baldwin",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
-    },
-    {
-      "display_name": "Cameron Diaz",
-      "slug": "cameron-diaz",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
-    },
-    {
-      "display_name": "Cate Blanchett",
-      "slug": "cate-blanchett",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
-    },
-    {
-      "display_name": "Chris Tucker",
-      "slug": "chris-tucker",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": true,
-      "total_matches": 11,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 11,
-          "matches": [
-            {
-              "page": 68,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...E Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 3 37520-B-727-31H-N908JE-JFK-LPAZ-136-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 425 9/21/2002 2002 B-727-31H N908JE Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 4 37520-B-727-31H-N..."
-            },
-            {
-              "page": 68,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 3 37521-B-727-31H-N908JE-LPAZ-DGAA-137-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 444 9/22/2002 2002 B-727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 4 37521-B-727-31H-N908JE-LPAZ-DGA..."
-            },
-            {
-              "page": 68,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 3 37522-B-727-31H-N908JE-DGAA-DNAA-138-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 462 9/23/2002 2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 4 37522-B-727-31H-N908JE-DGAA-DNAA-138-P..."
-            },
-            {
-              "page": 69,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...02 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 3 37523-B-727-31H-N908JE-DNAA-HRYR-139-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 480 9/24/2002 2002 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 4 37523-B-727-31H-N908JE-DNAA-HRYR-139..."
-            },
-            {
-              "page": 69,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 3 37524-B-727-31H-N908JE-HRYR-FQMA-140-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 498 9/25/2002 2002 B-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 4 37524-B-727-31H-N908JE-HRYR-FQMA..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 3 37525-B-727-31H-N908JE-FQMA-FACT-141-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 516 9/26/2002 2002 B-727-31H N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 4 37525-B-727-31H-N908JE-..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...et 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 3 37526-B-727-31H-N908JE-FACT-FAJS-142-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 534 9/27/2002 2002 B-727-31H N908JE Jet 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 4 37526-B-727-31H..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...et 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 3 37527-B-727-31H-N908JE-FAJS-FACT-143-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 546 9/28/2002 2002 B-727-31H N908JE Jet 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 4 37527-B-727-31H..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...7-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 3 37528-B-727-31H-N908JE-FACT-DGAA-144-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 556 9/29/2002 2002 B-727-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 4 37528-B-727-31H-N908JE-FACT-D..."
-            },
-            {
-              "page": 71,
-              "matched_variant": "Chris Tucker",
-              "snippet": "... 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 3 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 571 9/29/2002 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 4 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pa..."
-            },
-            {
-              "page": 71,
-              "matched_variant": "Chris Tucker",
-              "snippet": "...02 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 3 37528-B-727-31H-N908JE-LFPB-EGGW-146-Pass 3 Chris Tucker Tucker, Chris Chris Tucker CT Yes Flight Log 588 9/29/2002 2002 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 4 37528-B-727-31H-N908JE-LFPB-EGGW-146..."
-            }
-          ]
-        }
-      ],
-      "pinpoint_entity_id": "/m/01900g",
-      "pinpoint_file_count": 12
-    },
-    {
-      "display_name": "Courtney Love",
-      "slug": "courtney-love",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
-    },
-    {
-      "display_name": "Hillary Clinton",
-      "slug": "hillary-clinton",
-      "priority": "P0",
-      "category": "Political Figure",
-      "found_in_documents": true,
-      "total_matches": 25,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 25,
-          "matches": [
-            {
-              "page": 60,
-              "matched_variant": "Clinton",
-              "snippet": "...-727-31 N908JE Jet 134 MIA HPN Miami, FL, United States Westchester County, NY, United States 57 Pass 1 37296-B-727-31-N908JE-MIA-HPN-57-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 74 2/9/2002 2002 B-727-31 N908JE Jet 134 MIA HPN Miami, FL, United States Westchester County, NY, United..."
-            },
-            {
-              "page": 62,
-              "matched_variant": "Clinton",
-              "snippet": "...5 3/19/2002 2002 B-727-31 N908JE Jet 134 JFK EGGW New York, NY, United States London, England 75 Pass 1 37334-B-727-31-N908JE-JFK-EGGW-75-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 176 3/19/2002 2002 B-727-31 N908JE Jet 134 JFK EGGW New York, NY, United States London, England 75 Pass ..."
-            },
-            {
-              "page": 62,
-              "matched_variant": "Clinton",
-              "snippet": "...1 3/21/2002 2002 B-727-31 N908JE Jet 134 EGGW JFK London, England New York, NY, United States 76 Pass 1 37336-B-727-31-N908JE-EGGW-JFK-76-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 182 3/21/2002 2002 B-727-31 N908JE Jet 134 EGGW JFK London, England New York, NY, United States 76 Pass ..."
-            },
-            {
-              "page": 63,
-              "matched_variant": "Clinton",
-              "snippet": "...og 213 5/22/2002 2002 B-727-31 N908JE Jet 134 RJTA VHHH Atsugi, Japan Hong Kong, Hong Kong 100 Pass 4 37398-B-727-31-N908JE-RJTA-VHHH-100-Pass 4 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 214 5/22/2002 2002 B-727-31 N908JE Jet 134 RJTA VHHH Atsugi, Japan Hong Kong, Hong Kong 100 Pass 5 37398..."
-            },
-            {
-              "page": 63,
-              "matched_variant": "Clinton",
-              "snippet": "... 223 5/23/2002 2002 B-727-31 N908JE Jet 134 VHHH ZGSZ Hong Kong, Hong Kong Shenzhen, China 101 Pass 4 37399-B-727-31-N908JE-VHHH-ZGSZ-101-Pass 4 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 224 5/23/2002 2002 B-727-31 N908JE Jet 134 VHHH ZGSZ Hong Kong, Hong Kong Shenzhen, China 101 Pass 5 373..."
-            },
-            {
-              "page": 63,
-              "matched_variant": "Clinton",
-              "snippet": "... 231 5/23/2002 2002 B-727-31 N908JE Jet 134 ZGSZ WSSS Shenzhen, China Singapore, Singapore 102 Pass 4 37399-B-727-31-N908JE-ZGSZ-WSSS-102-Pass 4 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 232 5/23/2002 2002 B-727-31 N908JE Jet 134 ZGSZ WSSS Shenzhen, China Singapore, Singapore 102 Pass 5 373..."
-            },
-            {
-              "page": 64,
-              "matched_variant": "Clinton",
-              "snippet": "...2 2002 B-727-31 N908JE Jet 134 WSSS VTBD Singapore, Singapore Don Muang, Bangkok, Thailand 103 Pass 4 37401-B-727-31-N908JE-WSSS-VTBD-103-Pass 4 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 242 5/25/2002 2002 B-727-31 N908JE Jet 134 WSSS VTBD Singapore, Singapore Don Muang, Bangkok, Thailand 1..."
-            },
-            {
-              "page": 66,
-              "matched_variant": "Clinton",
-              "snippet": "...45 7/13/2002 2002 B-727-31H N908JE Jet 134 GMME LPAZ Rabat, Morocco Santa Maria, Portugal 122 Pass 6 37450-B-727-31H-N908JE-GMME-LPAZ-122-Pass 6 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 346 7/13/2002 2002 B-727-31H N908JE Jet 134 GMME LPAZ Rabat, Morocco Santa Maria, Portugal 122 Pass 7 37..."
-            },
-            {
-              "page": 66,
-              "matched_variant": "Clinton",
-              "snippet": "...2 2002 B-727-31H N908JE Jet 134 LPAZ JFK Santa Maria, Portugal New York, NY, United States 123 Pass 6 37450-B-727-31H-N908JE-LPAZ-JFK-123-Pass 6 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 355 7/13/2002 2002 B-727-31H N908JE Jet 134 LPAZ JFK Santa Maria, Portugal New York, NY, United States 1..."
-            },
-            {
-              "page": 68,
-              "matched_variant": "Clinton",
-              "snippet": "...2 2002 B-727-31H N908JE Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 1 37520-B-727-31H-N908JE-JFK-LPAZ-136-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 423 9/21/2002 2002 B-727-31H N908JE Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 1..."
-            },
-            {
-              "page": 68,
-              "matched_variant": "Clinton",
-              "snippet": "... 441 9/22/2002 2002 B-727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 1 37521-B-727-31H-N908JE-LPAZ-DGAA-137-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 442 9/22/2002 2002 B-727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 2 3752..."
-            },
-            {
-              "page": 68,
-              "matched_variant": "Clinton",
-              "snippet": "...ght Log 459 9/23/2002 2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 1 37522-B-727-31H-N908JE-DGAA-DNAA-138-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 460 9/23/2002 2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 2 37522-B-727..."
-            },
-            {
-              "page": 69,
-              "matched_variant": "Clinton",
-              "snippet": "...t Log 477 9/24/2002 2002 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 1 37523-B-727-31H-N908JE-DNAA-HRYR-139-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 478 9/24/2002 2002 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 2 37523-B-7..."
-            },
-            {
-              "page": 69,
-              "matched_variant": "Clinton",
-              "snippet": "...g 495 9/25/2002 2002 B-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 1 37524-B-727-31H-N908JE-HRYR-FQMA-140-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 496 9/25/2002 2002 B-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 2 37524..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Clinton",
-              "snippet": "...6/2002 2002 B-727-31H N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 1 37525-B-727-31H-N908JE-FQMA-FACT-141-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 514 9/26/2002 2002 B-727-31H N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pas..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Clinton",
-              "snippet": "...002 B-727-31H N908JE Jet 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 1 37526-B-727-31H-N908JE-FACT-FAJS-142-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 532 9/27/2002 2002 B-727-31H N908JE Jet 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Clinton",
-              "snippet": "...002 B-727-31H N908JE Jet 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 1 37527-B-727-31H-N908JE-FAJS-FACT-143-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 544 9/28/2002 2002 B-727-31H N908JE Jet 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa..."
-            },
-            {
-              "page": 70,
-              "matched_variant": "Clinton",
-              "snippet": "...53 9/29/2002 2002 B-727-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 1 37528-B-727-31H-N908JE-FACT-DGAA-144-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 554 9/29/2002 2002 B-727-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 2 37..."
-            },
-            {
-              "page": 71,
-              "matched_variant": "Clinton",
-              "snippet": "...ight Log 569 9/29/2002 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 1 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 584 9/29/2002 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 2 37528-B-727-..."
-            },
-            {
-              "page": 71,
-              "matched_variant": "Clinton",
-              "snippet": "...t Log 585 9/29/2002 2002 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 1 37528-B-727-31H-N908JE-LFPB-EGGW-146-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 586 9/29/2002 2002 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 2 37528-B-7..."
-            },
-            {
-              "page": 83,
-              "matched_variant": "Clinton",
-              "snippet": "...Log 1124 11/4/2003 2003 B-727-31H N908JE Jet 134 EBBR ENGM Brussels, Belgium Oslo, Norway 225 Pass 5 37929-B-727-31H-N908JE-EBBR-ENGM-225-Pass 5 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1125 11/4/2003 2003 B-727-31H N908JE Jet 134 EBBR ENGM Brussels, Belgium Oslo, Norway 225 Pass 6 37929-B..."
-            },
-            {
-              "page": 84,
-              "matched_variant": "Clinton",
-              "snippet": "...g 1140 11/5/2003 2003 B-727-31H N908JE Jet 134 ENGM UNNT Oslo, Norway Novosibirsk, Russia 228 Pass 7 37930-B-727-31H-N908JE-ENGM-UNNT-228-Pass 7 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1141 11/6/2003 2003 B-727-31H N908JE Jet 134 UNNT VHHH Novosibirsk, Russia Hong Kong, Hong Kong 229 Pass..."
-            },
-            {
-              "page": 84,
-              "matched_variant": "Clinton",
-              "snippet": "...1/6/2003 2003 B-727-31H N908JE Jet 134 UNNT VHHH Novosibirsk, Russia Hong Kong, Hong Kong 229 Pass 7 37931-B-727-31H-N908JE-UNNT-VHHH-229-Pass 7 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1148 11/9/2003 2003 B-727-31H N908JE Jet 134 VHHH ZUUU Hong Kong, Hong Kong Chengdu, China 230 Pass 1 37..."
-            },
-            {
-              "page": 84,
-              "matched_variant": "Clinton",
-              "snippet": "...154 11/9/2003 2003 B-727-31H N908JE Jet 134 VHHH ZUUU Hong Kong, Hong Kong Chengdu, China 230 Pass 7 37934-B-727-31H-N908JE-VHHH-ZUUU-230-Pass 7 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1155 11/9/2003 2003 B-727-31H N908JE Jet 134 VHHH ZUUU Hong Kong, Hong Kong Chengdu, China 230 Pass 8 37..."
-            },
-            {
-              "page": 84,
-              "matched_variant": "Clinton",
-              "snippet": "... Log 1164 11/9/2003 2003 B-727-31H N908JE Jet 134 ZUUU ZBAA Chengdu, China Beijing, China 231 Pass 9 37934-B-727-31H-N908JE-ZUUU-ZBAA-231-Pass 9 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1165 11/10/2003 2003 B-727-31H N908JE Jet 134 ZUUU ZBAA Chengdu, China Beijing, China 231 Pass 11 37934-..."
-            }
-          ]
-        }
-      ],
-      "pinpoint_entity_id": "/m/0157m",
-      "pinpoint_file_count": 410
-    },
-    {
-      "display_name": "Les Wexner",
-      "slug": "les-wexner",
-      "priority": "P0",
-      "category": "Business",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": [],
-      "pinpoint_entity_id": "/m/01hwr1",
-      "pinpoint_file_count": 45
-    },
-    {
-      "display_name": "Mick Jagger",
-      "slug": "mick-jagger",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
-    },
-    {
-      "display_name": "Minnie Driver",
-      "slug": "minnie-driver",
-      "priority": "P1",
-      "category": "Entertainment",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
-    },
-    {
-      "display_name": "Noam Chomsky",
-      "slug": "noam-chomsky",
-      "priority": "P1",
-      "category": "Academic",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
-    },
-    {
-      "display_name": "Robert F. Kennedy Jr.",
-      "slug": "robert-f-kennedy-jr",
-      "priority": "P1",
-      "category": "Political Figure",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
-    },
-    {
-      "display_name": "Tom Pritzker",
-      "slug": "tom-pritzker",
-      "priority": "P1",
-      "category": "Business",
-      "found_in_documents": true,
-      "total_matches": 1,
-      "documents": [
-        {
-          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
-          "classification": "Flight Logs",
-          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
-          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
-          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
-          "verification_status": "UNVERIFIED",
-          "match_count": 1,
-          "matches": [
-            {
-              "page": 41,
-              "matched_variant": "Tom Pritzker",
-              "snippet": "...159B N908JE Jet 22 EGGW EGYM London, England Marham, United Kingdom 1429 Pass 4 36867-G-1159B-N908JE-EGGW-EGYM-1429-Pass 4 Tom Pritzker Pritzker, Tom Tom Pritzker TP Yes Flight Log 2316 12/7/2000 2000 G-1159B N908JE Jet 22 EGGW EGYM London, England Marham, United Kingdom 1429 Pass 5 36867-G-1159B-N908JE-EGGW-EG..."
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "display_name": "Kathryn Ruemmler",
-      "slug": "kathryn-ruemmler",
-      "priority": "P1",
-      "category": "Legal",
-      "found_in_documents": false,
-      "total_matches": 0,
-      "documents": []
+      "pinpoint_file_count": 798,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
     },
     {
       "display_name": "Glenn Dubin",
@@ -3943,7 +3585,874 @@
         }
       ],
       "pinpoint_entity_id": "/m/0dlkym0",
-      "pinpoint_file_count": 5
+      "pinpoint_file_count": 5,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Hillary Clinton",
+      "slug": "hillary-clinton",
+      "priority": "P0",
+      "category": "Political Figure",
+      "found_in_documents": true,
+      "total_matches": 25,
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 25,
+          "matches": [
+            {
+              "page": 60,
+              "matched_variant": "Clinton",
+              "snippet": "...-727-31 N908JE Jet 134 MIA HPN Miami, FL, United States Westchester County, NY, United States 57 Pass 1 37296-B-727-31-N908JE-MIA-HPN-57-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 74 2/9/2002 2002 B-727-31 N908JE Jet 134 MIA HPN Miami, FL, United States Westchester County, NY, United..."
+            },
+            {
+              "page": 62,
+              "matched_variant": "Clinton",
+              "snippet": "...5 3/19/2002 2002 B-727-31 N908JE Jet 134 JFK EGGW New York, NY, United States London, England 75 Pass 1 37334-B-727-31-N908JE-JFK-EGGW-75-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 176 3/19/2002 2002 B-727-31 N908JE Jet 134 JFK EGGW New York, NY, United States London, England 75 Pass ..."
+            },
+            {
+              "page": 62,
+              "matched_variant": "Clinton",
+              "snippet": "...1 3/21/2002 2002 B-727-31 N908JE Jet 134 EGGW JFK London, England New York, NY, United States 76 Pass 1 37336-B-727-31-N908JE-EGGW-JFK-76-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 182 3/21/2002 2002 B-727-31 N908JE Jet 134 EGGW JFK London, England New York, NY, United States 76 Pass ..."
+            },
+            {
+              "page": 63,
+              "matched_variant": "Clinton",
+              "snippet": "...og 213 5/22/2002 2002 B-727-31 N908JE Jet 134 RJTA VHHH Atsugi, Japan Hong Kong, Hong Kong 100 Pass 4 37398-B-727-31-N908JE-RJTA-VHHH-100-Pass 4 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 214 5/22/2002 2002 B-727-31 N908JE Jet 134 RJTA VHHH Atsugi, Japan Hong Kong, Hong Kong 100 Pass 5 37398..."
+            },
+            {
+              "page": 63,
+              "matched_variant": "Clinton",
+              "snippet": "... 223 5/23/2002 2002 B-727-31 N908JE Jet 134 VHHH ZGSZ Hong Kong, Hong Kong Shenzhen, China 101 Pass 4 37399-B-727-31-N908JE-VHHH-ZGSZ-101-Pass 4 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 224 5/23/2002 2002 B-727-31 N908JE Jet 134 VHHH ZGSZ Hong Kong, Hong Kong Shenzhen, China 101 Pass 5 373..."
+            },
+            {
+              "page": 63,
+              "matched_variant": "Clinton",
+              "snippet": "... 231 5/23/2002 2002 B-727-31 N908JE Jet 134 ZGSZ WSSS Shenzhen, China Singapore, Singapore 102 Pass 4 37399-B-727-31-N908JE-ZGSZ-WSSS-102-Pass 4 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 232 5/23/2002 2002 B-727-31 N908JE Jet 134 ZGSZ WSSS Shenzhen, China Singapore, Singapore 102 Pass 5 373..."
+            },
+            {
+              "page": 64,
+              "matched_variant": "Clinton",
+              "snippet": "...2 2002 B-727-31 N908JE Jet 134 WSSS VTBD Singapore, Singapore Don Muang, Bangkok, Thailand 103 Pass 4 37401-B-727-31-N908JE-WSSS-VTBD-103-Pass 4 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 242 5/25/2002 2002 B-727-31 N908JE Jet 134 WSSS VTBD Singapore, Singapore Don Muang, Bangkok, Thailand 1..."
+            },
+            {
+              "page": 66,
+              "matched_variant": "Clinton",
+              "snippet": "...45 7/13/2002 2002 B-727-31H N908JE Jet 134 GMME LPAZ Rabat, Morocco Santa Maria, Portugal 122 Pass 6 37450-B-727-31H-N908JE-GMME-LPAZ-122-Pass 6 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 346 7/13/2002 2002 B-727-31H N908JE Jet 134 GMME LPAZ Rabat, Morocco Santa Maria, Portugal 122 Pass 7 37..."
+            },
+            {
+              "page": 66,
+              "matched_variant": "Clinton",
+              "snippet": "...2 2002 B-727-31H N908JE Jet 134 LPAZ JFK Santa Maria, Portugal New York, NY, United States 123 Pass 6 37450-B-727-31H-N908JE-LPAZ-JFK-123-Pass 6 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 355 7/13/2002 2002 B-727-31H N908JE Jet 134 LPAZ JFK Santa Maria, Portugal New York, NY, United States 1..."
+            },
+            {
+              "page": 68,
+              "matched_variant": "Clinton",
+              "snippet": "...2 2002 B-727-31H N908JE Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 1 37520-B-727-31H-N908JE-JFK-LPAZ-136-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 423 9/21/2002 2002 B-727-31H N908JE Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 1..."
+            },
+            {
+              "page": 68,
+              "matched_variant": "Clinton",
+              "snippet": "... 441 9/22/2002 2002 B-727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 1 37521-B-727-31H-N908JE-LPAZ-DGAA-137-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 442 9/22/2002 2002 B-727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 2 3752..."
+            },
+            {
+              "page": 68,
+              "matched_variant": "Clinton",
+              "snippet": "...ght Log 459 9/23/2002 2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 1 37522-B-727-31H-N908JE-DGAA-DNAA-138-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 460 9/23/2002 2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 2 37522-B-727..."
+            },
+            {
+              "page": 69,
+              "matched_variant": "Clinton",
+              "snippet": "...t Log 477 9/24/2002 2002 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 1 37523-B-727-31H-N908JE-DNAA-HRYR-139-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 478 9/24/2002 2002 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 2 37523-B-7..."
+            },
+            {
+              "page": 69,
+              "matched_variant": "Clinton",
+              "snippet": "...g 495 9/25/2002 2002 B-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 1 37524-B-727-31H-N908JE-HRYR-FQMA-140-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 496 9/25/2002 2002 B-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 2 37524..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Clinton",
+              "snippet": "...6/2002 2002 B-727-31H N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 1 37525-B-727-31H-N908JE-FQMA-FACT-141-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 514 9/26/2002 2002 B-727-31H N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pas..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Clinton",
+              "snippet": "...002 B-727-31H N908JE Jet 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 1 37526-B-727-31H-N908JE-FACT-FAJS-142-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 532 9/27/2002 2002 B-727-31H N908JE Jet 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Clinton",
+              "snippet": "...002 B-727-31H N908JE Jet 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 1 37527-B-727-31H-N908JE-FAJS-FACT-143-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 544 9/28/2002 2002 B-727-31H N908JE Jet 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Clinton",
+              "snippet": "...53 9/29/2002 2002 B-727-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 1 37528-B-727-31H-N908JE-FACT-DGAA-144-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 554 9/29/2002 2002 B-727-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 2 37..."
+            },
+            {
+              "page": 71,
+              "matched_variant": "Clinton",
+              "snippet": "...ight Log 569 9/29/2002 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 1 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 584 9/29/2002 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 2 37528-B-727-..."
+            },
+            {
+              "page": 71,
+              "matched_variant": "Clinton",
+              "snippet": "...t Log 585 9/29/2002 2002 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 1 37528-B-727-31H-N908JE-LFPB-EGGW-146-Pass 1 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 586 9/29/2002 2002 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 2 37528-B-7..."
+            },
+            {
+              "page": 83,
+              "matched_variant": "Clinton",
+              "snippet": "...Log 1124 11/4/2003 2003 B-727-31H N908JE Jet 134 EBBR ENGM Brussels, Belgium Oslo, Norway 225 Pass 5 37929-B-727-31H-N908JE-EBBR-ENGM-225-Pass 5 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1125 11/4/2003 2003 B-727-31H N908JE Jet 134 EBBR ENGM Brussels, Belgium Oslo, Norway 225 Pass 6 37929-B..."
+            },
+            {
+              "page": 84,
+              "matched_variant": "Clinton",
+              "snippet": "...g 1140 11/5/2003 2003 B-727-31H N908JE Jet 134 ENGM UNNT Oslo, Norway Novosibirsk, Russia 228 Pass 7 37930-B-727-31H-N908JE-ENGM-UNNT-228-Pass 7 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1141 11/6/2003 2003 B-727-31H N908JE Jet 134 UNNT VHHH Novosibirsk, Russia Hong Kong, Hong Kong 229 Pass..."
+            },
+            {
+              "page": 84,
+              "matched_variant": "Clinton",
+              "snippet": "...1/6/2003 2003 B-727-31H N908JE Jet 134 UNNT VHHH Novosibirsk, Russia Hong Kong, Hong Kong 229 Pass 7 37931-B-727-31H-N908JE-UNNT-VHHH-229-Pass 7 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1148 11/9/2003 2003 B-727-31H N908JE Jet 134 VHHH ZUUU Hong Kong, Hong Kong Chengdu, China 230 Pass 1 37..."
+            },
+            {
+              "page": 84,
+              "matched_variant": "Clinton",
+              "snippet": "...154 11/9/2003 2003 B-727-31H N908JE Jet 134 VHHH ZUUU Hong Kong, Hong Kong Chengdu, China 230 Pass 7 37934-B-727-31H-N908JE-VHHH-ZUUU-230-Pass 7 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1155 11/9/2003 2003 B-727-31H N908JE Jet 134 VHHH ZUUU Hong Kong, Hong Kong Chengdu, China 230 Pass 8 37..."
+            },
+            {
+              "page": 84,
+              "matched_variant": "Clinton",
+              "snippet": "... Log 1164 11/9/2003 2003 B-727-31H N908JE Jet 134 ZUUU ZBAA Chengdu, China Beijing, China 231 Pass 9 37934-B-727-31H-N908JE-ZUUU-ZBAA-231-Pass 9 Bill Clinton Clinton, Bill Bill Clinton BC Yes Flight Log 1165 11/10/2003 2003 B-727-31H N908JE Jet 134 ZUUU ZBAA Chengdu, China Beijing, China 231 Pass 11 37934-..."
+            }
+          ]
+        }
+      ],
+      "pinpoint_entity_id": "/m/0157m",
+      "pinpoint_file_count": 410,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Jesus Christ",
+      "slug": "jesus-christ",
+      "priority": "P1",
+      "category": "Religious Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Joe Biden",
+      "slug": "joe-biden",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/012gx2",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Kathryn Ruemmler",
+      "slug": "kathryn-ruemmler",
+      "priority": "P1",
+      "category": "Legal",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/0gvs5b7",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Kevin Spacey",
+      "slug": "kevin-spacey",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": true,
+      "total_matches": 11,
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 11,
+          "matches": [
+            {
+              "page": 68,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...E Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 2 37520-B-727-31H-N908JE-JFK-LPAZ-136-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 424 9/21/2002 2002 B-727-31H N908JE Jet 134 JFK LPAZ New York, NY, United States Santa Maria, Portugal 136 Pass 3 37520-B-727-31H-N..."
+            },
+            {
+              "page": 68,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 2 37521-B-727-31H-N908JE-LPAZ-DGAA-137-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 443 9/22/2002 2002 B-727-31H N908JE Jet 134 LPAZ DGAA Santa Maria, Portugal Accra, Ghana 137 Pass 3 37521-B-727-31H-N908JE-LPAZ-DGA..."
+            },
+            {
+              "page": 68,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 2 37522-B-727-31H-N908JE-DGAA-DNAA-138-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 461 9/23/2002 2002 B-727-31H N908JE Jet 134 DGAA DNAA Accra, Ghana Abuja, Nigeria 138 Pass 3 37522-B-727-31H-N908JE-DGAA-DNAA-138-P..."
+            },
+            {
+              "page": 69,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...02 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 2 37523-B-727-31H-N908JE-DNAA-HRYR-139-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 479 9/24/2002 2002 B-727-31H N908JE Jet 134 DNAA HRYR Abuja, Nigeria Kigali, Rwanda 139 Pass 3 37523-B-727-31H-N908JE-DNAA-HRYR-139..."
+            },
+            {
+              "page": 69,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 2 37524-B-727-31H-N908JE-HRYR-FQMA-140-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 497 9/25/2002 2002 B-727-31H N908JE Jet 134 HRYR FQMA Kigali, Rwanda Maputo, Mozambique 140 Pass 3 37524-B-727-31H-N908JE-HRYR-FQMA..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 2 37525-B-727-31H-N908JE-FQMA-FACT-141-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 515 9/26/2002 2002 B-727-31H N908JE Jet 134 FQMA FACT Maputo, Mozambique Cape Town, South Africa 141 Pass 3 37525-B-727-31H-N908JE-..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...et 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 2 37526-B-727-31H-N908JE-FACT-FAJS-142-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 533 9/27/2002 2002 B-727-31H N908JE Jet 134 FACT FAJS Cape Town, South Africa Johannesburg, South Africa 142 Pass 3 37526-B-727-31H..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...et 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 2 37527-B-727-31H-N908JE-FAJS-FACT-143-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 545 9/28/2002 2002 B-727-31H N908JE Jet 134 FAJS FACT Johannesburg, South Africa Cape Town, South Africa 143 Pass 3 37527-B-727-31H..."
+            },
+            {
+              "page": 70,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...7-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 2 37528-B-727-31H-N908JE-FACT-DGAA-144-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 555 9/29/2002 2002 B-727-31H N908JE Jet 134 FACT DGAA Cape Town, South Africa Accra, Ghana 144 Pass 3 37528-B-727-31H-N908JE-FACT-D..."
+            },
+            {
+              "page": 71,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "... 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 2 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 570 9/29/2002 2002 B-727-31H N908JE Jet 134 DGAA LFPB Accra, Ghana Paris, France 145 Pass 3 37528-B-727-31H-N908JE-DGAA-LFPB-145-Pa..."
+            },
+            {
+              "page": 71,
+              "matched_variant": "Kevin Spacey",
+              "snippet": "...02 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 2 37528-B-727-31H-N908JE-LFPB-EGGW-146-Pass 2 Kevin Spacey Spacey, Kevin Kevin Spacey KS Yes Flight Log 587 9/29/2002 2002 B-727-31H N908JE Jet 134 LFPB EGGW Paris, France London, England 146 Pass 3 37528-B-727-31H-N908JE-LFPB-EGGW-146..."
+            }
+          ]
+        }
+      ],
+      "pinpoint_entity_id": "/m/048lv",
+      "pinpoint_file_count": 23,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Larry Summers",
+      "slug": "larry-summers",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": true,
+      "total_matches": 5,
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 5,
+          "matches": [
+            {
+              "page": 24,
+              "matched_variant": "Larry Summers",
+              "snippet": "...et 22 ASE IAD Aspen, CO, United States Washington Dc, United States 1159 Pass 3 36057-G-1159B-N908JE-ASE-IAD-1159-Pass 3 Larry Summers Summers, Larry Larry Summers LS Yes Flight Log 3594 9/19/1998 1998 G-1159B N908JE Jet 22 ASE IAD Aspen, CO, United States Washington Dc, United States 1159 Pass 4 36057-G-1159B-N..."
+            },
+            {
+              "page": 91,
+              "matched_variant": "Larry Summers",
+              "snippet": "...t 134 JFK BED New York, NY, United States Bedford, MA, United States 259 Pass 3 38092-B-727-31-N908JE-JFK-BED-259-Pass 3 Larry Summers Summers, Larry Larry Summers LS Yes Flight Log 1429 4/15/2004 2004 B-727-31 N908JE Jet 134 JFK BED New York, NY, United States Bedford, MA, United States 259 Pass 4 38092-B-727-3..."
+            },
+            {
+              "page": 108,
+              "matched_variant": "Larry Summers",
+              "snippet": "...N Bedford, MA, United States Westchester County, NY, United States 1819 Pass 4 38609-G-1159B-N909JE-BED-HPN-1819-Pass 4 Larry Summers Summers, Larry Larry Summers LS Yes Flight Log 2122 9/14/2005 2005 G-1159B N909JE Jet 22 BED HPN Bedford, MA, United States Westchester County, NY, United States 1819 Pass 5 386..."
+            },
+            {
+              "page": 111,
+              "matched_variant": "Larry Summers",
+              "snippet": "...States Charlotte Amalie, St. Thomas, United States Virgin Islands 1853 Pass 2 38707-G-1159B-N909JE-BED-TIST-1853-Pass 2 Larry Summers Summers, Larry Larry Summers LS Yes Flight Log 2250 12/21/2005 2005 G-1159B N909JE Jet 22 BED TIST Bedford, MA, United States Charlotte Amalie, St. Thomas, United States Virgin ..."
+            },
+            {
+              "page": 111,
+              "matched_variant": "Summers",
+              "snippet": "...IST Bedford, MA, United States Charlotte Amalie, St. Thomas, United States Virgin Islands 1853 Pass 3 38707-G-1159B-N909JE-BED-TIST-1853-Pass 3 Lisa Summers Summers, Lisa Lisa Summers LS Yes Flight Log 2251 12/21/2005 2005 G-1159B N909JE Jet 22 BED TIST Bedford, MA, United States Charlotte Amalie, St. Tho..."
+            }
+          ]
+        }
+      ],
+      "pinpoint_entity_id": "/m/01d7lz",
+      "pinpoint_file_count": 10,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Lena Dunham",
+      "slug": "lena-dunham",
+      "priority": "P1",
+      "category": "Entertainment Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/0b3w054",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": "RESTART THE GIRLS DISCOURSE.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Leonardo DiCaprio",
+      "slug": "leonardo-dicaprio",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/0dvmd",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Les Wexner",
+      "slug": "les-wexner",
+      "priority": "P0",
+      "category": "Business",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/01hwr1",
+      "pinpoint_file_count": 45,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Martin Scorsese",
+      "slug": "martin-scorsese",
+      "priority": "P1",
+      "category": "Entertainment Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/04sry",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": "/images/martin-scorsese.webp",
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Michael Jackson",
+      "slug": "michael-jackson",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": true,
+      "total_matches": 6,
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 6,
+          "matches": [
+            {
+              "page": 6,
+              "matched_variant": "Jackson",
+              "snippet": "4503 8/21/1996 1996 G-1159B N908JE Jet 22 PBI JAN West Palm Beach, FL, United States Jackson, MS, United States 879 Pass 1 35298-G-1159B-N908JE-PBI-JAN-879-Pass 1 Jeff Epstein Epstein, Jeff Jeff Epstein JE Yes Flight Log 4504 8/21/1996 1996 G..."
+            },
+            {
+              "page": 6,
+              "matched_variant": "Jackson",
+              "snippet": "...Pass 1 Jeff Epstein Epstein, Jeff Jeff Epstein JE Yes Flight Log 4504 8/21/1996 1996 G-1159B N908JE Jet 22 PBI JAN West Palm Beach, FL, United States Jackson, MS, United States 879 Pass 2 35298-G-1159B-N908JE-PBI-JAN-879-Pass 2 Ghislaine Maxwell Maxwell, Ghislaine Ghislaine Maxwell GM Yes Flight Log 4505 ..."
+            },
+            {
+              "page": 6,
+              "matched_variant": "Jackson",
+              "snippet": "... Maxwell Maxwell, Ghislaine Ghislaine Maxwell GM Yes Flight Log 4505 8/21/1996 1996 G-1159B N908JE Jet 22 PBI JAN West Palm Beach, FL, United States Jackson, MS, United States 879 Pass 3 35298-G-1159B-N908JE-PBI-JAN-879-Pass 3 Robin Plant Plant, Robin Robin Plant RP Yes Flight Log 4506 8/21/1996 1996 G-11..."
+            },
+            {
+              "page": 6,
+              "matched_variant": "Jackson",
+              "snippet": "...1 35298-G-1159B-N908JE-JAN-SAF-880-Pass 1 Jeff Epstein Epstein, Jeff Jeff Epstein JE Yes Flight Log 4507 8/21/1996 1996 G-1159B N908JE Jet 22 JAN SAF Jackson, MS, United States Santa Fe, NM, United States 880 Pass 2 35298-G-1159B-N908JE-JAN-SAF-880-Pass 2 Ghislaine Maxwell Maxwell, Ghislaine Ghislaine Max..."
+            },
+            {
+              "page": 6,
+              "matched_variant": "Jackson",
+              "snippet": "...N908JE-JAN-SAF-880-Pass 2 Ghislaine Maxwell Maxwell, Ghislaine Ghislaine Maxwell GM Yes Flight Log 4508 8/21/1996 1996 G-1159B N908JE Jet 22 JAN SAF Jackson, MS, United States Santa Fe, NM, United States 880 Pass 3 35298-G-1159B-N908JE-JAN-SAF-880-Pass 3 Robin Plant Plant, Robin Robin Plant RP Yes Flight ..."
+            },
+            {
+              "page": 51,
+              "matched_variant": "Jackson",
+              "snippet": "...-N908JE-VNY-BFI-FOIA-004-No Records ? ? ?, ? ? ? ?? No FOIA 3161 8/14/2001 2001 C-421B N908GM Fixed Wing 8 PBI JAN West Palm Beach, FL, United States Jackson, MS, United States Pass 1 37117-C-421B-N908GM-PBI-JAN--Pass 1 Jonathan Mano Mano, Jonathan Jonathan Mano (Pilot) JM Yes Flight Log 3162 8/14/2001 200..."
+            }
+          ]
+        }
+      ],
+      "pinpoint_entity_id": "/m/09889g",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Michael Wolff",
+      "slug": "michael-wolff",
+      "priority": "P1",
+      "category": "Media Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/04q34ww",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Mick Jagger",
+      "slug": "mick-jagger",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/01kx_81",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Minnie Driver",
+      "slug": "minnie-driver",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Naomi Campbell",
+      "slug": "naomi-campbell",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": true,
+      "total_matches": 5,
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 5,
+          "matches": [
+            {
+              "page": 49,
+              "matched_variant": "Naomi Campbell",
+              "snippet": "... 22 TEB CYUL Teterboro, NJ, United States Dorval, Quebec, Canada 1512 Pass 3 37050-G-1159B-N909JE-TEB-CYUL-1512-Pass 3 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 3081 6/8/2001 2001 G-1159B N909JE Jet 22 TEB CYUL Teterboro, NJ, United States Dorval, Quebec, Canada 1512 Pass 4 37050-G-1159B-N90..."
+            },
+            {
+              "page": 62,
+              "matched_variant": "Naomi Campbell",
+              "snippet": "...N908JE Jet 134 EGGW JFK London, England New York, NY, United States 76 Pass 7 37336-B-727-31-N908JE-EGGW-JFK-76-Pass 7 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 188 3/21/2002 2002 B-727-31 N908JE Jet 134 EGGW JFK London, England New York, NY, United States 76 Pass 8 37336-B-727-31-N908JE-EGG..."
+            },
+            {
+              "page": 71,
+              "matched_variant": "Naomi Campbell",
+              "snippet": "...908JE Jet 134 LFPB JFK Paris, France New York, NY, United States 148 Pass 6 37531-B-727-31H-N908JE-LFPB-JFK-148-Pass 6 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 605 10/3/2002 2002 B-727-31H N908JE Jet 134 JFK PBI New York, NY, United States West Palm Beach, FL, United States 149 Pass 1 37532..."
+            },
+            {
+              "page": 77,
+              "matched_variant": "Naomi Campbell",
+              "snippet": "...ie, St. Thomas, United States Virgin Islands Sao Paulo, Brazil 189 Pass 6 37713-B-727-31H-N908JE-TIST-SBGR-189-Pass 6 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 869 4/5/2003 2003 B-727-31H N908JE Jet 134 SBGR GVAL Sao Paulo, Brazil Geneva, Switzerland 190 Pass 1 37716-B-727-31H-N908JE-SBGR-G..."
+            },
+            {
+              "page": 78,
+              "matched_variant": "Naomi Campbell",
+              "snippet": "... N908JE Jet 134 SBGR GVAL Sao Paulo, Brazil Geneva, Switzerland 190 Pass 6 37716-B-727-31H-N908JE-SBGR-GVAL-190-Pass 6 Naomi Campbell Campbell, Naomi Naomi Campbell NC Yes Flight Log 875 4/6/2003 2003 B-727-31H N908JE Jet 134 GVAL LFPB Geneva, Switzerland Paris, France 191 Pass 1 37717-B-727-31H-N908JE-GVAL-LFPB-..."
+            }
+          ]
+        }
+      ],
+      "pinpoint_entity_id": "/m/05b6w8",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Noam Chomsky",
+      "slug": "noam-chomsky",
+      "priority": "P1",
+      "category": "Academic",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/0b78hw",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Osama bin Laden",
+      "slug": "osama-bin-laden",
+      "priority": "P1",
+      "category": "Historical Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/05mg9",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": "Osama Bin Listed",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Peter Thiel",
+      "slug": "peter-thiel",
+      "priority": "P1",
+      "category": "Tech CEO",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/04hyrd",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Prince Andrew",
+      "slug": "prince-andrew",
+      "priority": "P0",
+      "category": "British Royal",
+      "found_in_documents": true,
+      "total_matches": 5,
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 5,
+          "matches": [
+            {
+              "page": 19,
+              "matched_variant": "Andrew",
+              "snippet": "...98 G-1159B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teterboro, NJ, United States 1088 Pass 3 35890-G-1159B-N908JE-PBI-TEB-1088-Pass 3 Andrew Mitchell Mitchell, Andrew Andrew Mitchell AM Yes Flight Log 3379 4/5/1998 1998 G-1159B N908JE Jet 22 PBI TEB West Palm Beach, FL, United States Teter..."
+            },
+            {
+              "page": 35,
+              "matched_variant": "Prince Andrew",
+              "snippet": "...PBI Teterboro, NJ, United States West Palm Beach, FL, United States 1338 Pass 5 36658-G-1159B-N908JE-TEB-PBI-1338-Pass 5 Prince Andrew Andrew, Prince Prince Andrew PA Yes Flight Log 2654 5/12/2000 2000 G-1159B N908JE Jet 22 TEB PBI Teterboro, NJ, United States West Palm Beach, FL, United States 1338 Pass 6 36658..."
+            },
+            {
+              "page": 98,
+              "matched_variant": "Andrew",
+              "snippet": "...otte Amalie, St. Thomas, United States Virgin Islands West Palm Beach, FL, United States 300 Pass 5 38276-B-727-31H-N908JE-TIST-PBI-300-Pass 5 Laura Andrew Andrew, Laura Laura Andrew LA Yes Flight Log 1742 10/16/2004 2004 B-727-31H N908JE Jet 134 TIST PBI Charlotte Amalie, St. Thomas, United States Virg..."
+            },
+            {
+              "page": 98,
+              "matched_variant": "Andrew",
+              "snippet": "...lotte Amalie, St. Thomas, United States Virgin Islands West Palm Beach, FL, United States 300 Pass 6 38276-B-727-31H-N908JE-TIST-PBI-300-Pass 6 Lisa Andrew Andrew, Lisa Lisa Andrew LA Yes Flight Log 1743 10/16/2004 2004 B-727-31H N908JE Jet 134 TIST PBI Charlotte Amalie, St. Thomas, United States Virgin..."
+            },
+            {
+              "page": 98,
+              "matched_variant": "Andrew",
+              "snippet": "...-31H N908JE Jet 134 PBI JFK West Palm Beach, FL, United States New York, NY, United States 301 Pass 5 38277-B-727-31H-N908JE-PBI-JFK-301-Pass 5 Laura Andrew Andrew, Laura Laura Andrew LA Yes Flight Log 1750 10/17/2004 2004 B-727-31H N908JE Jet 134 PBI JFK West Palm Beach, FL, United States New York, NY, U..."
+            }
+          ]
+        }
+      ],
+      "pinpoint_entity_id": "/m/0xnh2",
+      "pinpoint_file_count": 17,
+      "custom_content": {
+        "one_liner": "And why he's just \"Andrew Mountbatten-Windsor\" the peasant now.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Richard Dawkins",
+      "slug": "richard-dawkins",
+      "priority": "P1",
+      "category": "Academic Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/06g4_",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Robert F. Kennedy Jr.",
+      "slug": "robert-f-kennedy-jr",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Rupert Murdoch",
+      "slug": "rupert-murdoch",
+      "priority": "P1",
+      "category": "Business Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/06hrk",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Stephen Hawking",
+      "slug": "stephen-hawking",
+      "priority": "P1",
+      "category": "Scientist",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/01tdnyh",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Steve Bannon",
+      "slug": "steve-bannon",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/0bqscsg",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Taylor Swift",
+      "slug": "taylor-swift",
+      "priority": "P1",
+      "category": "Entertainment Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/0dl567",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": "Absolutely no wrongdoing implied here or anywhere, ever.",
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Tom Pritzker",
+      "slug": "tom-pritzker",
+      "priority": "P1",
+      "category": "Business",
+      "found_in_documents": true,
+      "total_matches": 1,
+      "documents": [
+        {
+          "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
+          "classification": "Flight Logs",
+          "source_url": "https://ia801606.us.archive.org/30/items/epstein-flight-logs-unredacted_202304/EPSTEIN%20FLIGHT%20LOGS%20UNREDACTED.pdf",
+          "source_attribution": "Internet Archive - US v. Maxwell Trial Exhibits",
+          "sha256": "d30f3807f9e2b0a2dc112221607f2190e6fe6e8535e3ce198e4e6d723c7d7b15",
+          "verification_status": "UNVERIFIED",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 41,
+              "matched_variant": "Tom Pritzker",
+              "snippet": "...159B N908JE Jet 22 EGGW EGYM London, England Marham, United Kingdom 1429 Pass 4 36867-G-1159B-N908JE-EGGW-EGYM-1429-Pass 4 Tom Pritzker Pritzker, Tom Tom Pritzker TP Yes Flight Log 2316 12/7/2000 2000 G-1159B N908JE Jet 22 EGGW EGYM London, England Marham, United Kingdom 1429 Pass 5 36867-G-1159B-N908JE-EGGW-EG..."
+            }
+          ]
+        }
+      ],
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
+    },
+    {
+      "display_name": "Vladimir Putin",
+      "slug": "vladimir-putin",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/08193",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Warren Buffett",
+      "slug": "warren-buffett",
+      "priority": "P1",
+      "category": "Business Figure",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": "/m/01d_ys",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Woody Allen",
+      "slug": "woody-allen",
+      "priority": "P1",
+      "category": "Entertainment",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "documents": [],
+      "pinpoint_entity_id": "/m/08l57",
+      "pinpoint_file_count": 0,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
     }
   ]
 }

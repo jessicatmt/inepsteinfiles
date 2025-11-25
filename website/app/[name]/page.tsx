@@ -237,6 +237,13 @@ export default async function NamePage({
             {person.display_name} {found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES
           </p>
 
+          {/* Custom One-Liner */}
+          {person.custom_content?.one_liner && (
+            <p className="text-xl md:text-2xl italic text-gray-700 mb-8">
+              {person.custom_content.one_liner}
+            </p>
+          )}
+
           {/* Match Count */}
           <p className="text-2xl mb-6">
             <a
@@ -275,6 +282,37 @@ export default async function NamePage({
             </a>
           </p>
         </div>
+
+        {/* Custom Image */}
+        {person.custom_content?.image_url && (
+          <div className="my-12 text-center">
+            <img 
+              src={person.custom_content.image_url} 
+              alt={`Custom content for ${person.display_name}`}
+              className="max-w-full md:max-w-2xl mx-auto rounded-lg shadow-lg"
+            />
+          </div>
+        )}
+
+        {/* YouTube Embed */}
+        {person.custom_content?.youtube_embed_id && (
+          <div className="my-12 max-w-3xl mx-auto">
+            <div className="aspect-w-16 aspect-h-9 relative" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={`https://www.youtube.com/embed/${person.custom_content.youtube_embed_id}${
+                  person.custom_content.youtube_timestamp 
+                    ? `?start=${person.custom_content.youtube_timestamp}` 
+                    : ''
+                }`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full rounded-lg"
+              ></iframe>
+            </div>
+          </div>
+        )}
 
         {/* Sources Section (YES only) */}
         {found && (
