@@ -5,6 +5,26 @@ import peopleData from '@/public/people_index.json';
 // Use Edge runtime for faster cold starts
 export const runtime = 'edge';
 
+// Helper to split text into lines that fit within maxChars
+// This creates the "highlighter" effect where each line has its own background
+function splitIntoLines(text: string, maxChars: number = 38): string[] {
+  const words = text.split(' ');
+  const lines: string[] = [];
+  let currentLine = '';
+
+  for (const word of words) {
+    const testLine = currentLine ? `${currentLine} ${word}` : word;
+    if (testLine.length <= maxChars) {
+      currentLine = testLine;
+    } else {
+      if (currentLine) lines.push(currentLine);
+      currentLine = word;
+    }
+  }
+  if (currentLine) lines.push(currentLine);
+  return lines;
+}
+
 // Cache OG images for 1 day, but allow stale-while-revalidate
 export const revalidate = 86400;
 
@@ -123,21 +143,33 @@ export async function GET(
                 YES
               </div>
 
-              {/* Name line - highlighted text effect */}
-              <span
+              {/* Name line - highlighted text effect that hugs the text */}
+              <div
                 style={{
-                  fontFamily: 'Public Sans',
-                  fontSize: 50,
-                  fontWeight: 900,
-                  color: '#ffffff',
-                  lineHeight: 1.4,
-                  backgroundColor: '#000000',
-                  padding: '4px 12px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
                   marginBottom: 24,
+                  gap: 4,
                 }}
               >
-                {personName} IS in the Epstein Files
-              </span>
+                {splitIntoLines(`${personName} IS in the Epstein Files`).map((line, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      fontFamily: 'Public Sans',
+                      fontSize: 50,
+                      fontWeight: 900,
+                      color: '#ffffff',
+                      backgroundColor: '#000000',
+                      padding: '6px 14px',
+                      lineHeight: 1.1,
+                    }}
+                  >
+                    {line}
+                  </span>
+                ))}
+              </div>
 
               {/* Monospace details - 31px Geist Mono Bold */}
               <div
@@ -232,21 +264,33 @@ export async function GET(
                 NO
               </div>
 
-              {/* Name line - highlighted text effect */}
-              <span
+              {/* Name line - highlighted text effect that hugs the text */}
+              <div
                 style={{
-                  fontFamily: 'Public Sans',
-                  fontSize: 50,
-                  fontWeight: 900,
-                  color: '#000000',
-                  lineHeight: 1.4,
-                  backgroundColor: '#ffffff',
-                  padding: '4px 12px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
                   marginBottom: 24,
+                  gap: 4,
                 }}
               >
-                {personName} is NOT in the Epstein Files
-              </span>
+                {splitIntoLines(`${personName} is NOT in the Epstein Files`).map((line, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      fontFamily: 'Public Sans',
+                      fontSize: 50,
+                      fontWeight: 900,
+                      color: '#000000',
+                      backgroundColor: '#ffffff',
+                      padding: '6px 14px',
+                      lineHeight: 1.1,
+                    }}
+                  >
+                    {line}
+                  </span>
+                ))}
+              </div>
 
               {/* Monospace details - 31px Geist Mono Bold */}
               <div

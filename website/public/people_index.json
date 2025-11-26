@@ -573,7 +573,7 @@
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null,
-        "one_liner_link": "/putin-deez-nutz"
+        "one_liner_popup": "Putin DEEZ NUTZ in your mouth."
       },
       "documents": []
     },
@@ -3622,7 +3622,7 @@
             {
               "page": 16,
               "matched_variant": "Dubin",
-              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :\u2022\u2022 Dunne, Phillp & Domlmce . I t I \u2022 \u2022 t \u2022 Durso Luigi ..... IV"
+              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :•• Dunne, Phillp & Domlmce . I t I • • t • Durso Luigi ..... IV"
             }
           ]
         }
@@ -4617,25 +4617,7 @@
         "yo momma"
       ],
       "custom_content": {
-        "one_liner": "Hahaha \ud83d\ude02 funny. But YES someone was in your mom.",
-        "image_url": null,
-        "youtube_embed_id": null,
-        "youtube_timestamp": null
-      },
-      "documents": []
-    },
-    {
-      "display_name": "Putin Deez Nutz",
-      "slug": "putin-deez-nutz",
-      "priority": "Custom",
-      "category": "Easter Egg",
-      "found_in_documents": null,
-      "total_matches": 0,
-      "pinpoint_entity_id": null,
-      "pinpoint_file_count": 0,
-      "custom_content": {
-        "one_liner": "Putin DEEZ NUTZ in your mouth.",
-        "one_liner_link": null,
+        "one_liner": "Hahaha 😂 funny. But YES someone was in your mom.",
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null

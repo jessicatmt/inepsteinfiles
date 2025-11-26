@@ -20,6 +20,7 @@ export interface DocumentEvidence {
 export interface CustomContent {
   one_liner?: string | null;
   one_liner_link?: string | null;
+  one_liner_popup?: string | null;  // Popup text for "Check it out" alert (like FAKE NEWS button)
   image_url?: string | null;
   youtube_embed_id?: string | null;
   youtube_timestamp?: number | null;
