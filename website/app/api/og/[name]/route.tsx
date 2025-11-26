@@ -5,6 +5,40 @@ import peopleData from '@/public/people_index.json';
 // Use Edge runtime for faster cold starts
 export const runtime = 'edge';
 
+// Simple in-memory rate limiter for Edge runtime
+// Note: This resets on cold starts, but provides basic DoS protection
+const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
+const RATE_LIMIT_MAX = 30; // 30 requests per minute per IP
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = rateLimitMap.get(ip);
+
+  if (!record || now > record.resetTime) {
+    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
+    return false;
+  }
+
+  if (record.count >= RATE_LIMIT_MAX) {
+    return true;
+  }
+
+  record.count++;
+  return false;
+}
+
+// Sanitize and validate the name parameter
+function sanitizeName(name: string): string {
+  // Truncate to reasonable length and only allow alphanumeric + hyphens
+  return name
+    .slice(0, 100)
+    .toLowerCase()
+    .replace(/[^a-z0-9-]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
+
 // Helper to split text into lines that fit within maxChars
 // This creates the "highlighter" effect where each line has its own background
 function splitIntoLines(text: string, maxChars: number = 38): string[] {
@@ -41,8 +75,31 @@ export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ name: string }> }
 ) {
+  // Rate limiting check
+  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+             request.headers.get('x-real-ip') ||
+             'unknown';
+
+  if (isRateLimited(ip)) {
+    return new Response('Too many requests. Please try again later.', {
+      status: 429,
+      headers: {
+        'Retry-After': '60',
+        'Content-Type': 'text/plain',
+      },
+    });
+  }
+
   try {
-    const { name } = await params;
+    const { name: rawName } = await params;
+
+    // Sanitize the name parameter to prevent content spoofing
+    const name = sanitizeName(rawName);
+
+    // If name is empty after sanitization, return a generic error
+    if (!name) {
+      return new Response('Invalid name parameter', { status: 400 });
+    }
 
     // Load fonts in parallel
     const [publicSansBlackData, geistMonoBoldData] = await Promise.all([

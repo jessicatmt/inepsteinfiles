@@ -75,7 +75,7 @@ describe('Data Loading Functions', () => {
       mockFs.readFile.mockRejectedValue(error);
 
       await expect(loadPeopleData()).rejects.toThrow(
-        'People index file not found'
+        'Data source unavailable'
       );
     });
 
@@ -83,7 +83,7 @@ describe('Data Loading Functions', () => {
       mockFs.readFile.mockResolvedValue('{ invalid json }');
 
       await expect(loadPeopleData()).rejects.toThrow(
-        'People index file contains invalid JSON'
+        'Failed to load data'
       );
     });
 

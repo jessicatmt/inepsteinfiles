@@ -36,16 +36,19 @@ export async function loadPeopleData(): Promise<PeopleIndex> {
 
     return data;
   } catch (error) {
+    // Log detailed error server-side for debugging
+    console.error('Error loading people data:', error);
+
+    // Return generic error messages to clients to avoid information disclosure
     if (error instanceof Error) {
-      // Provide more context for different error types
       if (error.message.includes('ENOENT')) {
-        throw new Error('People index file not found. Please ensure people_index.json exists in the public directory.');
+        throw new Error('Data source unavailable. Please try again later.');
       } else if (error instanceof SyntaxError) {
-        throw new Error('People index file contains invalid JSON. Please check the file format.');
+        throw new Error('Data format error. Please try again later.');
       }
-      throw new Error(`Failed to load people data: ${error.message}`);
     }
-    throw new Error('Failed to load people data: Unknown error');
+    // Generic error for all other cases - don't expose internal details
+    throw new Error('Failed to load data. Please try again later.');
   }
 }
 
