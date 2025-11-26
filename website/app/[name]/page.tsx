@@ -343,10 +343,12 @@ export default async function NamePage({
                 );
               })}
             </div>
-            {/* Link to search for more on epstein-docs */}
+            {/* Link to search for more - use Pinpoint if available, otherwise epstein-docs people page */}
             <div className="text-center mt-6">
               <a
-                href={`https://epstein-docs.github.io/search/?q=${encodeURIComponent(person.display_name)}`}
+                href={person.pinpoint_entity_id
+                  ? `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=${encodeURIComponent(person.pinpoint_entity_id)}`
+                  : `https://epstein-docs.github.io/people/`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline"
