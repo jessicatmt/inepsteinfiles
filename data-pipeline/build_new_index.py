@@ -172,10 +172,10 @@ def main():
         variations = list(name_variations.get(canonical_name, set()))
         variations = [v for v in variations if v != canonical_name][:10]  # Limit variations
 
-        # Get top 5 most relevant documents as evidence
+        # Get top 7 most relevant documents as evidence
         evidence = []
         seen_summaries = set()
-        for doc in data['documents'][:20]:  # Check first 20
+        for doc in data['documents'][:25]:  # Check first 25
             summary = doc['summary']
             if summary and summary not in seen_summaries:
                 evidence.append({
@@ -186,7 +186,7 @@ def main():
                     'url': f"https://epstein-docs.github.io/document/{doc['doc_id']}/"
                 })
                 seen_summaries.add(summary)
-                if len(evidence) >= 5:
+                if len(evidence) >= 7:
                     break
 
         person_entry = {

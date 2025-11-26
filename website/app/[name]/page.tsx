@@ -241,7 +241,7 @@ export default async function NamePage({
             {found ? (
               <>
                 {person.total_matches && person.total_matches > 0
-                  ? `Found in ${person.total_matches} official document${person.total_matches !== 1 ? 's' : ''}.`
+                  ? `Appears in ${person.total_matches} official Epstein document${person.total_matches !== 1 ? 's' : ''} so far.`
                   : "Bookmark this page, we're still processing their file matches."}
               </>
             ) : (
@@ -311,7 +311,7 @@ export default async function NamePage({
               Evidence from Documents
             </h2>
             <div className="space-y-4">
-              {person.documents.slice(0, 5).map((doc, index) => {
+              {person.documents.slice(0, 7).map((doc, index) => {
                 const snippet = doc.matches?.[0]?.snippet || '';
                 if (!snippet) return null;
 
@@ -343,11 +343,34 @@ export default async function NamePage({
                 );
               })}
             </div>
-            {person.documents.length > 5 && (
-              <p className="text-center text-sm text-gray-500 mt-4">
-                Showing 5 of {person.documents.length} documents
-              </p>
-            )}
+            {/* Link to search for more on epstein-docs */}
+            <div className="text-center mt-6">
+              <a
+                href={`https://epstein-docs.github.io/search/?q=${encodeURIComponent(person.display_name)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 hover:underline"
+              >
+                Search for more documents →
+              </a>
+            </div>
+          </div>
+        )}
+
+        {/* Pinpoint Fallback - When we have Pinpoint data but no epstein-docs excerpts */}
+        {found && (!person.documents || person.documents.length === 0) && person.pinpoint_entity_id && (
+          <div className="my-12 max-w-3xl mx-auto text-center">
+            <p className="text-gray-600 mb-4">
+              Document excerpts are still being processed.
+            </p>
+            <a
+              href={`https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=${encodeURIComponent(person.pinpoint_entity_id)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors"
+            >
+              View documents in Google Pinpoint →
+            </a>
           </div>
         )}
 
