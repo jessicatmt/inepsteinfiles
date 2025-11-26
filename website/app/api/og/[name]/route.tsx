@@ -169,20 +169,20 @@ export async function GET(
               }}
             />
 
-            {/* Content overlay - centered vertically */}
+            {/* Content overlay - moved up to avoid page title overlay */}
             <div
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
-                justifyContent: 'center',
-                padding: '40px 50px',
+                justifyContent: 'flex-start',
+                padding: '30px 50px',
                 position: 'relative',
                 width: '100%',
                 height: '100%',
               }}
             >
-              {/* Giant YES - 238px Public Sans BLACK, centered horizontally */}
+              {/* Giant YES - 238px Public Sans BLACK, centered horizontally, with black stroke */}
               <div
                 style={{
                   display: 'flex',
@@ -192,9 +192,10 @@ export async function GET(
                   fontSize: 238,
                   fontWeight: 900,
                   lineHeight: 0.9,
-                  color: '#ffffff',
+                  color: '#FFFFFF',
                   letterSpacing: '-0.02em',
                   marginBottom: 20,
+                  textShadow: '-4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000, 4px 4px 0 #000, 0 -4px 0 #000, 0 4px 0 #000, -4px 0 0 #000, 4px 0 0 #000',
                 }}
               >
                 YES
@@ -218,7 +219,7 @@ export async function GET(
                       fontSize: 50,
                       fontWeight: 900,
                       color: '#ffffff',
-                      backgroundColor: '#000000',
+                      backgroundColor: 'rgba(0, 0, 0, 0.92)',
                       padding: '6px 14px',
                       lineHeight: 1.1,
                     }}
@@ -228,7 +229,7 @@ export async function GET(
                 ))}
               </div>
 
-              {/* Monospace details - 31px Geist Mono Bold */}
+              {/* Monospace details - 31px Geist Mono Bold, arrows in bright red */}
               <div
                 style={{
                   display: 'flex',
@@ -236,18 +237,20 @@ export async function GET(
                   gap: 6,
                   fontFamily: 'Geist Mono',
                   fontSize: 31,
-                  color: '#ffffff',
                   fontWeight: 700,
                 }}
               >
                 <div style={{ display: 'flex' }}>
-                  {`> ${fileCount} RESULTS IN OFFICIAL DOCUMENTS (SO FAR)`}
+                  <span style={{ color: '#FF3333' }}>{`> `}</span>
+                  <span style={{ color: '#ffffff' }}>{`${fileCount} RESULTS IN OFFICIAL DOCUMENTS (SO FAR)`}</span>
                 </div>
                 <div style={{ display: 'flex' }}>
-                  {`> ${vanityUrl}`}
+                  <span style={{ color: '#FF3333' }}>{`> `}</span>
+                  <span style={{ color: '#ffffff' }}>{vanityUrl}</span>
                 </div>
                 <div style={{ display: 'flex' }}>
-                  {`> NO WRONGDOING IS ALLEGED OR IMPLIED`}
+                  <span style={{ color: '#FF3333' }}>{`> `}</span>
+                  <span style={{ color: '#ffffff' }}>{`NO WRONGDOING IS ALLEGED OR IMPLIED`}</span>
                 </div>
               </div>
             </div>
@@ -290,20 +293,20 @@ export async function GET(
               }}
             />
 
-            {/* Content overlay - centered vertically */}
+            {/* Content overlay - moved up to avoid page title overlay */}
             <div
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'flex-start',
-                justifyContent: 'center',
-                padding: '40px 50px',
+                justifyContent: 'flex-start',
+                padding: '30px 50px',
                 position: 'relative',
                 width: '100%',
                 height: '100%',
               }}
             >
-              {/* Giant NO - 238px Public Sans BLACK, centered horizontally */}
+              {/* Giant NO - 238px Public Sans BLACK, centered horizontally, with black stroke */}
               <div
                 style={{
                   display: 'flex',
@@ -313,9 +316,10 @@ export async function GET(
                   fontSize: 238,
                   fontWeight: 900,
                   lineHeight: 0.9,
-                  color: '#ffffff',
+                  color: '#FFFFFF',
                   letterSpacing: '-0.02em',
                   marginBottom: 20,
+                  textShadow: '-4px -4px 0 #000, 4px -4px 0 #000, -4px 4px 0 #000, 4px 4px 0 #000, 0 -4px 0 #000, 0 4px 0 #000, -4px 0 0 #000, 4px 0 0 #000',
                 }}
               >
                 NO
@@ -369,7 +373,7 @@ export async function GET(
                 </div>
               </div>
 
-              {/* Legal disclaimer - right aligned, 18px Geist Mono */}
+              {/* Legal disclaimer - right aligned, 18px Geist Mono, light gray */}
               <div
                 style={{
                   display: 'flex',
@@ -377,7 +381,7 @@ export async function GET(
                   bottom: 30,
                   right: 50,
                   fontSize: 18,
-                  color: 'rgba(255, 255, 255, 0.6)',
+                  color: '#AAAAAA',
                   fontFamily: 'Geist Mono',
                   fontWeight: 700,
                 }}

@@ -8,7 +8,7 @@ import CheckItOutPopup from '../components/CheckItOutPopup';
 import { getPersonData } from '@/lib/data';
 
 // Version param for cache busting - bump this when data changes significantly
-const OG_VERSION = '20251125b';
+const OG_VERSION = '20251126a';
 
 // Allow dynamic params to handle names not in the index
 export const dynamicParams = true;
