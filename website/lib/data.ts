@@ -53,14 +53,38 @@ export async function loadPeopleData(): Promise<PeopleIndex> {
 }
 
 /**
- * Finds a person by their slug
+ * Finds a person by their slug with smart matching
  * @param slug The URL slug to search for
  * @returns Promise<Person | null> The person data or null if not found
+ *
+ * Matching priority:
+ * 1. Exact slug match
+ * 2. Slug ends with the search term (e.g., "obama" matches "barack-obama")
+ * 3. Slug contains the search term as a word boundary
  */
 export async function getPersonData(slug: string): Promise<Person | null> {
   try {
     const data = await loadPeopleData();
-    return data.people.find((p) => p.slug === slug) || null;
+    const normalizedSlug = slug.toLowerCase();
+
+    // 1. Exact match
+    const exactMatch = data.people.find((p) => p.slug === normalizedSlug);
+    if (exactMatch) return exactMatch;
+
+    // 2. Slug ends with search term (e.g., "obama" → "barack-obama")
+    const endMatch = data.people.find((p) =>
+      p.slug.endsWith('-' + normalizedSlug) || p.slug.endsWith(normalizedSlug)
+    );
+    if (endMatch) return endMatch;
+
+    // 3. Search term is a word in the slug (e.g., "clinton" → "bill-clinton")
+    const wordMatch = data.people.find((p) => {
+      const slugParts = p.slug.split('-');
+      return slugParts.includes(normalizedSlug);
+    });
+    if (wordMatch) return wordMatch;
+
+    return null;
   } catch (error) {
     console.error('Error loading person data:', error);
     // Re-throw to let calling code handle it
