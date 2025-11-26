@@ -115,15 +115,6 @@ export default async function NamePage({
   const { name } = await params;
   const person = await getPersonData(name);
 
-  // Track search asynchronously (don't await to avoid blocking page render)
-  fetch(`${process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}/api/track-search`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name }),
-  }).catch(() => {
-    // Silently fail tracking - don't block page render
-  });
-
   // Convert slug to display name (e.g., "donald-duck" -> "Donald Duck")
   const displayName = name
     .split('-')
