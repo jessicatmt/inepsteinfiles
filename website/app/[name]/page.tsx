@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Metadata } from 'next';
 import Image from 'next/image';
+import { redirect } from 'next/navigation';
 import SearchForm from '../components/SearchForm';
 import FakeNewsButton from '../components/FakeNewsButton';
 import CheckItOutPopup from '../components/CheckItOutPopup';
@@ -112,6 +113,12 @@ export default async function NamePage({
 }) {
   const { name } = await params;
   const person = await getPersonData(name);
+
+  // Redirect to canonical slug if we found a match via alias
+  // e.g., /obama → /barack-obama
+  if (person && person.slug !== name.toLowerCase()) {
+    redirect(`/${person.slug}`);
+  }
 
   // Convert slug to display name (e.g., "donald-duck" -> "Donald Duck")
   const displayName = name
