@@ -53,14 +53,14 @@ export default function AboutPage() {
 
           {/* 2. AI Indexed */}
           <div className="mb-8">
-            <h3 className="text-lg font-bold mb-3">2. "AI Indexed" / Beta Data Warning</h3>
+            <h3 className="text-lg font-bold mb-3">2. &ldquo;AI Indexed&rdquo; / Beta Data Warning</h3>
             <p className="text-gray-700 mb-3">
               This site uses automated Optical Character Recognition (OCR) and AI-assisted entity extraction,
-              as well as Google's Pinpoint document collections. <strong>This process is not 100% error-free.</strong>
+              as well as Google&apos;s Pinpoint document collections. <strong>This process is not 100% error-free.</strong>
             </p>
             <p className="text-gray-700">
-              While we cross-reference major names, "No Results" does not guarantee absence from the files,
-              and a "Positive Result" should always be verified against the primary source PDF
+              While we cross-reference major names, &ldquo;No Results&rdquo; does not guarantee absence from the files,
+              and a &ldquo;Positive Result&rdquo; should always be verified against the primary source PDF
               (linked in search results where available).
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
           </p>
           <p className="text-gray-700">
             <a href="sms://233733" className="text-blue-600 hover:underline">
-              You're not alone. Text HOME to 233733
+              You&apos;re not alone. Text HOME to 233733
             </a>
           </p>
         </section>

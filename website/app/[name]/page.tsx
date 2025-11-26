@@ -30,7 +30,6 @@ export async function generateMetadata({
     // Simpler title to avoid repetition with OG image text
     const title = `${displayName} | Epstein Files Search`;
     const description = `0 results found. Sources: ${name}.inepsteinfiles.com`;
-    const canonicalUrl = `https://inepsteinfiles.com/${name}?utm_source=x_share`;
     const vanityUrl = `https://${name}.inepsteinfiles.com?utm_source=x_share`;
     const altText = `Clear: ${displayName} has 0 matches in Epstein files so far. Still processing. Neutral search results.`;
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
@@ -66,7 +65,6 @@ export async function generateMetadata({
   // Person is "found" if they have documents OR Pinpoint file count > 0
   const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
   const vanityUrl = `https://${person.slug}.inepsteinfiles.com?utm_source=x_share`;
-  const canonicalUrl = `https://inepsteinfiles.com/${person.slug}?utm_source=x_share`;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
   const ogImageUrl = `${siteUrl}/api/og/${person.slug}?v=${OG_VERSION}`;
 
@@ -126,8 +124,6 @@ export default async function NamePage({
     const vanityUrl = `https://${name}.inepsteinfiles.com`;
     const shareText = `${displayName} IS NOT in the Epstein files. Thoughts?\n\n${vanityUrl}`;
     const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
-    // For names not in our index, we can only use text search
-    const pinpointSearchUrl = `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&p=1&q=${encodeURIComponent(displayName)}`;
 
     return (
       <main className="min-h-screen bg-white text-black p-4">
@@ -197,16 +193,9 @@ export default async function NamePage({
 
   // Person is "found" if they have documents OR Pinpoint file count > 0
   const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
-  const canonicalUrl = `https://inepsteinfiles.com/${person.slug}`;
   const vanityUrl = `https://${person.slug}.inepsteinfiles.com`;
   const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${vanityUrl}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
-
-  // Pinpoint collection URL for deep linking
-  // Use entity ID if available (more accurate), otherwise fall back to text search
-  const pinpointSearchUrl = person.pinpoint_entity_id
-    ? `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&p=1&entities=${encodeURIComponent(person.pinpoint_entity_id)}`
-    : `https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&q=${encodeURIComponent(person.display_name)}`;
 
   return (
     <main className="min-h-screen bg-white text-black p-4">
@@ -250,16 +239,11 @@ export default async function NamePage({
           {/* Match Count */}
           <p className="text-2xl mb-6">
             {found ? (
-              <a
-                href={pinpointSearchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-gray-600"
-              >
-                {person.pinpoint_file_count && person.pinpoint_file_count > 0
-                  ? `In ${person.pinpoint_file_count} official files so far.`
+              <>
+                {person.total_matches && person.total_matches > 0
+                  ? `Found in ${person.total_matches} official document${person.total_matches !== 1 ? 's' : ''}.`
                   : "Bookmark this page, we're still processing their file matches."}
-              </a>
+              </>
             ) : (
               'No search results in official files — so far.'
             )}
@@ -306,8 +290,8 @@ export default async function NamePage({
             <div className="aspect-w-16 aspect-h-9 relative" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 src={`https://www.youtube.com/embed/${person.custom_content.youtube_embed_id}${
-                  person.custom_content.youtube_timestamp 
-                    ? `?start=${person.custom_content.youtube_timestamp}` 
+                  person.custom_content.youtube_timestamp
+                    ? `?start=${person.custom_content.youtube_timestamp}`
                     : ''
                 }`}
                 title="YouTube video player"
@@ -320,6 +304,52 @@ export default async function NamePage({
           </div>
         )}
 
+        {/* Evidence Section - Show document excerpts */}
+        {found && person.documents && person.documents.length > 0 && (
+          <div className="my-12 max-w-3xl mx-auto">
+            <h2 className="text-xl font-bold uppercase tracking-wide text-gray-800 mb-6 text-center">
+              Evidence from Documents
+            </h2>
+            <div className="space-y-4">
+              {person.documents.slice(0, 5).map((doc, index) => {
+                const snippet = doc.matches?.[0]?.snippet || '';
+                if (!snippet) return null;
+
+                return (
+                  <a
+                    key={index}
+                    href={doc.source_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-gray-400 hover:bg-gray-100 transition-colors"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold text-sm">
+                        {index + 1}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm text-gray-600 mb-1">
+                          {doc.classification || 'Document'} • {doc.filename}
+                        </p>
+                        <p className="text-gray-800 line-clamp-3">
+                          &ldquo;{snippet.length > 300 ? snippet.slice(0, 300) + '...' : snippet}&rdquo;
+                        </p>
+                        <p className="text-xs text-blue-600 mt-2 hover:underline">
+                          View full document →
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                );
+              })}
+            </div>
+            {person.documents.length > 5 && (
+              <p className="text-center text-sm text-gray-500 mt-4">
+                Showing 5 of {person.documents.length} documents
+              </p>
+            )}
+          </div>
+        )}
 
         {/* Search Again Section */}
         <div className="border-t border-gray-300 pt-12 mt-12 text-center">

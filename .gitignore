@@ -64,3 +64,9 @@ htmlcov/
 !CLAUDE.md
 !README.github.md
 .vercel
+
+# Raw epstein-docs data (too large for git)
+data-pipeline/epstein_docs_analyses.json
+data-pipeline/epstein_docs_dedupe.json
+data-pipeline/new_people_index.json
+data-pipeline/people_index_compact.json
