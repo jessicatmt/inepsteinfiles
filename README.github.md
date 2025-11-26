@@ -163,8 +163,7 @@ This tool provides information from **official government documents only**. It d
 ## Contact
 
 Questions? Concerns? Found an error?
-- Email: jessica.suarez@gmail.com
-- Report issues on GitHub (link coming soon)
+- [Report issues on GitHub](https://github.com/jessicatmt/inepsteinfiles/issues)
 
 ## License
 

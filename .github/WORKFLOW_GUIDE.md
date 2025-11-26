@@ -153,4 +153,3 @@ You can adjust these workflows by editing:
 ---
 
 **Last Updated:** 2024-11-20
-**Maintainer:** jessica.suarez@gmail.com

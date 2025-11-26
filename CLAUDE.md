@@ -1,7 +1,6 @@
 # InEpsteinFiles.com - Claude Code Project Instructions
 
 ## Import Structure
-@/Users/Me/ClaudeWorkspace/CLAUDE.md
 @README.md
 
 ## Project Overview
@@ -191,8 +190,6 @@ These were in the original PRD but cut for speed:
 ## Key Decisions & Context
 
 ### From User Preferences
-- Email: jessica.suarez@gmail.com
-- Vercel account: jessicasuarez-3910
 - Unfamiliar with: Next.js App Router, Vercel deployment, Tailwind
 - Python environment: 3.13.7 installed, Tesseract needs installation
 - Manual monitoring: User will identify high-value PDFs from news

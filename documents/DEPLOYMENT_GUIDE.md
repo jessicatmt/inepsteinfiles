@@ -4,14 +4,14 @@
 
 ### Prerequisites
 - GitHub repository: `jessicatmt/inepsteinfiles` ✅ (already pushed)
-- Vercel account: `jessicasuarez-3910`
+- Vercel account connected
 - Domain: `inepsteinfiles.com` (purchased, needs DNS config)
 
 ### Step 1: Deploy to Vercel
 
 1. **Go to Vercel Dashboard**
    - Visit: https://vercel.com/dashboard
-   - Log in with account: `jessicasuarez-3910`
+   - Log in with your Vercel account
 
 2. **Import GitHub Repository**
    - Click "Add New..." → "Project"
