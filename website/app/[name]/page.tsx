@@ -64,7 +64,8 @@ export async function generateMetadata({
   }
 
   // Person is "found" if they have documents OR Pinpoint file count > 0
-  const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
+  // Use Boolean() to ensure we get true/false, not 0 (which React renders as "0")
+  const found = Boolean(person.found_in_documents) || (person.pinpoint_file_count != null && person.pinpoint_file_count > 0);
   const vanityUrl = `https://${person.slug}.inepsteinfiles.com?utm_source=x_share`;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://inepsteinfiles.com';
   const ogImageUrl = `${siteUrl}/api/og/${person.slug}?v=${OG_VERSION}`;
@@ -199,7 +200,8 @@ export default async function NamePage({
   }
 
   // Person is "found" if they have documents OR Pinpoint file count > 0
-  const found = person.found_in_documents || (person.pinpoint_file_count && person.pinpoint_file_count > 0);
+  // Use Boolean() to ensure we get true/false, not 0 (which React renders as "0")
+  const found = Boolean(person.found_in_documents) || (person.pinpoint_file_count != null && person.pinpoint_file_count > 0);
   const vanityUrl = `https://${person.slug}.inepsteinfiles.com`;
   const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${vanityUrl}`;
   const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
