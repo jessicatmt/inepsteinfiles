@@ -39,7 +39,11 @@ website/public/people_index.json
 
 # Logs (keep structure, ignore content)
 .logs/*.md
+.logs/*.jsonl
 !.logs/.gitkeep
+
+# Reference materials (local only, not for public repo)
+reference/
 
 # Python
 *.egg-info/
