@@ -93,6 +93,45 @@ export async function getPersonData(slug: string): Promise<Person | null> {
 }
 
 /**
+ * Finds all people that match a search term
+ * @param slug The search term
+ * @returns Promise<Person[]> Array of matching people
+ */
+export async function findAllMatches(slug: string): Promise<Person[]> {
+  try {
+    const data = await loadPeopleData();
+    const normalizedSlug = slug.toLowerCase();
+    const matches: Person[] = [];
+
+    // Find all matches (exact, ends with, contains)
+    data.people.forEach((person) => {
+      // Exact match
+      if (person.slug === normalizedSlug) {
+        matches.push(person);
+        return;
+      }
+      
+      // Slug ends with search term
+      if (person.slug.endsWith('-' + normalizedSlug) || person.slug.endsWith(normalizedSlug)) {
+        matches.push(person);
+        return;
+      }
+      
+      // Search term is a word in the slug
+      const slugParts = person.slug.split('-');
+      if (slugParts.includes(normalizedSlug)) {
+        matches.push(person);
+      }
+    });
+
+    return matches;
+  } catch (error) {
+    console.error('Error finding matches:', error);
+    return [];
+  }
+}
+
+/**
  * Clears the data cache (useful for testing)
  */
 export function clearCache(): void {

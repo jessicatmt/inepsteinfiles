@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import SearchForm from '../components/SearchForm';
 import FakeNewsButton from '../components/FakeNewsButton';
 import CheckItOutPopup from '../components/CheckItOutPopup';
-import { getPersonData } from '@/lib/data';
+import { getPersonData, findAllMatches } from '@/lib/data';
 
 // Version param for cache busting - bump this when data changes significantly
 const OG_VERSION = '20251126a';
@@ -114,6 +114,12 @@ export default async function NamePage({
 }) {
   const { name } = await params;
   const person = await getPersonData(name);
+  
+  // Find all potential matches for "Or searching for..." section
+  const allMatches = await findAllMatches(name);
+  const otherMatches = person 
+    ? allMatches.filter(p => p.slug !== person.slug)
+    : allMatches;
 
   // Redirect to canonical slug if we found a match via alias
   // e.g., /obama → /barack-obama
@@ -143,10 +149,34 @@ export default async function NamePage({
               NO
             </div>
 
-            {/* Subtitle */}
+            {/* Subtitle - using generic name since we don't know which person they meant */}
             <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
               {displayName} IS NOT IN THE EPSTEIN FILES
             </p>
+            
+            {/* Show other potential matches */}
+            {otherMatches.length > 0 && (
+              <div className="bg-gray-100 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+                <p className="text-sm font-semibold mb-3">Or searching for:</p>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {otherMatches.slice(0, 5).map(match => {
+                    const matchFound = Boolean(match.found_in_documents) || (match.pinpoint_file_count != null && match.pinpoint_file_count > 0);
+                    return (
+                      <Link
+                        key={match.slug}
+                        href={`/${match.slug}`}
+                        className="inline-flex items-center gap-2 bg-white px-3 py-2 rounded border border-gray-300 hover:border-black transition-colors"
+                      >
+                        <span className="text-sm">{match.display_name}</span>
+                        <span className={`text-xs font-bold ${matchFound ? 'text-red-600' : 'text-green-600'}`}>
+                          {matchFound ? 'YES' : 'NO'}
+                        </span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* Match Count */}
             <p className="text-2xl mb-6">
@@ -220,10 +250,34 @@ export default async function NamePage({
             {found ? 'YES' : 'NO'}
           </div>
 
-          {/* Subtitle */}
+          {/* Subtitle - now showing the actual person's full name */}
           <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
             {person.display_name} {found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES
           </p>
+          
+          {/* Show other potential matches if user searched with partial name */}
+          {otherMatches.length > 0 && (
+            <div className="bg-gray-100 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+              <p className="text-sm font-semibold mb-3">Or searching for:</p>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {otherMatches.slice(0, 5).map(match => {
+                  const matchFound = Boolean(match.found_in_documents) || (match.pinpoint_file_count != null && match.pinpoint_file_count > 0);
+                  return (
+                    <Link
+                      key={match.slug}
+                      href={`/${match.slug}`}
+                      className="inline-flex items-center gap-2 bg-white px-3 py-2 rounded border border-gray-300 hover:border-black transition-colors"
+                    >
+                      <span className="text-sm">{match.display_name}</span>
+                      <span className={`text-xs font-bold ${matchFound ? 'text-red-600' : 'text-green-600'}`}>
+                        {matchFound ? 'YES' : 'NO'}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Custom One-Liner */}
           {person.custom_content?.one_liner && (
