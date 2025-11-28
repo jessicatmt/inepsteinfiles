@@ -450,12 +450,8 @@ export default async function NamePage({
         {/* Footer */}
         <div className="text-center pt-8 mt-8 text-xs text-gray-600">
           <Link href="/about" className="text-gray-600 hover:underline">about</Link>
-          {!found && (
-            <>
-              {' • '}
-              <FakeNewsButton />
-            </>
-          )}
+          {' • '}
+          <FakeNewsButton />
           {' • '}
           last updated: november 25, 2024
           {' • '}
