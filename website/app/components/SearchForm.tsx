@@ -38,7 +38,7 @@ export default function SearchForm({ defaultValue = '', compact = false }: Searc
 
   // Fetch suggestions when query changes
   useEffect(() => {
-    if (searchQuery.length < 1) {
+    if (searchQuery.length < 3) {
       setSuggestions([]);
       setShowSuggestions(false);
       return;
@@ -123,10 +123,10 @@ export default function SearchForm({ defaultValue = '', compact = false }: Searc
             setSelectedIndex(-1);
           }}
           onKeyDown={handleKeyDown}
-          placeholder="type a name + enter"
+          placeholder={compact ? "type a name + enter" : "type a name"}
           className={compact 
             ? "text-center text-sm h-8 border-2 border-black px-3 w-48 bg-white focus:outline-none focus:border-black"
-            : "text-center text-base h-12 border-2 border-black px-4 max-w-md w-full bg-white focus:outline-none focus:border-black"
+            : "text-center text-2xl md:text-4xl h-14 md:h-16 border-2 border-black px-4 font-bold uppercase max-w-md w-full bg-white focus:outline-none focus:border-black"
           }
           autoComplete="off"
         />
@@ -135,7 +135,7 @@ export default function SearchForm({ defaultValue = '', compact = false }: Searc
       {/* Suggestions dropdown */}
       {showSuggestions && suggestions.length > 0 && (
         <div className={`absolute z-50 bg-white border-2 border-black mt-1 ${
-          compact ? 'w-48' : 'w-full max-w-md'
+          compact ? 'w-48' : 'w-full max-w-md left-0 right-0'
         } max-h-96 overflow-y-auto`}>
           {isLoading && (
             <div className="px-4 py-2 text-gray-500 text-sm">Searching...</div>

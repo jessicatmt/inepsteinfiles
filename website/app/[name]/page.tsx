@@ -153,6 +153,24 @@ export default async function NamePage({
             <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
               {displayName} IS NOT IN THE EPSTEIN FILES
             </p>
+
+            {/* Match Count */}
+            <p className="text-2xl mb-6">
+              No search results in official files — so far.
+            </p>
+
+            {/* Post on X Button */}
+            <a
+              href={twitterShareUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors mb-8"
+            >
+              Post on
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
             
             {/* Show other potential matches */}
             {otherMatches.length > 0 && (
@@ -177,24 +195,6 @@ export default async function NamePage({
                 </div>
               </div>
             )}
-
-            {/* Match Count */}
-            <p className="text-2xl mb-6">
-              No search results in official files — so far.
-            </p>
-
-            {/* Post on X Button */}
-            <a
-              href={twitterShareUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors mb-8"
-            >
-              Post on
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
 
             {/* Legal Disclaimer */}
             <p className="text-xs text-gray-600 mt-8">
@@ -254,30 +254,6 @@ export default async function NamePage({
           <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
             {person.display_name} {found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES
           </p>
-          
-          {/* Show other potential matches if user searched with partial name */}
-          {otherMatches.length > 0 && (
-            <div className="bg-gray-100 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
-              <p className="text-sm font-semibold mb-3">Or searching for:</p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {otherMatches.slice(0, 5).map(match => {
-                  const matchFound = Boolean(match.found_in_documents) || (match.pinpoint_file_count != null && match.pinpoint_file_count > 0);
-                  return (
-                    <Link
-                      key={match.slug}
-                      href={`/${match.slug}`}
-                      className="inline-flex items-center gap-2 bg-white px-3 py-2 rounded border border-gray-300 hover:border-black transition-colors"
-                    >
-                      <span className="text-sm">{match.display_name}</span>
-                      <span className={`text-xs font-bold ${matchFound ? 'text-red-600' : 'text-green-600'}`}>
-                        {matchFound ? 'YES' : 'NO'}
-                      </span>
-                    </Link>
-                  );
-                })}
-              </div>
-            </div>
-          )}
 
           {/* Custom One-Liner */}
           {person.custom_content?.one_liner && (
@@ -325,6 +301,30 @@ export default async function NamePage({
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
           </a>
+          
+          {/* Show other potential matches if user searched with partial name */}
+          {otherMatches.length > 0 && (
+            <div className="bg-gray-100 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
+              <p className="text-sm font-semibold mb-3">Or searching for:</p>
+              <div className="flex flex-wrap gap-2 justify-center">
+                {otherMatches.slice(0, 5).map(match => {
+                  const matchFound = Boolean(match.found_in_documents) || (match.pinpoint_file_count != null && match.pinpoint_file_count > 0);
+                  return (
+                    <Link
+                      key={match.slug}
+                      href={`/${match.slug}`}
+                      className="inline-flex items-center gap-2 bg-white px-3 py-2 rounded border border-gray-300 hover:border-black transition-colors"
+                    >
+                      <span className="text-sm">{match.display_name}</span>
+                      <span className={`text-xs font-bold ${matchFound ? 'text-red-600' : 'text-green-600'}`}>
+                        {matchFound ? 'YES' : 'NO'}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Legal Disclaimer */}
           <p className="text-xs text-gray-600 mt-8">
