@@ -1,0 +1,80 @@
+{
+  "bill-clinton": {
+    "canonical_slug": "bill-clinton",
+    "canonical_name": "Bill Clinton",
+    "aliases": [
+      "clinton",
+      "william-j-clinton",
+      "william-jefferson-clinton",
+      "president-bill-clinton",
+      "president-clinton",
+      "wjc",
+      "w-j-clinton"
+    ]
+  },
+  "hillary-clinton": {
+    "canonical_slug": "hillary-clinton",
+    "canonical_name": "Hillary Clinton",
+    "aliases": [
+      "hillary-rodham-clinton",
+      "hillary-rodham",
+      "hrc",
+      "secretary-clinton"
+    ]
+  },
+  "donald-trump": {
+    "canonical_slug": "donald-trump",
+    "canonical_name": "Donald Trump",
+    "aliases": [
+      "trump",
+      "president-trump",
+      "donald-j-trump",
+      "djt"
+    ]
+  },
+  "prince-andrew": {
+    "canonical_slug": "prince-andrew",
+    "canonical_name": "Prince Andrew",
+    "aliases": [
+      "andrew-duke-of-york",
+      "duke-of-york",
+      "andrew-albert-christian-edward"
+    ]
+  },
+  "alan-dershowitz": {
+    "canonical_slug": "alan-dershowitz",
+    "canonical_name": "Alan Dershowitz",
+    "aliases": [
+      "dershowitz",
+      "alan-m-dershowitz",
+      "professor-dershowitz"
+    ]
+  },
+  "ghislaine-maxwell": {
+    "canonical_slug": "ghislaine-maxwell",
+    "canonical_name": "Ghislaine Maxwell",
+    "aliases": [
+      "maxwell",
+      "ghislaine-noelle-marion-maxwell",
+      "g-maxwell"
+    ]
+  },
+  "jeffrey-epstein": {
+    "canonical_slug": "jeffrey-epstein",
+    "canonical_name": "Jeffrey Epstein",
+    "aliases": [
+      "epstein",
+      "jeffrey-e-epstein",
+      "jefrey-epstein",
+      "je"
+    ]
+  },
+  "mark-epstein": {
+    "canonical_slug": "mark-epstein",
+    "canonical_name": "Mark Epstein",
+    "aliases": [
+      "epstein-mark",
+      "m-epstein"
+    ]
+  }
+}

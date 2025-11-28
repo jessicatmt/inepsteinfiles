@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { PeopleIndex, Person } from '@/types';
+import { resolveAlias, getAllSlugsForPerson, consolidatePersonEntries, filterDuplicatePeople } from './aliasResolver';
 
 // Cache the data to avoid reading the 1.7MB file on every request
 let cachedData: PeopleIndex | null = null;
@@ -53,20 +54,42 @@ export async function loadPeopleData(): Promise<PeopleIndex> {
 }
 
 /**
- * Finds a person by their slug with smart matching
+ * Finds a person by their slug with smart matching and alias resolution
  * @param slug The URL slug to search for
  * @returns Promise<Person | null> The person data or null if not found
  *
  * Matching priority:
- * 1. Exact slug match
- * 2. Slug ends with the search term (e.g., "obama" matches "barack-obama")
- * 3. Slug contains the search term as a word boundary
+ * 1. Resolve aliases to canonical slug
+ * 2. Find all entries for this person (canonical + variations)
+ * 3. Consolidate into single entry with aggregated data
+ * 4. Fallback to original matching if no alias found
  */
 export async function getPersonData(slug: string): Promise<Person | null> {
   try {
     const data = await loadPeopleData();
     const normalizedSlug = slug.toLowerCase();
-
+    
+    // First, resolve any aliases to canonical slug
+    const canonicalSlug = resolveAlias(normalizedSlug);
+    
+    // Get all related slugs for this person
+    const allSlugs = getAllSlugsForPerson(canonicalSlug);
+    
+    // Find all entries that match any of these slugs
+    const matchingPeople: Person[] = [];
+    allSlugs.forEach(searchSlug => {
+      const match = data.people.find(p => p.slug === searchSlug);
+      if (match) {
+        matchingPeople.push(match);
+      }
+    });
+    
+    // If we found matches via alias resolution, consolidate them
+    if (matchingPeople.length > 0) {
+      return consolidatePersonEntries(matchingPeople);
+    }
+    
+    // Fallback to original matching logic for names not in alias config
     // 1. Exact match
     const exactMatch = data.people.find((p) => p.slug === normalizedSlug);
     if (exactMatch) return exactMatch;
@@ -93,9 +116,9 @@ export async function getPersonData(slug: string): Promise<Person | null> {
 }
 
 /**
- * Finds all people that match a search term
+ * Finds all people that match a search term, with deduplication via aliases
  * @param slug The search term
- * @returns Promise<Person[]> Array of matching people
+ * @returns Promise<Person[]> Array of matching people (deduplicated)
  */
 export async function findAllMatches(slug: string): Promise<Person[]> {
   try {
@@ -124,7 +147,9 @@ export async function findAllMatches(slug: string): Promise<Person[]> {
       }
     });
 
-    return matches;
+    // Filter out duplicates based on aliases
+    // This ensures we don't show "Bill Clinton", "William J. Clinton", etc. as separate results
+    return filterDuplicatePeople(matches);
   } catch (error) {
     console.error('Error finding matches:', error);
     return [];
