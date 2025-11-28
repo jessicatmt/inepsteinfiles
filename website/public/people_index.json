@@ -2385,7 +2385,25 @@
       "total_matches": 0,
       "pinpoint_entity_id": null,
       "pinpoint_file_count": 0,
-      "aliases": ["max-sussman", "sussman"],
+      "aliases": [],
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": []
+    },
+    {
+      "display_name": "Max Sussman",
+      "slug": "max-sussman",
+      "priority": "Custom",
+      "category": "Easter Egg",
+      "found_in_documents": false,
+      "total_matches": 0,
+      "pinpoint_entity_id": null,
+      "pinpoint_file_count": 0,
+      "aliases": [],
       "custom_content": {
         "one_liner": "And actually reported a search bug to make this site better.",
         "image_url": null,
