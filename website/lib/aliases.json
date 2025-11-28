@@ -76,5 +76,13 @@
       "epstein-mark",
       "m-epstein"
     ]
+  },
+  "mark-sussman": {
+    "canonical_slug": "mark-sussman",
+    "canonical_name": "Mark Sussman",
+    "aliases": [
+      "max-sussman",
+      "sussman"
+    ]
   }
 }
