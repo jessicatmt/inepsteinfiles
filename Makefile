@@ -1,4 +1,4 @@
-.PHONY: help install install-website install-pipeline dev build start lint test test-watch test-coverage clean
+.PHONY: help install install-website install-pipeline dev build start lint test test-watch test-coverage clean deploy
 
 # Default target
 help:
@@ -13,6 +13,9 @@ help:
 	@echo "  make test             Run tests"
 	@echo "  make test-watch       Run tests in watch mode"
 	@echo "  make test-coverage    Run tests with coverage"
+	@echo ""
+	@echo "Deployment:"
+	@echo "  make deploy           Deploy to production (git push origin main)"
 	@echo ""
 	@echo "Data Pipeline:"
 	@echo "  make install-pipeline Install Python dependencies"
@@ -65,6 +68,11 @@ test-watch:
 test-coverage:
 	@echo "Running tests with coverage..."
 	cd website && npm run test:coverage
+
+# Deployment
+deploy:
+	@echo "Deploying to production (Vercel)..."
+	git push origin main
 
 # Clean build artifacts
 clean:

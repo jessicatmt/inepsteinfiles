@@ -50,16 +50,50 @@ InEpsteinFiles.com provides a simple way to search if names appear in official E
 
 ## Quick Start
 
+### Using Makefile (Recommended)
+
 ```bash
-# Website
-cd website
-npm install
-npm run dev
+# Install dependencies and start development server
+make dev
 # Visit http://localhost:3000
 
+# Or step by step:
+make install          # Install website dependencies
+make dev              # Start development server (auto-installs if needed)
+make build            # Build for production
+make test             # Run tests
+make lint             # Run linter
+
+# See all available commands
+make help
+
 # Deploying
-git push origin main  # Auto-deploys to Vercel
+make deploy           # Deploy to production (auto-deploys to Vercel)
 ```
+
+## Available Makefile Commands
+
+The project includes a Makefile for common development tasks:
+
+**Website Development:**
+- `make install` - Install website dependencies (npm install)
+- `make dev` - Start development server (auto-installs dependencies, runs on http://localhost:3000)
+- `make build` - Build website for production
+- `make start` - Start production server
+- `make lint` - Run ESLint
+- `make test` - Run tests
+- `make test-watch` - Run tests in watch mode
+- `make test-coverage` - Run tests with coverage
+
+**Deployment:**
+- `make deploy` - Deploy to production (git push origin main, auto-deploys to Vercel)
+
+**Data Pipeline:**
+- `make install-pipeline` - Install Python dependencies
+
+**Utilities:**
+- `make clean` - Clean build artifacts and node_modules
+- `make help` - Show all available commands
 
 ## Project Structure
 
