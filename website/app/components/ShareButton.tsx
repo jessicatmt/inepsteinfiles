@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react';
 
 // YES rotation texts
 const YES_TEXTS = [
-  "oh",
+  "oh.",
   "anyway here's the link",
   "thoughts?",
-  "the results are in",
+  "the results are in…",
   "we good?",
   "ICYMI",
-  "COOKED",
+  "COOKED.",
   "Hey new files just dropped",
   "Got 'em"
 ];
@@ -18,7 +18,7 @@ const YES_TEXTS = [
 // NO rotation texts
 const NO_TEXTS = [
   "cleared ✔",
-  "the results are in",
+  "the results are in…",
   "we good?",
   "ICYMI",
   "What about your guy?"
