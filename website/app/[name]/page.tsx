@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import SearchForm from '../components/SearchForm';
 import FakeNewsButton from '../components/FakeNewsButton';
 import CheckItOutPopup from '../components/CheckItOutPopup';
+import ShareButton from '../components/ShareButton';
 import { getPersonData, findAllMatches } from '@/lib/data';
 
 // Version param for cache busting - bump this when data changes significantly
@@ -136,8 +137,6 @@ export default async function NamePage({
   if (!person) {
     // Show NO page for names not in the index
     const vanityUrl = `https://${name}.inepsteinfiles.com`;
-    const shareText = `${displayName} IS NOT in the Epstein files. Thoughts?\n\n${vanityUrl}`;
-    const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
     return (
       <main className="min-h-screen bg-white text-black p-4">
@@ -160,17 +159,7 @@ export default async function NamePage({
             </p>
 
             {/* Post on X Button */}
-            <a
-              href={twitterShareUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors mb-8"
-            >
-              Post on
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
+            <ShareButton displayName={displayName} found={false} vanityUrl={vanityUrl} />
             
             {/* Show other potential matches */}
             {otherMatches.length > 0 && (
@@ -233,8 +222,6 @@ export default async function NamePage({
   // Use Boolean() to ensure we get true/false, not 0 (which React renders as "0")
   const found = Boolean(person.found_in_documents) || (person.pinpoint_file_count != null && person.pinpoint_file_count > 0);
   const vanityUrl = `https://${person.slug}.inepsteinfiles.com`;
-  const shareText = `${person.display_name} ${found ? 'IS' : 'IS NOT'} in the Epstein files. Thoughts?\n\n${vanityUrl}`;
-  const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
 
   return (
     <main className="min-h-screen bg-white text-black p-4">
@@ -290,17 +277,7 @@ export default async function NamePage({
 
 
           {/* Post on X Button */}
-          <a
-            href={twitterShareUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors mb-8"
-          >
-            Post on
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
+          <ShareButton displayName={person.display_name} found={found} vanityUrl={vanityUrl} />
           
           {/* Show other potential matches if user searched with partial name */}
           {otherMatches.length > 0 && (
