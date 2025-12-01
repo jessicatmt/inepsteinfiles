@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Public_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const publicSans = Public_Sans({
@@ -46,6 +47,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${publicSans.variable} font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
