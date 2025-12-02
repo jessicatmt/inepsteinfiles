@@ -20,7 +20,14 @@ export async function generateMetadata({
   params: Promise<{ name: string }>;
 }): Promise<Metadata> {
   const { name } = await params;
-  const person = await getPersonData(name);
+  
+  let person = null;
+  try {
+    person = await getPersonData(name);
+  } catch (error) {
+    console.error('Error loading person data in generateMetadata:', error);
+    // Continue with person = null to show generic metadata
+  }
 
   // Convert slug to display name
   const displayName = name
@@ -114,10 +121,25 @@ export default async function NamePage({
   params: Promise<{ name: string }>;
 }) {
   const { name } = await params;
-  const person = await getPersonData(name);
+  
+  let person = null;
+  let allMatches: any[] = [];
+  
+  try {
+    person = await getPersonData(name);
+  } catch (error) {
+    console.error('Error loading person data in NamePage:', error);
+    // Continue with person = null to show "NO" page
+  }
   
   // Find all potential matches for "Or searching for..." section
-  const allMatches = await findAllMatches(name);
+  try {
+    allMatches = await findAllMatches(name);
+  } catch (error) {
+    console.error('Error finding matches:', error);
+    // Continue with empty matches
+  }
+  
   const otherMatches = person 
     ? allMatches.filter(p => p.slug !== person.slug)
     : allMatches;
