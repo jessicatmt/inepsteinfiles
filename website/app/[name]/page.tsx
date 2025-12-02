@@ -7,6 +7,7 @@ import FakeNewsButton from '../components/FakeNewsButton';
 import CheckItOutPopup from '../components/CheckItOutPopup';
 import ShareButton from '../components/ShareButton';
 import { getPersonData, findAllMatches } from '@/lib/data';
+import { rankDocuments, getClassificationIcon } from '@/lib/documentRanking';
 
 // Version param for cache busting - bump this when data changes significantly
 const OG_VERSION = '20251126a';
@@ -373,9 +374,12 @@ export default async function NamePage({
               Evidence from Documents
             </h2>
             <div className="space-y-4">
-              {person.documents.slice(0, 7).map((doc, index) => {
+              {rankDocuments(person.documents).slice(0, 7).map((doc, index) => {
                 const snippet = doc.matches?.[0]?.snippet || '';
                 if (!snippet) return null;
+                
+                // Highlight tier 1 documents with special styling
+                const isTier1 = doc.rankTier === 1;
 
                 return (
                   <a
@@ -383,15 +387,27 @@ export default async function NamePage({
                     href={doc.source_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block p-4 bg-gray-50 rounded-lg border border-gray-200 hover:border-gray-400 hover:bg-gray-100 transition-colors"
+                    className={`block p-4 rounded-lg border transition-colors ${
+                      isTier1 
+                        ? 'bg-red-50 border-red-200 hover:border-red-400 hover:bg-red-100' 
+                        : 'bg-gray-50 border-gray-200 hover:border-gray-400 hover:bg-gray-100'
+                    }`}
                   >
                     <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-100 text-red-600 rounded-full flex items-center justify-center font-bold text-sm">
+                      <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
+                        isTier1 ? 'bg-red-600 text-white' : 'bg-red-100 text-red-600'
+                      }`}>
                         {index + 1}
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-sm text-gray-600 mb-1">
+                          <span className="mr-1">{getClassificationIcon(doc.classification || '')}</span>
                           {doc.classification || 'Document'} • {doc.filename}
+                          {isTier1 && (
+                            <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">
+                              Direct Connection
+                            </span>
+                          )}
                         </p>
                         <p className="text-gray-800 line-clamp-3">
                           &ldquo;{snippet.length > 300 ? snippet.slice(0, 300) + '...' : snippet}&rdquo;
