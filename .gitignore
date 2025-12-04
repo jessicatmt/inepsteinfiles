@@ -37,13 +37,28 @@ website/public/people_index.json
 .vscode/
 .idea/
 
-# Logs (keep structure, ignore content)
-.logs/*.md
-.logs/*.jsonl
-!.logs/.gitkeep
+# ==========================================
+# PRIVATE WORKING FILES (Claude Code / local only)
+# ==========================================
+# These are personal working files for AI-assisted development,
+# not part of the public project.
 
-# Reference materials (local only, not for public repo)
+# Claude Code instructions
+CLAUDE.md
+.github/CLAUDE_SETUP.md
+
+# Project logs and notes
+.logs/
+
+# Reference materials and research
 reference/
+
+# Personal documentation and drafts
+documents/
+
+# ==========================================
+# STANDARD IGNORES
+# ==========================================
 
 # Python
 *.egg-info/
@@ -58,11 +73,10 @@ htmlcov/
 *.bak
 *.log
 
-# Keep these
+# Keep gitkeep files for empty directories
 !.gitkeep
-!README.md
-!CLAUDE.md
-!README.github.md
+
+# Vercel
 .vercel
 
 # Raw epstein-docs data (too large for git)
