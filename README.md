@@ -107,7 +107,7 @@ inepsteinfiles/
 │   ├── extract_pinpoint_entities.py  # Entity scraper
 │   ├── process_csv_updates.py        # CSV data processor
 │   └── [various fix scripts]
-└── reference/               # PRD and specs (aspirational)
+└── .github/                 # CI/CD workflows and PR templates
 ```
 
 ## Development Workflow
