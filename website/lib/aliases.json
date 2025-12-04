@@ -76,5 +76,15 @@
       "epstein-mark",
       "m-epstein"
     ]
+  },
+  "benjamin-netanyahu": {
+    "canonical_slug": "benjamin-netanyahu",
+    "canonical_name": "Benjamin Netanyahu",
+    "aliases": [
+      "netanyahu",
+      "binyamin-netanyahu",
+      "bibi-netanyahu",
+      "bibi"
+    ]
   }
 }

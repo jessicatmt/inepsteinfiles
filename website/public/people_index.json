@@ -1733,16 +1733,20 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 7,
+      "total_matches": 87,
       "pinpoint_entity_id": "/m/0fm2h",
-      "pinpoint_file_count": 7,
+      "pinpoint_file_count": 87,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null
       },
-      "documents": []
+      "documents": [],
+      "aliases": [
+        "binyamin-netanyahu",
+        "bibi-netanyahu"
+      ]
     },
     {
       "display_name": "Channing Tatum",
