@@ -118,37 +118,43 @@ export async function generateMetadata({
 
 export default async function NamePage({
   params,
+  searchParams,
 }: {
   params: Promise<{ name: string }>;
+  searchParams: Promise<{ q?: string }>;
 }) {
   const { name } = await params;
-  
+  const { q: originalQuery } = await searchParams;
+
   let person = null;
   let allMatches: any[] = [];
-  
+
   try {
     person = await getPersonData(name);
   } catch (error) {
     console.error('Error loading person data in NamePage:', error);
     // Continue with person = null to show "NO" page
   }
-  
+
   // Find all potential matches for "Or searching for..." section
+  // Use original query param if present (from redirect), otherwise use current slug
+  const searchTermForMatches = originalQuery || name;
   try {
-    allMatches = await findAllMatches(name);
+    allMatches = await findAllMatches(searchTermForMatches);
   } catch (error) {
     console.error('Error finding matches:', error);
     // Continue with empty matches
   }
-  
-  const otherMatches = person 
+
+  const otherMatches = person
     ? allMatches.filter(p => p.slug !== person.slug)
     : allMatches;
 
   // Redirect to canonical slug if we found a match via alias
   // e.g., /obama → /barack-obama
+  // Pass original search term as query param to preserve disambiguation
   if (person && person.slug !== name.toLowerCase()) {
-    redirect(`/${person.slug}`);
+    redirect(`/${person.slug}?q=${encodeURIComponent(name)}`);
   }
 
   // Convert slug to display name (e.g., "donald-duck" -> "Donald Duck")
@@ -187,7 +193,7 @@ export default async function NamePage({
             {/* Show other potential matches */}
             {otherMatches.length > 0 && (
               <div className="bg-gray-100 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
-                <p className="text-sm font-semibold mb-3">Or searching for:</p>
+                <p className="text-sm font-semibold mb-3">Search instead for:</p>
                 <div className="flex flex-wrap gap-2 justify-center">
                   {otherMatches.slice(0, 5).map(match => {
                     const matchFound = Boolean(match.found_in_documents) || (match.pinpoint_file_count != null && match.pinpoint_file_count > 0);
@@ -305,7 +311,7 @@ export default async function NamePage({
           {/* Show other potential matches if user searched with partial name */}
           {otherMatches.length > 0 && (
             <div className="bg-gray-100 rounded-lg p-4 mb-8 max-w-2xl mx-auto">
-              <p className="text-sm font-semibold mb-3">Or searching for:</p>
+              <p className="text-sm font-semibold mb-3">Search instead for:</p>
               <div className="flex flex-wrap gap-2 justify-center">
                 {otherMatches.slice(0, 5).map(match => {
                   const matchFound = Boolean(match.found_in_documents) || (match.pinpoint_file_count != null && match.pinpoint_file_count > 0);

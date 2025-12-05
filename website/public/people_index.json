@@ -3,11 +3,11 @@
     "version": "2.0",
     "generated": "2025-11-25",
     "description": "Merged: Original curated list + epstein-docs.github.io archive (8,186 documents)",
-    "total_names": 461,
+    "total_names": 465,
     "total_documents": 8186,
     "verification_note": "Documents sourced from public releases. Custom content preserved.",
     "has_custom_content": true,
-    "last_manual_update": "2025-11-25"
+    "last_manual_update": "2025-12-05"
   },
   "people": [
     {
@@ -38405,6 +38405,86 @@
       "doc_types": [
         "Telephone message records"
       ],
+      "variations": []
+    },
+    {
+      "display_name": "Heidi Klum",
+      "slug": "heidi-klum",
+      "priority": "P1",
+      "category": "Model/TV Personality",
+      "found_in_documents": true,
+      "total_matches": 10,
+      "pinpoint_file_count": 10,
+      "pinpoint_entity_id": "/m/01pctb",
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": [],
+      "roles": [],
+      "doc_types": [],
+      "variations": []
+    },
+    {
+      "display_name": "Tim Cook",
+      "slug": "tim-cook",
+      "priority": "P1",
+      "category": "Tech CEO",
+      "found_in_documents": true,
+      "total_matches": 8,
+      "pinpoint_file_count": 8,
+      "pinpoint_entity_id": "/m/05r65m",
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": [],
+      "roles": [],
+      "doc_types": [],
+      "variations": []
+    },
+    {
+      "display_name": "Gavin Newsom",
+      "slug": "gavin-newsom",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": true,
+      "total_matches": 5,
+      "pinpoint_file_count": 5,
+      "pinpoint_entity_id": "/m/0264nv",
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": [],
+      "roles": [],
+      "doc_types": [],
+      "variations": []
+    },
+    {
+      "display_name": "Nigel Farage",
+      "slug": "nigel-farage",
+      "priority": "P1",
+      "category": "Political Figure",
+      "found_in_documents": true,
+      "total_matches": 37,
+      "pinpoint_file_count": 37,
+      "pinpoint_entity_id": "/m/025qb6",
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "documents": [],
+      "roles": [],
+      "doc_types": [],
       "variations": []
     }
   ]
