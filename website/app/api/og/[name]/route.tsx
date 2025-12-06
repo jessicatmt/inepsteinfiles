@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element, jsx-a11y/alt-text */
+// Note: OG image routes use @vercel/og ImageResponse which requires <img> tags, not Next.js Image
 import { ImageResponse } from 'next/og';
 import { NextRequest } from 'next/server';
 import peopleData from '@/public/people_index.json';

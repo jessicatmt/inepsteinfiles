@@ -7,6 +7,7 @@ import FakeNewsButton from '../components/FakeNewsButton';
 import CheckItOutPopup from '../components/CheckItOutPopup';
 import ShareButton from '../components/ShareButton';
 import { getPersonData, findAllMatches } from '@/lib/data';
+import { Person } from '@/types';
 import { rankDocuments, getClassificationIcon } from '@/lib/documentRanking';
 
 // Version param for cache busting - bump this when data changes significantly
@@ -127,7 +128,7 @@ export default async function NamePage({
   const { q: originalQuery } = await searchParams;
 
   let person = null;
-  let allMatches: any[] = [];
+  let allMatches: Person[] = [];
 
   try {
     person = await getPersonData(name);
