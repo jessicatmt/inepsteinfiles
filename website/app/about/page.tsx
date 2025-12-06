@@ -108,12 +108,13 @@ export default function AboutPage() {
         {/* Footer */}
         <div className="text-center pt-8 mt-8 text-xs text-gray-600">
           <Link href="https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
-            Browse full database (5000+ documents)
+            Browse full database (9000+ documents)
           </Link>
           {' • '}
           <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
             @jessicasuarez
           </a>
+          <div className="mt-2">Last updated 2025-12-05</div>
         </div>
       </div>
     </main>
