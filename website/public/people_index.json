@@ -3,11 +3,11 @@
     "version": "2.0",
     "generated": "2025-11-25",
     "description": "Merged: Original curated list + epstein-docs.github.io archive (8,186 documents)",
-    "total_names": 465,
+    "total_names": 466,
     "total_documents": 8186,
     "verification_note": "Documents sourced from public releases. Custom content preserved.",
     "has_custom_content": true,
-    "last_manual_update": "2025-12-05"
+    "last_manual_update": "2025-12-08"
   },
   "people": [
     {
@@ -38373,6 +38373,28 @@
       "roles": [],
       "doc_types": [],
       "variations": []
+    },
+    {
+      "display_name": "Salman Rushdie",
+      "slug": "salman-rushdie",
+      "priority": "P2",
+      "category": "Person",
+      "found_in_documents": true,
+      "total_matches": 18,
+      "documents": [],
+      "pinpoint_entity_id": "/m/04cbtrw",
+      "pinpoint_file_count": 18,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "roles": [],
+      "doc_types": [],
+      "variations": [
+        "Salman Rushdie"
+      ]
     }
   ]
 }
