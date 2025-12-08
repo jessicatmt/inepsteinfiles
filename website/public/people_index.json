@@ -3,7 +3,7 @@
     "version": "2.0",
     "generated": "2025-11-25",
     "description": "Merged: Original curated list + epstein-docs.github.io archive (8,186 documents)",
-    "total_names": 466,
+    "total_names": 467,
     "total_documents": 8186,
     "verification_note": "Documents sourced from public releases. Custom content preserved.",
     "has_custom_content": true,
@@ -38394,6 +38394,28 @@
       "doc_types": [],
       "variations": [
         "Salman Rushdie"
+      ]
+    },
+    {
+      "display_name": "Emmanuel Macron",
+      "slug": "emmanuel-macron",
+      "priority": "P2",
+      "category": "Person",
+      "found_in_documents": true,
+      "total_matches": 20,
+      "documents": [],
+      "pinpoint_entity_id": "/m/011ncr8c",
+      "pinpoint_file_count": 20,
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      },
+      "roles": [],
+      "doc_types": [],
+      "variations": [
+        "Emmanuel Macron"
       ]
     }
   ]
