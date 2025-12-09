@@ -3,11 +3,11 @@
     "version": "2.0",
     "generated": "2025-11-25",
     "description": "Merged: Original curated list + epstein-docs.github.io archive (8,186 documents)",
-    "total_names": 467,
+    "total_names": 468,
     "total_documents": 8186,
     "verification_note": "Documents sourced from public releases. Custom content preserved.",
     "has_custom_content": true,
-    "last_manual_update": "2025-12-08"
+    "last_manual_update": "2025-12-09"
   },
   "people": [
     {
@@ -1419,7 +1419,7 @@
             {
               "page": 16,
               "matched_variant": "Dubin",
-              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :•• Dunne, Phillp & Domlmce . I t I • • t • Durso Luigi ..... IV"
+              "snippet": "*Redactions for personal contact information i l ! l j { f Oucrey-Glordano, f i Dubin, Peter OurybarJohnson u~,,.; :\u2022\u2022 Dunne, Phillp & Domlmce . I t I \u2022 \u2022 t \u2022 Durso Luigi ..... IV"
             }
           ]
         }
@@ -2475,7 +2475,7 @@
         "yo momma"
       ],
       "custom_content": {
-        "one_liner": "Hahaha 😂 funny. But YES someone was in your mom.",
+        "one_liner": "Hahaha \ud83d\ude02 funny. But YES someone was in your mom.",
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null
@@ -8321,10 +8321,10 @@
       "variations": [
         "A. MARIE VILLAFANA",
         "A. Marie Villapena",
-        "A. Marie Villapaña",
+        "A. Marie Villapa\u00f1a",
         "A. Marie Vilafana",
         "A. Marie Villapana",
-        "A. Marie Villafaña",
+        "A. Marie Villafa\u00f1a",
         "A. Marie Villafana"
       ]
     },
@@ -9257,7 +9257,7 @@
       ]
     },
     {
-      "display_name": "William JULIÉ",
+      "display_name": "William JULI\u00c9",
       "slug": "william-juli",
       "priority": "P2",
       "category": "Person",
@@ -9283,8 +9283,8 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "William JULIÉ",
-              "snippet": "The document is an expert opinion by French lawyer William Julié on the extradition laws between the US and France. Julié argues that the French Minister of Justice's letter, which stated that France does not extradite its citizens outside the EU, is misleading and that the Extradition Treaty between the US and France gives France discretion to extradite its nationals. Julié also critiques the government's reliance on the Peterson case as a precedent."
+              "matched_variant": "William JULI\u00c9",
+              "snippet": "The document is an expert opinion by French lawyer William Juli\u00e9 on the extradition laws between the US and France. Juli\u00e9 argues that the French Minister of Justice's letter, which stated that France does not extradite its citizens outside the EU, is misleading and that the Extradition Treaty between the US and France gives France discretion to extradite its nationals. Juli\u00e9 also critiques the government's reliance on the Peterson case as a precedent."
             }
           ]
         },
@@ -9299,7 +9299,7 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "William JULIÉ",
+              "matched_variant": "William JULI\u00c9",
               "snippet": "The document argues that the court has jurisdiction to decide on bail conditions despite a pending appeal and that Ms. Maxwell's renunciation of her foreign citizenship is a valid condition of release, contrary to the government's assertion based on a letter from the French Ministry of Justice."
             }
           ]
@@ -9315,7 +9315,7 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "William JULIÉ",
+              "matched_variant": "William JULI\u00c9",
               "snippet": "The document discusses the case of Djamel Beghal, a dual French-Algerian citizen who was deprived of his French nationality and deported to Algeria. It highlights the French government's use of citizenship deprivation as a means to facilitate removal from France, and the complexities surrounding extradition and deportation under European human rights law."
             }
           ]
@@ -9331,7 +9331,7 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "William JULIÉ",
+              "matched_variant": "William JULI\u00c9",
               "snippet": "The document appears to be a court filing arguing that a person who has lost French nationality should not be protected from extradition under Article 696-4 of the French Code of Criminal Procedure, citing instances where the French government has deported individuals deprived of their French nationality for criminal offenses."
             }
           ]
@@ -9347,15 +9347,15 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "William JULIÉ",
+              "matched_variant": "William JULI\u00c9",
               "snippet": "The document is a court filing discussing the bail conditions for Ms. Maxwell, including the relevance of her renunciation of French citizenship to extradition proceedings. The filing argues that the court has jurisdiction to decide on bail and that renunciation of citizenship is a valid condition of release. The document highlights the uncertainty surrounding the interpretation of extradition law and treaty provisions between the US and France."
             }
           ]
         }
       ],
       "roles": [
-        "Author of the document, Avocat à la Cour",
-        "Avocat à la Cour (Lawyer) providing expert opinion",
+        "Author of the document, Avocat \u00e0 la Cour",
+        "Avocat \u00e0 la Cour (Lawyer) providing expert opinion",
         "French attorney providing expert opinion on extradition law",
         "French legal counsel for the defendant",
         "French lawyer providing expert opinion on extradition law"
@@ -9368,7 +9368,7 @@
         "Expert Opinion on French Extradition Law"
       ],
       "variations": [
-        "William Julié",
+        "William Juli\u00e9",
         "William Jule"
       ]
     },
@@ -10177,9 +10177,9 @@
         "court document or deposition transcript"
       ],
       "variations": [
-        "Villafaña",
+        "Villafa\u00f1a",
         "Villafana",
-        "Ms. Villafaña",
+        "Ms. Villafa\u00f1a",
         "Ms. Villafana"
       ]
     },
@@ -10337,7 +10337,7 @@
             {
               "page": 1,
               "matched_variant": "CLAUDIUS ENGLISH",
-              "snippet": "The document is an indictment filed by the United States District Court for the Southern District of New York, charging Claudius English with conspiracy to engage in sex trafficking of minors. The charge alleges that English and others conspired to recruit and solicit minors for commercial sex acts. The indictment cites specific federal statutes (18 U.S.C. §§ 1594(c), 1591(a)(1), (b)(1), and (b)(2)) as the basis for the charge."
+              "snippet": "The document is an indictment filed by the United States District Court for the Southern District of New York, charging Claudius English with conspiracy to engage in sex trafficking of minors. The charge alleges that English and others conspired to recruit and solicit minors for commercial sex acts. The indictment cites specific federal statutes (18 U.S.C. \u00a7\u00a7 1594(c), 1591(a)(1), (b)(1), and (b)(2)) as the basis for the charge."
             }
           ]
         },
@@ -11037,7 +11037,7 @@
             {
               "page": 1,
               "matched_variant": "Acosta",
-              "snippet": "The document outlines the negotiations and challenges related to Jeffrey Epstein's Non-Prosecution Agreement (NPA), including disagreements over terms such as sexual offender registration and monetary damages for victims. It details the interactions between prosecutors, including Acosta and Villafaña, and Epstein's defense team, including Lefkowitz, Sloman, and Starr. The NPA's signing and subsequent disputes are covered, along with the Department's review of the case."
+              "snippet": "The document outlines the negotiations and challenges related to Jeffrey Epstein's Non-Prosecution Agreement (NPA), including disagreements over terms such as sexual offender registration and monetary damages for victims. It details the interactions between prosecutors, including Acosta and Villafa\u00f1a, and Epstein's defense team, including Lefkowitz, Sloman, and Starr. The NPA's signing and subsequent disputes are covered, along with the Department's review of the case."
             }
           ]
         },
@@ -15642,7 +15642,7 @@
       ],
       "roles": [
         "Liaison Magistrate at the Embassy of the United States of America in Paris",
-        "Magistrat de liaison, Ambassade des Etats-Unis d'Amérique à Paris",
+        "Magistrat de liaison, Ambassade des Etats-Unis d'Am\u00e9rique \u00e0 Paris",
         "Magistrat de liaison (liaison magistrate) at the US Embassy in Paris",
         "Liaison Magistrate on behalf of the Embassy of the United States of America",
         "Liaison Magistrate, Embassy of the United States of America in Paris"
@@ -18114,7 +18114,7 @@
             {
               "page": 1,
               "matched_variant": "Kelly Bovino Umekubo",
-              "snippet": "Laura A. Menninger, defense attorney for Ghislaine Maxwell, submits an affidavit stating that material witness Kelly Bovino has refused to testify despite being subpoenaed. The defense has made efforts to contact Bovino, but she has not responded. Menninger requests that the court order Bovino's arrest under 28 U.S.C. § 3144 to secure her testimony."
+              "snippet": "Laura A. Menninger, defense attorney for Ghislaine Maxwell, submits an affidavit stating that material witness Kelly Bovino has refused to testify despite being subpoenaed. The defense has made efforts to contact Bovino, but she has not responded. Menninger requests that the court order Bovino's arrest under 28 U.S.C. \u00a7 3144 to secure her testimony."
             }
           ]
         },
@@ -20116,7 +20116,7 @@
             {
               "page": 1,
               "matched_variant": "Mr. Sloman",
-              "snippet": "The document outlines the negotiations and challenges related to Jeffrey Epstein's Non-Prosecution Agreement (NPA), including disagreements over terms such as sexual offender registration and monetary damages for victims. It details the interactions between prosecutors, including Acosta and Villafaña, and Epstein's defense team, including Lefkowitz, Sloman, and Starr. The NPA's signing and subsequent disputes are covered, along with the Department's review of the case."
+              "snippet": "The document outlines the negotiations and challenges related to Jeffrey Epstein's Non-Prosecution Agreement (NPA), including disagreements over terms such as sexual offender registration and monetary damages for victims. It details the interactions between prosecutors, including Acosta and Villafa\u00f1a, and Epstein's defense team, including Lefkowitz, Sloman, and Starr. The NPA's signing and subsequent disputes are covered, along with the Department's review of the case."
             }
           ]
         },
@@ -20186,10 +20186,10 @@
         }
       ],
       "roles": [
-        "Supervisory prosecutor or colleague of Villafaña",
+        "Supervisory prosecutor or colleague of Villafa\u00f1a",
         "Likely another defense attorney or representative for Epstein",
         "Assistant U.S. Attorney who worked on the Epstein case",
-        "USAO official informed by Villafaña about victim consultation",
+        "USAO official informed by Villafa\u00f1a about victim consultation",
         "USAO representative"
       ],
       "doc_types": [
@@ -21428,7 +21428,7 @@
       ]
     },
     {
-      "display_name": "José A. Cabranes",
+      "display_name": "Jos\u00e9 A. Cabranes",
       "slug": "jos-a-cabranes",
       "priority": "P2",
       "category": "Person",
@@ -21454,7 +21454,7 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "José A. Cabranes",
+              "matched_variant": "Jos\u00e9 A. Cabranes",
               "snippet": "The United States Court of Appeals for the Second Circuit affirmed Ghislaine Maxwell's conviction for sex trafficking and related charges, rejecting her arguments that her prosecution was barred by Epstein's Non-Prosecution Agreement and that the statute of limitations had expired. The court also found that the District Court did not abuse its discretion in denying Maxwell's motion for a new trial and that her sentence was procedurally reasonable."
             }
           ]
@@ -21470,7 +21470,7 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "José A. Cabranes",
+              "matched_variant": "Jos\u00e9 A. Cabranes",
               "snippet": "Ghislaine Maxwell appeals her June 29, 2022, conviction for sex trafficking and related crimes. The District Court imposed concurrent prison terms of 60, 120, and 240 months. The appeal is before the United States Court of Appeals."
             }
           ]
@@ -21486,7 +21486,7 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "José A. Cabranes",
+              "matched_variant": "Jos\u00e9 A. Cabranes",
               "snippet": "The United States Court of Appeals for the Second Circuit affirmed Ghislaine Maxwell's conviction on September 17, 2024, as decided by the United States District Court for the Southern District of New York on June 29, 2022. The appeal was considered based on the district court's record and the parties' briefs. The judgment was signed by the Clerk of Court, Catherine O'Hagan Wolfe."
             }
           ]
@@ -21502,8 +21502,8 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "José A. Cabranes",
-              "snippet": "The United States Court of Appeals for the Second Circuit affirmed Ghislaine Maxwell's conviction and sentence, rejecting her claims that her prosecution was barred by Jeffrey Epstein's Non-Prosecution Agreement, that the indictment was untimely, and that the district court erred in handling her trial. The court held that Epstein's agreement did not bind the USAO-SDNY and that Maxwell's indictment was timely under 18 U.S.C. § 3283."
+              "matched_variant": "Jos\u00e9 A. Cabranes",
+              "snippet": "The United States Court of Appeals for the Second Circuit affirmed Ghislaine Maxwell's conviction and sentence, rejecting her claims that her prosecution was barred by Jeffrey Epstein's Non-Prosecution Agreement, that the indictment was untimely, and that the district court erred in handling her trial. The court held that Epstein's agreement did not bind the USAO-SDNY and that Maxwell's indictment was timely under 18 U.S.C. \u00a7 3283."
             }
           ]
         },
@@ -21518,8 +21518,8 @@
           "matches": [
             {
               "page": 1,
-              "matched_variant": "José A. Cabranes",
-              "snippet": "The United States Court of Appeals for the Second Circuit issued a mandate in the case United States v. Ghislaine Maxwell on November 9, 2020. The case was heard by Circuit Judges José A. Cabranes, Rosemary S. Pooler, and Reena Raggi. The mandate follows a summary order, which does not have precedential effect."
+              "matched_variant": "Jos\u00e9 A. Cabranes",
+              "snippet": "The United States Court of Appeals for the Second Circuit issued a mandate in the case United States v. Ghislaine Maxwell on November 9, 2020. The case was heard by Circuit Judges Jos\u00e9 A. Cabranes, Rosemary S. Pooler, and Reena Raggi. The mandate follows a summary order, which does not have precedential effect."
             }
           ]
         }
@@ -23838,7 +23838,7 @@
             {
               "page": 1,
               "matched_variant": "Lourie",
-              "snippet": "The document discusses internal USAO emails and interviews regarding the handling of Jeffrey Epstein's case, including disagreements about meeting with his defense counsel and prosecution strategy. USAO officials Lourie, Menchel, and Villafaña had differing opinions on whether to meet with Epstein's lawyers. The document provides insight into the USAO's decision-making process in the Epstein case."
+              "snippet": "The document discusses internal USAO emails and interviews regarding the handling of Jeffrey Epstein's case, including disagreements about meeting with his defense counsel and prosecution strategy. USAO officials Lourie, Menchel, and Villafa\u00f1a had differing opinions on whether to meet with Epstein's lawyers. The document provides insight into the USAO's decision-making process in the Epstein case."
             }
           ]
         },
@@ -24485,7 +24485,7 @@
             {
               "page": 1,
               "matched_variant": "MR. LEFKOWITZ",
-              "snippet": "The document outlines the negotiations and challenges related to Jeffrey Epstein's Non-Prosecution Agreement (NPA), including disagreements over terms such as sexual offender registration and monetary damages for victims. It details the interactions between prosecutors, including Acosta and Villafaña, and Epstein's defense team, including Lefkowitz, Sloman, and Starr. The NPA's signing and subsequent disputes are covered, along with the Department's review of the case."
+              "snippet": "The document outlines the negotiations and challenges related to Jeffrey Epstein's Non-Prosecution Agreement (NPA), including disagreements over terms such as sexual offender registration and monetary damages for victims. It details the interactions between prosecutors, including Acosta and Villafa\u00f1a, and Epstein's defense team, including Lefkowitz, Sloman, and Starr. The NPA's signing and subsequent disputes are covered, along with the Department's review of the case."
             }
           ]
         },
@@ -25985,7 +25985,7 @@
             {
               "page": 1,
               "matched_variant": "Bradley J. Edwards",
-              "snippet": "The declaration of A. Marie Villafaña details her role as the Assistant United States Attorney in the Jeffrey Epstein investigation, the notification of victims, and the terms of the deferred prosecution agreement, including provisions for preserving federal remedies for Epstein's victims."
+              "snippet": "The declaration of A. Marie Villafa\u00f1a details her role as the Assistant United States Attorney in the Jeffrey Epstein investigation, the notification of victims, and the terms of the deferred prosecution agreement, including provisions for preserving federal remedies for Epstein's victims."
             }
           ]
         },
@@ -26802,7 +26802,7 @@
         "Head of the International Criminal Assistance Bureau",
         "Head of the International Criminal Assistance Bureau, France",
         "Author or signatory of the document, likely from the Office for the International Mutual Assistance in Criminal Matters",
-        "Chef du Bureau de l'Entraide Pénale Internationale"
+        "Chef du Bureau de l'Entraide P\u00e9nale Internationale"
       ],
       "doc_types": [
         "Official Letter",
@@ -26811,7 +26811,7 @@
       ],
       "variations": [
         "Philippe AEGLE",
-        "Philippe JAEGIÉ",
+        "Philippe JAEGI\u00c9",
         "Philippe JAEGLE"
       ]
     },
@@ -33283,7 +33283,7 @@
             {
               "page": 1,
               "matched_variant": "Dershowitz",
-              "snippet": "The document discusses internal USAO emails and interviews regarding the handling of Jeffrey Epstein's case, including disagreements about meeting with his defense counsel and prosecution strategy. USAO officials Lourie, Menchel, and Villafaña had differing opinions on whether to meet with Epstein's lawyers. The document provides insight into the USAO's decision-making process in the Epstein case."
+              "snippet": "The document discusses internal USAO emails and interviews regarding the handling of Jeffrey Epstein's case, including disagreements about meeting with his defense counsel and prosecution strategy. USAO officials Lourie, Menchel, and Villafa\u00f1a had differing opinions on whether to meet with Epstein's lawyers. The document provides insight into the USAO's decision-making process in the Epstein case."
             }
           ]
         },
@@ -38417,6 +38417,21 @@
       "variations": [
         "Emmanuel Macron"
       ]
+    },
+    {
+      "display_name": "Piers Morgan",
+      "slug": "piers-morgan",
+      "priority": "P1",
+      "category": "Media",
+      "found_in_documents": true,
+      "total_matches": 29,
+      "entity_id": "/m/02pjzn",
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=%2Fm%2F02pjzn&p=1",
+      "documents": [],
+      "aliases": [
+        "Piers Stefan Pughe-Morgan"
+      ],
+      "notes": "British broadcaster and journalist"
     }
   ]
 }
