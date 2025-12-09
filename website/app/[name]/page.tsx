@@ -6,7 +6,7 @@ import SearchForm from '../components/SearchForm';
 import FakeNewsButton from '../components/FakeNewsButton';
 import CheckItOutPopup from '../components/CheckItOutPopup';
 import ShareButton from '../components/ShareButton';
-import { getPersonData, findAllMatches } from '@/lib/data';
+import { getPersonData, findAllMatches, getLastUpdatedDate } from '@/lib/data';
 import { Person } from '@/types';
 import { rankDocuments, getClassificationIcon } from '@/lib/documentRanking';
 
@@ -137,6 +137,9 @@ export default async function NamePage({
     // Continue with person = null to show "NO" page
   }
 
+  // Get the last updated date from metadata
+  const lastUpdatedDate = await getLastUpdatedDate();
+
   // Find all potential matches for "Or searching for..." section
   // Use original query param if present (from redirect), otherwise use current slug
   const searchTermForMatches = originalQuery || name;
@@ -237,7 +240,7 @@ export default async function NamePage({
             {' • '}
             <FakeNewsButton />
             {' • '}
-            last updated: december 9, 2024
+            last updated: {lastUpdatedDate}
             {' • '}
             <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
               @jessicasuarez
@@ -475,7 +478,7 @@ export default async function NamePage({
           {' • '}
           <FakeNewsButton />
           {' • '}
-          last updated: december 9, 2024
+          last updated: {lastUpdatedDate}
           {' • '}
           <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
             @jessicasuarez

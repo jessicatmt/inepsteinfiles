@@ -47,6 +47,8 @@ export interface PeopleIndex {
     total_names: number;
     total_documents: number;
     verification_note: string;
+    has_custom_content?: boolean;
+    last_manual_update?: string;
   };
   people: Person[];
 }
