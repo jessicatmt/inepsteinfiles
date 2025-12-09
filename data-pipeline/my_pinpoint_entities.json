@@ -1,0 +1,97 @@
+{
+  "collection_id": "7185d6ee2381569d",
+  "scraped_at": "2025-12-04T08:58:51.037876",
+  "total_entities": 15,
+  "entities": [
+    {
+      "name": "United States District Court for the Southern District of New York",
+      "entity_id": "/m/037ycj",
+      "file_count": 981,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/037ycj"
+    },
+    {
+      "name": "Bill Clinton",
+      "entity_id": "/m/0157m",
+      "file_count": 905,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/0157m"
+    },
+    {
+      "name": "Palm Beach",
+      "entity_id": "/m/0rqf1",
+      "file_count": 822,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/0rqf1"
+    },
+    {
+      "name": "Barack Obama",
+      "entity_id": "/m/02mjmr",
+      "file_count": 791,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/02mjmr"
+    },
+    {
+      "name": "Federal Bureau of Investigation",
+      "entity_id": "/m/02_1m",
+      "file_count": 592,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/02_1m"
+    },
+    {
+      "name": "United States district court",
+      "entity_id": "/m/0j75z",
+      "file_count": 568,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/0j75z"
+    },
+    {
+      "name": "United States Department of Justice",
+      "entity_id": "/m/0dtj5",
+      "file_count": 5,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/0dtj5"
+    },
+    {
+      "name": "Jeffrey Epstein",
+      "entity_id": "/m/0fz196",
+      "file_count": 3,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/0fz196"
+    },
+    {
+      "name": "Donald Trump",
+      "entity_id": "/m/0cqt90",
+      "file_count": 2,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/0cqt90"
+    },
+    {
+      "name": "House Committee on Oversight and Reform",
+      "entity_id": "/m/05rw4y",
+      "file_count": 2,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/05rw4y"
+    },
+    {
+      "name": "United States",
+      "entity_id": "/m/09c7w0",
+      "file_count": 2,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/09c7w0"
+    },
+    {
+      "name": "Ghislaine Maxwell",
+      "entity_id": "/m/0gw_xk8",
+      "file_count": 1,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/0gw_xk8"
+    },
+    {
+      "name": "New York",
+      "entity_id": "/m/02_286",
+      "file_count": 1,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/02_286"
+    },
+    {
+      "name": "Florida",
+      "entity_id": "/m/02xry",
+      "file_count": 1,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/02xry"
+    },
+    {
+      "name": "New York",
+      "entity_id": "/m/059rby",
+      "file_count": 1,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&entities=/m/059rby"
+    }
+  ]
+}
