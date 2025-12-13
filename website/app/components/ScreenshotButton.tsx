@@ -1,14 +1,14 @@
 'use client';
 
 import { useState } from 'react';
-import html2canvas from 'html2canvas';
 
 interface ScreenshotButtonProps {
   displayName: string;
   found: boolean;
+  slug: string;
 }
 
-export default function ScreenshotButton({ displayName }: ScreenshotButtonProps) {
+export default function ScreenshotButton({ displayName, slug }: ScreenshotButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [imageDataUrl, setImageDataUrl] = useState<string | null>(null);
 
@@ -16,63 +16,19 @@ export default function ScreenshotButton({ displayName }: ScreenshotButtonProps)
     setIsLoading(true);
 
     try {
-      // Find the main result area
-      const resultElement = document.querySelector('.result-container') as HTMLElement;
-      if (!resultElement) {
-        alert('Could not find result to screenshot. Please refresh and try again.');
-        setIsLoading(false);
-        return;
+      // Fetch the OG image (Twitter card) for this person
+      const response = await fetch(`/api/og/${slug}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch image');
       }
 
-      // Capture the element
-      const canvas = await html2canvas(resultElement, {
-        scale: 2,
-        backgroundColor: '#ffffff',
-        logging: false,
-        useCORS: true,
+      const blob = await response.blob();
+      const dataUrl = await new Promise<string>((resolve) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result as string);
+        reader.readAsDataURL(blob);
       });
 
-      // Target dimensions (square for social sharing)
-      const targetWidth = 1080;
-      const targetHeight = 1080;
-
-      // Create output canvas
-      const outputCanvas = document.createElement('canvas');
-      outputCanvas.width = targetWidth;
-      outputCanvas.height = targetHeight;
-      const ctx = outputCanvas.getContext('2d');
-      if (!ctx) {
-        alert('Could not create canvas');
-        setIsLoading(false);
-        return;
-      }
-
-      // Fill background
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0, 0, targetWidth, targetHeight);
-
-      // Calculate scaling to fit content
-      const scale = Math.min(
-        (targetWidth * 0.9) / canvas.width,
-        (targetHeight * 0.8) / canvas.height
-      );
-      const scaledWidth = canvas.width * scale;
-      const scaledHeight = canvas.height * scale;
-
-      // Center the content
-      const x = (targetWidth - scaledWidth) / 2;
-      const y = (targetHeight - scaledHeight) / 2;
-
-      ctx.drawImage(canvas, x, y, scaledWidth, scaledHeight);
-
-      // Add watermark at bottom
-      ctx.fillStyle = '#9ca3af';
-      ctx.font = '24px system-ui, sans-serif';
-      ctx.textAlign = 'center';
-      ctx.fillText('inepsteinfiles.com', targetWidth / 2, targetHeight - 40);
-
-      // Get data URL and show in modal
-      const dataUrl = outputCanvas.toDataURL('image/png');
       setImageDataUrl(dataUrl);
       setIsLoading(false);
     } catch (error) {

@@ -211,7 +211,7 @@ export default async function NamePage({
             {/* Share Buttons */}
             <div className="flex flex-wrap gap-3 justify-center mt-6 mb-8">
               <ShareButton displayName={displayName} found={false} vanityUrl={vanityUrl} />
-              <ScreenshotButton displayName={displayName} found={false} />
+              <ScreenshotButton displayName={displayName} found={false} slug={name} />
             </div>
             
             {/* Show other potential matches */}
@@ -337,7 +337,7 @@ export default async function NamePage({
           {/* Share Buttons */}
           <div className="flex flex-wrap gap-3 justify-center mt-6 mb-8">
             <ShareButton displayName={person.display_name} found={found} vanityUrl={vanityUrl} />
-            <ScreenshotButton displayName={person.display_name} found={found} />
+            <ScreenshotButton displayName={person.display_name} found={found} slug={person.slug} />
           </div>
           
           {/* Show other potential matches if user searched with partial name */}
