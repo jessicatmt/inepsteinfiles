@@ -165,6 +165,18 @@ export function clearCache(): void {
 }
 
 /**
+ * Gets all people who ARE in the Epstein files (found = true)
+ * Used for random "but X is" links on NO pages
+ * @returns Promise<Person[]> Array of people with documents
+ */
+export async function getYesPeople(): Promise<Person[]> {
+  const data = await loadPeopleData();
+  return data.people.filter(p =>
+    Boolean(p.found_in_documents) || (p.pinpoint_file_count != null && p.pinpoint_file_count > 0)
+  );
+}
+
+/**
  * Gets the last updated date from the people index metadata
  * @returns Promise<string> Formatted date string (e.g., "december 9, 2024")
  */

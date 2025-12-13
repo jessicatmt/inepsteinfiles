@@ -48,7 +48,7 @@ export default function ShareButton({ displayName, found, vanityUrl }: ShareButt
   if (!mounted) {
     return (
       <button
-        className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors mb-8 opacity-50 cursor-wait"
+        className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors opacity-50 cursor-wait"
         disabled
       >
         Post on
@@ -68,7 +68,7 @@ export default function ShareButton({ displayName, found, vanityUrl }: ShareButt
       href={twitterShareUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors mb-8"
+      className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors"
     >
       Post on
       <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">

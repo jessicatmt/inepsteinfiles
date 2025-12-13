@@ -6,7 +6,9 @@ import SearchForm from '../components/SearchForm';
 import FakeNewsButton from '../components/FakeNewsButton';
 import CheckItOutPopup from '../components/CheckItOutPopup';
 import ShareButton from '../components/ShareButton';
-import { getPersonData, findAllMatches, getLastUpdatedDate } from '@/lib/data';
+import ScreenshotButton from '../components/ScreenshotButton';
+import RandomYesLink from '../components/RandomYesLink';
+import { getPersonData, findAllMatches, getLastUpdatedDate, getYesPeople } from '@/lib/data';
 import { Person } from '@/types';
 import { rankDocuments, getClassificationIcon } from '@/lib/documentRanking';
 
@@ -140,6 +142,15 @@ export default async function NamePage({
   // Get the last updated date from metadata
   const lastUpdatedDate = await getLastUpdatedDate();
 
+  // Get YES people for random link on NO pages
+  let yesPeople: { slug: string; display_name: string }[] = [];
+  try {
+    const allYesPeople = await getYesPeople();
+    yesPeople = allYesPeople.map(p => ({ slug: p.slug, display_name: p.display_name }));
+  } catch (error) {
+    console.error('Error loading YES people:', error);
+  }
+
   // Find all potential matches for "Or searching for..." section
   // Use original query param if present (from redirect), otherwise use current slug
   const searchTermForMatches = originalQuery || name;
@@ -176,23 +187,32 @@ export default async function NamePage({
         <div className="max-w-4xl mx-auto">
           {/* Answer Section */}
           <div className="text-center mb-16">
-            {/* NO Answer */}
-            <div className="text-8xl md:text-[14rem] font-black leading-none tracking-tighter mb-8 text-green-600">
-              NO
+            {/* Result container for screenshot */}
+            <div className="result-container py-8">
+              {/* NO Answer */}
+              <div className="text-8xl md:text-[14rem] font-black leading-none tracking-tighter mb-8 text-green-600">
+                NO
+              </div>
+
+              {/* Subtitle - using generic name since we don't know which person they meant */}
+              <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
+                {displayName} IS NOT IN THE EPSTEIN FILES
+              </p>
+
+              {/* Match Count */}
+              <p className="text-2xl mb-2">
+                No search results in official files — so far.
+              </p>
+
+              {/* Random YES person link */}
+              <RandomYesLink yesPeople={yesPeople} />
             </div>
 
-            {/* Subtitle - using generic name since we don't know which person they meant */}
-            <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
-              {displayName} IS NOT IN THE EPSTEIN FILES
-            </p>
-
-            {/* Match Count */}
-            <p className="text-2xl mb-6">
-              No search results in official files — so far.
-            </p>
-
-            {/* Post on X Button */}
-            <ShareButton displayName={displayName} found={false} vanityUrl={vanityUrl} />
+            {/* Share Buttons */}
+            <div className="flex flex-wrap gap-3 justify-center mt-6 mb-8">
+              <ShareButton displayName={displayName} found={false} vanityUrl={vanityUrl} />
+              <ScreenshotButton displayName={displayName} found={false} />
+            </div>
             
             {/* Show other potential matches */}
             {otherMatches.length > 0 && (
@@ -261,56 +281,64 @@ export default async function NamePage({
       <div className="max-w-4xl mx-auto">
         {/* Answer Section */}
         <div className="text-center mb-16">
-          {/* YES/NO Answer */}
-          <div
-            className={`text-8xl md:text-[14rem] font-black leading-none tracking-tighter mb-8 ${
-              found ? 'text-red-600' : 'text-green-600'
-            }`}
-          >
-            {found ? 'YES' : 'NO'}
+          {/* Result container for screenshot */}
+          <div className="result-container py-8">
+            {/* YES/NO Answer */}
+            <div
+              className={`text-8xl md:text-[14rem] font-black leading-none tracking-tighter mb-8 ${
+                found ? 'text-red-600' : 'text-green-600'
+              }`}
+            >
+              {found ? 'YES' : 'NO'}
+            </div>
+
+            {/* Subtitle - now showing the actual person's full name */}
+            <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
+              {person.display_name} {found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES
+            </p>
+
+            {/* Custom One-Liner */}
+            {person.custom_content?.one_liner && (
+              <p className="text-xl md:text-2xl italic text-gray-700 mb-8">
+                {person.custom_content.one_liner}
+                {person.custom_content?.one_liner_popup ? (
+                  <>
+                    {' '}
+                    <CheckItOutPopup popupText={person.custom_content.one_liner_popup} />
+                  </>
+                ) : person.custom_content?.one_liner_link ? (
+                  <>
+                    {' '}
+                    <Link href={person.custom_content.one_liner_link} className="underline hover:text-gray-500">
+                      Check it out.
+                    </Link>
+                  </>
+                ) : null}
+              </p>
+            )}
+
+            {/* Match Count */}
+            <p className="text-2xl mb-2">
+              {found ? (
+                <>
+                  {person.total_matches && person.total_matches > 0
+                    ? `Appears in ${person.total_matches} official Epstein document${person.total_matches !== 1 ? 's' : ''} so far.`
+                    : "Bookmark this page, we're still processing their file matches."}
+                </>
+              ) : (
+                'No search results in official files — so far.'
+              )}
+            </p>
+
+            {/* Random YES person link - only on NO pages */}
+            {!found && <RandomYesLink yesPeople={yesPeople} />}
           </div>
 
-          {/* Subtitle - now showing the actual person's full name */}
-          <p className="text-2xl md:text-3xl font-bold uppercase tracking-wide mb-12">
-            {person.display_name} {found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES
-          </p>
-
-          {/* Custom One-Liner */}
-          {person.custom_content?.one_liner && (
-            <p className="text-xl md:text-2xl italic text-gray-700 mb-8">
-              {person.custom_content.one_liner}
-              {person.custom_content?.one_liner_popup ? (
-                <>
-                  {' '}
-                  <CheckItOutPopup popupText={person.custom_content.one_liner_popup} />
-                </>
-              ) : person.custom_content?.one_liner_link ? (
-                <>
-                  {' '}
-                  <Link href={person.custom_content.one_liner_link} className="underline hover:text-gray-500">
-                    Check it out.
-                  </Link>
-                </>
-              ) : null}
-            </p>
-          )}
-
-          {/* Match Count */}
-          <p className="text-2xl mb-6">
-            {found ? (
-              <>
-                {person.total_matches && person.total_matches > 0
-                  ? `Appears in ${person.total_matches} official Epstein document${person.total_matches !== 1 ? 's' : ''} so far.`
-                  : "Bookmark this page, we're still processing their file matches."}
-              </>
-            ) : (
-              'No search results in official files — so far.'
-            )}
-          </p>
-
-
-          {/* Post on X Button */}
-          <ShareButton displayName={person.display_name} found={found} vanityUrl={vanityUrl} />
+          {/* Share Buttons */}
+          <div className="flex flex-wrap gap-3 justify-center mt-6 mb-8">
+            <ShareButton displayName={person.display_name} found={found} vanityUrl={vanityUrl} />
+            <ScreenshotButton displayName={person.display_name} found={found} />
+          </div>
           
           {/* Show other potential matches if user searched with partial name */}
           {otherMatches.length > 0 && (
