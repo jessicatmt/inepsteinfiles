@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import html2canvas from 'html2canvas';
 
 interface ScreenshotButtonProps {
   displayName: string;
@@ -10,42 +11,8 @@ interface ScreenshotButtonProps {
 export default function ScreenshotButton({ displayName }: ScreenshotButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [showOptions, setShowOptions] = useState(false);
-  const [html2canvasLoaded, setHtml2canvasLoaded] = useState(false);
-  const [loadError, setLoadError] = useState(false);
   const [imageDataUrl, setImageDataUrl] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // Load html2canvas from CDN
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    // Check if already loaded
-    if (typeof window.html2canvas !== 'undefined') {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
-      setHtml2canvasLoaded(true);
-      return;
-    }
-
-    // Check if script is already in DOM
-    const existingScript = document.querySelector('script[src*="html2canvas"]');
-    if (existingScript) {
-      existingScript.addEventListener('load', () => setHtml2canvasLoaded(true));
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = 'https://html2canvas.hertzen.com/dist/html2canvas.min.js';
-    script.async = true;
-    script.onload = () => {
-      setHtml2canvasLoaded(true);
-      setLoadError(false);
-    };
-    script.onerror = () => {
-      setLoadError(true);
-      console.error('Failed to load html2canvas');
-    };
-    document.head.appendChild(script);
-  }, []);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -59,12 +26,6 @@ export default function ScreenshotButton({ displayName }: ScreenshotButtonProps)
   }, []);
 
   async function generateScreenshot(mode: 'square' | 'vertical') {
-    // Load on demand if not ready
-    if (!html2canvasLoaded || typeof window.html2canvas === 'undefined') {
-      alert('Screenshot feature is still loading. Please wait a moment and try again.');
-      return;
-    }
-
     setIsLoading(true);
     setShowOptions(false);
 
@@ -78,7 +39,7 @@ export default function ScreenshotButton({ displayName }: ScreenshotButtonProps)
       }
 
       // Capture the element
-      const canvas = await window.html2canvas(resultElement, {
+      const canvas = await html2canvas(resultElement, {
         scale: 2,
         backgroundColor: '#ffffff',
         logging: false,
@@ -149,29 +110,15 @@ export default function ScreenshotButton({ displayName }: ScreenshotButtonProps)
     link.click();
   }
 
-  // Determine button state
-  const isDisabled = isLoading;
-  const buttonText = loadError
-    ? 'Screenshot (unavailable)'
-    : isLoading
-      ? 'Generating...'
-      : 'Screenshot';
-
   return (
     <>
       <div className="relative inline-block" ref={dropdownRef}>
         <button
-          onClick={() => {
-            if (loadError) {
-              alert('Screenshot feature failed to load. Please refresh the page.');
-              return;
-            }
-            setShowOptions(!showOptions);
-          }}
-          disabled={isDisabled}
+          onClick={() => setShowOptions(!showOptions)}
+          disabled={isLoading}
           className={`inline-flex items-center gap-2 bg-gray-200 text-gray-800 px-4 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors ${
-            isDisabled ? 'opacity-50 cursor-wait' : ''
-          } ${loadError ? 'opacity-50' : ''}`}
+            isLoading ? 'opacity-50 cursor-wait' : ''
+          }`}
         >
           {isLoading ? (
             <>
@@ -188,7 +135,7 @@ export default function ScreenshotButton({ displayName }: ScreenshotButtonProps)
                 <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
                 <polyline points="21,15 16,10 5,21" />
               </svg>
-              {buttonText}
+              Screenshot this
             </>
           )}
         </button>
@@ -262,11 +209,4 @@ export default function ScreenshotButton({ displayName }: ScreenshotButtonProps)
       )}
     </>
   );
-}
-
-// Extend Window interface for html2canvas
-declare global {
-  interface Window {
-    html2canvas: (element: HTMLElement, options?: object) => Promise<HTMLCanvasElement>;
-  }
 }
