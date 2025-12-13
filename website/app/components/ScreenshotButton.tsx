@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import html2canvas from 'html2canvas';
 
 interface ScreenshotButtonProps {
@@ -10,24 +10,10 @@ interface ScreenshotButtonProps {
 
 export default function ScreenshotButton({ displayName }: ScreenshotButtonProps) {
   const [isLoading, setIsLoading] = useState(false);
-  const [showOptions, setShowOptions] = useState(false);
   const [imageDataUrl, setImageDataUrl] = useState<string | null>(null);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setShowOptions(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  async function generateScreenshot(mode: 'square' | 'vertical') {
+  async function generateScreenshot() {
     setIsLoading(true);
-    setShowOptions(false);
 
     try {
       // Find the main result area
@@ -46,9 +32,9 @@ export default function ScreenshotButton({ displayName }: ScreenshotButtonProps)
         useCORS: true,
       });
 
-      // Target dimensions
+      // Target dimensions (square for social sharing)
       const targetWidth = 1080;
-      const targetHeight = mode === 'square' ? 1080 : 1920;
+      const targetHeight = 1080;
 
       // Create output canvas
       const outputCanvas = document.createElement('canvas');
@@ -112,53 +98,32 @@ export default function ScreenshotButton({ displayName }: ScreenshotButtonProps)
 
   return (
     <>
-      <div className="relative inline-block" ref={dropdownRef}>
-        <button
-          onClick={() => setShowOptions(!showOptions)}
-          disabled={isLoading}
-          className={`inline-flex items-center gap-2 bg-gray-200 text-gray-800 px-4 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors ${
-            isLoading ? 'opacity-50 cursor-wait' : ''
-          }`}
-        >
-          {isLoading ? (
-            <>
-              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-              </svg>
-              Generating...
-            </>
-          ) : (
-            <>
-              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
-                <polyline points="21,15 16,10 5,21" />
-              </svg>
-              Screenshot this
-            </>
-          )}
-        </button>
-
-        {showOptions && (
-          <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50 min-w-[180px]">
-            <button
-              onClick={() => generateScreenshot('square')}
-              className="w-full px-4 py-3 text-left text-sm hover:bg-gray-100 flex items-center gap-2"
-            >
-              <span className="w-4 h-4 border border-current inline-block" />
-              Square (1:1)
-            </button>
-            <button
-              onClick={() => generateScreenshot('vertical')}
-              className="w-full px-4 py-3 text-left text-sm hover:bg-gray-100 flex items-center gap-2 border-t border-gray-100"
-            >
-              <span className="w-3 h-5 border border-current inline-block" />
-              Vertical (9:16)
-            </button>
-          </div>
+      <button
+        onClick={generateScreenshot}
+        disabled={isLoading}
+        className={`inline-flex items-center gap-2 bg-gray-200 text-gray-800 px-4 py-3 rounded-full font-semibold hover:bg-gray-300 transition-colors ${
+          isLoading ? 'opacity-50 cursor-wait' : ''
+        }`}
+      >
+        {isLoading ? (
+          <>
+            <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
+              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+            </svg>
+            Generating...
+          </>
+        ) : (
+          <>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+              <polyline points="21,15 16,10 5,21" />
+            </svg>
+            Screenshot this
+          </>
         )}
-      </div>
+      </button>
 
       {/* Image Preview Modal */}
       {imageDataUrl && (
