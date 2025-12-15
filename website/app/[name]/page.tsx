@@ -297,9 +297,22 @@ export default async function NamePage({
               {person.display_name} {found ? 'IS' : 'IS NOT'} IN THE EPSTEIN FILES
             </p>
 
-            {/* Custom One-Liner */}
+            {/* Match Count */}
+            <p className="text-2xl mb-2">
+              {found ? (
+                <>
+                  {person.total_matches && person.total_matches > 0
+                    ? `Appears in ${person.total_matches} official Epstein document${person.total_matches !== 1 ? 's' : ''} so far.`
+                    : "Bookmark this page, we're still processing their file matches."}
+                </>
+              ) : (
+                'No search results in official files — so far.'
+              )}
+            </p>
+
+            {/* Custom One-Liner (after match count for punchline effect) */}
             {person.custom_content?.one_liner && (
-              <p className="text-xl md:text-2xl italic text-gray-700 mb-8">
+              <p className="text-xl md:text-2xl italic text-gray-700 mt-4 mb-4">
                 {person.custom_content.one_liner}
                 {person.custom_content?.one_liner_popup ? (
                   <>
@@ -316,19 +329,6 @@ export default async function NamePage({
                 ) : null}
               </p>
             )}
-
-            {/* Match Count */}
-            <p className="text-2xl mb-2">
-              {found ? (
-                <>
-                  {person.total_matches && person.total_matches > 0
-                    ? `Appears in ${person.total_matches} official Epstein document${person.total_matches !== 1 ? 's' : ''} so far.`
-                    : "Bookmark this page, we're still processing their file matches."}
-                </>
-              ) : (
-                'No search results in official files — so far.'
-              )}
-            </p>
 
             {/* Random YES person link - only on NO pages */}
             {!found && <RandomYesLink yesPeople={yesPeople} />}
