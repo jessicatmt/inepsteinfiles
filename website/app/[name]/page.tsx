@@ -310,7 +310,10 @@ export default async function NamePage({
               )}
             </p>
 
-            {/* Custom One-Liner (after match count for punchline effect) */}
+            {/* Random YES person link - only on NO pages */}
+            {!found && <RandomYesLink yesPeople={yesPeople} />}
+
+            {/* Custom One-Liner (after random link for punchline effect) */}
             {person.custom_content?.one_liner && (
               <p className="text-xl md:text-2xl italic text-gray-700 mt-4 mb-4">
                 {person.custom_content.one_liner}
@@ -329,9 +332,6 @@ export default async function NamePage({
                 ) : null}
               </p>
             )}
-
-            {/* Random YES person link - only on NO pages */}
-            {!found && <RandomYesLink yesPeople={yesPeople} />}
           </div>
 
           {/* Share Buttons */}
