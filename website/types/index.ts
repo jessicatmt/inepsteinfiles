@@ -24,6 +24,7 @@ export interface CustomContent {
   image_url?: string | null;
   youtube_embed_id?: string | null;
   youtube_timestamp?: number | null;
+  custom_share_text?: string | null;  // Override random Twitter share text
 }
 
 export interface Person {

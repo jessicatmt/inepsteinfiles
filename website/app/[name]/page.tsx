@@ -336,7 +336,7 @@ export default async function NamePage({
 
           {/* Share Buttons */}
           <div className="flex flex-wrap gap-3 justify-center mt-6 mb-8">
-            <ShareButton displayName={person.display_name} found={found} vanityUrl={vanityUrl} />
+            <ShareButton displayName={person.display_name} found={found} vanityUrl={vanityUrl} customShareText={person.custom_content?.custom_share_text} />
             <ScreenshotButton displayName={person.display_name} found={found} slug={person.slug} />
           </div>
           

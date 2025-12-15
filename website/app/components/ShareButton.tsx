@@ -28,6 +28,7 @@ interface ShareButtonProps {
   displayName: string;
   found: boolean;
   vanityUrl: string;
+  customShareText?: string | null;  // Override random text
 }
 
 function getRandomText(found: boolean): string {
@@ -35,9 +36,9 @@ function getRandomText(found: boolean): string {
   return textPool[Math.floor(Math.random() * textPool.length)];
 }
 
-export default function ShareButton({ displayName, found, vanityUrl }: ShareButtonProps) {
+export default function ShareButton({ displayName, found, vanityUrl, customShareText }: ShareButtonProps) {
   const [mounted, setMounted] = useState(false);
-  const [randomText] = useState(() => getRandomText(found));
+  const [randomText] = useState(() => customShareText || getRandomText(found));
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
