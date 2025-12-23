@@ -178,20 +178,9 @@ export async function getYesPeople(): Promise<Person[]> {
 
 /**
  * Gets the last updated date from the people index metadata
- * @returns Promise<string> Formatted date string (e.g., "december 9, 2024")
+ * @returns Promise<string> Date string in YYYY-MM-DD format
  */
 export async function getLastUpdatedDate(): Promise<string> {
   const data = await loadPeopleData();
-  const dateStr = data._metadata?.last_manual_update || '2024-11-25';
-
-  // Parse the date string (format: YYYY-MM-DD)
-  const [year, month, day] = dateStr.split('-').map(Number);
-  const date = new Date(year, month - 1, day);
-
-  const monthNames = [
-    'january', 'february', 'march', 'april', 'may', 'june',
-    'july', 'august', 'september', 'october', 'november', 'december'
-  ];
-
-  return `${monthNames[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  return data._metadata?.last_manual_update || '2024-11-25';
 }
