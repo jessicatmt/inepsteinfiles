@@ -1,6 +1,16 @@
 import { ImageResponse } from 'next/og';
 
+// Use Edge runtime for faster cold starts
+export const runtime = 'edge';
+
+// Load font at module level (bundled with the edge function)
+const publicSansBlack = fetch(
+  new URL('../fonts/PublicSans-Black.ttf', import.meta.url)
+).then((res) => res.arrayBuffer());
+
 export async function GET() {
+  const publicSansBlackData = await publicSansBlack;
+
   return new ImageResponse(
     (
       <div
@@ -19,6 +29,7 @@ export async function GET() {
         <div
           style={{
             display: 'flex',
+            fontFamily: 'Public Sans',
             fontSize: 72,
             fontWeight: 900,
             textAlign: 'center',
@@ -37,7 +48,9 @@ export async function GET() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            fontFamily: 'Public Sans',
             fontSize: 32,
+            fontWeight: 900,
             color: '#666666',
             textAlign: 'center',
             marginBottom: 40,
@@ -52,7 +65,9 @@ export async function GET() {
         <div
           style={{
             display: 'flex',
+            fontFamily: 'Public Sans',
             fontSize: 24,
+            fontWeight: 900,
             color: '#999999',
             textAlign: 'center',
           }}
@@ -64,6 +79,14 @@ export async function GET() {
     {
       width: 1200,
       height: 628,
+      fonts: [
+        {
+          name: 'Public Sans',
+          data: publicSansBlackData,
+          style: 'normal' as const,
+          weight: 900 as const,
+        },
+      ],
     }
   );
 }
