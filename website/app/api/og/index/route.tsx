@@ -28,32 +28,36 @@ export async function GET() {
             letterSpacing: '-0.02em',
           }}
         >
-          IS [NAME] IN THE<br />EPSTEIN FILES?
+          IS [NAME] IN THE EPSTEIN FILES?
         </div>
 
         {/* Tagline */}
         <div
           style={{
             display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
             fontSize: 32,
             color: '#666666',
             textAlign: 'center',
             marginBottom: 40,
+            lineHeight: 1.4,
           }}
         >
-          Search official documents
+          <span>No paywall. No login. No allegations.</span>
+          <span>Just the official public documents.</span>
         </div>
 
-        {/* Proof link */}
+        {/* URL */}
         <div
           style={{
             display: 'flex',
-            fontSize: 20,
+            fontSize: 24,
             color: '#999999',
             textAlign: 'center',
           }}
         >
-          Proof: inepsteinfiles.com
+          inepsteinfiles.com
         </div>
       </div>
     ),
