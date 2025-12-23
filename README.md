@@ -20,7 +20,7 @@ InEpsteinFiles.com provides a simple way to search if names appear in official E
 ## How It Works (MVP Approach)
 
 1. Documents are added to a Pinpoint collection (manual upload or Google Drive folders)
-2. A curated list of ~50 high-profile names is maintained
+2. A curated list of 469 names is maintained
 3. Playwright scraper extracts Knowledge Graph entity IDs and document counts from Pinpoint
 4. `people_index.json` stores names, entity IDs, and counts
 5. Website displays YES/NO based on whether documents exist for that entity
@@ -39,7 +39,7 @@ InEpsteinFiles.com provides a simple way to search if names appear in official E
 ### Data Backend (Running)
 - **Documents**: Google Journalist Studio Pinpoint (no API)
 - **Scraping**: Playwright (Python) for entity extraction
-- **Data**: `people_index.json` with ~50 curated names
+- **Data**: `people_index.json` with 469 indexed names
 
 ### Data Pipeline (Exists, Not Deployed)
 - **Language**: Python 3.13

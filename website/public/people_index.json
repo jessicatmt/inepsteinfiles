@@ -135,12 +135,15 @@
       ]
     },
     {
-      "display_name": "Prince Andrew",
-      "slug": "prince-andrew",
+      "display_name": "Andrew Mountbatten-Windsor",
+      "slug": "andrew-mountbatten-windsor",
       "priority": "P0",
       "category": "British Royal",
       "found_in_documents": true,
-      "total_matches": 91,
+      "total_matches": 448,
+      "variations": [
+        "Prince Andrew"
+      ],
       "documents": [
         {
           "filename": "EPSTEIN FLIGHT LOGS UNREDACTED.pdf",
@@ -180,9 +183,9 @@
         }
       ],
       "pinpoint_entity_id": "/m/0xnh2",
-      "pinpoint_file_count": 91,
+      "pinpoint_file_count": 448,
       "custom_content": {
-        "one_liner": "And why he's just \"Andrew Mountbatten-Windsor\" the peasant now.",
+        "one_liner": "Formerly known as Prince Andrew.",
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null
@@ -348,10 +351,10 @@
       "priority": "P0",
       "category": "Tech CEO",
       "found_in_documents": true,
-      "total_matches": 16,
+      "total_matches": 117,
       "documents": [],
       "pinpoint_entity_id": "/m/017nt",
-      "pinpoint_file_count": 16,
+      "pinpoint_file_count": 117,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -365,7 +368,7 @@
       "priority": "P0",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 15,
+      "total_matches": 914,
       "documents": [
         {
           "filename": "doj-ogr-00016010",
@@ -480,7 +483,7 @@
       "priority": "P0",
       "category": "Legal",
       "found_in_documents": true,
-      "total_matches": 12,
+      "total_matches": 408,
       "documents": [
         {
           "filename": "17-295 ch 2003",
@@ -564,7 +567,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/097qj4",
-      "pinpoint_file_count": 12,
+      "pinpoint_file_count": 408,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -601,8 +604,8 @@
       "priority": "P0",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 12,
-      "pinpoint_file_count": 12,
+      "total_matches": 2056,
+      "pinpoint_file_count": 2056,
       "pinpoint_entity_id": "/m/0cqt90",
       "custom_content": {
         "one_liner": null,
@@ -717,7 +720,7 @@
       "priority": "P0",
       "category": "Business",
       "found_in_documents": true,
-      "total_matches": 12,
+      "total_matches": 268,
       "documents": [
         {
           "filename": "17-295 ch 2003",
@@ -801,7 +804,7 @@
         }
       ],
       "pinpoint_entity_id": "/m/01hwr1",
-      "pinpoint_file_count": 12,
+      "pinpoint_file_count": 268,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -833,10 +836,10 @@
       "priority": "P0",
       "category": "Tech CEO",
       "found_in_documents": true,
-      "total_matches": 8,
+      "total_matches": 59,
       "documents": [],
       "pinpoint_entity_id": "/m/03nzf1",
-      "pinpoint_file_count": 8,
+      "pinpoint_file_count": 59,
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -2170,13 +2173,13 @@
       "priority": "P1",
       "category": "Academic",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 115,
       "documents": [],
       "pinpoint_entity_id": "/m/0b78hw",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 115,
       "custom_content": {
         "one_liner": null,
-        "image_url": null,
+        "image_url": "/images/noam-chomsky-1.jpeg",
         "youtube_embed_id": null,
         "youtube_timestamp": null
       }
@@ -2286,10 +2289,11 @@
       "priority": "P1",
       "category": "Political Figure",
       "found_in_documents": true,
-      "total_matches": 0,
+      "total_matches": 366,
       "documents": [],
       "pinpoint_entity_id": "/m/0bqscsg",
-      "pinpoint_file_count": null,
+      "pinpoint_file_count": 366,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&p=1&entities=%2Fm%2F0bqscsg",
       "custom_content": {
         "one_liner": null,
         "image_url": null,
@@ -38448,6 +38452,24 @@
         "Piers Stefan Pughe-Morgan"
       ],
       "notes": "British broadcaster and journalist"
+    },
+    {
+      "display_name": "Richard Branson",
+      "slug": "richard-branson",
+      "priority": "P1",
+      "category": "Business",
+      "found_in_documents": true,
+      "total_matches": 31,
+      "documents": [],
+      "pinpoint_entity_id": "/m/0n839",
+      "pinpoint_file_count": 31,
+      "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&p=1&spt=2&entities=%2Fm%2F0n839",
+      "custom_content": {
+        "one_liner": null,
+        "image_url": null,
+        "youtube_embed_id": null,
+        "youtube_timestamp": null
+      }
     }
   ]
 }
