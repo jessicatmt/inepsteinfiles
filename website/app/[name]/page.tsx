@@ -8,7 +8,7 @@ import CheckItOutPopup from '../components/CheckItOutPopup';
 import ShareButton from '../components/ShareButton';
 import ScreenshotButton from '../components/ScreenshotButton';
 import RandomYesLink from '../components/RandomYesLink';
-import { getPersonData, findAllMatches, getLastUpdatedDate, getYesPeople } from '@/lib/data';
+import { getPersonData, findAllMatches, getYesPeople } from '@/lib/data';
 import { Person } from '@/types';
 import { rankDocuments, getClassificationIcon } from '@/lib/documentRanking';
 
@@ -139,9 +139,6 @@ export default async function NamePage({
     // Continue with person = null to show "NO" page
   }
 
-  // Get the last updated date from metadata
-  const lastUpdatedDate = await getLastUpdatedDate();
-
   // Get YES people for random link on NO pages
   let yesPeople: { slug: string; display_name: string }[] = [];
   try {
@@ -260,7 +257,7 @@ export default async function NamePage({
             {' • '}
             <FakeNewsButton />
             {' • '}
-            last updated: {lastUpdatedDate}
+            last updated: {process.env.NEXT_PUBLIC_BUILD_DATE}
             {' • '}
             <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
               @jessicasuarez
@@ -506,7 +503,7 @@ export default async function NamePage({
           {' • '}
           <FakeNewsButton />
           {' • '}
-          last updated: {lastUpdatedDate}
+          last updated: {process.env.NEXT_PUBLIC_BUILD_DATE}
           {' • '}
           <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
             @jessicasuarez

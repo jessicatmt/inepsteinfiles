@@ -176,11 +176,3 @@ export async function getYesPeople(): Promise<Person[]> {
   );
 }
 
-/**
- * Gets the last updated date from the people index metadata
- * @returns Promise<string> Date string in YYYY-MM-DD format
- */
-export async function getLastUpdatedDate(): Promise<string> {
-  const data = await loadPeopleData();
-  return data._metadata?.last_manual_update || '2024-11-25';
-}

@@ -50,6 +50,11 @@ const nextConfig: NextConfig = {
   // Ensure proper file access in serverless environment
   output: 'standalone',
 
+  // Inject build date at build time - auto-updates on every deploy
+  env: {
+    NEXT_PUBLIC_BUILD_DATE: new Date().toISOString().split('T')[0], // YYYY-MM-DD
+  },
+
   // Security headers for all routes
   async headers() {
     return [

@@ -26,7 +26,7 @@ export default function HomePage() {
           <a href="https://twitter.com/jessicasuarez" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:underline">
             @jessicasuarez
           </a>
-          <div className="mt-2">Last updated 2025-12-23</div>
+          <div className="mt-2">Last updated {process.env.NEXT_PUBLIC_BUILD_DATE}</div>
         </div>
       </div>
     </main>
