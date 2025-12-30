@@ -313,13 +313,17 @@ export default async function NamePage({
             {/* Custom One-Liner (after random link for punchline effect) */}
             {person.custom_content?.one_liner && (
               <p className="text-xl md:text-2xl italic text-gray-700 mt-4 mb-4">
-                {person.custom_content.one_liner}
-                {person.custom_content?.one_liner_popup ? (
+                {person.custom_content.one_liner.includes('<') ? (
+                  <span dangerouslySetInnerHTML={{ __html: person.custom_content.one_liner }} />
+                ) : (
+                  person.custom_content.one_liner
+                )}
+                {!person.custom_content.one_liner.includes('<') && person.custom_content?.one_liner_popup ? (
                   <>
                     {' '}
                     <CheckItOutPopup popupText={person.custom_content.one_liner_popup} />
                   </>
-                ) : person.custom_content?.one_liner_link ? (
+                ) : !person.custom_content.one_liner.includes('<') && person.custom_content?.one_liner_link ? (
                   <>
                     {' '}
                     <Link href={person.custom_content.one_liner_link} className="underline hover:text-gray-500">
