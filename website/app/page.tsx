@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import SearchForm from './components/SearchForm';
+import MostSearched from './components/MostSearched';
 
 export default function HomePage() {
   return (
@@ -14,6 +15,9 @@ export default function HomePage() {
           </div>
           <span className="whitespace-nowrap">IN THE EPSTEIN FILES?</span>
         </div>
+
+        {/* Most Searched */}
+        <MostSearched />
 
         {/* Footer */}
         <div className="text-center mt-16 text-xs text-gray-600">
