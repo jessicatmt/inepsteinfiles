@@ -32,10 +32,11 @@
       "djt"
     ]
   },
-  "prince-andrew": {
-    "canonical_slug": "prince-andrew",
-    "canonical_name": "Prince Andrew",
+  "andrew-mountbatten-windsor": {
+    "canonical_slug": "andrew-mountbatten-windsor",
+    "canonical_name": "Andrew Mountbatten-Windsor",
     "aliases": [
+      "prince-andrew",
       "andrew-duke-of-york",
       "duke-of-york",
       "andrew-albert-christian-edward"
