@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getSupabaseClient } from '@/lib/supabase';
 
 // Simple in-memory rate limiter
 const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
@@ -58,8 +59,16 @@ export async function POST(request: NextRequest) {
     }
 
     // Log the report - visible in Vercel logs
-    // TODO: In the future, store this in a database (e.g., Vercel KV, Supabase, etc.)
     console.log(`[FAKE NEWS REPORT] name="${name}" ip="${ip}" timestamp="${timestamp}"`);
+
+    // Store in Supabase (fire and forget - don't block response)
+    try {
+      const supabase = getSupabaseClient();
+      await supabase.from('reports').insert({ slug: name });
+    } catch (dbError) {
+      // Log but don't fail the request
+      console.error('Failed to store report in database:', dbError);
+    }
 
     return NextResponse.json({
       success: true,
