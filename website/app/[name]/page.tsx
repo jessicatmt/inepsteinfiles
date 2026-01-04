@@ -9,6 +9,7 @@ import ShareButton from '../components/ShareButton';
 import ScreenshotButton from '../components/ScreenshotButton';
 import RandomYesLink from '../components/RandomYesLink';
 import SearchTracker from '../components/SearchTracker';
+import EpsteinOverlay from '../components/EpsteinOverlay';
 import { getPersonData, findAllMatches, getYesPeople } from '@/lib/data';
 import { Person } from '@/types';
 import { rankDocuments, getClassificationIcon } from '@/lib/documentRanking';
@@ -182,6 +183,7 @@ export default async function NamePage({
 
     return (
       <main className="min-h-screen bg-white text-black p-4">
+        <EpsteinOverlay />
         <SearchTracker slug={name} displayName={displayName} />
         <div className="max-w-4xl mx-auto">
           {/* Answer Section */}
@@ -277,6 +279,7 @@ export default async function NamePage({
 
   return (
     <main className="min-h-screen bg-white text-black p-4">
+      <EpsteinOverlay />
       <SearchTracker slug={person.slug} displayName={person.display_name} />
       <div className="max-w-4xl mx-auto">
         {/* Answer Section */}
