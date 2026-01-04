@@ -14,21 +14,25 @@ export default function EpsteinOverlay() {
 
     // Use setTimeout to make the state updates async (avoids cascading render warning)
     setTimeout(() => {
-      // 1 in 10 chance to show the overlay
-      const shouldShow = Math.random() < 0.1;
+      // Check for debug param: ?overlay=1 always shows it
+      const params = new URLSearchParams(window.location.search);
+      const forceShow = params.get('overlay') === '1';
+
+      // 1 in 10 chance to show, or always if ?overlay=1
+      const shouldShow = forceShow || Math.random() < 0.1;
       if (!shouldShow) return;
 
       setVisible(true);
 
-      // Start fade out after 800ms
+      // Start fade out after 400ms
       setTimeout(() => {
         setFadeOut(true);
-      }, 800);
+      }, 400);
 
-      // Remove completely after fade animation (800ms + 400ms fade)
+      // Remove completely after fade animation (400ms + 300ms fade)
       setTimeout(() => {
         setVisible(false);
-      }, 1200);
+      }, 700);
     }, 0);
   }, []);
 
@@ -36,7 +40,7 @@ export default function EpsteinOverlay() {
 
   return (
     <div
-      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black transition-opacity duration-400 ${
+      className={`fixed inset-0 z-[9999] flex items-center justify-center bg-black transition-opacity duration-300 ${
         fadeOut ? 'opacity-0' : 'opacity-100'
       }`}
       style={{ pointerEvents: 'none' }}
