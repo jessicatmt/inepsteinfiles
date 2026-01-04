@@ -41,7 +41,7 @@ export default function MostSearched() {
   return (
     <div className="mt-12 text-center">
       <h2 className="text-sm uppercase tracking-wide text-gray-500 mb-4 font-bold">
-        Most Searched (Last 7 Days)
+        Trending Searches
       </h2>
       <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
         {trending.slice(0, 8).map((item) => (
