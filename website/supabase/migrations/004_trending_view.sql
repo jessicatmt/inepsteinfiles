@@ -10,7 +10,7 @@ SELECT
   display_name,
   COUNT(*) as search_count
 FROM searches
-WHERE last_searched > NOW() - INTERVAL '24 hours'
+WHERE searched_at > NOW() - INTERVAL '24 hours'
 GROUP BY slug, display_name
 ORDER BY search_count DESC
 LIMIT 50;
