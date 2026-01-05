@@ -1,27 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSupabaseClient } from '@/lib/supabase';
-
-// Simple in-memory rate limiter
-const rateLimitMap = new Map<string, { count: number; resetTime: number }>();
-const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
-const RATE_LIMIT_MAX = 5; // 5 reports per minute per IP
-
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const record = rateLimitMap.get(ip);
-
-  if (!record || now > record.resetTime) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + RATE_LIMIT_WINDOW });
-    return false;
-  }
-
-  if (record.count >= RATE_LIMIT_MAX) {
-    return true;
-  }
-
-  record.count++;
-  return false;
-}
+import { checkRateLimit, getClientIp, RATE_LIMITS } from '@/lib/rateLimit';
 
 // Sanitize the name parameter
 function sanitizeName(name: string): string {
@@ -34,15 +13,25 @@ function sanitizeName(name: string): string {
 }
 
 export async function POST(request: NextRequest) {
-  // Rate limiting
-  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-             request.headers.get('x-real-ip') ||
-             'unknown';
+  // Get client IP using secure method
+  const ip = getClientIp(request);
 
-  if (isRateLimited(ip)) {
+  // Check rate limit using persistent Supabase storage
+  const rateLimitResult = await checkRateLimit({
+    ...RATE_LIMITS.report,
+    identifier: `report:${ip}`,
+  });
+
+  if (!rateLimitResult.success) {
     return NextResponse.json(
       { error: 'Too many reports. Please try again later.' },
-      { status: 429 }
+      {
+        status: 429,
+        headers: {
+          'X-RateLimit-Remaining': '0',
+          'X-RateLimit-Reset': rateLimitResult.resetAt.toISOString(),
+        },
+      }
     );
   }
 

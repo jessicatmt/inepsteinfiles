@@ -2,18 +2,39 @@ import { NextResponse } from 'next/server';
 import Fuse from 'fuse.js';
 import { loadPeopleData } from '@/lib/data';
 import { filterDuplicatePeople } from '@/lib/aliasResolver';
+import { checkRateLimit, getClientIp, RATE_LIMITS } from '@/lib/rateLimit';
 
 export async function GET(request: Request) {
+  // Rate limiting to prevent enumeration attacks
+  const ip = getClientIp(request);
+  const rateLimitResult = await checkRateLimit({
+    ...RATE_LIMITS.search,
+    identifier: `search:${ip}`,
+  });
+
+  if (!rateLimitResult.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.', results: [] },
+      {
+        status: 429,
+        headers: {
+          'X-RateLimit-Remaining': '0',
+          'X-RateLimit-Reset': rateLimitResult.resetAt.toISOString(),
+        },
+      }
+    );
+  }
+
   try {
     const { searchParams } = new URL(request.url);
     const query = searchParams.get('q');
-    
+
     if (!query || query.length < 1) {
       return NextResponse.json({ results: [] });
     }
 
     const data = await loadPeopleData();
-    
+
     // Configure Fuse.js for fuzzy search
     const fuse = new Fuse(data.people, {
       keys: [
@@ -26,14 +47,14 @@ export async function GET(request: Request) {
       minMatchCharLength: 1,
       shouldSort: true
     });
-    
+
     // Search and get more results initially to account for duplicates
     const results = fuse.search(query).slice(0, 20);
-    
+
     // Extract the person objects and filter duplicates
     const people = results.map(r => r.item);
     const dedupedPeople = filterDuplicatePeople(people);
-    
+
     // Format results for the frontend, limiting to 8 after deduplication
     const formattedResults = dedupedPeople.slice(0, 8).map(person => ({
       slug: person.slug,
@@ -41,7 +62,7 @@ export async function GET(request: Request) {
       found_in_documents: person.found_in_documents || false,
       pinpoint_file_count: person.pinpoint_file_count || 0
     }));
-    
+
     return NextResponse.json({ results: formattedResults });
   } catch (error) {
     console.error('Search API error:', error);

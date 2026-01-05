@@ -13,6 +13,7 @@ import EpsteinOverlay from '../components/EpsteinOverlay';
 import { getPersonData, findAllMatches, getYesPeople } from '@/lib/data';
 import { Person } from '@/types';
 import { rankDocuments, getClassificationIcon } from '@/lib/documentRanking';
+import SafeOneLiner from '../components/SafeOneLiner';
 
 // Version param for cache busting - bump this when data changes significantly
 const OG_VERSION = '20251126a';
@@ -319,11 +320,7 @@ export default async function NamePage({
             {/* Custom One-Liner (after random link for punchline effect) */}
             {person.custom_content?.one_liner && (
               <p className="text-xl md:text-2xl italic text-gray-700 mt-4 mb-4">
-                {person.custom_content.one_liner.includes('<') ? (
-                  <span dangerouslySetInnerHTML={{ __html: person.custom_content.one_liner }} />
-                ) : (
-                  person.custom_content.one_liner
-                )}
+                <SafeOneLiner text={person.custom_content.one_liner} />
                 {!person.custom_content.one_liner.includes('<') && person.custom_content?.one_liner_popup ? (
                   <>
                     {' '}
