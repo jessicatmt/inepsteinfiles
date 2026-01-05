@@ -1,23 +1,24 @@
--- Reports table for "Fake News" reports
+-- Reports table RLS policies
 -- Run this in the Supabase SQL editor
+--
+-- NOTE: If your 'reports' table ALREADY EXISTS, just run the
+-- ALTER TABLE and CREATE POLICY statements below.
 
-CREATE TABLE IF NOT EXISTS reports (
-  id BIGSERIAL PRIMARY KEY,
-  slug TEXT NOT NULL,
-  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
-);
+-- Uncomment this block ONLY if table doesn't exist:
+-- CREATE TABLE IF NOT EXISTS reports (
+--   id BIGSERIAL PRIMARY KEY,
+--   slug TEXT NOT NULL,
+--   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+-- );
+-- CREATE INDEX IF NOT EXISTS idx_reports_slug ON reports (slug);
+-- CREATE INDEX IF NOT EXISTS idx_reports_created_at ON reports (created_at DESC);
 
--- Index for efficient queries on slug
-CREATE INDEX IF NOT EXISTS idx_reports_slug ON reports (slug);
-
--- Index for time-based queries
-CREATE INDEX IF NOT EXISTS idx_reports_created_at ON reports (created_at DESC);
-
--- Enable Row Level Security
+-- Enable Row Level Security (run this regardless)
 ALTER TABLE reports ENABLE ROW LEVEL SECURITY;
 
 -- Policy: Allow insert from anon users (for submitting reports)
 -- Rate limiting is handled at the application level
+DROP POLICY IF EXISTS "Allow insert for report submission" ON reports;
 CREATE POLICY "Allow insert for report submission" ON reports
   FOR INSERT TO anon
   WITH CHECK (true);
