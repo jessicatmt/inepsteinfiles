@@ -13,6 +13,7 @@ import EpsteinOverlay from '../components/EpsteinOverlay';
 import { getPersonData, findAllMatches, getYesPeople } from '@/lib/data';
 import { Person } from '@/types';
 import { rankDocuments, getClassificationIcon } from '@/lib/documentRanking';
+import { buildYouTubeEmbedUrl } from '@/lib/validation';
 import SafeOneLiner from '../components/SafeOneLiner';
 
 // Version param for cache busting - bump this when data changes significantly
@@ -389,25 +390,27 @@ export default async function NamePage({
           </div>
         )}
 
-        {/* YouTube Embed */}
-        {person.custom_content?.youtube_embed_id && (
-          <div className="my-12 max-w-3xl mx-auto">
-            <div className="aspect-w-16 aspect-h-9 relative" style={{ paddingBottom: '56.25%' }}>
-              <iframe
-                src={`https://www.youtube.com/embed/${person.custom_content.youtube_embed_id}${
-                  person.custom_content.youtube_timestamp
-                    ? `?start=${person.custom_content.youtube_timestamp}`
-                    : ''
-                }`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute top-0 left-0 w-full h-full rounded-lg"
-              ></iframe>
+        {/* YouTube Embed - validated for security */}
+        {(() => {
+          const youtubeUrl = buildYouTubeEmbedUrl(
+            person.custom_content?.youtube_embed_id,
+            person.custom_content?.youtube_timestamp
+          );
+          return youtubeUrl ? (
+            <div className="my-12 max-w-3xl mx-auto">
+              <div className="aspect-w-16 aspect-h-9 relative" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src={youtubeUrl}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-0 left-0 w-full h-full rounded-lg"
+                ></iframe>
+              </div>
             </div>
-          </div>
-        )}
+          ) : null;
+        })()}
 
         {/* Evidence Section - Show document excerpts */}
         {found && person.documents && person.documents.length > 0 && (
