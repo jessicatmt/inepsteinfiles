@@ -27,7 +27,6 @@ source-files/
 
 # Processing outputs (generated files)
 data-pipeline/output/*.json
-website/public/people_index.json
 
 # System files
 .DS_Store
@@ -85,3 +84,60 @@ data-pipeline/epstein_docs_analyses.json
 data-pipeline/epstein_docs_dedupe.json
 data-pipeline/new_people_index.json
 data-pipeline/people_index_compact.json
+
+# ==========================================
+# DATA-PIPELINE WORKING FILES
+# ==========================================
+# Only 3 core scripts are tracked:
+# - extract_pinpoint_entities.py
+# - process_csv_updates.py
+# - requirements.txt
+data-pipeline/*.json
+data-pipeline/*.csv
+data-pipeline/*.html
+data-pipeline/*.png
+data-pipeline/screenshots/
+data-pipeline/FIX_README.md
+data-pipeline/add_*.py
+data-pipeline/audit_*.py
+data-pipeline/auto_*.py
+data-pipeline/automated_*.py
+data-pipeline/browser_*.py
+data-pipeline/build_*.py
+data-pipeline/comprehensive_*.py
+data-pipeline/convert_*.py
+data-pipeline/create_*.py
+data-pipeline/download_*.py
+data-pipeline/extract_all_*.py
+data-pipeline/extract_people_*.py
+data-pipeline/extract_spreadsheet_*.py
+data-pipeline/find_*.py
+data-pipeline/fix_*.py
+data-pipeline/inspect_*.py
+data-pipeline/manual_*.py
+data-pipeline/process_manual_*.py
+data-pipeline/scrape_*.py
+data-pipeline/scroll_*.py
+data-pipeline/search_*.py
+data-pipeline/test_*.py
+data-pipeline/update_*.py
+data-pipeline/validate_*.py
+
+# ==========================================
+# WORKING DOCUMENT FOLDERS
+# ==========================================
+database/
+implementation/
+milestones/
+prototype/
+specifications/
+
+# ==========================================
+# GITHUB BACKUP FILES
+# ==========================================
+.github/workflows-backup/
+
+# ==========================================
+# ONE-TIME FILES
+# ==========================================
+.vercel-redeploy
