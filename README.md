@@ -15,6 +15,14 @@ A single-purpose search engine that tells you whether a name appears in official
 
 You get an immediate **YES** or **NO** with a link to search the source documents yourself.
 
+## Features
+
+- Instant YES/NO search results
+- Dynamic Twitter/OG social cards
+- Trending searches
+- Screenshot button
+- "Fake News" reporting
+
 ## How it works
 
 1. Enter any name in the search box
