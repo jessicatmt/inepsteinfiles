@@ -1,7 +1,8 @@
 -- Trending searches view for analytics
--- Run this in the Supabase SQL editor AFTER 002_searches_table.sql
+-- Run this in the Supabase SQL editor
+-- NOTE: Assumes 'searches' table already exists with 'last_searched' column
 
--- Create a materialized view for better performance on trending queries
+-- Create a view for trending queries
 -- This aggregates searches from the last 24 hours
 CREATE OR REPLACE VIEW trending_searches AS
 SELECT
@@ -9,7 +10,7 @@ SELECT
   display_name,
   COUNT(*) as search_count
 FROM searches
-WHERE created_at > NOW() - INTERVAL '24 hours'
+WHERE last_searched > NOW() - INTERVAL '24 hours'
 GROUP BY slug, display_name
 ORDER BY search_count DESC
 LIMIT 50;
