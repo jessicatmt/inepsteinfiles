@@ -2303,14 +2303,158 @@
             {
               "page": 3,
               "matched_variant": "Steve Bannon",
-              "snippet": "Text messages between Steve Bannon and Jeffrey Epstein from April 30, 2019 discussing a documentary rehabilitation project."
+              "snippet": "April 30, 2019: Epstein and Bannon discuss documentary rehabilitation project. Epstein mentions 'rapist who traffics in female children to be raped by worlds most powerful, richest men' - context for image rehabilitation."
+            }
+          ]
+        },
+        {
+          "filename": "EFTA01615699",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01615699.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 2,
+              "matched_variant": "Steve Bannon",
+              "snippet": "March 31, 2019: Epstein jokes 'the meeting is now biled as the child rapist meets the nitwits intellectual' while planning Bannon visit. Bannon asks 'I'm staying with you tonight??-- u have room?' and arranges sleepover at Epstein's Paris residence."
             }
           ],
           "screenshots": [
             {
-              "path": "/evidence/steve-bannon/EFTA01615808/page-3.png",
-              "pageNumber": 3,
-              "highlightQuote": "Yes yes yes of course -- but we must counter 'rapist who traffics in female children to be raped by worlds most powerful, richest men'"
+              "path": "/evidence/steve-bannon/EFTA01615699/page-2.png",
+              "pageNumber": 2,
+              "highlightQuote": "Im easy, the meeting is now biled as the child rapist meets the nitwits intellectual. . not sue which is funnier"
+            }
+          ]
+        },
+        {
+          "filename": "EFTA01614980",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01614980.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 2,
+              "matched_variant": "Steve Bannon",
+              "snippet": "March 13-14, 2018: Bannon mocks Mongolian women ('Pretty girls if u like 'me with mustaches'), discusses crypto schemes ('We can make that place a crypto capital'), and Epstein invites Bannon for 'breakfast and a facial' at his NYC home."
+            }
+          ]
+        },
+        {
+          "filename": "EFTA01615683",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01615683.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 7,
+              "matched_variant": "Steve Bannon",
+              "snippet": "March 29, 2019: Epstein sends photo from Louvre Pyramid with 'the entire [Macron] govt' captioned 'just us two entire place. French power'. Bannon replies 'Powermove'. Texts discuss Bannon using Epstein's private jet from Rome."
+            }
+          ]
+        },
+        {
+          "filename": "EFTA01615010",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01615010.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 2,
+              "matched_variant": "Steve Bannon",
+              "snippet": "March 26-29, 2018: Epstein texts 'He thinks Jared and he can run it' referring to Trump. Clarifies 'Govt' when Bannon asks. Bannon confirms '1000%' it's a 'javanka result'. Also discusses Times Up meeting at MIT with Joi Ito for 'cover'."
+            }
+          ]
+        },
+        {
+          "filename": "EFTA01615703",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01615703.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 5,
+              "matched_variant": "Steve Bannon",
+              "snippet": "April 2-3, 2019: Discussing Bolsonaro strategy, Epstein advises 'I told him to - like the N word. The C word is - corrupt. And never utter it'. Plans media training shoot at Epstein's home. Bannon responds 'LMAO !!!-- Bolsanoro the anti corruption guy though'."
+            }
+          ]
+        },
+        {
+          "filename": "EFTA01615533",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01615533.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 2,
+              "matched_variant": "Steve Bannon",
+              "snippet": "December 25-26, 2018: Epstein and Bannon discuss 'Caracas' and Venezuela policy, Saudi oil prices, and criticize Fed Chair Powell. Bannon says 'Nobody wants to do it' regarding Trump admin staffing. References Bolsonaro dinner."
+            }
+          ]
+        },
+        {
+          "filename": "EFTA01615587",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01615587.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 2,
+              "matched_variant": "Steve Bannon",
+              "snippet": "January 22-27, 2019: Epstein sends Bannon an Apple Watch for Christmas. Discuss Roger Stone arrest ('What a dope' / 'Moron'), Bolsonaro/Maduro, and 'javanka result'. Bannon jokes he's 'In Texas building a wall'."
+            }
+          ]
+        },
+        {
+          "filename": "EFTA01615976",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01615976.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 3,
+              "matched_variant": "Steve Bannon",
+              "snippet": "July 3-6, 2019: Bannon requests intro to 'Erhud' (Ehud Barak) via 'Aaron Klein'. Bannon says 'I'm working Pompeo for support'. Epstein invites Bannon to 'film on the island' and visit Cold Spring Harbor with 'Watson'. Then 'All canceled' the day before Epstein's arrest."
+            }
+          ]
+        },
+        {
+          "filename": "EFTA01615190",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01615190.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 4,
+              "matched_variant": "Steve Bannon",
+              "snippet": "July 16-18, 2018: Bannon texts 'London with Boris' (Boris Johnson). Epstein notes 'Barrack apoplectic' (Tom Barrack) about Helsinki summit. Epstein comments on Trump: 'Donald would never piss off the guy who was going to rent the retail space in tt'."
             }
           ]
         },
@@ -2399,7 +2543,7 @@
       "pinpoint_file_count": 366,
       "pinpoint_url": "https://journaliststudio.google.com/pinpoint/search?collection=7185d6ee2381569d&spt=2&p=1&entities=%2Fm%2F0bqscsg",
       "custom_content": {
-        "one_liner": "Direct email correspondence with Epstein in 2018, discussing Trump and politics.",
+        "one_liner": "15+ iMessage conversations 2018-2019: Epstein jokes about being 'the child rapist', Bannon asks for sleepovers, discusses Trump/Jared running govt, coordinates on Pompeo/Bolsonaro, planned filming 'on the island' days before arrest.",
         "image_url": null,
         "youtube_embed_id": null,
         "youtube_timestamp": null
