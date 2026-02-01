@@ -3,6 +3,8 @@
  * Sorts documents by relevance and importance
  */
 
+import { DocumentScreenshot } from '@/types';
+
 export interface RankedDocument {
   filename: string;
   classification: string;
@@ -16,6 +18,7 @@ export interface RankedDocument {
     matched_variant?: string;
     snippet?: string;
   }>;
+  screenshots?: DocumentScreenshot[];
   rankScore?: number;
   rankTier?: number;
 }

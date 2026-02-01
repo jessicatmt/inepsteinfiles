@@ -2292,6 +2292,29 @@
       "total_matches": 366,
       "documents": [
         {
+          "filename": "EFTA01615808",
+          "classification": "iMessage Conversation",
+          "source_url": "https://www.justice.gov/epstein/files/DataSet%2010/EFTA01615808.pdf",
+          "source_attribution": "DOJ EFTA Records - DataSet 10",
+          "sha256": "",
+          "verification_status": "PUBLIC_RECORD",
+          "match_count": 1,
+          "matches": [
+            {
+              "page": 3,
+              "matched_variant": "Steve Bannon",
+              "snippet": "Text messages between Steve Bannon and Jeffrey Epstein from April 30, 2019 discussing a documentary rehabilitation project."
+            }
+          ],
+          "screenshots": [
+            {
+              "path": "/evidence/steve-bannon/EFTA01615808/page-3.png",
+              "pageNumber": 3,
+              "highlightQuote": "Yes yes yes of course -- but we must counter 'rapist who traffics in female children to be raped by worlds most powerful, richest men'"
+            }
+          ]
+        },
+        {
           "filename": "HOUSE_OVERSIGHT_026256",
           "classification": "Email - Direct Correspondence",
           "source_url": "https://epsteinsecrets.com/documents/758",

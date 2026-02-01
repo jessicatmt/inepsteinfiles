@@ -6,6 +6,12 @@ export interface DocumentMatch {
   snippet: string;
 }
 
+export interface DocumentScreenshot {
+  path: string;           // e.g., "/evidence/steve-bannon/EFTA01615808/page-3.png"
+  pageNumber?: number;
+  highlightQuote?: string; // The quote to display next to the thumbnail
+}
+
 export interface DocumentEvidence {
   filename: string;
   classification: string;
@@ -15,6 +21,7 @@ export interface DocumentEvidence {
   verification_status: string;
   match_count: number;
   matches: DocumentMatch[];
+  screenshots?: DocumentScreenshot[];
 }
 
 export interface CustomContent {
