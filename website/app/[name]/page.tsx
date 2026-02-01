@@ -15,6 +15,7 @@ import { Person } from '@/types';
 import { rankDocuments, getClassificationIcon } from '@/lib/documentRanking';
 import { buildYouTubeEmbedUrl } from '@/lib/validation';
 import SafeOneLiner from '../components/SafeOneLiner';
+import ScreenshotGallery from '../components/ScreenshotGallery';
 
 // Version param for cache busting - bump this when data changes significantly
 const OG_VERSION = '20251126a';
@@ -421,26 +422,24 @@ export default async function NamePage({
             <div className="space-y-4">
               {rankDocuments(person.documents).slice(0, 7).map((doc, index) => {
                 const snippet = doc.matches?.[0]?.snippet || '';
-                if (!snippet) return null;
-                
-                // Highlight tier 1 documents with special styling
+                if (!snippet && !doc.screenshots?.length) return null;
+
+                // Highlight tier 1 documents or documents with screenshots
                 const isTier1 = doc.rankTier === 1;
+                const hasScreenshots = doc.screenshots && doc.screenshots.length > 0;
 
                 return (
-                  <a
+                  <div
                     key={index}
-                    href={doc.source_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block p-4 rounded-lg border transition-colors ${
-                      isTier1 
-                        ? 'bg-red-50 border-red-200 hover:border-red-400 hover:bg-red-100' 
-                        : 'bg-gray-50 border-gray-200 hover:border-gray-400 hover:bg-gray-100'
+                    className={`p-4 rounded-lg border transition-colors ${
+                      isTier1 || hasScreenshots
+                        ? 'bg-red-50 border-red-200'
+                        : 'bg-gray-50 border-gray-200'
                     }`}
                   >
                     <div className="flex items-start gap-3">
                       <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${
-                        isTier1 ? 'bg-red-600 text-white' : 'bg-red-100 text-red-600'
+                        isTier1 || hasScreenshots ? 'bg-red-600 text-white' : 'bg-red-100 text-red-600'
                       }`}>
                         {index + 1}
                       </div>
@@ -454,15 +453,32 @@ export default async function NamePage({
                             </span>
                           )}
                         </p>
-                        <p className="text-gray-800 line-clamp-3">
-                          &ldquo;{snippet.length > 300 ? snippet.slice(0, 300) + '...' : snippet}&rdquo;
-                        </p>
-                        <p className="text-xs text-blue-600 mt-2 hover:underline">
-                          View full document →
-                        </p>
+                        {snippet && (
+                          <p className="text-gray-800 line-clamp-3">
+                            &ldquo;{snippet.length > 300 ? snippet.slice(0, 300) + '...' : snippet}&rdquo;
+                          </p>
+                        )}
+                        <a
+                          href={doc.source_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-blue-600 mt-2 hover:underline inline-block"
+                        >
+                          View full document (PDF) →
+                        </a>
+
+                        {/* Screenshot Gallery - renders inline when screenshots exist */}
+                        {hasScreenshots && (
+                          <ScreenshotGallery
+                            screenshots={doc.screenshots!}
+                            documentName={doc.filename}
+                            sourceUrl={doc.source_url}
+                            personName={person.display_name}
+                          />
+                        )}
                       </div>
                     </div>
-                  </a>
+                  </div>
                 );
               })}
             </div>
